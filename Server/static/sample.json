@@ -1,0 +1,68 @@
+// What redis will contain
+
+// Not Complete version. Will complete
+
+{
+	"publicGames" :	{
+					
+		"123<gameID>" :	{ 
+							
+			"gameName"			: "String",
+			"route"				: "String", 
+			"passwordStatus"	: "False"
+
+			} 
+		}
+}
+
+{
+	"privateGames" :	{
+					
+		"123<gameID>" :	{ 
+							
+			"gameName"			: "String", 
+			"route"				: "String",  
+			"passwordStatus"	: "String",
+			"password"			: "String"	
+
+			} 
+		}
+}
+
+{
+	"board of <gameID>" : {
+		"0" : {
+			"type" 		: "GO",
+			"playersOn" : {},
+
+		"1" : {
+			"type" 		: "Property",
+			"status"	: "notOwned",
+			"colour"	: "String",
+			"price"		: "Integer",
+			"playersOn" : {}
+		},
+
+		"2" : {
+			"type" 		: "commChest",
+			"playersOn" : {}	
+	}
+}
+
+{
+	"players of <gID>" : {
+		"uID" : {
+			"public" : {
+				"name" 			: "String",
+				"number" 		: "<int>",
+				"properties" 	: {},
+				"GOOJF"			: "<int>",
+				"figurine"		: "<String>"
+			},
+
+			"money" 		: "<int>"
+		}
+	}
+}
+
+

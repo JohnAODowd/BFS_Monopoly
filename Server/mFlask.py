@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import redisLib as r
 import lobby
+from json import dumps
 print("START *****************************************************************************************************")
 
 app = Flask(__name__)
@@ -8,6 +9,8 @@ app = Flask(__name__)
 """
 Application Controller
 """
+
+# TODO fill in web pages
 
 @app.route('/')
 def home():
@@ -52,7 +55,9 @@ def game():
             if r.validategID(json['gID']) and r.validateUID(json['gID'], json['uID']):
                 if json['request'] == 'FIGURINE':                               #user selecting figurine
                     ret = lobby.selectFigurine(json)
-
+                elif json['request'] == 'PING' and lobby.getGameStatus(json['gID']) == "LOBBY":
+                    ret = lobby.ping(json)
+                    
         elif 'gID' in json:
             if r.validategID(json['gID']):                                      #set join user details
                 if json['request'] == 'JOIN':
@@ -62,7 +67,7 @@ def game():
                 ret = lobby.host(json)
 
 
-        return ret
+        return dumps(ret)
 
         # TODO Lobby:
             # TODO keep track of lobby time per ping

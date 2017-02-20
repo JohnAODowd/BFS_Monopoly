@@ -33,24 +33,19 @@ def getBoard(gID):														#returns the board for a gamee using gID
 def getSquare(gID, squareNo):											#returns a board square using gID and squareNo
 	return getBoard(gID)[squareNo]
 
-def setGame(gID, game):													#sets a game, takes gID + game <dict>
-	pass
-
 def setPlayer(gID, uID, player):										#sets a player, takes gID + uID + player <dict>
 	players 		= getPlayers(gID)
 	players[uID]	= player
 	r.set('players of ' + gID, dumps(player).encode("utf-8"))
 
-def setBoard(gID, board=None):											#sets a board, takes gID + board <dict>
-	if board == None:
-		board 					= getInitBoard()
-	players 				= getPlayers(gID)
-	publicPlayers			= {}
+def setBoard(gID):														#sets a board, takes gID + board <dict>
+	board 				= getInitBoard()
+	players 			= getPlayers(gID)
 	for player in players:
-		publicPlayers[player["public"]["number"]] = player["public"]
-	board[0]["playersOn"] 	= publicPlayers
+		board[player['public']['position']]["playersOn"] = player['name']
 	r.set('board of ' + gID, dumps(board).encode("utf-8"))
-	
+	return board
+
 def setSquare(gID, squareNo, square):									#sets a square, takes gID + squareNo + square<dict>
 	board 			= getBoard()
 	board[squareNo] = square

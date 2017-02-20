@@ -1,16 +1,13 @@
 from flask import Flask, request, render_template
 import redisLib as r
-
+import lobby
 print("START *****************************************************************************************************")
 
 app = Flask(__name__)
 
-def getfirstPublicGame():
-    games   = r.getGames()
-    for gID in games:
-        if games[gID]["type"] == "public" and game[gID]["playersNo"] < 8:
-            return gID
-    return False
+"""
+Application Controller
+"""
 
 @app.route('/')
 def home():
@@ -33,7 +30,7 @@ def join():
                 else:
                     return render_template("join.html", gID=gID)                #return join form
         elif request.args.get("type") == "public":                              #check if game is join is public
-            gID = getfirstPublicGame()                                          #get first available game
+            gID = lobby.getfirstPublicGame()                                    #get first available game
             if gID:
                 return render_template("join.html", gID=gID)                    #return form
             else:
@@ -44,24 +41,36 @@ def join():
         return render_template("error.html")                                    #error
 
 
+"""
+Main game controller
+"""
 @app.route("/game", methods=["POST"])                                           #Only use post here
 def game():
     if request.method == "POST":
-        pass
-        # TODO set players
+        json = (request.get_json())
+        if 'gID' in json and 'uID' in json:                                     #if user has valid uID and gID
+            if r.validategID(json['gID']) and r.validateUID(json['gID'], json['uID']):
+                if json['request'] == 'FIGURINE':                               #user selecting figurine
+                    ret = lobby.selectFigurine(json)
+
+        elif 'gID' in json:
+            if r.validategID(json['gID']):                                      #set join user details
+                if json['request'] == 'JOIN':
+                    ret = lobby.join(json)
+        else:
+            if json['request'] == 'HOST':                                       #set host user details
+                ret = lobby.host(json)
+
+
+        return ret
+
         # TODO Lobby:
             # TODO keep track of lobby time per ping
             # TODO init Board
             # TODO set game
-
-
-def lobby(json):
-    pass
 
 if __name__ == '__main__':
   app.run(
         host="0.0.0.0",
         port=int("8080")
   )
-
-

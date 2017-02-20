@@ -1,0 +1,34 @@
+//User Sends:
+
+{
+  "request"   : "FIGURINE",         // request type
+  "figurine"  : "CAR",              // figurine user wants
+  "gID"       : "<String>",         // game ID
+  "uID"       : "<String>"          // user ID
+},
+
+//Server's response:
+
+{
+  "player" : {                                    // player details object
+        "money"   : 10000,                        // amount of money user has
+        "uID"     : "<String>"                    // user's ID
+        "public"  : {                             // public fields (money is private; game rules)
+          "name"        : "Mr. Monopoly Man",     // user's name
+          "number"      : 1,                      // user's number
+          "properties"  : {},                     // user's properties
+          "GOOJF"       : 0,                      // number of get out of jail free cards
+          "figurine"    : "CAR"                   // user's figurine
+        }
+    },
+
+  "game" : {
+        "gID"           : "<String>",              // game's ID
+        "type"          : "public",                // client doesnt need to use this
+        "playersNo"     : 1,                       // number of players so far
+        "turn"          : 1,                       // who's turn is it
+        "lastActivity"  : "<String>",              // client doesnt need this
+        "figurines"     : "[list]",                // figurines that are available
+        "status"        : "LOBBY"                  // status of game e.g. LOBBY, PLAYING, FINISHED
+  }
+}

@@ -1,0 +1,33 @@
+//User Sends:
+
+{
+  "request" : "JOIN",               // should be invisible field in the form
+  "type"    : "public",             // should be lowercase, set depending on what user chooses; e.g public or private
+  "name"    : "Mr. Monopoly Man",   // user's name; user set through a text field
+  "gID"     : "<String>"            // gID will be in the URL host sends to users; set as invisible field
+},
+
+//Server's response:
+
+{
+  "player" : {                                    // player details object
+        "money"   : 10000,                        // amount of money user has
+        "uID"     : "<String>"                    // user's ID
+        "public"  : {                             // public fields (money is private; game rules)
+          "name"        : "Mr. Monopoly Man",     // user's name
+          "number"      : 2,                      // user's number
+          "properties"  : {},                     // user's properties
+          "GOOJF"       : 0                       // number of get out of jail free cards
+        }
+    },
+
+  "game" : {
+        "gID"           : "<String>",              // game's ID
+        "type"          : "public",                // client doesnt need to use this
+        "playersNo"     : 2,                       // number of players so far
+        "turn"          : 1,                       // who's turn is it
+        "lastActivity"  : "<String>",              // client doesnt need this
+        "figurines"     : "[list]",                // figurines that are available
+        "status"        : "LOBBY"                  // status of game e.g. LOBBY, PLAYING, FINISHED
+  }
+}

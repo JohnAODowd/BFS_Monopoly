@@ -1,7 +1,4 @@
-from hashlib import sha256
 import redis
-import random
-import string
 from json import dumps, loads
 from monopolyVars import getInitBoard
 
@@ -10,45 +7,43 @@ from monopolyVars import getInitBoard
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0)
 
-def genString(size=10, chars=string.ascii_uppercase + string.digits):
-	return ''.join(random.choice(chars) for _ in range(size))
+"""
+Used for setting and getting data from redis database
+"""
 
-def genID():
-	token = sha256(genString().encode('utf-8')).hexdigest()
-	return token
-
-def getGames():
+def getGames():															#gets all games in redis
 	return loads(r.get('Games').decode("utf-8"))
 
-def getGame(gID):
+def getGame(gID):														#gets a specific game with gID
 	games 	= getGames()
 	game 	= games[gID]
 	return game
 
-def getPlayers(gID):
+def getPlayers(gID):													#gets all players for a game with gID
 	return loads(r.get('players of ' + gID).decode("utf-8"))
 
-def getPlayer(gID, uID):
+def getPlayer(gID, uID):												#gets specific player using gID and uID
 	players = getPlayers(gID)
 	player 	= players[uID]
 	return player
 
-def getBoard(gID):
+def getBoard(gID):														#returns the board for a gamee using gID
 	return loads(r.get('board of ' + gID).decode("utf-8"))
 
-def getSquare(gID, squareNo):
+def getSquare(gID, squareNo):											#returns a board square using gID and squareNo
 	return getBoard(gID)[squareNo]
 
-def setGame(game):
+def setGame(gID, game):													#sets a game, takes gID + game <dict>
 	pass
 
-def setPlayer(gID, uID, player):
+def setPlayer(gID, uID, player):										#sets a player, takes gID + uID + player <dict>
 	players 		= getPlayers(gID)
 	players[uID]	= player
 	r.set('players of ' + gID, dumps(player).encode("utf-8"))
 
-def setBoard(gID):
-	board 					= getInitBoard()
+def setBoard(gID, board=None):											#sets a board, takes gID + board <dict>
+	if board == None:
+		board 					= getInitBoard()
 	players 				= getPlayers(gID)
 	publicPlayers			= {}
 	for player in players:
@@ -56,8 +51,15 @@ def setBoard(gID):
 	board[0]["playersOn"] 	= publicPlayers
 	r.set('board of ' + gID, dumps(board).encode("utf-8"))
 	
-def setSquare(gID, squareNo, square):
+def setSquare(gID, squareNo, square):									#sets a square, takes gID + squareNo + square<dict>
 	board 			= getBoard()
 	board[squareNo] = square
 	r.set('board of ' + gID, dumps(board).encode("utf-8"))
 
+def validateGID(gID):													#used to validate a gID
+	games = getGames()
+	return gID in games
+
+def validateUID(gID, uID):												#used to validate a uID
+	players = getPlayers(gID)
+	return uID in players

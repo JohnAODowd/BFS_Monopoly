@@ -1,0 +1,30 @@
+@font-face {
+  font-family: 'RedRooster';
+  src: url(../fonts/RedRooster.ttf); }
+body {
+  margin: 0 0 0 0;
+  max-height: 100vh; }
+
+.body {
+  height: auto;
+  background-image: url("../assets/tweed/tweed.png"); }
+
+nav {
+  height: 10vh; }
+
+.collapsible {
+  margin-top: 2em; }
+
+.test {
+  margin-top: 6em;
+  border: 1px #333 solid;
+  border-radius: 4px;
+  margin: 2em; }
+
+.demo {
+  border-right: 1px solid #333;
+  height: 85vh;
+  min-height: 85vh;
+  margin-bottom: none; }
+
+/*# sourceMappingURL=index.css.map */

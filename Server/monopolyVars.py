@@ -232,5 +232,10 @@ initBoard = {
     }
 }
 
+figurines = ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"]
+
 def getInitBoard():
     return initBoard
+
+def getFigurines():
+    return figurines

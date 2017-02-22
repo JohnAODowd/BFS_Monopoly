@@ -1,19 +1,53 @@
 .body {
-  height: auto;
-  background-image: url("../assets/tweed/tweed.png"); }
+  height: 100vh;
+  background-image: url("../assets/tweed/tweed.png");
+  overflow: hidden; }
 
 nav {
   height: 10vh; }
 
-.collapsible {
-  margin-top: 2em; }
+.form-container {
+  color: #f8f8f3;
+  margin-top: 2em;
+  background-color: #484848;
+  border-top: 4px #c0392b solid;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  .form-container h3 {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; }
 
-#canvas {
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: auto;
-  margin-right: auto;
-  display: block; }
+.spinner {
+  position: relative;
+  height: 480px;
+  color: #f8f8f3;
+  margin-top: 2em;
+  background-color: #484848;
+  border-top: 4px #3498db solid;
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px; }
+  .spinner h3 {
+    font-size: 1.5em;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block; }
+
+.canvas-container {
+  text-align: center; }
+
+#game-board {
+  display: inline;
+  margin-top: 2em; }
 
 .test {
   margin-top: 6em;
@@ -26,5 +60,8 @@ nav {
   height: 85vh;
   min-height: 85vh;
   margin-bottom: none; }
+
+.collapsible {
+  margin-top: 2em; }
 
 /*# sourceMappingURL=game.css.map */

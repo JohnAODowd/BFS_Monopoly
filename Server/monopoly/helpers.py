@@ -2,7 +2,8 @@ import random
 import string
 from _sha256 import sha256
 from datetime import datetime
-import redisLib as r
+from monopoly import redisLib as r
+
 
 def getTime():                                                          #used for updating  activity time
     now = datetime.now()

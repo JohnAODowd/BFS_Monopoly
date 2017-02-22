@@ -1,6 +1,7 @@
-import helpers as help
-import redisLib as r
-from monopolyVars import getFigurines
+import monopoly.redisLib as r
+from monopoly.monopolyVars import getFigurines
+
+from monopoly import helpers as help
 
 """
 Library for host/join and general lobby functionality
@@ -94,4 +95,23 @@ def ping(json):
     players         = r.getPlayers(json['gID'])
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+    return ret
+
+def lobby(json):
+    if 'gID' in json and 'uID' in json:                                 # if user has valid uID and gID
+        if r.validateUID(json['gID'], json['uID']):
+
+            if json['request'] == 'FIGURINE':                           # user selecting figurine
+                ret = selectFigurine(json)
+            elif json['request'] == 'PING':                             # user polling for details
+                ret = ping(json)
+
+    elif 'gID' in json and 'uID' not in json and json['request'] == 'JOIN':
+        if r.validateGID(json['gID']):                                  # set join user details
+            ret = join(json)
+
+    else:
+        if json['request'] == 'HOST':                                   # set host user details
+            ret = host(json)
+
     return ret

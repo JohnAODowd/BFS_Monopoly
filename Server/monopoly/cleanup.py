@@ -1,5 +1,5 @@
 import redis
-import redisLib as rLib
+from monopoly import redisLib as rLib
 
 r = redis.StrictRedis(host='localhost', port=6379, db=0, password="Glad0s7334")
 

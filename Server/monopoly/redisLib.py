@@ -1,6 +1,6 @@
 import redis
 from json import dumps, loads
-from monopolyVars import getInitBoard
+from monopoly.monopolyVars import getInitBoard
 
 # TODO create monopolyVars
 # TODO unit test

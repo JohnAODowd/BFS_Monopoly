@@ -1,7 +1,9 @@
-from flask import Flask, request, render_template
-import redisLib as r
-import lobby
 from json import dumps
+
+import monopoly.redisLib as r
+from flask import Flask, request, render_template
+from monopoly import lobby
+
 print("START *****************************************************************************************************")
 
 app = Flask(__name__)
@@ -11,7 +13,7 @@ Application Controller
 """
 
 # TODO fill in web pages
-# TODO seperate game() into functions
+# TODO separate game() into functions
 
 @app.route('/')
 def home():
@@ -50,24 +52,11 @@ Main game controller
 """
 @app.route("/game", methods=["POST"])                                           #Only use post here
 def game():
-    ret = "{'error:'broken'}"
+    ret = "{'error':'broken'}"
     if request.method == "POST":
         json = (request.get_json())
-        if 'gID' in json and 'uID' in json:                                     #if user has valid uID and gID
-            if r.validateUID(json['gID'], json['uID']):
-                if json['request'] == 'FIGURINE':                               #user selecting figurine
-                    ret = lobby.selectFigurine(json)
-                elif json['request'] == 'PING' and lobby.getGameStatus(json['gID']) == "LOBBY":
-                    ret = lobby.ping(json)
-                    
-        elif 'gID' in json and 'uID' not in json:
-            if r.validateGID(json['gID']):                                      #set join user details
-                if json['request'] == 'JOIN':
-                    ret = lobby.join(json)
-        else:
-            if json['request'] == 'HOST':                                       #set host user details
-                ret = lobby.host(json)
-
+        if json['request'] == 'HOST' or lobby.getGameStatus(json['gID']) == "LOBBY":
+            ret = lobby.lobby(json)
 
         return dumps(ret)
 

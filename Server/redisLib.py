@@ -33,6 +33,13 @@ def getBoard(gID):														#returns the board for a gamee using gID
 def getSquare(gID, squareNo):											#returns a board square using gID and squareNo
 	return getBoard(gID)[squareNo]
 
+def getCurrentSquare(gID, uID):
+    #return the square a user is on
+    user = getPlayer(gID, uID)
+    squareNo = user['currentSquare']
+    
+    return getSquare(gID, squareNo)
+
 def setGame(gID, game):													#sets a game in redis; gID <String> + game <dict>
 	games 		= getGames()
 	games[gID] 	= game

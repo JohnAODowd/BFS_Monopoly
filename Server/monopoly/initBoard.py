@@ -1,241 +1,273 @@
 initBoard = {
     0   :   {
-        "type"          : "GO",
-        "playersOn"     : {},
-        "amount"        : 2000              # FIXME
+		"category"		: "special",
+        "name"          : "Go",
+        "playersOn"     : {}
     },
 
     1   :   {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"brown1"},
         "playersOn"     : {}
     },
 
     2   :   {
-        "type"          : "commChest",
+		"category"		: "card",
+        "name"          : "CommunityChest",
         "playersOn"     : {}
     },
 
     3   : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"brown2"},
         "playersOn"     : {}
     },
 
     4   : {
-        "type"          : "tax",
-        "amount"        : 200,              # FIXME
+		"category"		: "tax",
+        "name"          : "IncomeTax",
+        "amount"        : 200,              
         "playersOn"     : {}
     },
 
     5   : {
-        "type"          : "transport",
-        "transport"     : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "railroad",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     6   : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"lightBlue1"},
         "playersOn"     : {}
     },
 
     7   : {
-        "type"          : "chance",
+		"category"		: "card",
+        "name"          : "Chance",
         "playersOn"     : {}
     },
 
     8   : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"lightBlue2"},
         "playersOn"     : {}
     },
 
     9   : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"lightBlue3"},
         "playersOn"     : {}
     },
 
     10  : {
-        "type"          : "jail",
+		"category"		: "special",
+        "name"          : "jail",
         "playersOn"     : {},
         "playersIn"     : {}
     },
 
     11  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"pink1"},
         "playersOn"     : {}
     },
 
     12  : {
-        "type"          : "service",        # TODO add details
-        "service"       : {},
+		"category"		: "property",
+		"type"			: "utility",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     13  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "utility",
+        "property"      : {"pink2"},
         "playersOn"     : {}
     },
 
     14  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"pink3"},
         "playersOn"     : {}
     },
 
     15  : {
-        "type"          : "transport",
-        "transport"     : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "railroad",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     16  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"orange1"},
         "playersOn"     : {}
     },
 
     17  : {
-        "type"          : "commChest",
+		"category"		: "card",
+        "name"          : "CommunityChest",
         "playersOn"     : {}
     },
 
     18  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"orange2"},
         "playersOn"     : {}
     },
 
     19  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"orange3"},
         "playersOn"     : {}
     },
 
     20  : {
-        "type"          : "freeParking",
+		"category"		: "special",
+        "name"          : "FreeParking",
         "playersOn"     : {}
     },
 
     21  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"red1"},
         "playersOn"     : {}
     },
 
     22  : {
-        "type"          : "chance",
+		"category"		: "card",
+        "name"          : "Chance",
         "playersOn"     : {}
     },
 
     23  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"red2"},
         "playersOn"     : {}
     },
 
     24  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"red3"},
         "playersOn"     : {}
     },
 
     25  : {
-        "type"          : "transport",
-        "transport"     : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "railroad",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     26  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"yellow1"},
         "playersOn"     : {}
     },
 
     27  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"yellow2"},
         "playersOn"     : {}
     },
 
     28  : {
-        "type"          : "service",        # TODO add details
-        "service"       : {},
+		"category"		: "property",
+		"type"			: "utility",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     29  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"yellow3"},
         "playersOn"     : {}
     },
 
     30  : {
-        "type"          : "goToJail",
-        "playersOn"     : {}
+		"category"		: "special",
+        "name"          : "goToJail",
+        "playersOn"     : {
+		"category"		: "",}
     },
 
     31  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"green1"},
         "playersOn"     : {}
     },
 
     32  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"green2"},
         "playersOn"     : {}
     },
 
     33  : {
-        "type"          : "commChest",
+		"category"		: "card",
+        "name"          : "CommunityChest",
         "playersOn"     : {}
     },
 
     34  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"green3"},
         "playersOn"     : {}
     },
 
     35  : {
-        "type"          : "transport",
-        "transport"     : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "railroad",
+        "property"      : {},
         "playersOn"     : {}
     },
 
     36  : {
-        "type"          : "chance",
+		"category"		: "card",
+        "name"          : "Chance",
         "playersOn"     : {}
     },
 
     37  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"darkBlue1"},
         "playersOn"     : {}
     },
 
     38  : {
-        "type": "tax",
-        "amount": 200,  # FIXME
+		"category"		: "tax",
+        "name": "tax",
+        "amount": 100,  
         "playersOn": {}
     },
 
     39  : {
-        "type"          : "property",
-        "property"      : {},               # TODO add details
+		"category"		: "property",
+		"type"			: "street",
+        "property"      : {"darkBlue2"},
         "playersOn"     : {}
     }
 }
-
-figurines = ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"]
-
-def getInitBoard():
-    return initBoard
-
-def getFigurines():
-    return figurines

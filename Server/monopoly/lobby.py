@@ -1,6 +1,5 @@
 import monopoly.redisLib as r
 from monopoly.monopolyVars import getFigurines
-
 from monopoly import helpers as help
 
 """
@@ -91,8 +90,9 @@ def getGameStatus(gID):
 def ping(json):
     ret             = {}
     ret['game']     = r.getGame(json['gID'])
-    ret['players']  = {}
     players         = r.getPlayers(json['gID'])
+    ret['player']   = players[json['uID']]
+    ret['players'] = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
     return ret

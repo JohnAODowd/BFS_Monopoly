@@ -45,11 +45,7 @@ def roll_dice(verbose = False):
 def double_roll():
 	first_roll = roll_dice()
 	second_roll = roll_dice()
-	result = first_roll + second_roll
-	double = False
-	if ((result % 2) == 0):
-		double = (first_roll == second_roll)
-	return result, double
+	return first_roll + second_roll, first_roll == second_roll
 
 '''
 def test_single(verbose = False):

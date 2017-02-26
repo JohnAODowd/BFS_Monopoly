@@ -283,5 +283,32 @@
 		"house2" :  600,
 		"house3" :  1400,
 		"house4" :  1700,
-		"hotel" :  2000}
-}}
+		"hotel" :  2000},
+	
+	"railroad1":
+		{"name" : "Kings Cross Station",
+		"price" : 200
+		"mortgage": 100},
+	"railroad2":
+		{"name" : "Marylebone Station",
+		"price" : 200
+		"mortgage": 100},
+	"railroad3":
+		{"name" : "Fenchurch St Station",
+		"price" : 200
+		"mortgage": 100},
+	"railroad4":
+		{"name" :"Liverpool Street Station",
+		"price" : 200
+		"mortgage": 100},
+	
+	"electric":
+		{"name" :"Electric Company",
+		"price" : 150
+		"mortgage": 75},
+	"water":
+		{"name" :"Water Works",
+		"price" : 150
+		"mortgage": 75}	
+	}
+}

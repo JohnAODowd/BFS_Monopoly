@@ -1,23 +1,287 @@
-#{colourGroup, name, price, mortgage, rent, house1, house2, house3, house4, hotel}
-{'brown', 'Old Kent Road', 60, 30, 2, 10, 30, 90, 160, 250}
-{'brown', 'Whitechapel Road', 60, 30, 4, 20, 60, 180, 320, 450}
-{'light blue', 'The Angel Islington', 100, 50, 6, 30, 90, 270, 400, 550}
-{'light blue', 'Euston Road', 100, 50, 6, 30, 90, 270, 400, 550}
-{'light blue', 'Pentonville Road', 120, 60, 8, 40, 100, 300, 450, 600}
-{'pink', 'Pall Mall', 140, 70, 10, 50, 150, 450, 625, 750}
-{'pink', 'Whitehall', 140, 70, 10, 50, 150, 450, 625, 750}
-{'pink', 'Northumberland Avenue', 160, 80, 12, 60, 180, 500, 700, 900}
-{'orange', 'Bow Street', 180, 90, 14, 70, 200, 550, 750, 950}
-{'orange', 'Marlborough Street', 180, 90, 14, 70, 200, 550, 750, 950}
-{'orange', 'Vine Street', 200, 100, 16, 80, 220, 600, 800, 1000}
-{'red', 'The Strand', 220, 110, 18, 90, 250, 700, 875, 1050}
-{'red', 'Fleet Street', 220, 110, 18, 90, 250, 700, 875, 1050}
-{'red', 'Trafalgar Square', 240, 120, 20, 100, 300, 750, 925, 1100}
-{'yellow', 'Leicester Square', 260, 130, 22, 110, 330, 800, 975, 1150}
-{'yellow', 'Coventry Street', 260, 130, 22, 110, 330, 800, 975, 1150}
-{'yellow', 'Piccadilly', 280, 140, 24*, 120, 360, 850, 1025, 1200}
-{'green', 'Regent Street', 300, 150, 26, 130, 390, 900, 1100, 1275}
-{'green', 'Oxford Street', 300, 150, 26, 130, 390, 900, 1100, 1275}
-{'green', 'Bond Street', 320, 160, 28, 150, 450, 1000, 1200, 1400}
-{'dark blue', 'Park Lane', 350, 175, 35, 175, 500, 1100, 1300, 1500}
-{'dark blue', 'Mayfair', 400, 200, 50, 200, 600, 1400, 1700, 2000}
+{"properties" : {
+	"brown1" : 
+		{"colourGroup" : "brown", 
+		"colourHex" : "#864C38", 
+		"name" : "Old Kent Road",
+		"price" : 60,
+		"mortgage" : 30,
+		"rent" : 2,
+		"house1" : 10,
+		"house2" :  30,
+		"house3" :  90,
+		"house4" :  160,
+		"hotel" :  250},
+
+	"brown2" :
+		{"colourGroup" : "brown", 
+		"colourHex" :  "#864C38", 
+		"name" :  "Whitechapel Road",
+		"price" :  60,
+		"mortgage" :  30,
+		"rent" :  4,
+		"house1" :  20,
+		"house2" :  60,
+		"house3" :  180,
+		"house4" :  320,
+		"hotel" :  450},
+	
+	"lightBlue1" :	
+		{"colourGroup" : "lightBlue", 
+		"colourHex" :  "#1C7EFC", 
+		"name" :  "The Angel Islington",
+		"price" :  100,
+		"mortgage" :  50,
+		"rent" :  6,
+		"house1" :  30,
+		"house2" :  90,
+		"house3" :  270,
+		"house4" :  400,
+		"hotel" :  550},
+		
+	"lightBlue2" :	
+		{"colourGroup" : "lightBlue", 
+		"colourHex" :  "#1C7EFC", 
+		"name" :  "Euston Road",
+		"price" :  100,
+		"mortgage" :  50,
+		"rent" :  6,
+		"house1" :  30,
+		"house2" :  90,
+		"house3" :  270,
+		"house4" :  400,
+		"hotel" :  550},
+		
+	"lightBlue3" :	
+		{"colourGroup" : "lightBlue", 
+		"colourHex" :  "#1C7EFC", 
+		"name" :  "Pentonville Road",
+		"price" :  120,
+		"mortgage" :  60,
+		"rent" :  8,
+		"house1" :  40,
+		"house2" :  100,
+		"house3" :  300,
+		"house4" :  450,
+		"hotel" :  600},
+		
+	"pink1" : 
+		{"colourGroup" : "pink", 
+		"colourHex" :  "#FCFEFC", 
+		"name" :  "Pall Mall",
+		"price" :  140,
+		"mortgage" :  70,
+		"rent" :  10,
+		"house1" :  50,
+		"house2" :  150,
+		"house3" :  450,
+		"house4" :  625,
+		"hotel" :  750},
+	
+	"pink2" : 
+		{"colourGroup" : "pink", 
+		"colourHex" :  "#FCFEFC", 
+		"name" :  "Whitehall",
+		"price" :  140,
+		"mortgage" :  70,
+		"rent" :  10,
+		"house1" :  50,
+		"house2" :  150,
+		"house3" :  450,
+		"house4" :  625,
+		"hotel" :  750},
+		
+	"pink3" : 
+		{"colourGroup" : "pink", 
+		"colourHex" :  "#FCFEFC", 
+		"name" :  "Northumberland Avenue",
+		"price" :  160,
+		"mortgage" :  80,
+		"rent" :  12,
+		"house1" :  60,
+		"house2" :  180,
+		"house3" :  500,
+		"house4" :  700,
+		"hotel" :  900},
+		
+	"orange1" :
+		{"colourGroup" : "orange", 
+		"colourHex" :  "#EC8B2C", 
+		"name" :  "Bow Street",
+		"price" :  180,
+		"mortgage" :  90,
+		"rent" :  14,
+		"house1" :  70,
+		"house2" :  200,
+		"house3" :  550,
+		"house4" :  750,
+		"hotel" :  950},
+		
+	"orange2" :
+		{"colourGroup" : "orange", 
+		"colourHex" :  "#EC8B2C", 
+		"name" :  "Marlborough Street",
+		"price" :  180,
+		"mortgage" :  90,
+		"rent" :  14,
+		"house1" :  70,
+		"house2" :  200,
+		"house3" :  550,
+		"house4" :  750,
+		"hotel" :  950},
+		
+	"orange3" :
+		{"colourGroup" : "orange", 
+		"colourHex" :  "#EC8B2C", 
+		"name" :  "Vine Street",
+		"price" :  200,
+		"mortgage" :  100,
+		"rent" :  16,
+		"house1" :  80,
+		"house2" :  220,
+		"house3" :  600,
+		"house4" :  800,
+		"hotel" :  1000},
+		
+	"red1" :
+		{"colourGroup" : "red", 
+		"colourHex" :  "#EC1E24", 
+		"name" :  "The Strand",
+		"price" :  220,
+		"mortgage" :  110,
+		"rent" :  18,
+		"house1" :  90,
+		"house2" :  250,
+		"house3" :  700,
+		"house4" :  875,
+		"hotel" :  1050},
+		
+	"red2" :
+		{"colourGroup" : "red", 
+		"colourHex" :  "#EC1E24", 
+		"name" :  "Fleet Street",
+		"price" :  220,
+		"mortgage" :  110,
+		"rent" :  18,
+		"house1" :  90,
+		"house2" :  250,
+		"house3" :  700,
+		"house4" :  875,
+		"hotel" :  1050},
+		
+	"red3" :
+		{"colourGroup" : "red", 
+		"colourHex" :  "#EC1E24", 
+		"name" :  "Trafalgar Square",
+		"price" :  240,
+		"mortgage" :  120,
+		"rent" :  20,
+		"house1" :  100,
+		"house2" :  300,
+		"house3" :  750,
+		"house4" :  925,
+		"hotel" :  1100},
+		
+	"yellow1" :
+		{"colourGroup" : "yellow", 
+		"colourHex" :  "#ECE604", 
+		"name" :   "Leicester Square",
+		"price" :  260,
+		"mortgage" :  130,
+		"rent" :  22,
+		"house1" :  110,
+		"house2" :  330,
+		"house3" :  800,
+		"house4" :  975,
+		"hotel" :  1150},
+		
+	"yellow2" :
+		{"colourGroup" : "yellow", 
+		"colourHex" :  "#ECE604", 
+		"name" :  "Coventry Street",
+		"price" :  260,
+		"mortgage" :  130,
+		"rent" :  22,
+		"house1" :  110,
+		"house2" :  330,
+		"house3" :  800,
+		"house4" :  975,
+		"hotel" :  1150},
+		
+	"yellow3" :
+		{"colourGroup" : "yellow", 
+		"colourHex" :  "#ECE604", 
+		"name" :  "Piccadilly",
+		"price" :  280,
+		"mortgage" :  140,
+		"rent" :  24,
+		"house1" :  120,
+		"house2" :  360,
+		"house3" :  850,
+		"house4" :  1025,
+		"hotel" :  1200},
+		
+	"green1" : 
+		{"colourGroup" : "green", 
+		"colourHex" :  "#13A758", 
+		"name" :  "Regent Street",
+		"price" :  300,
+		"mortgage" :  150,
+		"rent" :  26,
+		"house1" :  130,
+		"house2" :  390,
+		"house3" :  900,
+		"house4" :  1100,
+		"hotel" :  1275},
+		
+	"green2" :
+		{"colourGroup" : "green", 
+		"colourHex" :  "#13A758", 
+		"name" :  "Oxford Street",
+		"price" :  300,
+		"mortgage" :  150,
+		"rent" :  26,
+		"house1" :  130,
+		"house2" :  390,
+		"house3" :  900,
+		"house4" :  1100,
+		"hotel" :  1275},
+		
+	"green3" : 
+		{"colourGroup" : "green", 
+		"colourHex" :  "#13A758", 
+		"name" :  "Bond Street",
+		"price" :  320,
+		"mortgage" :  160,
+		"rent" :  28,
+		"house1" :  150,
+		"house2" :  450,
+		"house3" :  1000,
+		"house4" :  1200,
+		"hotel" :  1400},
+		
+	"darkBlue1" : 
+		{"colourGroup" : "darkBlue", 
+		"colourHex" :  "#1C529C", 
+		"name" :  "Park Lane",
+		"price" :  350,
+		"mortgage" :  175,
+		"rent" :  35,
+		"house1" :  175,
+		"house2" :  500,
+		"house3" :  1100,
+		"house4" :  1300,
+		"hotel" :  1500},
+		
+	"darkBlue2" : 
+		{"colourGroup" : "darkBlue", 
+		"colourHex" :  "#1C529C", 
+		"name" :  "Mayfair",
+		"price" :  400,
+		"mortgage" :  200,
+		"rent" :  50,
+		"house1" :  200,
+		"house2" :  600,
+		"house3" :  1400,
+		"house4" :  1700,
+		"hotel" :  2000}
+}}

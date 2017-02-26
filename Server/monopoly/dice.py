@@ -2,6 +2,15 @@ import hashlib
 import uuid
 from math import ceil
 
+"""
+Provably Fair Dice
+==================
+Monopoly Usage:
+def getRoll():
+	return ( result, isDouble = dice.double_roll() )
+"""
+
+
 def roll_dice(verbose = False):
 	MAX_HEX = 42949672.95  # 'FFFFFFFF' in dec
 
@@ -36,8 +45,7 @@ def roll_dice(verbose = False):
 def double_roll():
 	first_roll = roll_dice()
 	second_roll = roll_dice()
-	return (first_roll + second_roll)
-	#print(str(first_roll + second_roll))
+	return first_roll + second_roll, first_roll == second_roll
 
 '''
 def test_single(verbose = False):

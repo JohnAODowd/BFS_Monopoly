@@ -1,27 +1,27 @@
-import monopoly.redisLib as r
-from monopoly import lobby
+def move(gID, uID, diceRoll):
+    #move a player and decide what happens at the destination square
+    pass
 
-def checkTurn(gID, uID):
-    game    = r.getGame(gID)
-    player  = r.getPlayer(gID, uID)
-    if player['number'] == game['turn']:
-        return True
-    else:
-        return False
+def updateLocation(gID, uID, destination):
+    #updates player's location on the board by calling Redis fn
+    pass
 
-def ping(json, isTurn):
-    ret             = {}
-    ret['game']     = r.getGame(json['gID'])
-    ret['board']    = r.getBoard(json['gID'])
-    players         = r.getPlayers(json['gID'])
-    ret['options']  = ["MORTGAGE", "TRADE"]
-    if isTurn:
-        ret['options'] += ["ROLL"]
-        players[json['uID']]['options'] = ret['options']
-        r.setPlayer(json['gID'], json['uID'], players[json['uID']])
-    ret['player']   = players[json['uID']]
-    ret['players']  = {}
-    for _uID in players:
+def drawCard(gID, uID, cardType):
+    #draws a card from the stack returns it
+    pass
+
+def parseCard(gID, uID, card):
+    #decides what needs to be done with the card; returns GOOJF or None(?)
+    pass
+
+def checkPassGo(gID, uID, start, finish):
+    #checks if the player has passed go in this turn
+    #(if start >= 28 and finish >= 0)
+    pass
+
+def payTax(gID,uID, amount):
+    #transfers money from player to bank for tax purposes
+    pass
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
 
     return ret
@@ -48,3 +48,17 @@ def game(json):
 
 
 
+def parseProperty(gID, uID, propertyID):
+    #checks if property is owned. If owned by player or owned by another but
+    #currently mortgaged, do nothing & end turn. If owned by other player
+    #(but not mortgaged), trigger payRent(). If available, trigger buy(),
+    # which gives player option to buy or trigger auction.
+    pass
+
+def buy(gID, uID, propertyID):
+    #trigger UI to give player option to buy or not.
+    pass
+
+def payRent(gID, uID, propertyID):
+    #automatically deduct rent from player and pass to owner of property
+    pass

@@ -102,7 +102,7 @@ def ping(json):
                 #set player for security
     return ret
 
-def canStart(gID, uID):
+def canStart(gID, uID):                         #checks to see if starting is a viable option
     game = r.getGame(gID)
     players = r.getPlayers(gID)
     if players[uID]['number'] == 1:
@@ -111,7 +111,7 @@ def canStart(gID, uID):
                 return True
     return False
 
-def start(json):
+def start(json):                                #initialises the board and starts the game
     ret = {}
     if canStart(json['gID'], json['uID']):
         game            = r.getGame(json['gID'])
@@ -123,6 +123,7 @@ def start(json):
         ret['players']  = {}
         for _uID in players:
             ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+        r.start(json['gID'])
     else:
         ret['error'] = "START"
     return ret
@@ -147,4 +148,3 @@ def lobby(json):
             ret = host(json)
 
     return ret
-

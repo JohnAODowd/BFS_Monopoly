@@ -7,4 +7,5 @@ games = rLib.getGames()
 for gID in games:
     r.delete("players of " + gID)
     r.delete("board of " + gID)
+    r.delete("bank of " + gID)
 r.set("games", "{}")

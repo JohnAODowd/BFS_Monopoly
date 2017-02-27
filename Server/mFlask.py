@@ -1,8 +1,7 @@
 from json import dumps
-
 import monopoly.redisLib as r
 from flask import Flask, request, render_template
-from monopoly import lobby
+from monopoly import lobby, gameLib
 
 print("START *****************************************************************************************************")
 
@@ -57,6 +56,10 @@ def game():
         json = (request.get_json())
         if json['request'] == 'HOST' or lobby.getGameStatus(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
+        elif lobby.getGameStatus(json['gID']) == "PLAYING":
+            ret = gameLib.game(json)
+        elif lobby.getGameStatus(json['gID']) == "AUCTION":
+            ret = gameLib.bid(json)
 
         return dumps(ret)
 

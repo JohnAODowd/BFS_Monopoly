@@ -1,7 +1,7 @@
 import random
 import string
 from _sha256 import sha256
-from datetime import datetime
+from datetime import datetime, timedelta
 from monopoly import redisLib as r
 
 
@@ -23,7 +23,11 @@ def getfirstPublicGame():                                               #used to
             return gID
     return False
 
-def checkTime(lastActivity, limit):
+def checkTime(lastActivity, limit, seconds=False):
+    if seconds:
+        limit       = timedelta(seconds=limit)
+    else:
+        limit       = timedelta(minutes=limit)
     now         = help.getTime()
     lActivity   = datetime.strptime(lastActivity, '%Y-%m-%d %H:%M:%S')
     return now <= lActivity + limit

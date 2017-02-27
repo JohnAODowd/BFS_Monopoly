@@ -68,6 +68,20 @@ def checkTurn(gID, uID):
 
 #******************************************************************************
     #Controller Methods
+
+def getReturnData(gID, uID):
+    ret             = {}
+    game            = r.getGame(gID)
+    board           = r.getBoard(gID)
+    players         = r.getPlayers(gID)
+    player          = players[uID]
+    ret['game']     = game
+    ret['player']   = player
+    ret['board']    = board
+    for _uID in players:
+        ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+
+    return ret
 #******************************************************************************
 
 def mortgage(json):
@@ -76,7 +90,11 @@ def mortgage(json):
     player  = r.getPlayer(gID, uID)
     board   = r.getBoard(gID)
     if json['property']['id'] in player['public']['property']:
-        
+        if player['public']['property'][json['property']['id']]['status'] != "mortgaged":
+            player['money'] += player['public']['property'][json['property']['id']]['mortgage']
+            player['public']['property'][json['property']['id']]['status'] = "mortgaged"
+            r.setPlayer(gID, uID)
+
 
 def roll(json):
     gID                 = json['gID']

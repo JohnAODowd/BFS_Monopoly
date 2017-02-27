@@ -16,7 +16,7 @@ Application Controller
 
 @app.route('/')
 def home():
-    return render_template("home.html")         #return the homepage
+    return render_template('templates/index.html')         #return the homepage
 
 @app.route('/host')
 def host():
@@ -56,10 +56,12 @@ def game():
         json = (request.get_json())
         if json['request'] == 'HOST' or lobby.getGameStatus(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
-        elif lobby.getGameStatus(json['gID']) == "PLAYING":
-            ret = gameLib.game(json)
-        elif lobby.getGameStatus(json['gID']) == "AUCTION":
-            ret = gameLib.bid(json)
+        if json['request'] == "HOST":
+            return render_template("templates/game.html", var=dumps(ret))
+        # elif lobby.getGameStatus(json['gID']) == "PLAYING":
+        #     ret = gameLib.game(json)
+        # elif lobby.getGameStatus(json['gID']) == "AUCTION":
+        #     ret = gameLib.bid(json)
 
         return dumps(ret)
 
@@ -71,5 +73,5 @@ def game():
 if __name__ == '__main__':
   app.run(
         host="0.0.0.0",
-        port=int("8081")
+        port=int("8080")
   )

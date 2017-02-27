@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <script>
+      function showResult(str) {
+        var xhttp;    
+        if (str == "") {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "getresult.asp?q="+str, true);
+        xhttp.send();
+      }
+      </script>
+    </head>
+
+    <body>
+
+      <form action=""> 
+      <select name="customers" onchange="showResult(this.value)">
+      <option value="">Select an action:</option>
+      <option value="ROLL">Get Dice Roll</option>
+      <option value="PROP">Get Property Details</option>
+      </select>
+      </form>
+
+      <br>
+      <div id="txtHint">Result will replace this text ...</div>
+
+    </body>
+  </html>
+

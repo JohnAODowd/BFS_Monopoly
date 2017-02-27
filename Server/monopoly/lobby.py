@@ -6,7 +6,6 @@ from monopoly import helpers as help
 Library for host/join and general lobby functionality
 """
 
-# TODO start
 def host(json):                                                         #sets a game + host player
     try:
         game                    = {}
@@ -89,12 +88,43 @@ def getGameStatus(gID):
 
 def ping(json):
     ret             = {}
-    ret['game']     = r.getGame(json['gID'])
+    game            = r.getGame(json['gID'])
+    ret['game']     = game
     players         = r.getPlayers(json['gID'])
     ret['player']   = players[json['uID']]
-    ret['players'] = {}
+    ret['players']  = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+    if players[json['uID']]['number'] == 1:
+        if game['playersNo'] > 1:
+            if game['playersNo'] == 8 - len(game['figurines']):
+                ret['options']  = "START"
+                #set player for security
+    return ret
+
+def canStart(gID, uID):
+    game = r.getGame(gID)
+    players = r.getPlayers(gID)
+    if players[uID]['number'] == 1:
+        if game['playersNo'] > 1:
+            if game['playersNo'] == 8 - len(game['figurines']):
+                return True
+    return False
+
+def start(json):
+    ret = {}
+    if canStart(json['gID'], json['uID']):
+        game            = r.getGame(json['gID'])
+        game['status']  = "PLAYING"
+        r.setGame(json['gID'], game)
+        ret['game']     = game
+        players         = r.getPlayers(json['gID'])
+        ret['player']   = players[json['uID']]
+        ret['players']  = {}
+        for _uID in players:
+            ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+    else:
+        ret['error'] = "START"
     return ret
 
 def lobby(json):
@@ -105,6 +135,8 @@ def lobby(json):
                 ret = selectFigurine(json)
             elif json['request'] == 'PING':                             # user polling for details
                 ret = ping(json)
+            elif json['request'] == "START":
+                ret = start(json)
 
     elif 'gID' in json and 'uID' not in json and json['request'] == 'JOIN':
         if r.validateGID(json['gID']):                                  # set join user details
@@ -115,3 +147,4 @@ def lobby(json):
             ret = host(json)
 
     return ret
+

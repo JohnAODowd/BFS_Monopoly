@@ -2,6 +2,44 @@ import monopoly.redisLib as r
 from monopoly.dice import double_roll
 from monopoly import lobby
 
+def move(gID, uID, diceRoll):
+    #move a player and decide what happens at the destination square
+    pass
+
+def drawCard(gID, uID, cardType):
+    #draws a card from the stack returns it
+    pass
+
+def parseCard(gID, uID, card):
+    #decides what needs to be done with the card; returns GOOJF or None(?)
+    pass
+
+def checkPassGo(gID, uID, start, finish):
+    #checks if the player has passed go in this turn
+    #(if start >= 28 and finish >= 0)
+    pass
+
+def payTax(gID,uID, amount):
+    #transfers money from player to bank for tax purposes
+    pass
+    #ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
+    #return ret
+
+def parseProperty(gID, uID, propertyID):
+    #checks if property is owned. If owned by player or owned by another but
+    #currently mortgaged, do nothing & end turn. If owned by other player
+    #(but not mortgaged), trigger payRent(). If available, trigger buy(),
+    # which gives player option to buy or trigger auction.
+    pass
+
+def buy(gID, uID, propertyID):
+    #trigger UI to give player option to buy or not.
+    pass
+
+def payRent(gID, uID, propertyID):
+    #automatically deduct rent from player and pass to owner of property
+    pass
+
 def pay(gID, uID, rec, amount):
     ret         = {}
     players     = r.getPlayers(gID)
@@ -15,23 +53,10 @@ def pay(gID, uID, rec, amount):
     return ret
 
 def analysePos(gID, uID, board, pos):
+    ret = {}
     if board[pos]['category'] == 'property':
         if board[pos]['property']['status'] == "owned":
-            ret = pay()
-        elif board[pos]['property']['status'] == "mortgaged":
-            pass
-        else:
-            ret                 = {}
-            ret['options']      = ['BUY', 'AUCTION']
-            player              = r.getPlayer(gID, uID)
-            player['options']   += ["BUY"]
-            player['options']   += ["AUCTION"]
-            return ret
-    else:
-        ret             = {}
-        ret['ignore']   = board[pos]['category']
-    return ret
-
+            pay()
 
 def updateLocation(gID, uID, roll):
     ret         = {}
@@ -46,6 +71,7 @@ def updateLocation(gID, uID, roll):
     r.setBoard(gID, board)
     player['public']['position'] = newPos
     r.setPlayer(gID, uID, player)
+
 
     ret['board']    = board
     ret['player']   = player
@@ -86,16 +112,13 @@ def ping(json, isTurn):
     ret             = {}
     ret['game']     = r.getGame(json['gID'])
     ret['board']    = r.getBoard(json['gID'])
+    players         = r.getPlayers(json['gID'])
     ret['options']  = ["MORTGAGE", "TRADE"]
-
-    players = r.getPlayers(json['gID'])
-
     if isTurn:
         ret['options'] += ["ROLL"]
         players[json['uID']]['options'] = ret['options']
         r.setPlayer(json['gID'], json['uID'], players[json['uID']])
     ret['player']   = players[json['uID']]
-
     ret['players']  = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
@@ -111,10 +134,16 @@ def game(json):
         elif isTurn and json['request'] in r.getPlayer(json['gID'], json['uID'])['options']:
             if json['request'] == "ROLL":
                 ret = roll(json)
-            # elif json['request'] == 'BUY':
-            #     ret
-            # elif json['request'] == 'AUCTION':
-            #
-            # elif json['request'] == 'MORTGAGE':
-            #
-            # elif json['request'] == 'TRADE':
+            elif json['request'] == 'BUY':
+                ret
+            elif json['request'] == 'AUCTION':
+
+            elif json['request'] == 'MORTGAGE':
+
+            elif json['request'] == 'TRADE':
+
+
+
+
+
+

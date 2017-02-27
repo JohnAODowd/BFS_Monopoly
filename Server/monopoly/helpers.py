@@ -22,3 +22,8 @@ def getfirstPublicGame():                                               #used to
         if games[gID]["type"] == "public" and games[gID]["playersNo"] < 8:
             return gID
     return False
+
+def checkTime(lastActivity, limit):
+    now         = help.getTime()
+    lActivity   = datetime.strptime(lastActivity, '%Y-%m-%d %H:%M:%S')
+    return now <= lActivity + limit

@@ -1,36 +1,37 @@
 <!DOCTYPE html>
   <html>
     <head>
-      <!--Import Google Fonts-->
-      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Lato:300,100,700" rel="stylesheet" type="text/css">
-      <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-      <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700' rel='stylesheet' type='text/css'>
-      <!-- Icons -->
-      <script src="https://use.fontawesome.com/59835bec64.js"></script>
-      <link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/ico">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/index.css"  media="screen,projection"/>
-
-      <!--Let browser know website is optimized for mobile-->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-      
-
-
+      <script>
+      function showResult(str) {
+        var xhttp;    
+        if (str == "") {
+          document.getElementById("txtHint").innerHTML = "";
+          return;
+        }
+        xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("txtHint").innerHTML = this.responseText;
+          }
+        };
+        xhttp.open("GET", "getresult.asp?q="+str, true);
+        xhttp.send();
+      }
+      </script>
     </head>
 
     <body>
 
-      <form action="/action_page.php">
-        Send to Server<br>
-        <input type="text"  name="client-msg" value="Message">
-        <br>
-        Reply from Server<br>
-        <input type="text" name="server-msg" value="Reply" readonly>
-        <br><br>
-        <input type="submit" value="Submit">
-      </form> 
+      <form action=""> 
+      <select name="customers" onchange="showResult(this.value)">
+      <option value="">Select an action:</option>
+      <option value="ROLL">Get Dice Roll</option>
+      <option value="PROP">Get Property Details</option>
+      </select>
+      </form>
+
+      <br>
+      <div id="txtHint">Result will replace this text ...</div>
 
     </body>
   </html>

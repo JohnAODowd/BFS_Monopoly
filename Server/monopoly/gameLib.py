@@ -20,8 +20,24 @@ def pay(gID, sender, receiver, amount):
     
     
 
-def analysePos(gID, uID, board, pos):           # analyses the players position to see what operations need to be made on a square
-    if board[pos]['category'] == 'property':
+def analysePosition(gID, uID, board, position):
+    # analyses the player's position to see what operations need to be made on a square
+    
+    if board[pos]['category'] == 'tax':
+        pay(gID,uID,0,square['amount']) #pay the bank the tax amount required on this square
+        pass
+    
+    elif board[pos]['category'] == 'special':
+        if square['name'] == 'Free Parking' or square['name'] == 'Jail' or square['name'] == 'Go':
+            # do nothing
+            pass
+        if square['name'] == 'Go To Jail':
+            goToJail(gID,uID)
+        
+    elif board[pos]['category'] == 'card':
+        drawCard(gID, uID, square['name'])
+        
+    elif board[pos]['category'] == 'property':
         if board[pos]['property']['status'] == "owned":
             ret = pay(gID, uID, board[pos]['property']['owner'], board[pos]['property']['rent'])
         elif board[pos]['property']['status'] == "mortgaged":
@@ -30,30 +46,30 @@ def analysePos(gID, uID, board, pos):           # analyses the players position 
             ret                 = {}
             ret['options']      = ['BUY', 'AUCTION']
             player              = r.getPlayer(gID, uID)
-            player['options']   += ["BUY"]
-            player['options']   += ["AUCTION"]
+            player['options']   += ["BUY"]      #why?
+            player['options']   += ["AUCTION"]  #why?
             return ret
-    #TODO elif cards/specials
+            
     else:
         ret             = {}
-        ret['ignore']   = board[pos]['category']
+        ret['ignore']   = board[pos]['category']    #why?
     return ret
 
 def updateLocation(gID, uID, value):         #moves a player to new position
     ret         = {}
     player      = r.getPlayer(gID, uID)
     board       = r.getBoard(gID)
-    prevPos     = player['public']['position']
-    newPos      = prevPos + value
-    if newPos > 39:
-        newPos = newPos - 40
-    board[prevPos]['playersOn'].remove(player['number'])
-    board[newPos]['playersOn'].append(player['number'])
+    previousPosition     = player['public']['position']
+    newPosition      = prevPosition + value
+    if newPosition > 39:
+        newPosition = newPosition - 40
+    board[prevPosition]['playersOn'].remove(player['number'])
+    board[newPosition]['playersOn'].append(player['number'])
     r.setBoard(gID, board)
-    player['public']['position'] = newPos
+    player['public']['position'] = newPosition
     r.setPlayer(gID, uID, player)           #checking position
 
-    ret = analysePos(gID, uID, board, newPos)
+    ret = analysePosition(gID, uID, board, newPosition)
     ret['board']    = board
     ret['player']   = player
 

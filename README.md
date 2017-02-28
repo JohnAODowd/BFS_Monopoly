@@ -6,4 +6,4 @@ A *blazingly fast* implementation of the classic board game Monopoly as part of 
 * John A. O'Dowd 🐘
 * Dan Delaney 🗿
 * Fergal Eccles 🌿 
-* Hassan Baker 👳 
+* Hassan Baker ✊🏾 

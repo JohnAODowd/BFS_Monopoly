@@ -51,11 +51,10 @@ xmlhttp.onreadystatechange = function() {
 			var mortVal = properties[i]['mortgage'].toString();
 			ctx.fillText( "Mortgage Value $".concat(mortVal), 70, 130);
 
-			/*
-			var houseVal = Property.houseprice.toString();
+			var houseVal = properties[i]['houseprice'].toString();
 			ctx.fillText("Houses Cost $".concat(houseVal).concat(" each"), 70, 145);
 			ctx.fillText("Hotels, $".concat(houseVal).concat(" plus 4 houses"), 70, 160);
-			*/
+
 
 			// Setup House Values
 			ctx.textAlign = "left";

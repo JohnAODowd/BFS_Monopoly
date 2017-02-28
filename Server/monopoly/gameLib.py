@@ -6,18 +6,19 @@ import monopoly.helpers as help
     #Monopoly/Helper Methods
 #******************************************************************************
 
-def pay(gID, uID, rec, amount):             #pay to a player/bank (rec == 0 for bank), can return an alert
+def pay(gID, sender, receiver, amount):             
+    #pay to a player/bank (receiver == 0 for bank), can return an alert
     ret         = {}
-    players     = r.getPlayers(gID)
-    if players[uID]['money'] >= amount:
-        players[uID]['money'] = players[uID]['money'] - amount
-        if rec != 0:
-            for player in players:
-                if player['public']['number'] == rec:
-                    player['money'] += amount
+    player     = r.getPlayer(gID,sender)
+    if player['money'] >= amount:
+        r.decrementMoney(gID,sender,amount)
+        r.incrementMoney(gID,receiver,amount)
+        #ret...notice of amount transferred 
     else:
         ret['alert'] = "INSUFFICIENT FUNDS"    #alert; must be dealt with or player loses
     return ret
+    
+    
 
 def analysePos(gID, uID, board, pos):           # analyses the players position to see what operations need to be made on a square
     if board[pos]['category'] == 'property':

@@ -16,7 +16,7 @@ def pay(gID, uID, rec, amount):             #pay to a player/bank (rec == 0 for 
                 if player['public']['number'] == rec:
                     player['money'] += amount
     else:
-        ret['alert'] = "INSUFFICIENT FUNDS"    #alert; must be dealt with or player loses
+        ret['alert'] = "INSUFFICIENT FUNDS"    # alert; must be dealt with or player loses
     return ret
 
 def analysePos(gID, uID, board, pos):           # analyses the players position to see what operations need to be made on a square
@@ -69,18 +69,23 @@ def checkTurn(gID, uID):
 #******************************************************************************
     #Controller Methods
 
-def getReturnData(gID, uID):
-    ret             = {}
-    game            = r.getGame(gID)
-    board           = r.getBoard(gID)
-    players         = r.getPlayers(gID)
-    player          = players[uID]
-    ret['game']     = game
-    ret['player']   = player
-    ret['board']    = board
+def getReturnData(gID, uID, options):
+    ret                 = {}
+    game                = r.getGame(gID)
+    board               = r.getBoard(gID)
+    players             = r.getPlayers(gID)
+    player              = players[uID]
+    if len(options):
+        for option in options:
+            player['options'].append(option)
+        r.setPlayer(gID, uID)
+    ret['options']      = player['options']
+    ret['game']         = game
+    ret['player']       = player
+    ret['board']        = board
+    ret['players']      = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
-
     return ret
 #******************************************************************************
 
@@ -166,23 +171,10 @@ def auction(json):
     r.setGame(gID, game)
 
 def ping(json, isTurn):
-    ret             = {}
-    ret['game']     = r.getGame(json['gID'])
-    ret['board']    = r.getBoard(json['gID'])
-
-    players = r.getPlayers(json['gID'])
-
     if isTurn:
-        ret['options'] += ["ROLL"]
-        players[json['uID']]['options'] = ret['options']
-        r.setPlayer(json['gID'], json['uID'], players[json['uID']])
-    ret['player']   = players[json['uID']]
-    ret['options']  = players[json['uID']]['options']
-
-    ret['players']  = {}
-    for _uID in players:
-        ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
-
+        ret  = getReturnData(json['gID'], json['uID'], ["ROLL"])
+    else:
+        ret  = getReturnData(json['gID'], json['uID'], [])
     return ret
 
 #******************************************************************************

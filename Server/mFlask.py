@@ -1,5 +1,6 @@
 from json import dumps
 import monopoly.redisLib as r
+import monopoly.monopolyVars as mv
 from flask import Flask, request, render_template
 from monopoly import lobby, gameLib, helpers
 
@@ -20,34 +21,7 @@ def home():
         if request.args.get("gID"): 
             gID = request.args.get("gID")
             return render_template("index.html", joinForm="private", gID=gID)
-    return render_template("index.html", joinForm="public")         #return the homepage
-
-@app.route('/host')
-def host():
-    return render_template("host.html")         #return host form
-
-
-@app.route("/join", methods=["GET"])
-def join():
-    if request.method == "GET":
-        if request.args.get("gID"):                                             #check if private game
-            gID     = request.args.get("gID")
-            games   = r.getGames()
-            if gID in games:                                                    #verify gID
-                if games[gID]["PlayersNo"] == 8:                                #if game is full
-                    return render_template("join.html", error="game full")
-                else:
-                    return render_template("join.html", gID=gID)                #return join form
-        elif request.args.get("type") == "public":                              #check if game is join is public
-            gID = lobby.getfirstPublicGame()                                    #get first available game
-            if gID:
-                return render_template("join.html", gID=gID)                    #return form
-            else:
-                return render_template("join.html", error="No games available")
-        else:
-            return render_template("error.html")                                #Else invalid parameters
-    else:
-        return render_template("error.html")                                    #error
+    return render_template("index.html", joinForm="public")                             #return the homepage
 
 
 """
@@ -69,7 +43,7 @@ def game():
             if 'error' in ret:
                 return render_template("index.html", error=ret['error'])
             else:
-                return render_template("game.html", var=str(dumps(ret)))
+                return render_template("game.html", initFigurines=str(dumps(mv.getFigurines(True))), init=str(dumps(ret)))
         # elif lobby.getGameStatus(json['gID']) == "PLAYING":
         #     ret = gameLib.game(json)
         # elif lobby.getGameStatus(json['gID']) == "AUCTION":

@@ -66,7 +66,7 @@
 		
 	"pink1" : 
 		{"colourGroup" : "pink", 
-		"colourHex" :  "#FCFEFC", 
+		"colourHex" :  "#D32884", 
 		"name" :  "Pall Mall",
 		"price" :  140,
 		"mortgage" :  70,
@@ -79,7 +79,7 @@
 	
 	"pink2" : 
 		{"colourGroup" : "pink", 
-		"colourHex" :  "#FCFEFC", 
+		"colourHex" :  "#D32884", 
 		"name" :  "Whitehall",
 		"price" :  140,
 		"mortgage" :  70,
@@ -92,7 +92,7 @@
 		
 	"pink3" : 
 		{"colourGroup" : "pink", 
-		"colourHex" :  "#FCFEFC", 
+		"colourHex" :  "#D32884", 
 		"name" :  "Northumberland Avenue",
 		"price" :  160,
 		"mortgage" :  80,

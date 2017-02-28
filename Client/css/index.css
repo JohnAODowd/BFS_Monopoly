@@ -22,7 +22,8 @@ body {
     height: 64px;
     font-size: 42px;
     font-family: 'norwester';
-    font-variant: small-caps; }
+    font-variant: small-caps;
+    margin-left: 1em; }
 
 #main-body {
   background-image: url("../assets/background/background-cork.png");
@@ -34,6 +35,7 @@ body {
   margin-top: 4em;
   background-color: #000;
   opacity: 0.85;
-  color: #fff; }
+  color: #fff;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=index.css.map */

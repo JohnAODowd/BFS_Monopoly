@@ -22,7 +22,7 @@ def roll_dice(verbose = False):
 	secret_seed = uuid.uuid4().hex
 
 	# Create sha256 of seeds 
-	hash_object = hashlib.sha256((secret_seed + server_seed + client_seed))
+	hash_object = hashlib.sha256((secret_seed.encode("utf-8") + server_seed.encode("utf-8") + client_seed.encode("utf-8")))
 	hex_digest = hash_object.hexdigest()
 
 	# Convert first 8 chars to DEC
@@ -50,7 +50,7 @@ def double_roll():
 	ret['double']	= first_roll == second_roll
 	return ret
 
-'''
+"""
 def test_single(verbose = False):
 	results = [0 for x in range(6)]
 	for i in range(100):
@@ -70,11 +70,11 @@ def test_double(verbose = False):
 		for i in range(len(results)):
 			print(str(i+2) + " : " + str(results[i]) + " " + ("=" * results[i]))
 	print(results)
-'''
+"""
 
 if __name__ == '__main__':
-	double_roll()
-	#test_double()
+	print(double_roll())
+	#test_double(verbose = True)
 	#double_roll()
-	#roll_dice()
+	print(roll_dice()
 	#roll_dice(verbose = True)

@@ -8,7 +8,7 @@
     "1"   :   {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "brown1",
+		"name"          : "brown1",
 		"playersOn"     : {}
     },
 
@@ -21,13 +21,13 @@
     "3"   : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "brown2",
+		"name"          : "brown2",
 		"playersOn"     : {}
     },
 
     "4"   : {
 		"category"		: "tax",
-		"name"          : "IncomeTax",
+		"name"          : "incomeTax",
 		"amount"        : 200,              
 		"playersOn"     : {}
     },
@@ -35,14 +35,14 @@
     "5"   : {
 		"category"		: "property",
 		"type"			: "railroad",
-		"property"      : "railroad1",
+		"name"          : "railroad1",
 		"playersOn"     : {}
     },
 
     "6"   : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "lightBlue1",
+		"name"          : "lightBlue1",
 		"playersOn"     : {}
     },
 
@@ -55,14 +55,14 @@
     "8"   : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "lightBlue2",
+		"name"          : "lightBlue2",
 		"playersOn"     : {}
     },
 
     "9"   : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "lightBlue3",
+		"name"          : "lightBlue3",
 		"playersOn"     : {}
     },
 
@@ -76,42 +76,42 @@
     "11"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "pink1",
+		"name"          : "pink1",
 		"playersOn"     : {}
     },
 
     "12"  : {
 		"category"		: "property",
 		"type"			: "utility",
-		"property"      : "electric",
+		"name"          : "electric",
 		"playersOn"     : {}
     },
 
     "13"  : {
 		"category"		: "property",
-		"type"			: "utility",
-		"property"      : "pink2",
+		"type"			: "street",
+		"name"          : "pink2",
 		"playersOn"     : {}
     },
 
     "14"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "pink3",
+		"name"          : "pink3",
 		"playersOn"     : {}
     },
 
     "15"  : {
 		"category"		: "property",
 		"type"			: "railroad",
-		"property"      : "railroad2",
+		"name"          : "railroad2",
 		"playersOn"     : {}
     },
 
     "16"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "orange1",
+		"name"          : "orange1",
 		"playersOn"     : {}
     },
 
@@ -124,14 +124,14 @@
     "18"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "orange2",
+		"name"          : "orange2",
 		"playersOn"     : {}
     },
 
     "19"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "orange3",
+		"name"          : "orange3",
 		"playersOn"     : {}
     },
 
@@ -144,7 +144,7 @@
     "21"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "red1",
+		"name"          : "red1",
 		"playersOn"     : {}
     },
 
@@ -157,49 +157,49 @@
     "23"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "red2",
+		"name"          : "red2",
 		"playersOn"     : {}
     },
 
     "24"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "red3",
+		"name"          : "red3",
 		"playersOn"     : {}
     },
 
     "25"  : {
 		"category"		: "property",
 		"type"			: "railroad",
-		"property"      : "railroad3",
+		"name"          : "railroad3",
 		"playersOn"     : {}
     },
 
     "26"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "yellow1",
+		"name"          : "yellow1",
 		"playersOn"     : {}
     },
 
     "27"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "yellow2",
+		"name"          : "yellow2",
 		"playersOn"     : {}
     },
 
     "28"  : {
 		"category"		: "property",
 		"type"			: "utility",
-		"property"      : "water",
+		"name"          : "water",
 		"playersOn"     : {}
     },
 
     "29"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "yellow3",
+		"name"          : "yellow3",
 		"playersOn"     : {}
     },
 
@@ -212,14 +212,14 @@
     "31"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "green1",
+		"name"          : "green1",
 		"playersOn"     : {}
     },
 
     "32"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "green2",
+		"name"          : "green2",
 		"playersOn"     : {}
     },
 
@@ -232,42 +232,42 @@
     "34"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "green3",
+		"name"          : "green3",
 		"playersOn"     : {}
     },
 
     "35"  : {
 		"category"		: "property",
 		"type"			: "railroad",
-		"property"      : "railroad4",
+		"name"          : "railroad4",
 		"playersOn"     : {}
     },
 
-    36  : {
+    "36"  : {
 		"category"		: "card",
 		"name"          : "Chance",
 		"playersOn"     : {}
     },
 
-    ""37"  : {
+    "37"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "darkBlue1",
+		"name"          : "darkBlue1",
 		"playersOn"     : {}
     },
 
     "38"  : {
 		"category"		: "tax",
-		"name": "tax",
-		"amount": 100,  
-		"playersOn": {}
+		"name"			: "luxuryTax",
+		"amount"		: 100,  
+		"playersOn"		: {}
     },
 
     "39"  : {
 		"category"		: "property",
 		"type"			: "street",
-		"property"      : "darkBlue2",
+		"name"          : "darkBlue2",
 		"playersOn"     : {}
-    		}
+    }
 	}
 }

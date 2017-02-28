@@ -1,7 +1,7 @@
 import redis
 from json import dumps, loads
-from monopoly.monopolyVars import getInitBoard, getInitBank
-r = redis.StrictRedis(host='localhost', port=6379, db=0, password="Glad0s7334")
+from monopoly.monopolyVars import getInitBoard
+r = redis.StrictRedis(host='redis.netsoc.co', port=6379, db=0)
 
 """
 Used for setting and getting data from redis database
@@ -26,30 +26,22 @@ def getPlayer(gID, uID):  # gets specific player using gID and uID
 def getBoard(gID):  # returns the board for a game using gID
     return loads(r.get('board of ' + gID).decode("utf-8"))
 
-def getBank(gID):
-	return loads(r.get('bank of ' + gID).decode("utf-8"))
-
 def setGame(gID, game):  # sets a game in redis; gID <String> + game <dict>
     games = getGames()
     games[gID] = game
     r.set('games', dumps(games).encode("utf-8"))
 
-def setBank(gID, bank):
-    r.set('bank of ' + gID, dumps(bank).encode("utf-8"))
-
 def init(gID):
-	r.set('players of ' + gID, "{}")
-	r.set('board of ' + gID, "{}")
-	r.set('bank of ' + gID, "{}")
+    r.set('players of ' + gID, "{}")
+    r.set('board of ' + gID, "{}")
 
 def start(gID):
-	players = getPlayers(gID)
-	board 	= getInitBoard()
-	bank 	= getInitBank()
-	for player in players:
-		board[0]['playersOn'] += [player['public']['number']]
-	setBoard(gID, board)
-	setBank(gID, bank)
+    players = getPlayers(gID)
+    board 	= getInitBoard()
+
+    for _uID in players:
+        board[0]['playersOn'] += [players[_uID]['public']['number']]
+    setBoard(gID, board)
 
 def setPlayer(gID, uID, player):  # sets a player, takes gID + uID + player <dict>
     players = getPlayers(gID)

@@ -16,7 +16,7 @@ Application Controller
 
 @app.route('/')
 def home():
-    return render_template('templates/index.html')         #return the homepage
+    return render_template("index.html")         #return the homepage
 
 @app.route('/host')
 def host():
@@ -54,10 +54,23 @@ def game():
     ret = "{'error':'broken'}"
     if request.method == "POST":
         json = (request.get_json())
+        if json == None:
+            form = request.form
+            print (form)
+            if form['request'] == "HOST":
+                json                = {}
+                json["request"]     = form["request"]
+                json["name"]    = form["username"]
+                if form["private"] == "on":
+                    json["type"]    = "private"
+                else:
+                    json["type"]    = "public"
+        print (json)
         if json['request'] == 'HOST' or lobby.getGameStatus(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
+            print (ret)
         if json['request'] == "HOST":
-            return render_template("templates/game.html", var=dumps(ret))
+            return render_template("game.html", var=str(dumps(ret)))
         # elif lobby.getGameStatus(json['gID']) == "PLAYING":
         #     ret = gameLib.game(json)
         # elif lobby.getGameStatus(json['gID']) == "AUCTION":

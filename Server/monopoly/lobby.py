@@ -95,7 +95,7 @@ def ping(json):
     ret['players']  = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
-    if players[json['uID']]['number'] == 1:
+    if players[json['uID']]['public']['number'] == 1:
         if game['playersNo'] > 1:
             if game['playersNo'] == 8 - len(game['figurines']):
                 ret['options']  = "START"
@@ -105,7 +105,7 @@ def ping(json):
 def canStart(gID, uID):                         #checks to see if starting is a viable option
     game = r.getGame(gID)
     players = r.getPlayers(gID)
-    if players[uID]['number'] == 1:
+    if players[uID]['public']['number'] == 1:
         if game['playersNo'] > 1:
             if game['playersNo'] == 8 - len(game['figurines']):
                 return True

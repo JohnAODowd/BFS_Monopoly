@@ -1,37 +1,37 @@
 initBoard = {
     0   :   {
         "type"          : "GO",
-        "playersOn"     : {},
+        "playersOn"     : [],
         "amount"        : 2000              # FIXME
     },
 
     1   :   {
         "type"          : "property",
-        "property"      : {},               # TODO add details
+        "playersOn"     : [],               # TODO add details
         "playersOn"     : {}
     },
 
     2   :   {
         "type"          : "commChest",
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     3   : {
         "type"          : "property",
         "property"      : {},               # TODO add details
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     4   : {
         "type"          : "tax",
         "amount"        : 200,              # FIXME
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     5   : {
         "type"          : "transport",
         "transport"     : {},               # TODO add details
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     6   : {

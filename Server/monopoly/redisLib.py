@@ -84,5 +84,4 @@ def getCards(gID):
 
 def getCard(gID, cardType, cardNumber):
     cards = getCards(gID)[cardType]
-    print(cards)
     return cards[cardNumber]

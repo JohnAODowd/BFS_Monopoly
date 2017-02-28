@@ -73,3 +73,13 @@ def validateUID(gID, uID):  # used to validate a uID
         return True
     else:
         return False
+
+def incrementMoney(gID,uID,amount):
+    player = getPlayer(gID, uID)
+    player['money'] = int(player['money']) + int(amount)
+    setPlayer(gID, uID, player)
+    
+def decrementMoney(gID,uID,amount):
+    player = getPlayer(gID, uID)
+    player['money'] = int(player['money']) - int(amount)
+    setPlayer(gID, uID, player)

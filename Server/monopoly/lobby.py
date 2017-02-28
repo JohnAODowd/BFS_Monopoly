@@ -30,11 +30,14 @@ def host(json):                                                         #sets a 
 def join(json, gID=None):                                                   #sets a player
     ret = {}
     if gID == None:
-        gID                                 = json['gID']
+        if "gID" in json:
+            gID                             = json['gID']
+        else:
+            gID                             = help.getfirstPublicGame()
     try:
-        game                                = r.getGames()[gID]
+        game                                = r.getGame(gID)
         if game['playersNo'] == 8:
-            ret['error']                    = 'full'
+            ret['error']                    = 'Game is full. Try again.'
         else:
             game['playersNo']               += 1
             uID                             = help.genID()
@@ -52,7 +55,7 @@ def join(json, gID=None):                                                   #set
             ret['player']                   = player
             ret['game']                     = game
             ret['players']                  = {}
-            players                         = r.getPlayers(json['gID'])
+            players                         = r.getPlayers(gID)
             for _uID in players:
                 ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
     except:
@@ -95,7 +98,7 @@ def ping(json):
     ret['players']  = {}
     for _uID in players:
         ret['players'][players[_uID]['public']['name']] = players[_uID]['public']
-    if players[json['uID']]['number'] == 1:
+    if players[json['uID']]['public']['number'] == 1:
         if game['playersNo'] > 1:
             if game['playersNo'] == 8 - len(game['figurines']):
                 ret['options']  = "START"
@@ -105,7 +108,7 @@ def ping(json):
 def canStart(gID, uID):                         #checks to see if starting is a viable option
     game = r.getGame(gID)
     players = r.getPlayers(gID)
-    if players[uID]['number'] == 1:
+    if players[uID]['public']['number'] == 1:
         if game['playersNo'] > 1:
             if game['playersNo'] == 8 - len(game['figurines']):
                 return True
@@ -138,13 +141,10 @@ def lobby(json):
                 ret = ping(json)
             elif json['request'] == "START":
                 ret = start(json)
-
-    elif 'gID' in json and 'uID' not in json and json['request'] == 'JOIN':
-        if r.validateGID(json['gID']):                                  # set join user details
-            ret = join(json)
-
-    else:
-        if json['request'] == 'HOST':                                   # set host user details
+        
+    elif json["request"] == "JOIN":                                     # set join user details
+        ret = join(json)
+    elif json['request'] == 'HOST':                                   # set host user details
             ret = host(json)
 
     return ret

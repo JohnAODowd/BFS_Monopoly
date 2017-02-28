@@ -31,3 +31,14 @@ def checkTime(lastActivity, limit, seconds=False):
     now         = help.getTime()
     lActivity   = datetime.strptime(lastActivity, '%Y-%m-%d %H:%M:%S')
     return now <= lActivity + limit
+
+def formToJson(form):
+    json    = {}
+    for key in form:
+        if key == "private":
+            json["type"] = "private"
+        else:
+            json[key]   = form[key]
+    if "type" not in json and json['request'] == "HOST":
+        json["type"] = "public"
+    return json

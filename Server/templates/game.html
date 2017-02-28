@@ -8,11 +8,11 @@
       <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700' rel='stylesheet'  type='text/css'>
       <!-- Icons -->
       <script src="https://use.fontawesome.com/59835bec64.js"></script>
-      <link rel="icon" href="favicon.ico" sizes="16x16 32x32" type="image/ico">
+      <link rel="icon" href="http://hassassin.netsoc.co/client/favicon.ico" sizes="16x16 32x32" type="image/ico">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"     media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/jquery.spin.css"         media="screen,projection"/>
-      <link type="text/css" rel="stylesheet" href="css/game.css"                media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="http://hassassin.netsoc.co/client/css/materialize.min.css"     media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="http://hassassin.netsoc.co/client/css/jquery.spin.css"         media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="http://hassassin.netsoc.co/client/css/game.css"                media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -68,16 +68,20 @@
       </div>
 
       <script type="text/javascript">
-          var init = {{ var }};
+        var initFigurines = {{ initFigurines | safe }}
+      </script>
+
+      <script type="text/javascript">
+          var init = {{ var | safe }};
       </script>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"> </script>
-      <script type="text/javascript" src="js/jquery-cookie/jquery.cookie.js">           </script>
-      <script type="text/javascript" src="js/materialize.min.js">                       </script>
-      <script type="text/javascript" src="js/spin.min.js">                           </script>
-      <script type="text/javascript" src="js/jquery.spin.js">                           </script>
+      <script type="text/javascript" src="http://hassassin.netsoc.co/js/jquery-cookie/jquery.cookie.js"></script>
+      <script type="text/javascript" src="http://hassassin.netsoc.co/js/materialize.min.js">                       </script>
+      <script type="text/javascript" src="http://hassassin.netsoc.co/js/spin.min.js">                           </script>
+      <script type="text/javascript" src="http://hassassin.netsoc.co/js/jquery.spin.js">                           </script>
 
-      <script type="text/javascript" src="js/app.js">                                   </script>
+      <script type="text/javascript" src="http://hassassin.netsoc.co/js/app.js">                                   </script>
       
     </body>
   </html>

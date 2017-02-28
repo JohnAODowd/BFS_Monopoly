@@ -17,15 +17,12 @@ class user:
     _name       = None
     _figurines  = None
     _history    = None
-    _type       = "HOST"
-    _option     = None
 
     def __init__(self, name, type="HOST", gID=None):
         self._name      = name
         self._history   = "Request history: ***************************\n\n"
         if type != "HOST":
-            self._gID   = gID
-            self._type  = "JOIN"
+            self._gID = gID
 
     def __str__(self):
         string = "Name: " + self._name + "\n"
@@ -87,19 +84,6 @@ class user:
         self._history       += "SENDING (PING)*\n" + str(js) + "\n\n"
         response            = post(js)
         self._history       += "RECIEVED***********\n" + response + "\n\n"
-        if self._type == "HOST":
-            response    = json.loads(response)
-            if "START" in response["options"]:
-                self._option = "START"
-
-    def start(self):
-        js = {}
-        js["request"] = "START"
-        js["uID"] = self._uID
-        js["gID"] = self._gID
-        self._history += "SENDING (START)*\n" + str(js) + "\n\n"
-        response = post(js)
-        self._history += "RECIEVED***********\n" + response + "\n\n"
 
 def test():
     users   = []
@@ -120,11 +104,7 @@ def test():
     for _player in users:
         _player.ping()
 
-    users[0].start()
-
     for _player in users:
         print(_player)
-
-
 
 test()

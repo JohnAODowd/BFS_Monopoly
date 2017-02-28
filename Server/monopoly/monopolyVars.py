@@ -1,37 +1,37 @@
 initBoard = {
     0   :   {
         "type"          : "GO",
-        "playersOn"     : {},
+        "playersOn"     : [],
         "amount"        : 2000              # FIXME
     },
 
     1   :   {
         "type"          : "property",
-        "property"      : {},               # TODO add details
+        "playersOn"     : [],               # TODO add details
         "playersOn"     : {}
     },
 
     2   :   {
         "type"          : "commChest",
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     3   : {
         "type"          : "property",
         "property"      : {},               # TODO add details
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     4   : {
         "type"          : "tax",
         "amount"        : 200,              # FIXME
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     5   : {
         "type"          : "transport",
         "transport"     : {},               # TODO add details
-        "playersOn"     : {}
+        "playersOn"     : [],
     },
 
     6   : {
@@ -232,10 +232,24 @@ initBoard = {
     }
 }
 
-figurines = ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"]
+figurines = {
+            "HAT"           : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-hat.png",
+            "CAR"           : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-car.png",
+            "THIMBLE"       : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-thimble.png",
+            "IRON"          : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-iron.png",
+            "BOOT"          : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-boot.png",
+            "SHIP"          : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-ship.png",
+            "DOG"           : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-dog.png",
+            "WHEELBARROW"   : "http://hassassin.netsoc.co/client/assets/game_assets/lobby/avatar-wbarrow.png"
+            }
 
 def getInitBoard():
     return initBoard
 
-def getFigurines():
-    return figurines
+def getFigurines(images=False):
+    if images:
+        return figurines
+    else:
+        lst = []
+        for key in figurines:
+            lst += [key]

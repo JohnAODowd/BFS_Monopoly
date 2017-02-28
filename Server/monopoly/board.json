@@ -243,13 +243,13 @@
 		"playersOn"     : {}
     },
 
-    36  : {
+    "36"  : {
 		"category"		: "card",
 		"name"          : "Chance",
 		"playersOn"     : {}
     },
 
-    ""37"  : {
+    "37"  : {
 		"category"		: "property",
 		"type"			: "street",
 		"property"      : "darkBlue1",

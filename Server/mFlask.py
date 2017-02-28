@@ -1,7 +1,7 @@
 from json import dumps
 import monopoly.redisLib as r
 from flask import Flask, request, render_template
-from monopoly import lobby, gameLib
+from monopoly import lobby, gameLib, helpers
 
 print("START *****************************************************************************************************")
 
@@ -14,9 +14,13 @@ Application Controller
 # TODO fill in web pages
 # TODO separate game() into functions
 
-@app.route('/')
+@app.route('/', methods=["GET"])
 def home():
-    return render_template("index.html")         #return the homepage
+    if request.method == "GET":
+        if request.args.get("gID"): 
+            gID = request.args.get("gID")
+            return render_template("index.html", joinForm="private", gID=gID)
+    return render_template("index.html", joinForm="public")         #return the homepage
 
 @app.route('/host')
 def host():
@@ -49,28 +53,23 @@ def join():
 """
 Main game controller
 """
-@app.route("/game", methods=["POST"])                                           #Only use post here
+@app.route("/game", methods=["POST", "GET"])                                           #Only use post here
 def game():
     ret = "{'error':'broken'}"
     if request.method == "POST":
         json = (request.get_json())
+
         if json == None:
             form = request.form
-            print (form)
-            if form['request'] == "HOST":
-                json                = {}
-                json["request"]     = form["request"]
-                json["name"]    = form["username"]
-                if form["private"] == "on":
-                    json["type"]    = "private"
-                else:
-                    json["type"]    = "public"
-        print (json)
-        if json['request'] == 'HOST' or lobby.getGameStatus(json['gID']) == "LOBBY":
+            json = helpers.formToJson(form)
+        if json['request'] == 'HOST' or json['request'] == "JOIN" or lobby.getGameStatus(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
-            print (ret)
-        if json['request'] == "HOST":
-            return render_template("game.html", var=str(dumps(ret)))
+            print(ret)
+        if json['request'] == "HOST" or json['request'] == "JOIN":
+            if 'error' in ret:
+                return render_template("index.html", error=ret['error'])
+            else:
+                return render_template("game.html", var=str(dumps(ret)))
         # elif lobby.getGameStatus(json['gID']) == "PLAYING":
         #     ret = gameLib.game(json)
         # elif lobby.getGameStatus(json['gID']) == "AUCTION":

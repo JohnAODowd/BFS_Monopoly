@@ -27,8 +27,8 @@ def getBoard(gID):  # returns the board for a game using gID
     return loads(r.get('board of ' + gID).decode("utf-8"))
 
 def setGame(gID, game):  # sets a game in redis; gID <String> + game <dict>
-    games = getGames()
-    games[gID] = game
+    games       = getGames()
+    games[gID]  = game
     r.set('games', dumps(games).encode("utf-8"))
 
 def init(gID):

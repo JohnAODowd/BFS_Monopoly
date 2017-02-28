@@ -1,0 +1,22 @@
+var init = {
+	"player": 
+		{
+			"public": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, 
+			"uID": "d03320484e04fee26e86b27ba80581bc96fb9e68c85b6be6cc341d3df56c87d0", "money": 10000
+		}, 
+	"players": 
+		{
+			"azby": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, 
+			"hass": {"name": "hass", "GOOJF": 0, "number": 1, "position": 0, "properties": {}}
+		}, 
+	"game": 
+		{
+			"gID": "14ae581c4e2595892d46b3c76a501e3505cc24f901c1ec594bd9fb0c878749bd", 
+			"lastActivity": "2017-02-28 04:04:27", 
+			"turn": 1, 
+			"figurines": ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"], 
+			"type": "public", 
+			"status": "LOBBY", 
+			"playersNo": 2
+		}
+	};

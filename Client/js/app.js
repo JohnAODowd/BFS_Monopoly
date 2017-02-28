@@ -1,75 +1,28 @@
 (function($){
 	$(function(){
+			// Game Variables
+			var game_id;
+			var last_activity;
+			var turn;
+			var figurines;
+			var type;
+			var status;
+			var playersNo;
+			// player variables
+			// public
+			var player_name;
+			var player_GOOJF
+			var player_number
+			var player_position
+			var player_properties;
+			//private
+			var playerID;
+			var player_balance;
 
-		// game state variables: "form", "lobby", "play"
-		var game_state = "form";
-
-		// HTML templates for various game states
-		// 1st. Form for host game or join game, 2nd. choose avatar, 3rd. game screen
-		var form_html = '<div class="form-container row hoverable z-depth-2">'+
-				            '<form id="host-form" class="col s12">'+
-				            '<h3 class="center-align">Create Game</h3>'+
-				              '<div class="row">'+
-				                '<div class="input-field col s6">'+
-				                  '<input id="first_name" type="text" class="validate">'+
-				                  '<label for="first_name">Game Name</label>'+
-				                '</div>'+
-				                '<div class="input-field col s6">'+
-				                  '<input id="last_name" type="text" class="validate">'+
-				                  '<label for="last_name">Username</label>'+
-				                '</div>'+
-				              '</div>'+
-				              '<div class="row">'+
-				                '<div class="input-field col s6">'+
-				                  '<input id="password" type="password" class="validate">'+
-				                  '<label for="password">Password</label>'+
-				                '</div>'+
-				                '<div class="input-field col s6">'+
-                  					'<button class="btn waves-effect waves-light red" type="submit" name="action" id="create-submit">Create Game Lobby'+
-                    					'<i class="material-icons right">send</i>'+
-				                	'</button>'+
-				                '</div>'+
-
-				              '</div>'+
-				              '<div class="divider white"></div>'+
-				            '</form>'+
-				        '<!-- JOIN GAME FORM -->'+
-
-				            '<form id="join-form" class="col s12">'+
-				              '<h3>Join Game</h3>'+
-				              '<div class="row">'+
-				                '<div class="input-field col s6">'+
-				                  '<input id="random-username" type="text" class="validate">'+
-				                  '<label for="random-username">Username</label>'+
-				                '</div>'+
-				                '<div class="input-field col s6">'+
-				           '<input class="btn waves-effect waves-light" type="submit" name="action" id="random-submit" value="Submit">'+
-				                '</div>'+
-				            '</form>'+
-				          '</div>';
-		var lobby_html = '<div class="spinner row z-depth-2" data-spin>'+
-							'</div>';
-		// '<div class="spinner row z-depth-2>'+
-		// 					'<h3>test</h3>'+
-		// 				'</div>';
-		var game_html = '<div class="canvas-container">' +
-            			'<canvas id="game-board" width="520" height="520"></canvas>' +
-          				'</div>';
 
 		$(document).ready(function(){
 
-			if (game_state === "form"){
-				// Firstly load form html
-				console.log("form");
-				var board = $(".board");
-				board.append(form_html);
-
-				// set event listeners
-				$('form').on('submit', function(e){
-					e.preventDefault();
-					hostGame();
-				});
-			}
+			hostGame();
 
 		});
 
@@ -80,37 +33,33 @@
 
 		function hostGame() {
 			console.log("Host Game!");
-			// change game state // will replace with cookie
-			game_state = "lobby";
-			// clear html from game page
-			var board = $(".board");
-			$(".form-container").remove();
-			// append lobby html
-			board.append(lobby_html);
 
-			var opts = {
-			  lines: 13 // The number of lines to draw
-			, length: 28 // The length of each line
-			, width: 14 // The line thickness
-			, radius: 42 // The radius of the inner circle
-			, scale: 1 // Scales overall size of the spinner
-			, corners: 1 // Corner roundness (0..1)
-			, color: '#000' // #rgb or #rrggbb or array of colors
-			, opacity: 0.25 // Opacity of the lines
-			, rotate: 0 // The rotation offset
-			, direction: 1 // 1: clockwise, -1: counterclockwise
-			, speed: 1.2 // Rounds per second
-			, trail: 60 // Afterglow percentage
-			, fps: 20 // Frames per second when using setTimeout() as a fallback for CSS
-			, zIndex: 2e9 // The z-index (defaults to 2000000000)
-			, className: 'spinner' // The CSS class to assign to the spinner
-			, top: '50%' // Top position relative to parent
-			, left: '50%' // Left position relative to parent
-			, shadow: false // Whether to render a shadow
-			, hwaccel: false // Whether to use hardware acceleration
-			, position: 'absolute' // Element positioning
-			}
-			$('.spinner').spin();
+			// game variables
+			 console.log('game_variables');
+			game_variables = init['game'];
+			game_id = game_variables['gID']; console.log('GID:' + game_id);
+			last_activity = game_variables['lastActivity']; console.log('last_activity:'+last_activity);
+			turn = game_variables['turn']; console.log('turn:' + turn);
+			figurines = game_variables['figurines']; console.log('figurines:'+figurines);
+			type = game_variables['type']; console.log('type:'+type);
+			status = game_variables['status']; console.log('status:'+status);
+			playersNo = game_variables['playersNo']; console.log('playersNo:'+playersNo);
+			// player variables
+			console.log('player variables');
+			playerOBJ = init['player'];
+			//public
+			player_name = playerOBJ['public']['name']; console.log('player_name:'+player_name);
+			player_GOOJF = playerOBJ['public']['GOOJF']; console.log('player_GOOJF:'+player_GOOJF);
+			player_number = playerOBJ['public']['number']; console.log('player_number:'+player_number);
+			player_position = playerOBJ['public']['position']; console.log('player_position:'+player_position);
+			player_properties = playerOBJ['public']['properties']; console.log('player_properties:'+player_position);
+			// private
+			playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
+			player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
+			// dictionary of players (inclds this player data, we'll check for that later)
+
+
+
 		}
 
 		function initGame(){

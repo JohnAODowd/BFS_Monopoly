@@ -75,3 +75,14 @@ def decrementMoney(gID,uID,amount):
     player = getPlayer(gID, uID)
     player['money'] = int(player['money']) - int(amount)
     setPlayer(gID, uID, player)
+
+    def setCards(gID, cards):  # sets a player, takes gID + cards <dict>
+    r.set('cards of ' + gID, dumps(cards).encode("utf-8"))
+    
+def getCards(gID):
+    return loads(r.get('cards of ' + gID).decode("utf-8"))
+
+def getCard(gID, cardType, cardNumber):
+    cards = getCards(gID)[cardType]
+    print(cards)
+    return cards[cardNumber]

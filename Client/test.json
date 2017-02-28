@@ -18,5 +18,9 @@ var init = {
 			"type": "public", 
 			"status": "LOBBY", 
 			"playersNo": 2
+		},
+	"options":
+		{
+			
 		}
 	};

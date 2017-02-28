@@ -30,7 +30,7 @@
 			if (gameID){
 				// check a game has actually been found
 				if (game_type === 'LOBBY'){
-
+					main();
 				}
 			}
 

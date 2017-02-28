@@ -1,6 +1,6 @@
 import redis
 from json import dumps, loads
-from monopoly.monopolyVars import getInitBoard
+import initialiseGame
 r = redis.StrictRedis(host='redis.netsoc.co', port=6379, db=0)
 
 """
@@ -37,7 +37,7 @@ def init(gID):
 
 def start(gID):
     players = getPlayers(gID)
-    board 	= getInitBoard()
+    board 	= initialiseGame.getInitialBoard()
 
     for _uID in players:
         board[0]['playersOn'] += [players[_uID]['public']['number']]

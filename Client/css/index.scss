@@ -1,8 +1,9 @@
 
 
 @font-face {
-    font-family: 'RedRooster';
-    src: url(../fonts/RedRooster.ttf);
+    font-family: 'norwester';
+    //src: url(http://hassassin.netsoc.co/client/assets/fonts/norwester/webfonts/norwester.ttf);
+    src: url(../assets/fonts/norwester/webfonts/norwester.ttf);
 }
 
 
@@ -11,9 +12,42 @@ $fullscreen-margin: 6em;
 body {
 
 	margin: 0 0 0 0;
-	max-height: 100vh;
+	height: 100vh;
 	
 } // body end 
+/*
+	Header
+*/
+.nav-wrapper {
+	line-height: 64px;
+	height: 64px;
+	a {
 
+		height: 64px;
+		line-height: 64px;
+		img {
+			height: 64px;
+			display: inline;
+		}
+	}
+	#title {
+		display: inline-block;
+		height: 64px;
+		font-size: 42px;
+		font-family: 'norwester';
+		font-variant: small-caps;
+	}
+}
 // main page specific
-
+#main-body {
+	background-image: url("../assets/background/background-cork.png");
+	height: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.form-container {
+	margin-top: 4em;
+	background-color: #000;
+	opacity: 0.85;
+	color: #fff;
+}

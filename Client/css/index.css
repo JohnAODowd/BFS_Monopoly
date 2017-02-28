@@ -1,30 +1,39 @@
 @font-face {
-  font-family: 'RedRooster';
-  src: url(../fonts/RedRooster.ttf); }
+  font-family: 'norwester';
+  src: url(../assets/fonts/norwester/webfonts/norwester.ttf); }
 body {
   margin: 0 0 0 0;
-  max-height: 100vh; }
+  height: 100vh; }
 
-.body {
-  height: auto;
-  background-image: url("../assets/tweed/tweed.png"); }
+/*
+	Header
+*/
+.nav-wrapper {
+  line-height: 64px;
+  height: 64px; }
+  .nav-wrapper a {
+    height: 64px;
+    line-height: 64px; }
+    .nav-wrapper a img {
+      height: 64px;
+      display: inline; }
+  .nav-wrapper #title {
+    display: inline-block;
+    height: 64px;
+    font-size: 42px;
+    font-family: 'norwester';
+    font-variant: small-caps; }
 
-nav {
-  height: 10vh; }
+#main-body {
+  background-image: url("../assets/background/background-cork.png");
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover; }
 
-.collapsible {
-  margin-top: 2em; }
-
-.test {
-  margin-top: 6em;
-  border: 1px #333 solid;
-  border-radius: 4px;
-  margin: 2em; }
-
-.demo {
-  border-right: 1px solid #333;
-  height: 85vh;
-  min-height: 85vh;
-  margin-bottom: none; }
+.form-container {
+  margin-top: 4em;
+  background-color: #000;
+  opacity: 0.85;
+  color: #fff; }
 
 /*# sourceMappingURL=index.css.map */

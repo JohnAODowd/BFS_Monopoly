@@ -31,7 +31,7 @@ myFiles.forEach(function (file, i) {
         // whatever you decide to do with it, it is available as
         // responseText within this scope (unparsed!)
 	    jboard 		= jsonData[0];
-	    jproperties = jsonData[1];
+	    jproperties	= jsonData[1];
 	    jcards 		= jsonData[2];
 
 		/* ----------------------------------- */
@@ -46,7 +46,7 @@ myFiles.forEach(function (file, i) {
 					name = getAttribute(index, "name");
 			} 
 			return name;
-		} // board.["property"], otherwise board.["name"]
+		} // board[index]["property"], otherwise board[index]["name"]
 
 		function getAttribute(index, attr){
 			return jboard.board[index.toString()][attr];
@@ -54,11 +54,11 @@ myFiles.forEach(function (file, i) {
 
 		function getCategory(index){
 			return getAttribute(index, "category");
-		} // returns "property"
+		} // returns "property", "special", "card", "tax"
 
 		function getCardType(index){
 			return getAttribute(index, "name");
-		} // returns "CommunityChesy", "Chance"
+		} // returns "CommunityChest", "Chance"
 
 		function getPropertyType(index){
 			return getAttribute(index, "type");
@@ -77,39 +77,50 @@ myFiles.forEach(function (file, i) {
 		var wanchor = _width / 13;
 		var hanchor = _height / 13;
 
+		function Square(i) {
+		  this.index  = Integer.parseInt(i);
+		  this.name   = getName(i);
+		  this.width  = 2*wanchor;
+		  this.height = 2*hanchor;
 
-		var Board = {
+		  _drawRect( _width-this.width, _height-this.width, this.width, this.height);
 		}
 
-		var Side = {
+		function Tile(i) {
+		  this.index  = Integer.parseInt(i);
+		  this.cat    = getCategory(i);
+		  this.name   = getName(i);
+		  this.width  = wanchor;
+		  this.height = 2*hanchor;
+		  this.n = (index % 10);
+		  
+		  _drawRect( (_width - 2*this.width - this.n*this.width ), _height - 2*this.width - (this.n-1)*this.width); 
 		}
 
-		var Line = {
+		/* ----------------------------------- */
+
+		function _drawRect(x1,y1,w,h) {
+		  ctx.beginPath();
+		  ctx.rect(x1,y1,(x1 + w) ,(y1 + h));
+		  ctx.stroke();
+		  ctx.closePath();
 		}
 
-		var Square = {
-		  width: 2*wanchor,
-		  height: 2*hanchor
+		function _fillRect(x1,y1,colourHex) {
+		  ctx.beginPath();
+		  ctx.fillStyle = colourHex;
+		  var w = wanchor/4;
+		  var h = hanchor/4; // thanks hassan
+		  ctx.fillRect(x1,y1,(x1 + w) ,(y1 + h));
+		  ctx.closePath();
 		}
 
-		var Tile = {
-		  width: wanchor,
-		  height: 2*hanchor
-		}
-
-		var PropertyTile = {
-		}
-
-		var UtilityTile = {
-		}
-
-		var TransportTile = {
-		}
-
-		var ChanceTile = {
-		}
-
-		var CommunityTile = {
+		function rotate_point(pointX, pointY, originX, originY, angle) {
+		    angle = angle * Math.PI / 180.0;
+		    return {
+		        x: Math.cos(angle) * (pointX-originX) - Math.sin(angle) * (pointY-originY) + originX,
+		        y: Math.sin(angle) * (pointX-originX) + Math.cos(angle) * (pointY-originY) + originY
+    		};
 		}
 
 		/* ----------------------------------- */
@@ -118,8 +129,26 @@ myFiles.forEach(function (file, i) {
 		var ctx = c.getContext("2d");
 
 		function draw(){
-
+			for(var i in jboard){
+				switch(getCategory(i)) {
+					case "special":
+						var sq = new Square(i);
+						break;
+					case "property":
+						var tile = new Tile(i);
+						break;
+					case "card":
+						// get more info, then
+						// draw tile
+						break;
+					case "tax" :
+						// get more info, then
+						// draw tile
+				}
+			}
 		}
+
+		draw();
 
     })
 })

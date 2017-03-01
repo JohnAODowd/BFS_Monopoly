@@ -1,6 +1,6 @@
 {"board" :{
     "0"   :   {
-		"category"		: "special",
+		"category"		: "corner",
 		"name"          : "Go",
 		"playersOn"     : {}
     },
@@ -13,8 +13,8 @@
     },
 
     "2"   :   {
-		"category"		: "card",
-		"name"          : "CommunityChest",
+		"category"		: "community",
+		"name"          : "Community Chest",
 		"playersOn"     : {}
     },
 
@@ -33,7 +33,7 @@
     },
 
     "5"   : {
-		"category"		: "property",
+		"category"		: "transport",
 		"type"			: "railroad",
 		"name"          : "railroad1",
 		"playersOn"     : {}
@@ -47,7 +47,7 @@
     },
 
     "7"   : {
-		"category"		: "card",
+		"category"		: "chance",
 		"name"          : "Chance",
 		"playersOn"     : {}
     },
@@ -67,7 +67,7 @@
     },
 
     "10"  : {
-		"category"		: "special",
+		"category"		: "corner",
 		"name"          : "jail",
 		"playersOn"     : {},
 		"playersIn"     : {}
@@ -81,8 +81,7 @@
     },
 
     "12"  : {
-		"category"		: "property",
-		"type"			: "utility",
+		"category"		: "utility",
 		"name"          : "electric",
 		"playersOn"     : {}
     },
@@ -102,7 +101,7 @@
     },
 
     "15"  : {
-		"category"		: "property",
+		"category"		: "transport",
 		"type"			: "railroad",
 		"name"          : "railroad2",
 		"playersOn"     : {}
@@ -116,7 +115,8 @@
     },
 
     "17"  : {
-		"category"		: "card",
+		"category"		: "community
+		",
 		"name"          : "CommunityChest",
 		"playersOn"     : {}
     },
@@ -136,7 +136,7 @@
     },
 
     "20"  : {
-		"category"		: "special",
+		"category"		: "corner",
 		"name"          : "FreeParking",
 		"playersOn"     : {}
     },
@@ -149,7 +149,7 @@
     },
 
     "22"  : {
-		"category"		: "card",
+		"category"		: "chance",
 		"name"          : "Chance",
 		"playersOn"     : {}
     },
@@ -169,7 +169,7 @@
     },
 
     "25"  : {
-		"category"		: "property",
+		"category"		: "transport",
 		"type"			: "railroad",
 		"name"          : "railroad3",
 		"playersOn"     : {}
@@ -190,8 +190,7 @@
     },
 
     "28"  : {
-		"category"		: "property",
-		"type"			: "utility",
+		"category"		: "utility",
 		"name"          : "water",
 		"playersOn"     : {}
     },
@@ -204,7 +203,7 @@
     },
 
     "30"  : {
-		"category"		: "special",
+		"category"		: "corner",
 		"name"          : "goToJail",
 		"playersOn"     : {}
     },
@@ -224,7 +223,7 @@
     },
 
     "33"  : {
-		"category"		: "card",
+		"category"		: "community",
 		"name"          : "CommunityChest",
 		"playersOn"     : {}
     },
@@ -237,14 +236,14 @@
     },
 
     "35"  : {
-		"category"		: "property",
+		"category"		: "transport",
 		"type"			: "railroad",
 		"name"          : "railroad4",
 		"playersOn"     : {}
     },
 
     "36"  : {
-		"category"		: "card",
+		"category"		: "chance",
 		"name"          : "Chance",
 		"playersOn"     : {}
     },
@@ -258,7 +257,7 @@
 
     "38"  : {
 		"category"		: "tax",
-		"name"			: "luxuryTax",
+		"name"			: "Luxury Tax",
 		"amount"		: 100,  
 		"playersOn"		: {}
     },

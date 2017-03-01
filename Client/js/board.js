@@ -15,3 +15,6 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.send(null);
 
 */
+
+var c = document.getElementById("board");
+var ctx = c.getContext("2d");

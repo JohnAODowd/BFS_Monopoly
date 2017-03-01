@@ -1,5 +1,3 @@
-
-
 // Load JSON File
 var loadFile = function (filePath, done) {
     var xhr = new XMLHttpRequest();
@@ -9,7 +7,9 @@ var loadFile = function (filePath, done) {
 
 }
 // paths to all of your files
-var myFiles = [ "../Server/monopoly/board.json","../Server/monopoly/properties.json","../Server/monopoly/cards.json"
+var myFiles = [ "../Server/monopoly/board.json",
+				"../Server/monopoly/properties.json",
+				"../Server/monopoly/cards.json"
 			  ];
 // where you want to store the data
 var jsonData 	= [];
@@ -49,7 +49,9 @@ myFiles.forEach(function (file, i) {
 		} // board[index]["property"], otherwise board[index]["name"]
 
 		function getAttribute(index, attr){
-			return jboard.board[index.toString()][attr];
+			//force type string
+			var str = index.toString()
+			return jboard.board[str][attr];
 		}
 
 		function getCategory(index){
@@ -71,39 +73,48 @@ myFiles.forEach(function (file, i) {
 
 		/* ----------------------------------- */
 
-		var _width = 500;
-		var _height = 500;
+		var _width = 250;
+		var _height = 250;
 
 		var wanchor = _width / 13;
 		var hanchor = _height / 13;
 
 		function Square(i) {
-		  this.index  = Integer.parseInt(i);
-		  this.name   = getName(i);
+		  //this.index  = Integer.parseInt(i);
 		  this.width  = 2*wanchor;
 		  this.height = 2*hanchor;
 
-		  _drawRect( _width-this.width, _height-this.width, this.width, this.height);
+		  _drawRect( _width-this.width,
+		            _height-this.width,
+		            this.width,
+		            this.height);
 		}
 
 		function Tile(i) {
-		  this.index  = Integer.parseInt(i);
-		  this.cat    = getCategory(i);
-		  this.name   = getName(i);
+		  //this.index  = Integer.parseInt(i);
 		  this.width  = wanchor;
 		  this.height = 2*hanchor;
-		  this.n = (index % 10);
+		  this.n = i % 10;
 		  
-		  _drawRect( (_width - 2*this.width - this.n*this.width ), _height - 2*this.width - (this.n-1)*this.width); 
+		  var windent = (2*wanchor) + this.n * this.width;
+		  var hindent = this.height;
+		  
+		  _drawRect(_width-windent,
+		            _height-hindent,
+		            this.width,
+		            this.height);
 		}
 
 		/* ----------------------------------- */
 
 		function _drawRect(x1,y1,w,h) {
-		  ctx.beginPath();
-		  ctx.rect(x1,y1,(x1 + w) ,(y1 + h));
+		  console.log("Drawing at \n x     : ".concat(x1)
+		              .concat("\n y     : ".concat(y1))
+		              .concat("\n width : ".concat(w))
+		              .concat("\n height: ".concat(h))
+		             );
+		  ctx.rect(x1,y1,w,h);
 		  ctx.stroke();
-		  ctx.closePath();
 		}
 
 		function _fillRect(x1,y1,colourHex) {
@@ -129,26 +140,19 @@ myFiles.forEach(function (file, i) {
 		var ctx = c.getContext("2d");
 
 		function draw(){
-			for(var i in jboard){
-				switch(getCategory(i)) {
-					case "special":
-						var sq = new Square(i);
-						break;
-					case "property":
-						var tile = new Tile(i);
-						break;
-					case "card":
-						// get more info, then
-						// draw tile
-						break;
-					case "tax" :
-						// get more info, then
-						// draw tile
-				}
-			}
+		  //test draw
+		  _drawRect(0,0,2*wanchor,2*hanchor);
+		    
+		  var corner = new Square(0);
+		  var tile;
+		  for(var i = 1; i < 10; i++){
+		    tile = new Tile(i);
+		  }
 		}
 
 		draw();
+
+
 
     })
 })

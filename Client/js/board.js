@@ -49,8 +49,7 @@ myFiles.forEach(function (file, i) {
 		} // board[index]["property"], otherwise board[index]["name"]
 
 		function getAttribute(index, attr){
-			//force type string
-			var str = index.toString()
+			var str = index.toString(); //force type string
 			return jboard.board[str][attr];
 		}
 
@@ -62,14 +61,26 @@ myFiles.forEach(function (file, i) {
 			return getAttribute(index, "name");
 		} // returns "CommunityChest", "Chance"
 
+		function getSpecialType(index){
+			return getAttribute(index, "name");
+		} // returns "Go", "jail", "goToJail", "FreeParking"
+		
+		function getTaxType(index){
+			return getAttribute(index, "name");
+		} // returns "LuxuryTax", "tax"
+
 		function getPropertyType(index){
 			return getAttribute(index, "type");
 		} // returns "street", "railroad", "utility"
 
-		function getColour(index){
+		function getPropertyColour(index){
 			var path = getAttribute(index, "property");
 			return jproperties.properties[path]["colourHex"];
 		} // returns (eg.) "#ffffff"
+
+		function getTaxAmount(index){
+			return getAttribute(index, "amount");
+		} // returns 100, 200
 
 		/* ----------------------------------- */
 
@@ -90,15 +101,16 @@ myFiles.forEach(function (file, i) {
 		            this.height);
 		}
 
-		function Tile(i) {
+		function Tile(i, o) {
 		  //this.index  = Integer.parseInt(i);
 		  this.width  = wanchor;
 		  this.height = 2*hanchor;
+		  this.orient = o;
 		  this.n = i % 10;
 		  
 		  var windent = (2*wanchor) + this.n * this.width;
 		  var hindent = this.height;
-		  
+
 		  _drawRect(_width-windent,
 		            _height-hindent,
 		            this.width,
@@ -120,7 +132,7 @@ myFiles.forEach(function (file, i) {
 		function _fillRect(x1,y1,colourHex) {
 		  ctx.beginPath();
 		  ctx.fillStyle = colourHex;
-		  var w = wanchor/4;
+		  var w = wanchor;
 		  var h = hanchor/4; // thanks hassan
 		  ctx.fillRect(x1,y1,(x1 + w) ,(y1 + h));
 		  ctx.closePath();
@@ -134,7 +146,8 @@ myFiles.forEach(function (file, i) {
     		};
 		}
 
-		/* ----------------------------------- */
+		/* ----------------------
+		------------- */
 
 		var c = document.getElementById("boardCanvas");
 		var ctx = c.getContext("2d");
@@ -142,17 +155,63 @@ myFiles.forEach(function (file, i) {
 		function draw(){
 		  //test draw
 		  _drawRect(0,0,2*wanchor,2*hanchor);
-		    
+		  
+		  var orient = 0;
+		  var type;
+		  var tile;
+		  for(var i = 0; i < 40; i++){
+		  	switch(getCategory(i)){
+		  		case "special":
+		  			//make a side
+		  			//make a square
+		  			type = getSpecialType(i);
+		  			if (type == "Go"){
+		  				// make the Go tile
+		  			} else if (type == "jail"){
+		  				// make jail tile
+		  			} else if (type == "FreeParking"){
+		  				// make Free Parking tile
+		  			} else {
+		  				// make the goToJail tile
+		  			}
+		  			//increment orient
+		  			break;
+		  		case "property":
+		  			type = getPropertyType(i);
+		  			if (type == "street") {
+		  				// make a street tile
+		  			} else if (type == "railroad") {
+		  				// make a railroad tile
+		  			} else {
+		  				// make a utility tile
+		  			}
+		  			break;
+		  		case "card":
+		  			type = getCardType(i);
+		  			if (type == "Chance"){
+		  				// make a chance tile
+		  			} else {
+		  				// make a community tile
+		  			}
+		  			break;
+		  		case "tax":
+		  			type = getTaxType(i);
+		  			if (type == "LuxuryTax"){
+		  				// make the LuxuryTax tile
+		  			} else {
+		  				// make the IncomeTax tile
+		  			}
+		  	}
+		  }
+
+		  /*
 		  var corner = new Square(0);
 		  var tile;
 		  for(var i = 1; i < 10; i++){
 		    tile = new Tile(i);
 		  }
+		*/
 		}
-
 		draw();
-
-
-
     })
 })

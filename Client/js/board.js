@@ -121,7 +121,7 @@ myFiles.forEach(function (file, i) {
 		}
 
 		/* ----------------------------------- */
-
+		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
 		function orientTile(i) {
 			var o = Math.floor(i / 10);
 			var n = i % 10;

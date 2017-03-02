@@ -6,36 +6,35 @@ var loadFile = function (filePath, done) {
     xhr.send();
 
 }
-// paths to all of your files
+
+// directory paths to all JSON files
 var myFiles = [ "../Server/monopoly/board.json",
 				"../Server/monopoly/properties.json",
 				"../Server/monopoly/cards.json"
 			  ];
-// where you want to store the data
+
+// where JSON data is stored
 var jsonData 	= [];
 var jboard;
 var jcards;
 var jproperties;
+
 // loop through each file
 myFiles.forEach(function (file, i) {
     // and call loadFile
     // note how a function is passed as the second parameter
-    // that's the callback function
     loadFile(file, function (responseText) {
-        // we set jsonData[i] to the parse data since the requests
+        // set jsonData[i] to the parse data since the requests
         // will not necessarily come in order
-        // so we can't use JSONdata.push(JSON.parse(responseText));
-        // if the order doesn't matter, you can use push
         jsonData[i] = JSON.parse(responseText);
-        // or you could choose not to store it in an array.
-        // whatever you decide to do with it, it is available as
-        // responseText within this scope (unparsed!)
+        // all JSON obj's are available in this scope.
 	    jboard 		= jsonData[0];
 	    jproperties	= jsonData[1];
 	    jcards 		= jsonData[2];
 
 		/* ----------------------------------- */
 
+		// un-used due to lack of readability
 		function getName(index){
 			var name;
 			switch(getCategory(index)) {
@@ -73,9 +72,19 @@ myFiles.forEach(function (file, i) {
 			return getAttribute(index, "type");
 		} // returns "street", "railroad", "utility"
 
-		function getPropertyColour(index){
+		function getStreetColour(index){
 			var path = getAttribute(index, "property");
 			return jproperties.properties[path]["colourHex"];
+		} // returns (eg.) "#ffffff"
+
+		function getPropertyName(index){
+			var path = getAttribute(index, "property");
+			return jproperties.properties[path]["name"];
+		} // returns (eg.) "#ffffff"
+
+		function getPropertyPrice(index){
+			var path = getAttribute(index, "property");
+			return jproperties.properties[path]["name"];
 		} // returns (eg.) "#ffffff"
 
 		function getTaxAmount(index){
@@ -84,58 +93,131 @@ myFiles.forEach(function (file, i) {
 
 		/* ----------------------------------- */
 
-		var _width = 250;
-		var _height = 250;
+		var c = document.getElementById("boardCanvas");
+		var ctx = c.getContext("2d");
+
+		var _width = c.width;
+		var _height = c.height;
 
 		var wanchor = _width / 13;
 		var hanchor = _height / 13;
 
 		function Square(i) {
-		  //this.index  = Integer.parseInt(i);
+		  coords = orientSquare(i);
 		  this.width  = 2*wanchor;
 		  this.height = 2*hanchor;
-
-		  _drawRect( _width-this.width,
-		            _height-this.width,
-		            this.width,
-		            this.height);
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  _drawRect(this.x, this.y, this.width, this.height);
 		}
 
-		function Tile(i, o) {
-		  //this.index  = Integer.parseInt(i);
-		  this.width  = wanchor;
-		  this.height = 2*hanchor;
-		  this.orient = o;
-		  this.n = i % 10;
-		  
-		  var windent = (2*wanchor) + this.n * this.width;
-		  var hindent = this.height;
-
-		  _drawRect(_width-windent,
-		            _height-hindent,
-		            this.width,
-		            this.height);
+		function Tile( i ) {
+		  coords = orientTile(i);
+		  this.width = coords.w;
+		  this.height = coords.h;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  _drawRect(this.x, this.y, this.width, this.height);
 		}
 
 		/* ----------------------------------- */
 
-		function _drawRect(x1,y1,w,h) {
-		  console.log("Drawing at \n x     : ".concat(x1)
-		              .concat("\n y     : ".concat(y1))
+		function orientTile(i) {
+			var o = Math.floor(i / 10);
+			var n = i % 10;
+			switch(o){
+		  		case 0:
+		  			return {
+		  				x : wanchor + n*wanchor,
+		  				y : _height - 2*hanchor,
+		  				w : wanchor,
+		  				h : 2*hanchor
+		  			}
+		  			break;
+		  		case 1:
+		  			return {
+		  				x : 0,
+		  				y : _height - 2*hanchor - (n*hanchor),
+		  				w : 2*hanchor,
+		  				h : wanchor
+		  			}
+		  			break;
+				case 2:
+		  			return {
+						x : wanchor + n*wanchor,
+						y : 0, 
+						w : wanchor, 
+						h : 2*hanchor
+		  			}
+		  			break;
+				case 3:
+		  			return {
+						x : _width - 2*wanchor, 
+						y : hanchor + n*hanchor, 
+						w : 2*hanchor, 
+						h : wanchor
+		  			}
+			}
+		}
+
+		function orientSquare(i) {
+			var o = Math.floor(i / 10);
+			var n = i % 10;
+			switch(o){
+		  		case 0:
+		  			return {
+		  				x : _width  - 2*wanchor,
+		  				y : _height - 2*hanchor
+		  			}
+		  			break;
+		  		case 1:
+		  			return {
+		  				x : 0,
+		  				y : _height - 2*hanchor
+		  			}
+		  			break;
+				case 2:
+		  			return {
+						x : 0,
+						y : 0, 
+		  			}
+		  			break;
+				case 3:
+		  			return {
+						x : _width - 2*wanchor, 
+						y : 0, 
+		  			}
+			}
+		}
+
+		function _drawRect(x,y,w,h, colourHex) {
+		  colourHex = colourHex || 0;
+		  console.log("Drawing at \n x     : ".concat(x)
+		              .concat("\n y     : ".concat(y))
 		              .concat("\n width : ".concat(w))
 		              .concat("\n height: ".concat(h))
 		             );
-		  ctx.rect(x1,y1,w,h);
+		  ctx.rect(x,y,w,h);
 		  ctx.stroke();
+
 		}
 
-		function _fillRect(x1,y1,colourHex) {
+		function _fillRect(x,y,colourHex) {
 		  ctx.beginPath();
 		  ctx.fillStyle = colourHex;
 		  var w = wanchor;
-		  var h = hanchor/4; // thanks hassan
-		  ctx.fillRect(x1,y1,(x1 + w) ,(y1 + h));
+		  var h = hanchor/4; // thanks hassan!
+		  ctx.fillRect(x,y,w,h);
 		  ctx.closePath();
+		}
+
+		function _drawRotatedText(x,y,angle,str) {
+			 ctx.save();
+			 ctx.translate(x, y);
+			 ctx.rotate(angle * (Math.PI / 180));
+			 ctx.textAlign = "center";
+			 ctx.fillText(str, 0, 10);
+			 ctx.restore();
 		}
 
 		function rotate_point(pointX, pointY, originX, originY, angle) {
@@ -146,27 +228,23 @@ myFiles.forEach(function (file, i) {
     		};
 		}
 
-		/* ----------------------
-		------------- */
-
-		var c = document.getElementById("boardCanvas");
-		var ctx = c.getContext("2d");
+		/* ----------------------------------- */
 
 		function draw(){
 		  //test draw
-		  _drawRect(0,0,2*wanchor,2*hanchor);
+		  //_drawRect(0,0,2*wanchor,2*hanchor);
 		  
-		  var orient = 0;
 		  var type;
 		  var tile;
 		  for(var i = 0; i < 40; i++){
 		  	switch(getCategory(i)){
 		  		case "special":
-		  			//make a side
 		  			//make a square
 		  			type = getSpecialType(i);
 		  			if (type == "Go"){
 		  				// make the Go tile
+		  				tile = new Square(i);
+		  				console.log(Object.values(tile));
 		  			} else if (type == "jail"){
 		  				// make jail tile
 		  			} else if (type == "FreeParking"){
@@ -174,12 +252,12 @@ myFiles.forEach(function (file, i) {
 		  			} else {
 		  				// make the goToJail tile
 		  			}
-		  			//increment orient
 		  			break;
 		  		case "property":
 		  			type = getPropertyType(i);
 		  			if (type == "street") {
 		  				// make a street tile
+		  				tile = new Tile(i);
 		  			} else if (type == "railroad") {
 		  				// make a railroad tile
 		  			} else {
@@ -203,15 +281,8 @@ myFiles.forEach(function (file, i) {
 		  			}
 		  	}
 		  }
-
-		  /*
-		  var corner = new Square(0);
-		  var tile;
-		  for(var i = 1; i < 10; i++){
-		    tile = new Tile(i);
-		  }
-		*/
 		}
+		// init
 		draw();
     })
 })

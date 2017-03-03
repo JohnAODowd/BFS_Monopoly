@@ -89,7 +89,7 @@
 
     "13"  : {
 		"category"		: "property",
-		"type"			: "utility",
+		"type"			: "street",
 		"property"      : "pink2",
 		"playersOn"     : {}
     },
@@ -191,7 +191,7 @@
 
     "28"  : {
 		"category"		: "property",
-		"type"			: "utility",
+		"type"			: "street",
 		"property"      : "water",
 		"playersOn"     : {}
     },

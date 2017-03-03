@@ -288,6 +288,10 @@ myFiles.forEach(function (file, i) {
 		  var chance_img 		= document.getElementById("chance");
 		  var community_img 	= document.getElementById("community");
 		  var luxury_img 		= document.getElementById("luxury_tax");
+		  var income_img		= document.getElementById("income_tax");
+		  var water_img 		= document.getElementById("water");
+		  var electric_img		= document.getElementById("electric");
+		  var railroad_img		= document.getElementById("railroad");
 
 		  //corner imgs
 		  var go_img 			= document.getElementById("go");
@@ -319,6 +323,7 @@ myFiles.forEach(function (file, i) {
 						ctx.drawImage(go_to_jail_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
 		  			}
 		  			break;
+
 		  		case "property":
 		  			type = getPropertyType(i);
 		  			if (type == "street") {
@@ -327,10 +332,20 @@ myFiles.forEach(function (file, i) {
 		  				tile = new ColourTile(i, getStreetColour(i));
 		  			} else if (type == "railroad") {
 		  				// make a railroad tile
+		  				tile = new Tile(i);
+						ctx.drawImage(railroad_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
 		  			} else {
 		  				// make a utility tile
+		  				if (getPropertyName(i) == "Water Works"){
+		  					tile = new Tile(i);
+							ctx.drawImage(water_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+		  				} else {
+		  					tile = new Tile(i);
+							ctx.drawImage(electric_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+						}
 		  			}
 		  			break;
+
 		  		case "card":
 		  			type = getCardType(i);
 		  			if (type == "Chance"){
@@ -344,12 +359,19 @@ myFiles.forEach(function (file, i) {
 
 		  			}
 		  			break;
+
 		  		case "tax":
 		  			type = getTaxType(i);
 		  			if (type == "LuxuryTax"){
 		  				// make the LuxuryTax tile
+		  				tile = new Tile(i);
+		  				ctx.drawImage(luxury_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+
 		  			} else {
 		  				// make the IncomeTax tile
+
+		  				tile = new Tile(i);
+		  				ctx.drawImage(income_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
 		  			}
 		  	}
 		  }

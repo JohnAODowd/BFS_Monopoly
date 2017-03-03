@@ -129,6 +129,15 @@ myFiles.forEach(function (file, i) {
 		  _fillRect(this.x, this.y, this.width, this.height, colourHex);
 		}
 
+		function ImageTile(i, image){
+		  coords = orientImageTile(i);
+		  this.width = coords.w;
+		  this.height = coords.h;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  _drawImage(this.x, this.y, this.width, this.height, image);
+		}
+
 		/* ----------------------------------- */
 		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
 		function orientTile(i) {
@@ -164,6 +173,44 @@ myFiles.forEach(function (file, i) {
 						x : _width - 2*wanchor, 
 						y : hanchor + n*hanchor, 
 						w : 2*hanchor, 
+						h : wanchor
+		  			}
+			}
+		}
+
+		function orientImageTile(i) {
+			var o = Math.floor(i / 10);
+			var n = i % 10;
+			switch(o){
+		  		case 0:
+		  			return {
+		  				x : wanchor + n*wanchor,
+		  				y : _height - 2*hanchor - hanchor/4,
+		  				w : wanchor,
+		  				h : 2*hanchor - hanchor/4
+		  			}
+		  			break;
+		  		case 1:
+		  			return {
+		  				x : wanchor/4,
+		  				y : _height - 2*hanchor - (n*hanchor),
+		  				w : 2*hanchor - hanchor/4,
+		  				h : wanchor
+		  			}
+		  			break;
+				case 2:
+		  			return {
+						x : wanchor + n*wanchor,
+						y : wanchor/4, 
+						w : wanchor, 
+						h : 2*hanchor - hanchor/4
+		  			}
+		  			break;
+				case 3:
+		  			return {
+						x : _width - 2*wanchor, 
+						y : hanchor + n*hanchor, 
+						w : 2*hanchor - hanchor/4, 
 						h : wanchor
 		  			}
 			}
@@ -259,6 +306,10 @@ myFiles.forEach(function (file, i) {
 		  ctx.closePath();
 		}
 
+		function _drawImage(x,y,w,h, img) {
+			ctx.drawImage(img, x, y, w, h);
+		}
+
 		function _drawRotatedText(x,y,angle,str) {
 			 ctx.save();
 			 ctx.translate(x+2*wanchor, y+2*hanchor);
@@ -333,15 +384,15 @@ myFiles.forEach(function (file, i) {
 		  			} else if (type == "railroad") {
 		  				// make a railroad tile
 		  				tile = new Tile(i);
-						ctx.drawImage(railroad_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+		  				tile = new ImageTile(i, railroad_img);
 		  			} else {
 		  				// make a utility tile
 		  				if (getPropertyName(i) == "Water Works"){
 		  					tile = new Tile(i);
-							ctx.drawImage(water_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+							tile = new ImageTile(i, water_img);
 		  				} else {
 		  					tile = new Tile(i);
-							ctx.drawImage(electric_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+							tile = new ImageTile(i, electric_img);
 						}
 		  			}
 		  			break;

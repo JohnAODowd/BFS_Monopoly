@@ -10,9 +10,15 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Server$board.coverage" NAME="board Coverage Results" MODIFIED="1488399029298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$test.coverage" NAME="test Coverage Results" MODIFIED="1488344406286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$emojiToken.coverage" NAME="emojiToken Coverage Results" MODIFIED="1488561911510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
     <SUITE FILE_PATH="coverage/Server$lobbyUnitTest__1_.coverage" NAME="lobbyUnitTest (1) Coverage Results" MODIFIED="1488224995475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Server$lobbyUnitTest.coverage" NAME="lobbyUnitTest Coverage Results" MODIFIED="1487716330396" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$cleanup.coverage" NAME="cleanup Coverage Results" MODIFIED="1488587418575" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
+    <SUITE FILE_PATH="coverage/Server$lobbyUnitTest.coverage" NAME="lobbyUnitTest Coverage Results" MODIFIED="1488748792556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Server$monopolyVars.coverage" NAME="monopolyVars Coverage Results" MODIFIED="1487714989538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$getData.coverage" NAME="getData Coverage Results" MODIFIED="1488338611084" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
+    <SUITE FILE_PATH="coverage/Server$lobby.coverage" NAME="lobby Coverage Results" MODIFIED="1488471534374" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
     <SUITE FILE_PATH="coverage/Server$Project.coverage" NAME="Project Coverage Results" MODIFIED="1487626771181" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -29,106 +35,69 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="lobby.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/lobby.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="16" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mFlask.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mFlask.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="58" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lobby.json" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tests/lobby.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3476">
-              <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="monopolyVars.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/monopolyVars.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="254" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="254" selection-end-column="24" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gameLib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="549">
-              <caret line="176" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="233" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#29#0" expanded="true" />
-                <element signature="e#101#180#0" expanded="false" />
-                <element signature="e#966#1644#0" expanded="false" />
-                <element signature="e#1727#2312#0" expanded="false" />
-                <element signature="e#2343#2600#0" expanded="false" />
-                <element signature="e#3866#4519#0" expanded="false" />
-                <element signature="e#4633#5671#0" expanded="false" />
-                <element signature="e#5696#6350#0" expanded="false" />
-                <element signature="e#6541#6620#0" expanded="false" />
-                <element signature="e#7435#8435#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="lobbyUnitTest.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="lobbyUnitTest.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/lobbyUnitTest.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="629">
-              <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+            <state relative-caret-position="158">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+                <element signature="e#89#271#0" expanded="false" />
+                <element signature="e#1137#1205#0" expanded="false" />
+                <element signature="e#3220#3236#0" expanded="false" />
+                <element signature="e#3268#3284#0" expanded="false" />
+                <element signature="e#3324#4035#0" expanded="false" />
+                <element signature="e#4448#4827#0" expanded="false" />
+                <element signature="e#4857#5275#0" expanded="false" />
+                <element signature="e#5308#5338#0" expanded="false" />
+                <element signature="e#5370#5399#0" expanded="false" />
+                <element signature="e#5429#5879#0" expanded="false" />
+                <element signature="e#6913#7096#0" expanded="false" />
+                <element signature="e#7643#7782#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="board.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monopolyJSON/board.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="18" />
+              <folding>
+                <element signature="n#!!block;n#4#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#11#0;n#!!top" expanded="false" />
+                <element signature="e#198#212#0" expanded="false" />
+                <element signature="n#!!block;n#37#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#9#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#1#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#22#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#5#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#8#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#13#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#20#0;n#!!top" expanded="false" />
+                <element signature="n#!!block;n#32#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cards.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monopoly/cards.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redisLib.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
+      <file leaf-file-name="properties.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/monopolyJSON/properties.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-              <folding>
-                <element signature="e#0#12#0" expanded="true" />
-                <element signature="e#1095#1268#0" expanded="false" />
-                <element signature="e#1357#1471#0" expanded="false" />
-                <element signature="e#1503#1574#0" expanded="false" />
-                <element signature="e#1628#1718#0" expanded="false" />
-                <element signature="e#1777#1876#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="6341">
+              <caret line="373" column="1" lean-forward="true" selection-start-line="373" selection-start-column="1" selection-end-line="373" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -145,8 +114,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
+      <find>status</find>
+      <find>board</find>
+      <find>help</find>
+      <find>GoT</find>
+      <find>['property'][</find>
+      <find>jail</find>
+      <find>getProp</find>
+      <find>Last</find>
+      <find>getPlayer(gID</find>
+      <find>getPlayer</find>
+      <find>start</find>
+      <find>setPla</find>
+      <find>getPlayer(</find>
+      <find>'property'</find>
+      <find>inJa</find>
+      <find>&quot;BUY</find>
+      <find>&quot;build</find>
+      <find>pay</find>
+      <find>inJai</find>
+      <find>com</find>
+      <find>giveP</find>
+      <find>getRe</find>
+      <find>prin</find>
+      <find>_js</find>
+      <find>pri</find>
+      <find>red</find>
+      <find>150</find>
+      <find>&quot;price&quot;:150</find>
       <find>print</find>
-      <find>fig</find>
+      <find>ele</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -166,20 +163,36 @@
         <option value="$PROJECT_DIR$/lobby.py" />
         <option value="$PROJECT_DIR$/tests/lobby.json" />
         <option value="$PROJECT_DIR$/monopoly/properties.json" />
-        <option value="$PROJECT_DIR$/monopoly/dice.py" />
         <option value="$PROJECT_DIR$/monopoly/gameLib.py.orig" />
         <option value="$PROJECT_DIR$/monopoly/g.old" />
-        <option value="$PROJECT_DIR$/monopoly/redisLib.py" />
         <option value="$PROJECT_DIR$/monopoly/initProperties.py" />
         <option value="$PROJECT_DIR$/monopoly/initBoard.py" />
-        <option value="$PROJECT_DIR$/monopoly/cleanup.py" />
-        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
-        <option value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
-        <option value="$PROJECT_DIR$/monopoly/gameLib.py" />
-        <option value="$PROJECT_DIR$/monopoly/lobby.py" />
-        <option value="$PROJECT_DIR$/monopoly/monopolyVars.py" />
-        <option value="$PROJECT_DIR$/mFlask.py" />
         <option value="$PROJECT_DIR$/templates/game.html" />
+        <option value="$PROJECT_DIR$/monopoly/board.json" />
+        <option value="$PROJECT_DIR$/monopolyJSON/figurines.json" />
+        <option value="$PROJECT_DIR$/monopoly/monopolyVars.py" />
+        <option value="$PROJECT_DIR$/monopolyJSON/go.json" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/monopolyJSON/board.json" />
+        <option value="$PROJECT_DIR$/board.py" />
+        <option value="$PROJECT_DIR$/monopolyJSON/init.json" />
+        <option value="$PROJECT_DIR$/monopolyJSON/commchest.json" />
+        <option value="$PROJECT_DIR$/monopolyJSON/chance.json" />
+        <option value="$PROJECT_DIR$/monopoly/getData.py" />
+        <option value="$PROJECT_DIR$/monopoly/dice.py" />
+        <option value="$PROJECT_DIR$/chat.py" />
+        <option value="$PROJECT_DIR$/monopoly/gameLib.py" />
+        <option value="$PROJECT_DIR$/monopoly/cleanup.py" />
+        <option value="$PROJECT_DIR$/mFlask.py" />
+        <option value="$PROJECT_DIR$/monopoly/lobby.py" />
+        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
+        <option value="$PROJECT_DIR$/monopoly/emojiToken.py" />
+        <option value="$PROJECT_DIR$/monopoly/chat.py" />
+        <option value="$PROJECT_DIR$/tests/game.py" />
+        <option value="$PROJECT_DIR$/monopoly/redisLib.py" />
+        <option value="$PROJECT_DIR$/monopoly/cards.json" />
+        <option value="$PROJECT_DIR$/monopolyJSON/properties.json" />
+        <option value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
       </list>
     </option>
   </component>
@@ -190,10 +203,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="697" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -247,6 +259,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="monopolyJSON" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="monopoly" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -264,12 +290,13 @@
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\monopoly" />
+      <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\monopolyJSON" />
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\test" />
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.lobbyUnitTest (1)">
-    <configuration default="false" name="monopolyVars" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.lobbyUnitTest">
+    <configuration default="false" name="board" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -282,30 +309,48 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\monopoly\monopolyVars.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/board.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="lobby" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/monopoly" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/monopoly/lobby.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="cleanup" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/monopoly" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/monopoly/cleanup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="false" name="lobbyUnitTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\test\lobbyUnitTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="lobbyUnitTest (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -319,6 +364,24 @@
       <module name="Project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="emojiToken" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/monopoly" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/monopoly/emojiToken.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -555,17 +618,21 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <list size="4">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Project" />
-      <item index="1" class="java.lang.String" itemvalue="Python.monopolyVars" />
-      <item index="2" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.lobbyUnitTest (1)" />
+      <item index="1" class="java.lang.String" itemvalue="Python.board" />
+      <item index="2" class="java.lang.String" itemvalue="Python.lobby" />
+      <item index="3" class="java.lang.String" itemvalue="Python.cleanup" />
+      <item index="4" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
+      <item index="5" class="java.lang.String" itemvalue="Python.emojiToken" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.lobbyUnitTest (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
-        <item index="2" class="java.lang.String" itemvalue="Python.monopolyVars" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
+        <item index="1" class="java.lang.String" itemvalue="Python.cleanup" />
+        <item index="2" class="java.lang.String" itemvalue="Python.emojiToken" />
+        <item index="3" class="java.lang.String" itemvalue="Python.lobby" />
+        <item index="4" class="java.lang.String" itemvalue="Python.board" />
       </list>
     </recent_temporary>
   </component>
@@ -583,28 +650,48 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <frame x="-7" y="0" width="697" height="735" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19667171" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26059654" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5106383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4950166" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10310966" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37806875" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22919819" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5106383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -614,129 +701,31 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="9" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1054">
-          <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mFlask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="64" column="3" lean-forward="false" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Project.py" />
-    <entry file="file://$PROJECT_DIR$/Project.py" />
-    <entry file="file://$PROJECT_DIR$/static/host.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/figurine.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/sample.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/monopolyVars.py" />
-    <entry file="file://$PROJECT_DIR$/static/join.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="17" column="16" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mFlask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="59" column="0" lean-forward="false" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/lobby.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
-          <caret line="58" column="11" lean-forward="true" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="25" lean-forward="true" selection-start-line="59" selection-start-column="25" selection-end-line="59" selection-end-column="25" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
+            <element signature="e#217#261#0" expanded="false" />
+            <element signature="e#282#418#0" expanded="false" />
+            <element signature="e#475#531#0" expanded="false" />
+            <element signature="e#598#654#0" expanded="false" />
+            <element signature="e#721#775#0" expanded="false" />
+            <element signature="e#800#854#0" expanded="false" />
+            <element signature="e#878#931#0" expanded="false" />
+            <element signature="e#1013#1109#0" expanded="false" />
+            <element signature="e#1145#1203#0" expanded="false" />
+            <element signature="e#1438#1509#0" expanded="false" />
+            <element signature="e#1630#1732#0" expanded="false" />
+            <element signature="e#1762#1815#0" expanded="false" />
+            <element signature="e#1870#1960#0" expanded="false" />
+            <element signature="e#2019#2118#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -746,7 +735,7 @@
         <state relative-caret-position="408">
           <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -756,7 +745,10 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#269#299#1" expanded="false" />
+            <element signature="e#350#643#0" expanded="false" />
+            <element signature="e#705#733#1" expanded="false" />
+            <element signature="e#1844#1905#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -782,6 +774,16 @@
           <caret line="95" column="14" lean-forward="false" selection-start-line="95" selection-start-column="14" selection-end-line="95" selection-end-column="14" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#285#509#0" expanded="false" />
+            <element signature="e#543#1654#0" expanded="false" />
+            <element signature="e#1691#2894#0" expanded="false" />
+            <element signature="e#2924#3048#0" expanded="false" />
+            <element signature="e#3076#3150#0" expanded="false" />
+            <element signature="e#3250#3492#0" expanded="false" />
+            <element signature="e#6456#7032#0" expanded="false" />
+            <element signature="e#7054#7384#0" expanded="false" />
+            <element signature="e#7407#8071#0" expanded="false" />
+            <element signature="e#8094#8897#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -799,11 +801,20 @@
           <caret line="64" column="25" lean-forward="false" selection-start-line="64" selection-start-column="25" selection-end-line="64" selection-end-column="25" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
+            <element signature="e#217#261#0" expanded="false" />
+            <element signature="e#282#418#0" expanded="false" />
+            <element signature="e#475#531#0" expanded="false" />
+            <element signature="e#598#654#0" expanded="false" />
+            <element signature="e#721#775#0" expanded="false" />
+            <element signature="e#800#854#0" expanded="false" />
+            <element signature="e#878#931#0" expanded="false" />
+            <element signature="e#1013#1109#0" expanded="false" />
+            <element signature="e#1145#1203#0" expanded="false" />
+            <element signature="e#1438#1509#0" expanded="false" />
+            <element signature="e#1630#1732#0" expanded="false" />
+            <element signature="e#1762#1815#0" expanded="false" />
+            <element signature="e#1870#1960#0" expanded="false" />
+            <element signature="e#2019#2118#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -814,11 +825,20 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
+            <element signature="e#217#261#0" expanded="false" />
+            <element signature="e#282#418#0" expanded="false" />
+            <element signature="e#475#531#0" expanded="false" />
+            <element signature="e#598#654#0" expanded="false" />
+            <element signature="e#721#775#0" expanded="false" />
+            <element signature="e#800#854#0" expanded="false" />
+            <element signature="e#878#931#0" expanded="false" />
+            <element signature="e#1013#1109#0" expanded="false" />
+            <element signature="e#1145#1203#0" expanded="false" />
+            <element signature="e#1438#1509#0" expanded="false" />
+            <element signature="e#1630#1732#0" expanded="false" />
+            <element signature="e#1762#1815#0" expanded="false" />
+            <element signature="e#1870#1960#0" expanded="false" />
+            <element signature="e#2019#2118#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -828,7 +848,10 @@
         <state relative-caret-position="1071">
           <caret line="64" column="3" lean-forward="false" selection-start-line="64" selection-start-column="3" selection-end-line="64" selection-end-column="3" />
           <folding>
-            <element signature="e#0#22#0" expanded="true" />
+            <element signature="e#269#299#1" expanded="false" />
+            <element signature="e#350#643#0" expanded="false" />
+            <element signature="e#705#733#1" expanded="false" />
+            <element signature="e#1844#1905#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -839,11 +862,20 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
+            <element signature="e#217#261#0" expanded="false" />
+            <element signature="e#282#418#0" expanded="false" />
+            <element signature="e#475#531#0" expanded="false" />
+            <element signature="e#598#654#0" expanded="false" />
+            <element signature="e#721#775#0" expanded="false" />
+            <element signature="e#800#854#0" expanded="false" />
+            <element signature="e#878#931#0" expanded="false" />
+            <element signature="e#1013#1109#0" expanded="false" />
+            <element signature="e#1145#1203#0" expanded="false" />
+            <element signature="e#1438#1509#0" expanded="false" />
+            <element signature="e#1630#1732#0" expanded="false" />
+            <element signature="e#1762#1815#0" expanded="false" />
+            <element signature="e#1870#1960#0" expanded="false" />
+            <element signature="e#2019#2118#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -890,120 +922,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/monopoly/g.old" />
     <entry file="file://$PROJECT_DIR$/monopoly/initProperties.py" />
-    <entry file="file://$PROJECT_DIR$/monopoly/properties.json" />
     <entry file="file://$PROJECT_DIR$/monopoly/initBoard.py" />
-    <entry file="file://$PROJECT_DIR$/monopoly/cleanup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="20" lean-forward="false" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/other/cleanup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="12" lean-forward="false" selection-start-line="0" selection-start-column="12" selection-end-line="0" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/emojiToken.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="50" column="14" lean-forward="false" selection-start-line="50" selection-start-column="14" selection-end-line="50" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="7" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="12" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-            <element signature="e#1095#1268#0" expanded="false" />
-            <element signature="e#1357#1471#0" expanded="false" />
-            <element signature="e#1503#1574#0" expanded="false" />
-            <element signature="e#1628#1718#0" expanded="false" />
-            <element signature="e#1777#1876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/lobbyUnitTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="38" column="15" lean-forward="false" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="39" lean-forward="false" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/monopolyVars.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="254" column="24" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="254" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/lobby.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="16" column="48" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="149" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="549">
-          <caret line="176" column="56" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="233" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-            <element signature="e#101#180#0" expanded="false" />
-            <element signature="e#966#1644#0" expanded="false" />
-            <element signature="e#1727#2312#0" expanded="false" />
-            <element signature="e#2343#2600#0" expanded="false" />
-            <element signature="e#3866#4519#0" expanded="false" />
-            <element signature="e#4633#5671#0" expanded="false" />
-            <element signature="e#5696#6350#0" expanded="false" />
-            <element signature="e#6541#6620#0" expanded="false" />
-            <element signature="e#7435#8435#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mFlask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="58" column="15" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="62" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1015,11 +938,339 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/flaskExt.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/lobby.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3476">
           <caret line="95" column="13" lean-forward="false" selection-start-line="95" selection-start-column="13" selection-end-line="95" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/monopolyVars.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4199">
+          <caret line="247" column="0" lean-forward="false" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/figurines.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="23" lean-forward="true" selection-start-line="7" selection-start-column="23" selection-end-line="7" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/init.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="47" lean-forward="false" selection-start-line="0" selection-start-column="47" selection-end-line="0" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="34" lean-forward="true" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/commchest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/chance.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="6" lean-forward="false" selection-start-line="1" selection-start-column="6" selection-end-line="1" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mFlask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="38" column="74" lean-forward="true" selection-start-line="38" selection-start-column="74" selection-end-line="38" selection-end-column="74" />
+          <folding>
+            <element signature="e#269#299#1" expanded="false" />
+            <element signature="e#350#643#0" expanded="false" />
+            <element signature="e#705#733#1" expanded="false" />
+            <element signature="e#1844#1905#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/lobby.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1081">
+          <caret line="178" column="11" lean-forward="true" selection-start-line="178" selection-start-column="11" selection-end-line="178" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#285#509#0" expanded="false" />
+            <element signature="e#543#1654#0" expanded="false" />
+            <element signature="e#1691#2894#0" expanded="false" />
+            <element signature="e#2924#3048#0" expanded="false" />
+            <element signature="e#3076#3150#0" expanded="false" />
+            <element signature="e#3250#3492#0" expanded="false" />
+            <element signature="e#6456#7032#0" expanded="false" />
+            <element signature="e#7054#7384#0" expanded="false" />
+            <element signature="e#7407#8071#0" expanded="false" />
+            <element signature="e#8094#8897#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+            <element signature="e#114#198#0" expanded="false" />
+            <element signature="e#225#311#0" expanded="false" />
+            <element signature="e#341#438#0" expanded="false" />
+            <element signature="e#469#549#0" expanded="false" />
+            <element signature="e#574#648#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/initialiseGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="10" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1204">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+          <folding>
+            <element signature="e#728#770#0" expanded="false" />
+            <element signature="e#798#886#0" expanded="false" />
+            <element signature="e#927#1124#0" expanded="false" />
+            <element signature="e#1159#1279#0" expanded="false" />
+            <element signature="e#1323#1490#0" expanded="false" />
+            <element signature="e#1534#1700#0" expanded="false" />
+            <element signature="e#1741#2315#0" expanded="false" />
+            <element signature="e#2353#2934#0" expanded="false" />
+            <element signature="e#2980#3432#0" expanded="false" />
+            <element signature="e#3464#3558#0" expanded="false" />
+            <element signature="e#3598#3799#0" expanded="false" />
+            <element signature="e#3845#4737#0" expanded="false" />
+            <element signature="e#4786#5310#0" expanded="false" />
+            <element signature="e#5340#5970#0" expanded="false" />
+            <element signature="e#6019#7087#0" expanded="false" />
+            <element signature="e#7170#8322#0" expanded="false" />
+            <element signature="e#8353#8551#0" expanded="false" />
+            <element signature="e#8581#8992#0" expanded="false" />
+            <element signature="e#9053#10502#0" expanded="false" />
+            <element signature="e#10545#10988#0" expanded="false" />
+            <element signature="e#11047#12480#0" expanded="false" />
+            <element signature="e#12544#12878#0" expanded="false" />
+            <element signature="e#12939#13127#0" expanded="false" />
+            <element signature="e#13165#14961#0" expanded="false" />
+            <element signature="e#15000#15489#0" expanded="false" />
+            <element signature="e#15596#16219#0" expanded="false" />
+            <element signature="e#16241#17043#0" expanded="false" />
+            <element signature="e#17064#17745#0" expanded="false" />
+            <element signature="e#17770#18580#0" expanded="false" />
+            <element signature="e#18614#19306#0" expanded="false" />
+            <element signature="e#19352#20292#0" expanded="false" />
+            <element signature="e#20315#20918#0" expanded="false" />
+            <element signature="e#20948#21119#0" expanded="false" />
+            <element signature="e#21141#21469#0" expanded="false" />
+            <element signature="e#21471#21550#0" expanded="false" />
+            <element signature="e#21698#22709#0" expanded="false" />
+            <element signature="e#22730#24697#0" expanded="false" />
+            <element signature="e#24408#24649#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="395">
+          <caret line="52" column="16" lean-forward="false" selection-start-line="52" selection-start-column="16" selection-end-line="52" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/chat.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="22" lean-forward="true" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#46#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#13#0" expanded="false" />
+            <element signature="e#159#189#0" expanded="false" />
+            <element signature="e#2467#2537#0" expanded="false" />
+            <element signature="e#2637#2694#0" expanded="false" />
+            <element signature="e#2710#2807#0" expanded="false" />
+            <element signature="e#2924#3083#0" expanded="false" />
+            <element signature="e#3427#3681#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/emojiToken.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="50" column="0" lean-forward="true" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+            <element signature="e#217#261#0" expanded="false" />
+            <element signature="e#282#418#0" expanded="false" />
+            <element signature="e#475#531#0" expanded="false" />
+            <element signature="e#598#654#0" expanded="false" />
+            <element signature="e#721#775#0" expanded="false" />
+            <element signature="e#800#854#0" expanded="false" />
+            <element signature="e#878#931#0" expanded="false" />
+            <element signature="e#1013#1109#0" expanded="false" />
+            <element signature="e#1145#1203#0" expanded="false" />
+            <element signature="e#1438#1509#0" expanded="false" />
+            <element signature="e#1630#1732#0" expanded="false" />
+            <element signature="e#1762#1815#0" expanded="false" />
+            <element signature="e#1870#1960#0" expanded="false" />
+            <element signature="e#2019#2118#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/cleanup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/game.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="127" column="28" lean-forward="false" selection-start-line="127" selection-start-column="28" selection-end-line="127" selection-end-column="28" />
+          <folding>
+            <element signature="e#357#867#0" expanded="false" />
+            <element signature="e#1211#1435#0" expanded="false" />
+            <element signature="e#1456#2542#0" expanded="false" />
+            <element signature="e#1724#2124#0" expanded="false" />
+            <element signature="e#2161#2542#0" expanded="false" />
+            <element signature="e#2561#3117#0" expanded="false" />
+            <element signature="e#2996#3013#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/properties.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6341">
+          <caret line="373" column="1" lean-forward="true" selection-start-line="373" selection-start-column="1" selection-end-line="373" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopolyJSON/board.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="42" column="18" lean-forward="false" selection-start-line="42" selection-start-column="15" selection-end-line="42" selection-end-column="18" />
+          <folding>
+            <element signature="n#!!block;n#4#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#11#0;n#!!top" expanded="false" />
+            <element signature="e#198#212#0" expanded="false" />
+            <element signature="n#!!block;n#37#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#9#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#1#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#22#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#5#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#8#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#13#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#20#0;n#!!top" expanded="false" />
+            <element signature="n#!!block;n#32#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/cards.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="24" lean-forward="true" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/lobbyUnitTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#89#271#0" expanded="false" />
+            <element signature="e#1137#1205#0" expanded="false" />
+            <element signature="e#3220#3236#0" expanded="false" />
+            <element signature="e#3268#3284#0" expanded="false" />
+            <element signature="e#3324#4035#0" expanded="false" />
+            <element signature="e#4448#4827#0" expanded="false" />
+            <element signature="e#4857#5275#0" expanded="false" />
+            <element signature="e#5308#5338#0" expanded="false" />
+            <element signature="e#5370#5399#0" expanded="false" />
+            <element signature="e#5429#5879#0" expanded="false" />
+            <element signature="e#6913#7096#0" expanded="false" />
+            <element signature="e#7643#7782#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

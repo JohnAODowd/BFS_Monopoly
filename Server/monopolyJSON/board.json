@@ -1,0 +1,284 @@
+{  
+    "4":{  
+        "amount":200,
+        "category":"tax",
+        "name":"IncomeTax",
+        "playersOn":[  
+
+        ]
+    },
+    "11":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"pink1"
+    },
+    "37":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"darkBlue1"
+    },
+    "9":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"lightBlue3"
+    },
+    "1":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"brown1"
+    },
+    "12":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"electric"
+    },
+    "22":{  
+        "category":"card",
+        "name":"Chance",
+        "playersOn":[  
+
+        ]
+    },
+    "5":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"railroad1"
+    },
+    "8":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"lightBlue2"
+    },
+    "13":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"pink2"
+    },
+    "20":{  
+        "category":"special",
+        "name":"FreeParking",
+        "playersOn":[  
+
+        ]
+    },
+    "32":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"green2"
+    },
+    "35":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"railroad4"
+    },
+    "36":{  
+        "category":"card",
+        "name":"Chance",
+        "playersOn":[  
+
+        ]
+    },
+    "18":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"orange2"
+    },
+    "19":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"orange3"
+    },
+    "23":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"red2"
+    },
+    "10":{  
+        "category":"special",
+        "name":"jail",
+        "playersOn":[  
+
+        ]
+    },
+    "31":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"green1"
+    },
+    "15":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"railroad2"
+    },
+    "30":{  
+        "category":"special",
+        "name":"goToJail",
+        "playersOn":[  
+
+        ]
+    },
+    "21":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"red1"
+    },
+    "34":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"green3"
+    },
+    "33":{  
+        "category":"card",
+        "name":"CommunityChest",
+        "playersOn":[  
+
+        ]
+    },
+    "2":{  
+        "category":"card",
+        "name":"CommunityChest",
+        "playersOn":[  
+
+        ]
+    },
+    "38":{  
+        "amount":100,
+        "category":"tax",
+        "name":"tax",
+        "playersOn":[  
+
+        ]
+    },
+    "27":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"yellow2"
+    },
+    "17":{  
+        "category":"card",
+        "name":"CommunityChest",
+        "playersOn":[  
+
+        ]
+    },
+    "14":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"pink3"
+    },
+    "3":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"brown2"
+    },
+    "28":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"water"
+    },
+    "0":{  
+        "category":"special",
+        "name":"Go",
+        "playersOn":[  
+
+        ]
+    },
+    "25":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"railroad3"
+    },
+    "7":{  
+        "category":"card",
+        "name":"Chance",
+        "playersOn":[  
+
+        ]
+    },
+    "16":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"orange1"
+    },
+    "39":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"darkBlue2"
+    },
+    "26":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"yellow1"
+    },
+    "29":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"yellow3"
+    },
+    "6":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"lightBlue1"
+    },
+    "24":{  
+        "category":"property",
+        "playersOn":[  
+
+        ],
+        "pID":"red3"
+    }
+}

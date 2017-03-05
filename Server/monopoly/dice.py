@@ -22,7 +22,7 @@ def roll_dice(range=6, verbose = False):
 	secret_seed = uuid.uuid4().hex.encode("utf-8")
 
 	# Create sha256 of seeds 
-	hash_object = hashlib.sha256((secret_seed + server_seed + client_seed))
+	hash_object = hashlib.sha256((secret_seed.encode("utf-8") + server_seed.encode("utf-8") + client_seed.encode("utf-8")))
 	hex_digest = hash_object.hexdigest()
 
 	# Convert first 8 chars to DEC
@@ -75,6 +75,7 @@ def test_double(verbose = False):
 		for i in range(len(results)):
 			print(str(i+2) + " : " + str(results[i]) + " " + ("=" * results[i]))
 	print(results)
+"""
 '''
 
 if __name__ == '__main__':

@@ -78,3 +78,13 @@ def validateUID(gID, uID):  # used to validate a uID
         return True
     else:
         return False
+
+    def setCards(gID, cards):  # sets a player, takes gID + cards <dict>
+    r.set('cards of ' + gID, dumps(cards).encode("utf-8"))
+    
+def getCards(gID):
+    return loads(r.get('cards of ' + gID).decode("utf-8"))
+
+def getCard(gID, cardType, cardNumber):
+    cards = getCards(gID)[cardType]
+    return cards[cardNumber]

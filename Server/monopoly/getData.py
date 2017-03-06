@@ -6,7 +6,7 @@ url = "http://hassassin.netsoc.co/monopolyJSON/"
 
 def getBoardJson():
     response = requests.get(url + "board.json")
-    board = keyStringtoInt(loads(response.text))
+    board = keyStringtoInt(loads(response.text)["board"])
     return board
 
 def getChanceJson():

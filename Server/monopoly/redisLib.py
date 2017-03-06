@@ -35,9 +35,7 @@ def getChat(gID):
     return loads(r.get('chat of ' + gID).decode("utf-8"))
 
 def setGame(gID, game):  # sets a game in redis; gID <String> + game <dict>
-    print("here")
     games       = getGames()
-    print("not here")
     games[gID]  = game
     r.set('games', dumps(games).encode("utf-8"))
 
@@ -78,13 +76,3 @@ def validateUID(gID, uID):  # used to validate a uID
         return True
     else:
         return False
-
-    def setCards(gID, cards):  # sets a player, takes gID + cards <dict>
-    r.set('cards of ' + gID, dumps(cards).encode("utf-8"))
-    
-def getCards(gID):
-    return loads(r.get('cards of ' + gID).decode("utf-8"))
-
-def getCard(gID, cardType, cardNumber):
-    cards = getCards(gID)[cardType]
-    return cards[cardNumber]

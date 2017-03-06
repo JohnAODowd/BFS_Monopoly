@@ -1,284 +1,273 @@
-{  
-    "4":{  
-        "amount":200,
-        "category":"tax",
-        "name":"IncomeTax",
-        "playersOn":[  
-
-        ]
+{"board" :{
+    "0"   :   {
+        "category"      : "special",
+        "name"          : "Go",
+        "playersOn"     : [ ]
     },
-    "11":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"pink1"
+    "1"   :   {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"           : "brown1",
+        "playersOn"     : [ ]
     },
-    "37":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"darkBlue1"
+    "2"   :   {
+        "category"      : "card",
+        "name"          : "CommunityChest",
+        "playersOn"     : [ ]
     },
-    "9":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"lightBlue3"
+    "3"   : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"           : "brown2",
+        "playersOn"     : [ ]
     },
-    "1":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"brown1"
+    "4"   : {
+        "category"      : "tax",
+        "name"          : "IncomeTax",
+        "amount"        : 200,              
+        "playersOn"     : [ ]
     },
-    "12":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"electric"
+    "5"   : {
+        "category"      : "property",
+        "type"          : "railroad",
+        "pID"           : "railroad1",
+        "playersOn"     : [ ]
     },
-    "22":{  
-        "category":"card",
-        "name":"Chance",
-        "playersOn":[  
 
-        ]
+    "6"   : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "lightBlue1",
+        "playersOn"     : [ ]
     },
-    "5":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"railroad1"
+    "7"   : {
+        "category"      : "card",
+        "name"          : "Chance",
+        "playersOn"     : [ ]
     },
-    "8":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"lightBlue2"
+    "8"   : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "lightBlue2",
+        "playersOn"     : [ ]
     },
-    "13":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"pink2"
+    "9"   : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "lightBlue3",
+        "playersOn"     : [ ]
     },
-    "20":{  
-        "category":"special",
-        "name":"FreeParking",
-        "playersOn":[  
 
-        ]
+    "10"  : {
+        "category"      : "special",
+        "name"          : "jail",
+        "playersOn"     : [ ],
+        "playersIn"     : [ ]
     },
-    "32":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"green2"
+    "11"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "pink1",
+        "playersOn"     : [ ]
     },
-    "35":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"railroad4"
+    "12"  : {
+        "category"      : "property",
+        "type"          : "utility",
+        "pID"      : "electric",
+        "playersOn"     : [ ]
     },
-    "36":{  
-        "category":"card",
-        "name":"Chance",
-        "playersOn":[  
 
-        ]
+    "13"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "pink2",
+        "playersOn"     : [ ]
     },
-    "18":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"orange2"
+    "14"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "pink3",
+        "playersOn"     : [ ]
     },
-    "19":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"orange3"
+    "15"  : {
+        "category"      : "property",
+        "type"          : "railroad",
+        "pID"      : "railroad2",
+        "playersOn"     : [ ]
     },
-    "23":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"red2"
+    "16"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "orange1",
+        "playersOn"     : [ ]
     },
-    "10":{  
-        "category":"special",
-        "name":"jail",
-        "playersOn":[  
 
-        ]
+    "17"  : {
+        "category"      : "card",
+        "name"          : "CommunityChest",
+        "playersOn"     : [ ]
     },
-    "31":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"green1"
+    "18"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "orange2",
+        "playersOn"     : [ ]
     },
-    "15":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"railroad2"
+    "19"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "orange3",
+        "playersOn"     : [ ]
     },
-    "30":{  
-        "category":"special",
-        "name":"goToJail",
-        "playersOn":[  
 
-        ]
+    "20"  : {
+        "category"      : "special",
+        "name"          : "FreeParking",
+        "playersOn"     : [ ]
     },
-    "21":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"red1"
+    "21"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "red1",
+        "playersOn"     : [ ]
     },
-    "34":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"green3"
+    "22"  : {
+        "category"      : "card",
+        "name"          : "Chance",
+        "playersOn"     : [ ]
     },
-    "33":{  
-        "category":"card",
-        "name":"CommunityChest",
-        "playersOn":[  
 
-        ]
+    "23"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "red2",
+        "playersOn"     : [ ]
     },
-    "2":{  
-        "category":"card",
-        "name":"CommunityChest",
-        "playersOn":[  
 
-        ]
+    "24"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "red3",
+        "playersOn"     : [ ]
     },
-    "38":{  
-        "amount":100,
-        "category":"tax",
-        "name":"tax",
-        "playersOn":[  
 
-        ]
+    "25"  : {
+        "category"      : "property",
+        "type"          : "railroad",
+        "pID"      : "railroad3",
+        "playersOn"     : [ ]
     },
-    "27":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"yellow2"
+    "26"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "yellow1",
+        "playersOn"     : [ ]
     },
-    "17":{  
-        "category":"card",
-        "name":"CommunityChest",
-        "playersOn":[  
 
-        ]
+    "27"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "yellow2",
+        "playersOn"     : [ ]
     },
-    "14":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"pink3"
+    "28"  : {
+        "category"      : "property",
+        "type"          : "utility",
+        "pID"      : "water",
+        "playersOn"     : [ ]
     },
-    "3":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"brown2"
+    "29"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "yellow3",
+        "playersOn"     : [ ]
     },
-    "28":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"water"
+    "30"  : {
+        "category"      : "special",
+        "name"          : "goToJail",
+        "playersOn"     : [ ]
     },
-    "0":{  
-        "category":"special",
-        "name":"Go",
-        "playersOn":[  
 
-        ]
+    "31"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "green1",
+        "playersOn"     : [ ]
     },
-    "25":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"railroad3"
+    "32"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "green2",
+        "playersOn"     : [ ]
     },
-    "7":{  
-        "category":"card",
-        "name":"Chance",
-        "playersOn":[  
 
-        ]
+    "33"  : {
+        "category"      : "card",
+        "name"          : "CommunityChest",
+        "playersOn"     : [ ]
     },
-    "16":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"orange1"
+    "34"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "green3",
+        "playersOn"     : [ ]
     },
-    "39":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"darkBlue2"
+    "35"  : {
+        "category"      : "property",
+        "type"          : "railroad",
+        "pID"      : "railroad4",
+        "playersOn"     : [ ]
     },
-    "26":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"yellow1"
+    "36"  : {
+        "category"      : "card",
+        "name"          : "Chance",
+        "playersOn"     : [ ]
     },
-    "29":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"yellow3"
+    "37"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "darkBlue1",
+        "playersOn"     : [ ]
     },
-    "6":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"lightBlue1"
+    "38"  : {
+        "category"      : "tax",
+        "name": "LuxuryTax",
+        "amount": 100,  
+        "playersOn": [ ]
     },
-    "24":{  
-        "category":"property",
-        "playersOn":[  
 
-        ],
-        "pID":"red3"
+    "39"  : {
+        "category"      : "property",
+        "type"          : "street",
+        "pID"      : "darkBlue2",
+        "playersOn"     : [ ]
+            }
     }
 }

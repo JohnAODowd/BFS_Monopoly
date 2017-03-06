@@ -130,7 +130,6 @@ def host(json):
         game['buildings']       = getInitJson()['buildings']
         game['trade']           = {}
         r.setGame(gID, game)
-        print(json)
 
         r.init(gID)
 

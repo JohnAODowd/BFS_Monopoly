@@ -34,7 +34,6 @@ def giveGOOJF(gID, uID, deckType):
     player['public']['GOOJF'][deckType] = True
     r.setPlayer(gID, uID, player)
     r.setGame(gID, game)
-    print ("GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ")
 
 def setDeed(gID, uID, deed):
     # sets deed to deeds
@@ -58,23 +57,32 @@ def rentCalculator(gID, property):
     # calculates rent for a specific property <deed>
     playerProp  = None
     players     = r.getPlayers(gID)
-    if property['buildings'] > 0:
+    for _uID in players:
+        if players[_uID]['public']['number'] == property['owner']:
+            playerProp = players[_uID]['public']['properties']
+            break
+    if property["group"] == "transport":
+        rentFactor  = 2 ** (len(playerProp[property["group"]]["owned"]) - 1)
+        rent        = property["rent"] * rentFactor
+    elif property["group"] == "services":
+        game        = r.getGame(gID)
+        rollValue   = game["lastRoll"]["value"]
+        if len(playerProp[property["group"]]["owned"]) == 1:
+            rent = rollValue*4
+        else:
+            rent = rollValue*10
+    elif property['buildings'] > 0:
         if property["buildings"] == 5:
             rent = property["hotel"]
         else:
             rent = property["house" + str(property['buildings'])]
-    else:
-        for _uID in players:
-            if players[_uID]['public']['number'] == property['owner']:
-                playerProp = players[_uID]['public']['properties']
-                break
+    else:  
         rent = property['rent']
         if len(playerProp[property['group']]['owned']) == playerProp[property['group']]['size']:
             rent = rent * 2
     return rent
 
 def pay(gID, uID, rec, amount):
-    print("pay")
     #pay to a player/bank (rec == 0 for bank), !can return an alert!
     alert     = {}
     alert['boolean']    = False
@@ -136,7 +144,6 @@ def canBuild(gID, uID, pID, dem=False):
     return canBuild
 
 def processCard(gID, uID, card, deckType):
-    print("processCard")
     alert = {}
     alert['boolean'] = False
     if card['type'] == "GOOJF":
@@ -155,7 +162,6 @@ def processCard(gID, uID, card, deckType):
     return alert
 
 def drawCard(gID, uID):
-    print("drawCard")
     alert = {}
     alert['boolean'] = False
     game        = r.getGame(gID)
@@ -181,7 +187,6 @@ def drawCard(gID, uID):
 
 def analysePosition(gID, uID, board, pos):
     # analyses the player's position to see what operations need to be made on a square
-    print ("analysePosition")
     alert               = {}
     alert['boolean']    = False
     square              = board[pos]
@@ -211,12 +216,10 @@ def analysePosition(gID, uID, board, pos):
             player['options'] += ["AUCTION"]
             player["canBuy"]   = square["pID"]
             r.setPlayer(gID, uID, player)
-    print ("analysePos done")
     return alert
 
 def updateLocation(gID, uID, value):         #moves a player to new position
     #value can be value of a roll, or a special card e.g. jail, go, free parking
-    print ("updateLocation")
     player  = r.getPlayers(gID)[uID]
     board   = r.getBoard(gID)
     prevPos = player['public']['position']
@@ -229,8 +232,8 @@ def updateLocation(gID, uID, value):         #moves a player to new position
         alert['boolean']    = True
         alert['alert']      = "IN JAIL"
 
-        board[prevPos]['playersOn'].remove(player['number'])
-        board[newPos]['playersOn'].append(player['number'])
+        board[prevPos]['playersOn'].remove(player["public"]['number'])
+        board[newPos]['playersOn'].append(player["public"]['number'])
 
         r.setBoard(gID, board)
         player['public']['position'] = newPos
@@ -256,8 +259,6 @@ def updateLocation(gID, uID, value):         #moves a player to new position
     alert = analysePosition(gID, uID, board, newPos)     #checking position
     if GO:
         alert["GO"] = GO
-    print (alert)
-    print ("updateLoc done")
     return alert
 
 def checkTurn(gID, uID):
@@ -276,10 +277,8 @@ def incrementTurn(gID):
         turn = game['turn'] + 1
         if turn > game['playersNo']:
             turn = turn - game['playersNo']
-        print("turn: " + str(turn))
         game['turn'] = turn
         r.setGame(gID, game)
-        print("turn incremented")
         return True
     else:
         return False
@@ -476,7 +475,6 @@ def mortgage(json):
 
 def roll(json):
     # rolling a dice
-    print ("roll")
     gID                 = json['gID']
     uID                 = json['uID']
     roll                = double_roll()
@@ -493,7 +491,6 @@ def roll(json):
         getOutOfJail(gID, uID)
 
     alert = updateLocation(gID, uID, roll['value'])
-    print(alert)
     if "card" in alert:
         card = alert["card"]
     else:
@@ -506,11 +503,9 @@ def roll(json):
             ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['activity'], card)
     else:
         ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], {}, card)
-    print("roll done")
     return ret
 
 def buy(json):
-    print ("buy")
     # if player has option to buy a certain property and chooses to buy
     gID         = json['gID']
     uID         = json['uID']
@@ -524,7 +519,6 @@ def buy(json):
             giveProperty(gID, uID, player, deed)
             if incrementTurn(gID):
                 ret = helpers.getReturnData(gID, uID, [], ["BUY", "AUCTION", "ROLLED"])
-                print("took out rolled, roll should not be in options too")
             else:
                 ret = helpers.getReturnData(gID, uID, ["ROLL"], ["BUY", "AUCTION", "ROLLED"])
         else:

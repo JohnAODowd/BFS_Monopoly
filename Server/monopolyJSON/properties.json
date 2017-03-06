@@ -332,12 +332,14 @@
     "water":{
         "mortgage":75,
         "price":150,
+        "group":"services",
         "name":"Water Works",
         "size":2
     },
     "electric":{
         "mortgage":75,
         "price":150,
+        "group":"services",
         "name":"Electric Company",
         "size":2
     },
@@ -345,6 +347,7 @@
         "mortgage":100,
         "price":200,
         "name":"Fenchurch St Station",
+        "group":"transport",
         "size":4,
         "rent":25
     },
@@ -352,6 +355,7 @@
         "mortgage":100,
         "price":200,
         "name":"Liverpool Street Station",
+        "group":"transport",
         "size":4,
         "rent":25
     },
@@ -360,6 +364,7 @@
         "price":200,
         "name":"Marylebone Station",
         "size":4,
+        "group":"transport",
         "rent":25
     },
     "railroad1":{
@@ -367,6 +372,7 @@
         "price":200,
         "name":"Kings Cross Station",
         "size":4,
+        "group":"transport",
         "rent":25
     }
 }

@@ -4,7 +4,7 @@
 		var gameID;
 		var game_turn;
 		var figurines;
-		var game_status;
+		var game_state;
 		var playersNo;
 		// player variables
 		// public
@@ -27,12 +27,7 @@
 
 			hostGame();
 			//joinGame();
-			if (gameID){
-				// check a game has actually been found
-				if (game_type === 'LOBBY'){
-					main();
-				}
-			}
+			main();
 
 		});
 
@@ -42,7 +37,7 @@
 		function joinGame() {
 			console.log("Join Game!");
 			// update JSON using returned variable 'init' which is embedded in html return
-			updateJSON(init);
+			parseJSON(init);
 		} // end joinGame()
 
 		/*	=========
@@ -51,7 +46,7 @@
 		function hostGame() {
 			console.log("Host Game!");
 			// update JSON using returned variable 'init' which is embedded in html return
-			updateJSON(init);
+			parseJSON(init);
 
 		} // end hostGame()
 
@@ -86,46 +81,77 @@
 			// board - req when game in playing state
 			// alert - !req 
 			if (!json_data.hasOwnProperty('error')) {
+				//ensure that there is no error present in the return
 				if (json_data.hasOwnProperty('game') && 
 					json_data.hasOwnProperty('player') && 
 					json_data.hasOwnProperty('players') && 
 					json_data.hasOwnProperty('options')) {
-						// all required fields exist
-						game_variables = json_data['game'];
-						gameID = game_variables['gID']; 			console.log('GID:' + gameID);
-						game_turn = game_variables['turn']; 		console.log('turn:' + game_turn);
-						figurines = game_variables['figurines']; 	console.log('figurines:'+figurines);			
-						game_status = game_variables['status']; 	console.log('status:'+game_status);
-						playersNo = game_variables['playersNo']; 	console.log('playersNo:'+playersNo);
-						// player variables
-						console.log('player variables');
-						playerOBJ = json_data['player'];
-						//public
-						player_name = playerOBJ['public']['name']; 				console.log('player_name:'+player_name);
-						player_GOOJF = playerOBJ['public']['GOOJF']; 			console.log('player_GOOJF:'+player_GOOJF);
-						player_number = playerOBJ['public']['number']; 			console.log('player_number:'+player_number);
-						player_position = playerOBJ['public']['position']; 		console.log('player_position:'+player_position);
-						player_properties = playerOBJ['public']['properties']; 	console.log('player_properties:'+player_position);
-						// private
-						playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
-						player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
-						// dictionary of players (inclds this player data, we'll check for that later)
+					//ensure a 'game', 'player', 'players' and 'options' are set as keys in the json
 
-						// player list 
-						console.log('Player list');
-						player_list = json_data['players'];
-						player_keys = [];
-						$.each(player_list, function(key, value) {
-							player_keys.push(key);
+					/* 	==========
+						GAME VARS
+						========== */
+					game_variables = json_data['game'];
+					gameID = game_variables['gID']; 			console.log('GID:' + gameID);
+					game_turn = game_variables['turn']; 		console.log('turn:' + game_turn);
+					figurines = game_variables['figurines']; 	console.log('figurines:'+ figurines);			
+					game_state = game_variables['status']; 	console.log('status:'+ game_state);
+					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
+					/* 	==========
+						PLAYER VARS
+						========== */
+					console.log('player variables');
+					playerOBJ = json_data['player'];
+					/* 	==========
+						  PUBLIC
+						========== */
+					player_name = playerOBJ['public']['name']; 				console.log('player_name:'+player_name);
+					player_GOOJF = playerOBJ['public']['GOOJF']; 			console.log('player_GOOJF:'+player_GOOJF);
+					player_number = playerOBJ['public']['number']; 			console.log('player_number:'+player_number);
+					player_position = playerOBJ['public']['position']; 		console.log('player_position:'+player_position);
+					player_properties = playerOBJ['public']['properties']; 	console.log('player_properties:'+player_position);
+					/* 	==========
+						  PRIVATE
+						========== */
+					playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
+					player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
+					/* 	==========
+						PLAYERS
+						========== */						
+					// player_list contains the json mapping of player_names to their properties
+					// player keys is used for processing elsewhere, contains all keys
+					console.log('Player list');
+					player_list = json_data['players'];
+					player_keys = [];
+					// populate player_keys
+					$.each(player_list, function(key, value) {
+						player_keys.push(key);
+					});
+					// log to console for confirmation
+					for (var x=0; x < player_keys.length; x++){
+						console.log(player_keys[x]);
+						$.each(player_list[player_keys[x]], function(key, value){
+							console.log(key + ':' + value);
 						});
-						for (var x=0; x < player_keys.length; x++){
-							console.log(player_keys[x]);
-							$.each(player_list[player_keys[x]], function(key, value){
-								console.log(key + ':' + value);
-							});
-						} // End for
+					} // End for
+				}
+				if (game_state == 'PLAYING') {
+					// check if game is playing
+					// in which case 'board' is required
+					if (json_data.hasOwnProperty('board')) {
+						// make sure 'board' is present
+
+						// NEED TO IMPLEMENT
+
+					}
+				} // END PLAYING IF
+				if (json_data.hasOwnProperty('alert')) {
+					// IMPLEMENT
+				}
+				return 1;
 			} // End error check for req
 			console.log('Something went wrong');
+			return 0;
 		}
 
 		/*	========= =========
@@ -136,6 +162,7 @@
 			Updates game and player state throughout game
 			=========	*/
 		function ping() {
+
 			var data = {};
 			data['request'] = 'PING';
 			data['uID'] = playerID;
@@ -143,30 +170,177 @@
 
 			var json = JSON.stringify(data);
 			var ping_url = "http://leela.netsoc.co:8080/game";
-			$.getJSON(url, json, function(result){
-				json = result;
-			});
-			parseJSON(json);
+			
+			// *******
+			// Uncomment for server
+			// *******
+
+			// $.ajax({
+			// 	type: 'post',
+	  //           url: ping_url,
+	  //           data: json,
+	  //           contentType: "application/json; charset=utf-8",
+	  //           traditional: true,
+	  //           success: function (data) {
+   //              	parseJSON(data);
+   //              	console.log(data);
+   //              }
+			// });
+			parseJSON(init /*json*/);
 
 		}
+		/* 	=========	=========
+			Draw players to screen
+			=========	=========  */
+			// 
+			//	Embeds players in Header
+			//
+			function displayPlayers() {
+				for (_player in player_list) {
+					console.log("Player ----");
+					console.log(_player);
+					console.log(player_list[_player]['figurine']);
+					var player_img = initFig[player_list[_player]['figurine']];
+					$('.player-icons').append('<li><img src="'+ player_img +'" class="player-icon circle" id="'+_player+'"></li>');
+					
+					/* 	========= 	=========
+						Add Event Listeners using _player 
+						=========	========= */
+				}
+			}
 
-		/*	=========
+		/*	=========	=========
 			Display figurines to lobby
-			=========	*/	
-		function displayFigurines(json) {
-			console.log('displayFigurines');
-			$.each(json, function(key){
-				console.log(key);
-			});
-		}
+			=========	========= */
+		function displayFigurines() {
+			$('.board').empty();
+			console.log(figurines);
+			var x = 0;
+			var row = 1;
+			var figurines_html = 	'<div class="figurines">'+
+									'</div>';
+									
+			$('.board').append(figurines_html);
+			for (fig in figurines) {
+				$('.figurines').append('<img src="' + initFig[figurines[fig]] + '" id="' + figurines[fig] + '" />');
+			}
 
+		}
+		/*  ============
+			Functions for figurines
+			============ */
+
+        function figurineRequest(data) {
+
+          var json = JSON.stringify(data);
+          var ping_url = "http://leela.netsoc.co:8080/game"
+
+          // *** Uncomment when pushing to server
+          // $.ajax({
+          //     type: 'post',
+          //     url: ping_url,
+          //     data: json,
+          //     contentType: "application/json; charset=utf-8",
+          //     traditional: true,
+          //     success: function (data) {
+          //         console.log(data);
+          //       }
+          //   });
+        }
+        function wait(ms){
+		   var start = new Date().getTime();
+		   var end = start;
+		   while(end < start + ms) {
+		     end = new Date().getTime();
+		  }
+		}
 		/*	============	============	============
 			Core logic will go in a loop in the main() func
 			============	============	============	*/
 		function main() {
+			ping();
+			// console.log('PING 1');
+			// wait(3000);
+			// //var ping_interval = setInterval(ping, 4000);
+			displayFigurines();
+			// //var display_fig_interval = setInterval(displayFigurines, 4001);
+			// wait(3000);
 
-			setInterval(ping, 300);
-			displayFigurines(figurines);
+			displayPlayers();
+
+			$('#HAT').click(function()
+			{
+				//delete figurines["HAT"];
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "HAT";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log('HAT');
+			});
+	        $('#CAR').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "CAR";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("CAR");
+	          //sendRequest(data);
+	        });
+	        $('#THIMBLE').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "THIMBLE";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("THIMBLE");
+	          //sendRequest(data);
+	        });
+	        $('#IRON').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "IRON";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("IRON");
+	          //sendRequest(data);
+	        });
+	        $('#BOOT').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "BOOT";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("BOOT");
+	          //sendRequest(data);
+	        });
+	        $('#SHIP').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "SHIP";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("SHIP");
+	          //sendRequest(data);
+	        });
+	        $('#DOG').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "DOG";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("DOG");
+	          //sendRequest(data);
+	        });
+	        $('#WHEELBARROW').click(function() {
+	          var data = {};
+	          data['request'] = 'FIGURINE';
+	          data["figurine"] = "WHEELBARROW";
+	          data['gID'] = gameID;
+	          data['uID'] = playerID;
+	          console.log("WHEELBARROW");
+	          //sendRequest(data);
+	        });
 
 		}
 

@@ -1,6 +1,7 @@
 // app specific
-.body {
+.main {
 	height: 100vh;
+	max-height: 100vh;
 	background-image: url("../assets/tweed/tweed.png");
 	overflow: hidden;
 }
@@ -55,21 +56,30 @@ form {
 }
 // End Lobby CSS
 // CSS for canvas
-.canvas-container{
-	text-align:center;
-}
-#game-board {
-	display: inline;
-	margin-top: 2em;
-}
+
+
 // End Canvas CSS
 
 // html for game.html structure
+// .main {
+// 	position: fixed;
+// 	bottom: 0;
+// 	right: 0;
+// 	left: 0;
+// 	top: 0;
+// }
 .test {
 	margin-top: 6em;
 	border: 1px #333 solid;
 	border-radius: 4px;
 	margin: 2em;
+}
+.control-area {
+	background-color: #333;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	height: 6em;
 }
 .demo {
 	border-right: 1px solid #333;

@@ -5,7 +5,7 @@
         "2": {"type" :  "move", "destination" :  "24", "text" : "Advance to red3 — If you pass Go, collect $200"},
         "3": {"type" :  "move", "destination" :  "11", "text" : "Advance to pink1 – If you pass Go, collect $200"},
         "4": {"type" :  "move", "destination" :  "26", "text" : "Advance to yellow1 – If you pass Go, collect $200"},
-        "5": {"type" :  "move", "destination" :  "jail", "text" : "Go to Jail – Go directly to Jail – Do not pass Go, do not collect $200"},
+        "5": {"type" :  "move", "destination" :  "10", "text" : "Go to Jail – Go directly to Jail – Do not pass Go, do not collect $200"},
         "6": {"type" :  "receive", "amount" : 150, "text" : "Your building and loan matures—Collect $150"},
         "7": {"type" :  "receive", "amount" : 50, "text" : "Bank pays you dividend of $50"},
         "8": {"type" :  "receive", "amount" : 75, "text" : "You win 75 bucks"},

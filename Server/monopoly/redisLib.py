@@ -55,9 +55,9 @@ def setDeeds(gID, deeds):
     r.set('deeds of ' + gID, dumps(deeds).encode("utf-8"))
 
 def setDeed(gID, pID, deed):
-    deeds = getDeeds(gID)
-    deeds[pID] = deed
-    r.set('deeds of ' + gID, dumps(deeds).encode("utf-8"))
+    deeds       = getDeeds(gID)
+    deeds[pID]  = deed
+    setDeeds(gID, deeds)
 
 
 def setChat(gID, chat):

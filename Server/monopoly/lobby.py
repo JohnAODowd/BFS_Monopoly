@@ -30,6 +30,7 @@ def setInitProperties(gID):
                 newProp[key]['groupSize'] = properties[key]['size']
                 newProp[key].pop('size', None)
                 newProp[key]['buildPrice'] = newProp[key]['house1']
+                newProp[key]['buildings']    = 0
 
         elif "railroad" in key:
             newProp[key]['group'] = 'transport'
@@ -41,7 +42,6 @@ def setInitProperties(gID):
             newProp[key].pop('size', None)
         newProp[key]['status']       = 'notOwned'
         newProp[key]['pID']          = key
-        newProp[key]['buildings']    = 0
     r.setDeeds(gID, newProp)
 
 def getPlayerPropertiesDict():

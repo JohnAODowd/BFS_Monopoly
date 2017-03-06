@@ -1,6 +1,7 @@
 import redis
 from json import dumps, loads
-from monopoly.monopolyVars import getInitBoard
+from monopoly.helpers import keyStringtoInt
+
 r = redis.StrictRedis(host='redis.netsoc.co', port=6379, db=0)
 
 """
@@ -10,6 +11,12 @@ Used for setting and getting data from redis database
 def getGames():  # gets all games in redis
     return loads(r.get('games').decode("utf-8"))
 
+def init(gID):
+    r.set('players of ' + gID, "{}")
+    r.set('board of ' + gID, "{}")
+    r.set('deeds of ' + gID, "{}")
+    r.set('chat of ' + gID, "{}")
+
 def getGame(gID):  # gets a specific game with gID
     games = getGames()
     game = games[gID]
@@ -18,30 +25,22 @@ def getGame(gID):  # gets a specific game with gID
 def getPlayers(gID):  # gets all players for a game with gID
     return loads(r.get('players of ' + gID).decode("utf-8"))
 
-def getPlayer(gID, uID):  # gets specific player using gID and uID
-    players = getPlayers(gID)
-    player = players[uID]
-    return player
-
 def getBoard(gID):  # returns the board for a game using gID
-    return loads(r.get('board of ' + gID).decode("utf-8"))
+    return keyStringtoInt(loads(r.get('board of ' + gID).decode("utf-8")))
+
+def getDeeds(gID):
+    return loads(r.get('deeds of ' + gID).decode("utf-8"))
+
+def getChat(gID):
+    return loads(r.get('chat of ' + gID).decode("utf-8"))
 
 def setGame(gID, game):  # sets a game in redis; gID <String> + game <dict>
     games       = getGames()
     games[gID]  = game
     r.set('games', dumps(games).encode("utf-8"))
 
-def init(gID):
-    r.set('players of ' + gID, "{}")
-    r.set('board of ' + gID, "{}")
-
-def start(gID):
-    players = getPlayers(gID)
-    board 	= getInitBoard()
-
-    for _uID in players:
-        board[0]['playersOn'] += [players[_uID]['public']['number']]
-    setBoard(gID, board)
+def setPlayers(gID, players):
+    r.set('players of ' + gID, dumps(players).encode("utf-8"))
 
 def setPlayer(gID, uID, player):  # sets a player, takes gID + uID + player <dict>
     players = getPlayers(gID)
@@ -51,6 +50,18 @@ def setPlayer(gID, uID, player):  # sets a player, takes gID + uID + player <dic
 def setBoard(gID, board):
     r.set('board of ' + gID, dumps(board).encode("utf-8"))
     return board
+
+def setDeeds(gID, deeds):
+    r.set('deeds of ' + gID, dumps(deeds).encode("utf-8"))
+
+def setDeed(gID, pID, deed):
+    deeds = getDeeds(gID)
+    deeds[pID] = deed
+    r.set('deeds of ' + gID, dumps(deeds).encode("utf-8"))
+
+
+def setChat(gID, chat):
+    r.set('chat of ' + gID, dumps(chat).encode("utf-8"))
 
 def validateGID(gID):  # used to validate a gID
     games = getGames()
@@ -65,13 +76,3 @@ def validateUID(gID, uID):  # used to validate a uID
         return True
     else:
         return False
-
-def incrementMoney(gID,uID,amount):
-    player = getPlayer(gID, uID)
-    player['money'] = int(player['money']) + int(amount)
-    setPlayer(gID, uID, player)
-    
-def decrementMoney(gID,uID,amount):
-    player = getPlayer(gID, uID)
-    player['money'] = int(player['money']) - int(amount)
-    setPlayer(gID, uID, player)

@@ -249,7 +249,7 @@ class mMatrix:
 
     def simulate(self):
         self.lobby()
-        self.chat()
+        #self.chat()
         turn = 0
         print(self.history)
         while True:

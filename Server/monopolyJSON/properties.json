@@ -345,24 +345,28 @@
         "mortgage":100,
         "price":200,
         "name":"Fenchurch St Station",
-        "size":4
+        "size":4,
+        "rent":25
     },
     "railroad4":{
         "mortgage":100,
         "price":200,
         "name":"Liverpool Street Station",
-        "size":4
+        "size":4,
+        "rent":25
     },
     "railroad2":{
         "mortgage":100,
         "price":200,
         "name":"Marylebone Station",
-        "size":4
+        "size":4,
+        "rent":25
     },
     "railroad1":{
         "mortgage":100,
         "price":200,
         "name":"Kings Cross Station",
-        "size":4
+        "size":4,
+        "rent":25
     }
 }

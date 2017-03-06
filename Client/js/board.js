@@ -4,7 +4,6 @@ var loadFile = function (filePath, done) {
     xhr.onload = function () { console.log('2');return done(this.responseText) }
     xhr.open("GET", filePath, true);
     xhr.send();
-
 }
 
 // directory paths to all JSON files
@@ -34,19 +33,6 @@ myFiles.forEach(function (file, i) {
 
 		/* ----------------------------------- */
 
-		// un-used due to lack of readability
-		function getName(index){
-			var name;
-			switch(getCategory(index)) {
-				case "property":
-					name = getAttribute(index,"property");
-					break;
-				default:
-					name = getAttribute(index, "name");
-			} 
-			return name;
-		} // board[index]["property"], otherwise board[index]["name"]
-
 		function getAttribute(index, attr){
 			var str = index.toString(); //force type string
 			return jboard.board[str][attr];
@@ -73,19 +59,19 @@ myFiles.forEach(function (file, i) {
 		} // returns "street", "railroad", "utility"
 
 		function getStreetColour(index){
-			var path = getAttribute(index, "property");
+			var path = getAttribute(index, "pID");
 			return jproperties.properties[path]["colourHex"];
 		} // returns (eg.) "#ffffff"
 
 		function getPropertyName(index){
-			var path = getAttribute(index, "property");
+			var path = getAttribute(index, "pID");
 			return jproperties.properties[path]["name"];
-		} // returns (eg.) "#ffffff"
+		}  
 
 		function getPropertyPrice(index){
-			var path = getAttribute(index, "property");
+			var path = getAttribute(index, "pID");
 			return jproperties.properties[path]["name"];
-		} // returns (eg.) "#ffffff"
+		} 
 
 		function getTaxAmount(index){
 			return getAttribute(index, "amount");
@@ -102,6 +88,24 @@ myFiles.forEach(function (file, i) {
 		var wanchor = _width / 13;
 		var hanchor = _height / 13;
 
+		var cLeft = c.offsetLeft;
+		var cTop = c.offsetTop;
+
+		/*
+		c.addEventListener('click', function(event) {
+		    var x = event.pageX - cLeft,
+		        y = event.pageY - cTop;
+		    console.log(x, y)
+		    tiles.forEach(function(element) {
+		        if (y > element.top && y < element.top + element.height &&
+		        	x > element.left && x < element.left + element.width) {
+		            document.getElementById("blaze").innerHTML = element.i
+		        }
+		    });
+
+		}, false);
+		*/
+
 		function Square(i) {
 		  coords = orientSquare(i);
 		  this.width  = 2*wanchor;
@@ -109,8 +113,10 @@ myFiles.forEach(function (file, i) {
 		  this.x = coords.x;
 		  this.y = coords.y;
 		  _drawRect(this.x, this.y, this.width, this.height);
+		  this.onmouseover = function(){console.log("blaze it")}
 		}
 
+		var tiles = [];
 		function Tile(i) {
 		  coords = orientTile(i);
 		  this.width = coords.w;
@@ -118,6 +124,7 @@ myFiles.forEach(function (file, i) {
 		  this.x = coords.x;
 		  this.y = coords.y;
 		  _drawRect(this.x, this.y, this.width, this.height);
+		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
 		}
 
 		function ColourTile(i, colourHex) {
@@ -142,11 +149,16 @@ myFiles.forEach(function (file, i) {
 		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
 		function orientTile(i) {
 			var o = Math.floor(i / 10);
-			var n = i % 10;
+			var n;
+			if (i < 10){
+				n = i;
+			} else {
+				n = i % 10;
+			}
 			switch(o){
 		  		case 0:
 		  			return {
-		  				x : wanchor + n*wanchor,
+		  				x : _width - 2*wanchor - n*wanchor,
 		  				y : _height - 2*hanchor,
 		  				w : wanchor,
 		  				h : 2*hanchor
@@ -180,19 +192,24 @@ myFiles.forEach(function (file, i) {
 
 		function orientImageTile(i) {
 			var o = Math.floor(i / 10);
-			var n = i % 10;
+			var n;
+			if (i < 10){
+				n = i;
+			} else {
+				n = i % 10;
+			}
 			switch(o){
 		  		case 0:
 		  			return {
-		  				x : wanchor + n*wanchor,
-		  				y : _height - 2*hanchor - hanchor/4,
+		  				x : _width - 2*wanchor - n*wanchor,
+		  				y : _height - 2*hanchor,
 		  				w : wanchor,
 		  				h : 2*hanchor - hanchor/4
 		  			}
 		  			break;
 		  		case 1:
 		  			return {
-		  				x : wanchor/4,
+		  				x : 0,
 		  				y : _height - 2*hanchor - (n*hanchor),
 		  				w : 2*hanchor - hanchor/4,
 		  				h : wanchor
@@ -218,11 +235,15 @@ myFiles.forEach(function (file, i) {
 
 		function orientColourTile(i) {
 			var o = Math.floor(i / 10);
-			var n = i % 10;
+			if (i < 10){
+				n = i;
+			} else {
+				n = i % 10;
+			}
 			switch(o){
 		  		case 0:
 		  			return {
-		  				x : wanchor + n*wanchor,
+		  				x : _width - 2*wanchor - n*wanchor,
 		  				y : _height - 2*hanchor,
 		  				w : wanchor,
 		  				h : hanchor/2
@@ -259,7 +280,7 @@ myFiles.forEach(function (file, i) {
 			var o = Math.floor(i / 10);
 			var n = i % 10;
 			switch(o){
-		  		case 0:
+				case 0:
 		  			return {
 		  				x : _width  - 2*wanchor,
 		  				y : _height - 2*hanchor
@@ -332,8 +353,6 @@ myFiles.forEach(function (file, i) {
 		/* ----------------------------------- */
 
 		function draw(){
-		  //test draw
-		  //_drawRect(0,0,2*wanchor,2*hanchor);
 		  
 		  // tile imgs
 		  var chance_img 		= document.getElementById("chance");
@@ -352,6 +371,8 @@ myFiles.forEach(function (file, i) {
 
 		  var type;
 		  var tile;
+
+
 		  for(var i = 0; i < 40; i++){
 		  	switch(getCategory(i)){
 		  		case "special":
@@ -402,12 +423,11 @@ myFiles.forEach(function (file, i) {
 		  			if (type == "Chance"){
 		  				// make a chance tile
 		  				tile = new Tile(i);
-		  				ctx.drawImage(chance_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
-		  			} else {
+						tile = new ImageTile(i, chance_img);		  			
+					} else {
 		  				// make a community tile
 		  				tile = new Tile(i);
-		  				ctx.drawImage(community_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
-
+						tile = new ImageTile(i, community_img);
 		  			}
 		  			break;
 
@@ -416,16 +436,17 @@ myFiles.forEach(function (file, i) {
 		  			if (type == "LuxuryTax"){
 		  				// make the LuxuryTax tile
 		  				tile = new Tile(i);
-		  				ctx.drawImage(luxury_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+						tile = new ImageTile(i, luxury_img);
 
 		  			} else {
 		  				// make the IncomeTax tile
 
 		  				tile = new Tile(i);
-		  				ctx.drawImage(income_img, Object.values(tile)[2], Object.values(tile)[3], Object.values(tile)[0], Object.values(tile)[1]);
+						tile = new ImageTile(i, income_tax);
 		  			}
-		  	}
+		  		}
 		  }
+		  console.log(tiles);
 		  draw = function(){}; // Google "js noop" 
 		}
 		// init once

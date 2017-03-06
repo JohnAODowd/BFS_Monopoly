@@ -12,10 +12,10 @@
         "9": {"type" :  "receive", "amount" : 200, "text" : "Get a free 200 monopoly dollars."},
         "10": {"type" :  "receive", "amount" : 100, "text" : "You have won a crossword competition — Collect $100"},
         "11": {"type" :  "pay", "amount" : 15, "text" : "Pay poor tax of $15"},
-		"12": {"type" :  "pay", "amount" : 25, "text" : "Pay poor tax of $25"},
-		"13": {"type" :  "pay", "amount" : 35, "text" : "Pay poor tax of $35"},
-		"14": {"type" :  "pay", "amount" : 45, "text" : "Pay poor tax of $45"},
-		"15": {"type" :  "pay", "amount" : 100, "text" : "Pay poor tax of $100"},
+	"12": {"type" :  "pay", "amount" : 25, "text" : "Pay poor tax of $25"},
+	"13": {"type" :  "pay", "amount" : 35, "text" : "Pay poor tax of $35"},
+	"14": {"type" :  "pay", "amount" : 45, "text" : "Pay poor tax of $45"},
+	"15": {"type" :  "pay", "amount" : 100, "text" : "Pay poor tax of $100"}
 		
         },
     "CommunityChest" : {

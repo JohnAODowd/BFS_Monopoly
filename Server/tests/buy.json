@@ -1,0 +1,3250 @@
+**** BUY **** 
+
+Name:Hosty 
+gID:10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34 
+uID:6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba 
+figurine:IRON 
+
+Request history:*************************** 
+
+SENDING (BUY)*****
+{  
+    "pID":"lightBlue1",
+    "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+    "request":"BUY",
+    "uID":"6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba"
+}
+
+RECIEVED***********
+{  
+    "board":{  
+        "0":{  
+            "playersOn":[  
+                2
+            ],
+            "category":"special",
+            "name":"Go"
+        },
+        "1":{  
+            "pID":"brown1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "2":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "3":{  
+            "pID":"brown2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "4":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"IncomeTax",
+            "amount":200
+        },
+        "5":{  
+            "pID":"railroad1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "6":{  
+            "pID":"lightBlue1",
+            "playersOn":[  
+                1
+            ],
+            "category":"property"
+        },
+        "7":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "8":{  
+            "pID":"lightBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "9":{  
+            "pID":"lightBlue3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "10":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"jail"
+        },
+        "11":{  
+            "pID":"pink1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "12":{  
+            "pID":"electric",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "13":{  
+            "pID":"pink2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "14":{  
+            "pID":"pink3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "15":{  
+            "pID":"railroad2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "16":{  
+            "pID":"orange1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "17":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "18":{  
+            "pID":"orange2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "19":{  
+            "pID":"orange3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "20":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"FreeParking"
+        },
+        "21":{  
+            "pID":"red1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "22":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "23":{  
+            "pID":"red2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "24":{  
+            "pID":"red3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "25":{  
+            "pID":"railroad3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "26":{  
+            "pID":"yellow1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "27":{  
+            "pID":"yellow2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "28":{  
+            "pID":"water",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "29":{  
+            "pID":"yellow3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "30":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"goToJail"
+        },
+        "31":{  
+            "pID":"green1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "32":{  
+            "pID":"green2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "33":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "34":{  
+            "pID":"green3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "35":{  
+            "pID":"railroad4",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "36":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "37":{  
+            "pID":"darkBlue1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "38":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"tax",
+            "amount":100
+        },
+        "39":{  
+            "pID":"darkBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        }
+    },
+    "game":{  
+        "lastActivity":"2017-03-05 03:14:13",
+        "buildings":32,
+        "takenGOOJF":{  
+            "CommunityChest":false,
+            "Chance":false
+        },
+        "type":"private",
+        "state":"PLAYING",
+        "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+        "figurines":[  
+            "BOOT",
+            "SHIP",
+            "DOG",
+            "WHEELBARROW",
+            "CAR",
+            "HAT"
+        ],
+        "turn":2,
+        "lastRoll":{  
+            "value":6,
+            "double":false,
+            "firstRoll":4,
+            "secondRoll":2
+        },
+        "trade":{  
+
+        },
+        "GO":200,
+        "playersNo":2
+    },
+    "options":[  
+        "TRADE",
+        "MORTGAGE",
+        "ROLL"
+    ],
+    "players":{  
+        "Joiner1":{  
+            "position":0,
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "lightBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                }
+            },
+            "name":"Joiner1"
+        },
+        "Hosty":{  
+            "position":6,
+            "name":"Hosty",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+                        "lightBlue1"
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        }
+    },
+    "chat":{  
+        "1":{  
+            "number":2,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83d\udc77",
+            "playerName":"Joiner1"
+        },
+        "0":{  
+            "number":1,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83c\udf3b",
+            "playerName":"Hosty"
+        }
+    },
+    "trade":{  
+
+    },
+    "player":{  
+        "uID":"6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba",
+        "canBuy":null,
+        "money":15000,
+        "options":[  
+            "TRADE",
+            "MORTGAGE",
+            "ROLL"
+        ],
+        "trade":{  
+            "sent":{  
+
+            },
+            "recieved":[  
+
+            ]
+        },
+        "public":{  
+            "position":6,
+            "name":"Hosty",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+                        "lightBlue1"
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        }
+    },
+    "deeds":{  
+        "red2":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red2",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"Fleet Street"
+        },
+        "yellow3":{  
+            "price":280,
+            "house1":120,
+            "house2":360,
+            "hotel":1200,
+            "rent":24,
+            "mortgage":140,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow3",
+            "buildPrice":120,
+            "house3":850,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":1025,
+            "name":"Piccadilly"
+        },
+        "lightBlue2":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue2",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":400,
+            "name":"Euston Road"
+        },
+        "brown2":{  
+            "price":60,
+            "house1":20,
+            "house2":60,
+            "hotel":450,
+            "rent":4,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown2",
+            "buildPrice":20,
+            "house3":180,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":320,
+            "name":"Whitechapel Road"
+        },
+        "darkBlue2":{  
+            "price":400,
+            "house1":200,
+            "house2":600,
+            "hotel":2000,
+            "rent":50,
+            "mortgage":200,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue2",
+            "buildPrice":200,
+            "house3":1400,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1700,
+            "name":"Mayfair"
+        },
+        "darkBlue1":{  
+            "price":350,
+            "house1":175,
+            "house2":500,
+            "hotel":1500,
+            "rent":35,
+            "mortgage":175,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue1",
+            "buildPrice":175,
+            "house3":1100,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1300,
+            "name":"Park Lane"
+        },
+        "orange1":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange1",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Bow Street"
+        },
+        "green3":{  
+            "price":320,
+            "house1":150,
+            "house2":450,
+            "hotel":1400,
+            "rent":28,
+            "mortgage":160,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green3",
+            "buildPrice":150,
+            "house3":1000,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1200,
+            "name":"Bond Street"
+        },
+        "pink1":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink1",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Pall Mall"
+        },
+        "water":{  
+            "price":150,
+            "buildings":0,
+            "pID":"water",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Water Works"
+        },
+        "railroad4":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad4",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Liverpool Street Station"
+        },
+        "orange2":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange2",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Marlborough Street"
+        },
+        "yellow2":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow2",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Coventry Street"
+        },
+        "railroad3":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad3",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Fenchurch St Station"
+        },
+        "yellow1":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow1",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Leicester Square"
+        },
+        "orange3":{  
+            "price":200,
+            "house1":80,
+            "house2":220,
+            "hotel":1000,
+            "rent":16,
+            "mortgage":100,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange3",
+            "buildPrice":80,
+            "house3":600,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":800,
+            "name":"Vine Street"
+        },
+        "green2":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green2",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Oxford Street"
+        },
+        "pink3":{  
+            "price":160,
+            "house1":60,
+            "house2":180,
+            "hotel":900,
+            "rent":12,
+            "mortgage":80,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink3",
+            "buildPrice":60,
+            "house3":500,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":700,
+            "name":"Northumberland Avenue"
+        },
+        "brown1":{  
+            "price":60,
+            "house1":10,
+            "house2":30,
+            "hotel":250,
+            "rent":2,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown1",
+            "buildPrice":10,
+            "house3":90,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":160,
+            "name":"Old Kent Road"
+        },
+        "lightBlue1":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "owner":1,
+            "groupSize":3,
+            "pID":"lightBlue1",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "name":"The Angel Islington",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"owned",
+            "house4":400,
+            "houseprice":50
+        },
+        "green1":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green1",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Regent Street"
+        },
+        "red1":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red1",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"The Strand"
+        },
+        "railroad2":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad2",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Marylebone Station"
+        },
+        "red3":{  
+            "price":240,
+            "house1":100,
+            "house2":300,
+            "hotel":1100,
+            "rent":20,
+            "mortgage":120,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red3",
+            "buildPrice":100,
+            "house3":750,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":925,
+            "name":"Trafalgar Square"
+        },
+        "lightBlue3":{  
+            "price":120,
+            "house1":40,
+            "house2":100,
+            "hotel":600,
+            "rent":8,
+            "mortgage":60,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue3",
+            "buildPrice":40,
+            "house3":300,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":450,
+            "name":"Pentonville Road"
+        },
+        "pink2":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink2",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Whitehall"
+        },
+        "railroad1":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad1",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Kings Cross Station"
+        },
+        "electric":{  
+            "price":150,
+            "buildings":0,
+            "pID":"electric",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Electric Company"
+        }
+    }
+}
+
+SENDING (PING)*****
+{  
+    "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+    "request":"PING",
+    "uID":"6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba"
+}
+
+RECIEVED***********
+{  
+    "board":{  
+        "0":{  
+            "playersOn":[  
+                2
+            ],
+            "category":"special",
+            "name":"Go"
+        },
+        "1":{  
+            "pID":"brown1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "2":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "3":{  
+            "pID":"brown2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "4":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"IncomeTax",
+            "amount":200
+        },
+        "5":{  
+            "pID":"railroad1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "6":{  
+            "pID":"lightBlue1",
+            "playersOn":[  
+                1
+            ],
+            "category":"property"
+        },
+        "7":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "8":{  
+            "pID":"lightBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "9":{  
+            "pID":"lightBlue3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "10":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"jail"
+        },
+        "11":{  
+            "pID":"pink1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "12":{  
+            "pID":"electric",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "13":{  
+            "pID":"pink2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "14":{  
+            "pID":"pink3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "15":{  
+            "pID":"railroad2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "16":{  
+            "pID":"orange1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "17":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "18":{  
+            "pID":"orange2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "19":{  
+            "pID":"orange3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "20":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"FreeParking"
+        },
+        "21":{  
+            "pID":"red1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "22":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "23":{  
+            "pID":"red2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "24":{  
+            "pID":"red3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "25":{  
+            "pID":"railroad3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "26":{  
+            "pID":"yellow1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "27":{  
+            "pID":"yellow2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "28":{  
+            "pID":"water",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "29":{  
+            "pID":"yellow3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "30":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"goToJail"
+        },
+        "31":{  
+            "pID":"green1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "32":{  
+            "pID":"green2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "33":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "34":{  
+            "pID":"green3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "35":{  
+            "pID":"railroad4",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "36":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "37":{  
+            "pID":"darkBlue1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "38":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"tax",
+            "amount":100
+        },
+        "39":{  
+            "pID":"darkBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        }
+    },
+    "game":{  
+        "lastActivity":"2017-03-05 03:14:13",
+        "buildings":32,
+        "takenGOOJF":{  
+            "CommunityChest":false,
+            "Chance":false
+        },
+        "type":"private",
+        "state":"PLAYING",
+        "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+        "figurines":[  
+            "BOOT",
+            "SHIP",
+            "DOG",
+            "WHEELBARROW",
+            "CAR",
+            "HAT"
+        ],
+        "turn":2,
+        "lastRoll":{  
+            "value":6,
+            "double":false,
+            "firstRoll":4,
+            "secondRoll":2
+        },
+        "trade":{  
+
+        },
+        "GO":200,
+        "playersNo":2
+    },
+    "options":[  
+        "TRADE",
+        "MORTGAGE",
+        "ROLL"
+    ],
+    "players":{  
+        "Joiner1":{  
+            "position":0,
+            "name":"Joiner1",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        },
+        "Hosty":{  
+            "position":6,
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "lightBlue":{  
+                    "owned":[  
+                        "lightBlue1"
+                    ],
+                    "size":3
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                }
+            },
+            "name":"Hosty"
+        }
+    },
+    "chat":{  
+        "1":{  
+            "number":2,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83d\udc77",
+            "playerName":"Joiner1"
+        },
+        "0":{  
+            "number":1,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83c\udf3b",
+            "playerName":"Hosty"
+        }
+    },
+    "trade":{  
+
+    },
+    "player":{  
+        "uID":"6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba",
+        "trade":{  
+            "sent":{  
+
+            },
+            "recieved":[  
+
+            ]
+        },
+        "money":15000,
+        "options":[  
+            "TRADE",
+            "MORTGAGE",
+            "ROLL"
+        ],
+        "canBuy":null,
+        "public":{  
+            "position":6,
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "lightBlue":{  
+                    "owned":[  
+                        "lightBlue1"
+                    ],
+                    "size":3
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                }
+            },
+            "name":"Hosty"
+        }
+    },
+    "deeds":{  
+        "red2":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red2",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"Fleet Street"
+        },
+        "yellow3":{  
+            "price":280,
+            "house1":120,
+            "house2":360,
+            "hotel":1200,
+            "rent":24,
+            "mortgage":140,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow3",
+            "buildPrice":120,
+            "house3":850,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":1025,
+            "name":"Piccadilly"
+        },
+        "lightBlue2":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue2",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":400,
+            "name":"Euston Road"
+        },
+        "brown2":{  
+            "price":60,
+            "house1":20,
+            "house2":60,
+            "hotel":450,
+            "rent":4,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown2",
+            "buildPrice":20,
+            "house3":180,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":320,
+            "name":"Whitechapel Road"
+        },
+        "darkBlue2":{  
+            "price":400,
+            "house1":200,
+            "house2":600,
+            "hotel":2000,
+            "rent":50,
+            "mortgage":200,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue2",
+            "buildPrice":200,
+            "house3":1400,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1700,
+            "name":"Mayfair"
+        },
+        "darkBlue1":{  
+            "price":350,
+            "house1":175,
+            "house2":500,
+            "hotel":1500,
+            "rent":35,
+            "mortgage":175,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue1",
+            "buildPrice":175,
+            "house3":1100,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1300,
+            "name":"Park Lane"
+        },
+        "orange1":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange1",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Bow Street"
+        },
+        "green3":{  
+            "price":320,
+            "house1":150,
+            "house2":450,
+            "hotel":1400,
+            "rent":28,
+            "mortgage":160,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green3",
+            "buildPrice":150,
+            "house3":1000,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1200,
+            "name":"Bond Street"
+        },
+        "pink1":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink1",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Pall Mall"
+        },
+        "water":{  
+            "price":150,
+            "buildings":0,
+            "pID":"water",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Water Works"
+        },
+        "railroad4":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad4",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Liverpool Street Station"
+        },
+        "orange2":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange2",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Marlborough Street"
+        },
+        "yellow2":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow2",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Coventry Street"
+        },
+        "railroad3":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad3",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Fenchurch St Station"
+        },
+        "yellow1":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow1",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Leicester Square"
+        },
+        "orange3":{  
+            "price":200,
+            "house1":80,
+            "house2":220,
+            "hotel":1000,
+            "rent":16,
+            "mortgage":100,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange3",
+            "buildPrice":80,
+            "house3":600,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":800,
+            "name":"Vine Street"
+        },
+        "green2":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green2",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Oxford Street"
+        },
+        "pink3":{  
+            "price":160,
+            "house1":60,
+            "house2":180,
+            "hotel":900,
+            "rent":12,
+            "mortgage":80,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink3",
+            "buildPrice":60,
+            "house3":500,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":700,
+            "name":"Northumberland Avenue"
+        },
+        "brown1":{  
+            "price":60,
+            "house1":10,
+            "house2":30,
+            "hotel":250,
+            "rent":2,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown1",
+            "buildPrice":10,
+            "house3":90,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":160,
+            "name":"Old Kent Road"
+        },
+        "lightBlue1":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "owner":1,
+            "groupSize":3,
+            "pID":"lightBlue1",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "name":"The Angel Islington",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"owned",
+            "house4":400,
+            "houseprice":50
+        },
+        "green1":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green1",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Regent Street"
+        },
+        "red1":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red1",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"The Strand"
+        },
+        "railroad2":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad2",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Marylebone Station"
+        },
+        "red3":{  
+            "price":240,
+            "house1":100,
+            "house2":300,
+            "hotel":1100,
+            "rent":20,
+            "mortgage":120,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red3",
+            "buildPrice":100,
+            "house3":750,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":925,
+            "name":"Trafalgar Square"
+        },
+        "lightBlue3":{  
+            "price":120,
+            "house1":40,
+            "house2":100,
+            "hotel":600,
+            "rent":8,
+            "mortgage":60,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue3",
+            "buildPrice":40,
+            "house3":300,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":450,
+            "name":"Pentonville Road"
+        },
+        "pink2":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink2",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Whitehall"
+        },
+        "railroad1":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad1",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Kings Cross Station"
+        },
+        "electric":{  
+            "price":150,
+            "buildings":0,
+            "pID":"electric",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Electric Company"
+        }
+    }
+}
+
+*****************************
+Name:Joiner1 
+gID:10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34 
+uID:b853a4146360f7a6382692b074dfd203aab7e64e393ef5366172d6d895d55cc6 
+figurine:THIMBLE 
+
+Request history:*************************** 
+
+SENDING (PING)*****
+{  
+    "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+    "request":"PING",
+    "uID":"b853a4146360f7a6382692b074dfd203aab7e64e393ef5366172d6d895d55cc6"
+}
+
+RECIEVED***********
+{  
+    "board":{  
+        "0":{  
+            "playersOn":[  
+                2
+            ],
+            "category":"special",
+            "name":"Go"
+        },
+        "1":{  
+            "pID":"brown1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "2":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "3":{  
+            "pID":"brown2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "4":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"IncomeTax",
+            "amount":200
+        },
+        "5":{  
+            "pID":"railroad1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "6":{  
+            "pID":"lightBlue1",
+            "playersOn":[  
+                1
+            ],
+            "category":"property"
+        },
+        "7":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "8":{  
+            "pID":"lightBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "9":{  
+            "pID":"lightBlue3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "10":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"jail"
+        },
+        "11":{  
+            "pID":"pink1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "12":{  
+            "pID":"electric",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "13":{  
+            "pID":"pink2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "14":{  
+            "pID":"pink3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "15":{  
+            "pID":"railroad2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "16":{  
+            "pID":"orange1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "17":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "18":{  
+            "pID":"orange2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "19":{  
+            "pID":"orange3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "20":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"FreeParking"
+        },
+        "21":{  
+            "pID":"red1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "22":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "23":{  
+            "pID":"red2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "24":{  
+            "pID":"red3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "25":{  
+            "pID":"railroad3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "26":{  
+            "pID":"yellow1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "27":{  
+            "pID":"yellow2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "28":{  
+            "pID":"water",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "29":{  
+            "pID":"yellow3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "30":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"goToJail"
+        },
+        "31":{  
+            "pID":"green1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "32":{  
+            "pID":"green2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "33":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "34":{  
+            "pID":"green3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "35":{  
+            "pID":"railroad4",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "36":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "37":{  
+            "pID":"darkBlue1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "38":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"tax",
+            "amount":100
+        },
+        "39":{  
+            "pID":"darkBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        }
+    },
+    "game":{  
+        "lastActivity":"2017-03-05 03:14:13",
+        "buildings":32,
+        "takenGOOJF":{  
+            "CommunityChest":false,
+            "Chance":false
+        },
+        "type":"private",
+        "state":"PLAYING",
+        "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+        "figurines":[  
+            "BOOT",
+            "SHIP",
+            "DOG",
+            "WHEELBARROW",
+            "CAR",
+            "HAT"
+        ],
+        "turn":2,
+        "lastRoll":{  
+            "value":6,
+            "double":false,
+            "firstRoll":4,
+            "secondRoll":2
+        },
+        "trade":{  
+
+        },
+        "GO":200,
+        "playersNo":2
+    },
+    "options":[  
+        "TRADE",
+        "MORTGAGE",
+        "ROLL"
+    ],
+    "players":{  
+        "Joiner1":{  
+            "position":0,
+            "name":"Joiner1",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        },
+        "Hosty":{  
+            "position":6,
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "lightBlue":{  
+                    "owned":[  
+                        "lightBlue1"
+                    ],
+                    "size":3
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                }
+            },
+            "name":"Hosty"
+        }
+    },
+    "chat":{  
+        "1":{  
+            "number":2,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83d\udc77",
+            "playerName":"Joiner1"
+        },
+        "0":{  
+            "number":1,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83c\udf3b",
+            "playerName":"Hosty"
+        }
+    },
+    "trade":{  
+
+    },
+    "player":{  
+        "uID":"b853a4146360f7a6382692b074dfd203aab7e64e393ef5366172d6d895d55cc6",
+        "canBuy":null,
+        "money":15000,
+        "options":[  
+            "TRADE",
+            "MORTGAGE",
+            "ROLL"
+        ],
+        "trade":{  
+            "sent":{  
+
+            },
+            "recieved":[  
+
+            ]
+        },
+        "public":{  
+            "position":0,
+            "name":"Joiner1",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        }
+    },
+    "deeds":{  
+        "red2":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red2",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"Fleet Street"
+        },
+        "yellow3":{  
+            "price":280,
+            "house1":120,
+            "house2":360,
+            "hotel":1200,
+            "rent":24,
+            "mortgage":140,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow3",
+            "buildPrice":120,
+            "house3":850,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":1025,
+            "name":"Piccadilly"
+        },
+        "lightBlue2":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue2",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":400,
+            "name":"Euston Road"
+        },
+        "brown2":{  
+            "price":60,
+            "house1":20,
+            "house2":60,
+            "hotel":450,
+            "rent":4,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown2",
+            "buildPrice":20,
+            "house3":180,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":320,
+            "name":"Whitechapel Road"
+        },
+        "darkBlue2":{  
+            "price":400,
+            "house1":200,
+            "house2":600,
+            "hotel":2000,
+            "rent":50,
+            "mortgage":200,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue2",
+            "buildPrice":200,
+            "house3":1400,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1700,
+            "name":"Mayfair"
+        },
+        "darkBlue1":{  
+            "price":350,
+            "house1":175,
+            "house2":500,
+            "hotel":1500,
+            "rent":35,
+            "mortgage":175,
+            "houseprice":200,
+            "groupSize":2,
+            "pID":"darkBlue1",
+            "buildPrice":175,
+            "house3":1100,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "house4":1300,
+            "name":"Park Lane"
+        },
+        "orange1":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange1",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Bow Street"
+        },
+        "green3":{  
+            "price":320,
+            "house1":150,
+            "house2":450,
+            "hotel":1400,
+            "rent":28,
+            "mortgage":160,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green3",
+            "buildPrice":150,
+            "house3":1000,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1200,
+            "name":"Bond Street"
+        },
+        "pink1":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink1",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Pall Mall"
+        },
+        "water":{  
+            "price":150,
+            "buildings":0,
+            "pID":"water",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Water Works"
+        },
+        "railroad4":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad4",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Liverpool Street Station"
+        },
+        "orange2":{  
+            "price":180,
+            "house1":70,
+            "house2":200,
+            "hotel":950,
+            "rent":14,
+            "mortgage":90,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange2",
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":750,
+            "name":"Marlborough Street"
+        },
+        "yellow2":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow2",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Coventry Street"
+        },
+        "railroad3":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad3",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Fenchurch St Station"
+        },
+        "yellow1":{  
+            "price":260,
+            "house1":110,
+            "house2":330,
+            "hotel":1150,
+            "rent":22,
+            "mortgage":130,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"yellow1",
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "house4":975,
+            "name":"Leicester Square"
+        },
+        "orange3":{  
+            "price":200,
+            "house1":80,
+            "house2":220,
+            "hotel":1000,
+            "rent":16,
+            "mortgage":100,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"orange3",
+            "buildPrice":80,
+            "house3":600,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "house4":800,
+            "name":"Vine Street"
+        },
+        "green2":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green2",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Oxford Street"
+        },
+        "pink3":{  
+            "price":160,
+            "house1":60,
+            "house2":180,
+            "hotel":900,
+            "rent":12,
+            "mortgage":80,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink3",
+            "buildPrice":60,
+            "house3":500,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":700,
+            "name":"Northumberland Avenue"
+        },
+        "brown1":{  
+            "price":60,
+            "house1":10,
+            "house2":30,
+            "hotel":250,
+            "rent":2,
+            "mortgage":30,
+            "houseprice":50,
+            "groupSize":2,
+            "pID":"brown1",
+            "buildPrice":10,
+            "house3":90,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "house4":160,
+            "name":"Old Kent Road"
+        },
+        "lightBlue1":{  
+            "price":100,
+            "house1":30,
+            "house2":90,
+            "hotel":550,
+            "rent":6,
+            "mortgage":50,
+            "owner":1,
+            "groupSize":3,
+            "pID":"lightBlue1",
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "name":"The Angel Islington",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"owned",
+            "house4":400,
+            "houseprice":50
+        },
+        "green1":{  
+            "price":300,
+            "house1":130,
+            "house2":390,
+            "hotel":1275,
+            "rent":26,
+            "mortgage":150,
+            "houseprice":200,
+            "groupSize":3,
+            "pID":"green1",
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "house4":1100,
+            "name":"Regent Street"
+        },
+        "red1":{  
+            "price":220,
+            "house1":90,
+            "house2":250,
+            "hotel":1050,
+            "rent":18,
+            "mortgage":110,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red1",
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":875,
+            "name":"The Strand"
+        },
+        "railroad2":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad2",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Marylebone Station"
+        },
+        "red3":{  
+            "price":240,
+            "house1":100,
+            "house2":300,
+            "hotel":1100,
+            "rent":20,
+            "mortgage":120,
+            "houseprice":150,
+            "groupSize":3,
+            "pID":"red3",
+            "buildPrice":100,
+            "house3":750,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "house4":925,
+            "name":"Trafalgar Square"
+        },
+        "lightBlue3":{  
+            "price":120,
+            "house1":40,
+            "house2":100,
+            "hotel":600,
+            "rent":8,
+            "mortgage":60,
+            "houseprice":50,
+            "groupSize":3,
+            "pID":"lightBlue3",
+            "buildPrice":40,
+            "house3":300,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "house4":450,
+            "name":"Pentonville Road"
+        },
+        "pink2":{  
+            "price":140,
+            "house1":50,
+            "house2":150,
+            "hotel":750,
+            "rent":10,
+            "mortgage":70,
+            "houseprice":100,
+            "groupSize":3,
+            "pID":"pink2",
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "house4":625,
+            "name":"Whitehall"
+        },
+        "railroad1":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad1",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Kings Cross Station"
+        },
+        "electric":{  
+            "price":150,
+            "buildings":0,
+            "pID":"electric",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Electric Company"
+        }
+    }
+}
+
+********************************* END OF BUY **** 

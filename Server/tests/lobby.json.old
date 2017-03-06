@@ -1,0 +1,2158 @@
+Unit Test Results:
+
+Name:Hosty
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:f047074c7c0666502992c784d939092d3b54cf79c296cd484751969fe48d4298 
+figurine:HAT 
+
+Request history:*************************** 
+
+SENDING (HOST)*****
+
+{  
+   "request":"HOST",
+   "type":"private",
+   "name":"Hosty"
+}
+
+RECIEVED***********
+
+{  
+   "players":{  
+
+   },
+   "player":{  
+      "uID":"f047074c7c0666502992c784d939092d3b54cf79c296cd484751969fe48d4298",
+      "public":{  
+         "name":"Hosty",
+         "number":1,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":1,
+      "status":"LOBBY",
+      "figurines":[  
+         "HAT",
+         "CAR",
+         "THIMBLE",
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   },
+   "error":"join"
+}
+
+SENDING (FIGURINE)*
+
+{  
+   "request":"FIGURINE",
+   "figurine":"HAT",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"f047074c7c0666502992c784d939092d3b54cf79c296cd484751969fe48d4298"
+}
+
+RECIEVED***********
+
+{  
+   "players":{  
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"f047074c7c0666502992c784d939092d3b54cf79c296cd484751969fe48d4298",
+      "public":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":1,
+      "status":"LOBBY",
+      "figurines":[  
+         "CAR",
+         "THIMBLE",
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}
+
+SENDING (PING)*
+
+{  
+   "request":"PING",
+   "uID":"f047074c7c0666502992c784d939092d3b54cf79c296cd484751969fe48d4298",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}
+
+***************************** 
+Name:Joiner1 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:0e230be8d625a711efabb9fc47079d074a68332f581acfe2d2c7e46ccf6b32a8 
+figurine:CAR 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****
+
+{  
+   "request":"JOIN",
+   "name":"Joiner1",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}
+
+RECIEVED***********{  
+   "players":{  
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner1":{  
+         "name":"Joiner1",
+         "number":2,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"0e230be8d625a711efabb9fc47079d074a68332f581acfe2d2c7e46ccf6b32a8",
+      "public":{  
+         "name":"Joiner1",
+         "number":2,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":2,
+      "status":"LOBBY",
+      "figurines":[  
+         "CAR",
+         "THIMBLE",
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}
+
+SENDING (FIGURINE)*
+
+{  
+   "request":"FIGURINE",
+   "figurine":"CAR",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"0e230be8d625a711efabb9fc47079d074a68332f581acfe2d2c7e46ccf6b32a8"
+}
+
+RECIEVED***********
+
+{  
+   "players":{  
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"0e230be8d625a711efabb9fc47079d074a68332f581acfe2d2c7e46ccf6b32a8",
+      "public":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":2,
+      "status":"LOBBY",
+      "figurines":[  
+         "THIMBLE",
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}
+
+SENDING (PING)*
+
+{  
+   "request":"PING",
+   "uID":"0e230be8d625a711efabb9fc47079d074a68332f581acfe2d2c7e46ccf6b32a8",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}
+
+RECIEVED***********
+
+{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}
+
+***************************** 
+Name:Joiner2 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:181ed598708c426355add26c2c748411317f808e39067c3a6dda80c726622128 
+figurine:THIMBLE 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner2",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner2":{  
+         "name":"Joiner2",
+         "number":3,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"181ed598708c426355add26c2c748411317f808e39067c3a6dda80c726622128",
+      "public":{  
+         "name":"Joiner2",
+         "number":3,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":3,
+      "status":"LOBBY",
+      "figurines":[  
+         "THIMBLE",
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"THIMBLE",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"181ed598708c426355add26c2c748411317f808e39067c3a6dda80c726622128"
+}RECIEVED***********{  
+   "players":{  
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"181ed598708c426355add26c2c748411317f808e39067c3a6dda80c726622128",
+      "public":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":3,
+      "status":"LOBBY",
+      "figurines":[  
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"181ed598708c426355add26c2c748411317f808e39067c3a6dda80c726622128",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}***************************** 
+Name:Joiner3 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:dd105fcefe78266c3997dc67bfb6aea3d598f1552eb4ea3b4b56b58d8c1ba846 
+figurine:IRON 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner3",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner3":{  
+         "name":"Joiner3",
+         "number":4,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"dd105fcefe78266c3997dc67bfb6aea3d598f1552eb4ea3b4b56b58d8c1ba846",
+      "public":{  
+         "name":"Joiner3",
+         "number":4,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":4,
+      "status":"LOBBY",
+      "figurines":[  
+         "IRON",
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"IRON",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"dd105fcefe78266c3997dc67bfb6aea3d598f1552eb4ea3b4b56b58d8c1ba846"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"dd105fcefe78266c3997dc67bfb6aea3d598f1552eb4ea3b4b56b58d8c1ba846",
+      "public":{  
+         "number":4,
+         "figurine":"IRON",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner3",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":4,
+      "status":"LOBBY",
+      "figurines":[  
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"dd105fcefe78266c3997dc67bfb6aea3d598f1552eb4ea3b4b56b58d8c1ba846",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}***************************** 
+Name:Joiner4 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:de0312d4493c667bd1183987580e619c4e8b58e2e10d3ed95917dd2bfdd2a13a 
+figurine:BOOT 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner4",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner3":{  
+         "number":4,
+         "figurine":"IRON",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner3",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner4":{  
+         "name":"Joiner4",
+         "number":5,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"de0312d4493c667bd1183987580e619c4e8b58e2e10d3ed95917dd2bfdd2a13a",
+      "public":{  
+         "name":"Joiner4",
+         "number":5,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":5,
+      "status":"LOBBY",
+      "figurines":[  
+         "BOOT",
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"BOOT",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"de0312d4493c667bd1183987580e619c4e8b58e2e10d3ed95917dd2bfdd2a13a"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"de0312d4493c667bd1183987580e619c4e8b58e2e10d3ed95917dd2bfdd2a13a",
+      "public":{  
+         "number":5,
+         "figurine":"BOOT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner4",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":5,
+      "status":"LOBBY",
+      "figurines":[  
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"de0312d4493c667bd1183987580e619c4e8b58e2e10d3ed95917dd2bfdd2a13a",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}***************************** 
+Name:Joiner5 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:ab3a53f682bff56a9b1687681411ceaeae93ff7c3afe6c2db764c62f7ee56ae0 
+figurine:SHIP 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner5",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner4":{  
+         "number":5,
+         "figurine":"BOOT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner4",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "figurine":"IRON",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner3",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner5":{  
+         "name":"Joiner5",
+         "number":6,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"ab3a53f682bff56a9b1687681411ceaeae93ff7c3afe6c2db764c62f7ee56ae0",
+      "public":{  
+         "name":"Joiner5",
+         "number":6,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":6,
+      "status":"LOBBY",
+      "figurines":[  
+         "SHIP",
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"SHIP",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"ab3a53f682bff56a9b1687681411ceaeae93ff7c3afe6c2db764c62f7ee56ae0"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"ab3a53f682bff56a9b1687681411ceaeae93ff7c3afe6c2db764c62f7ee56ae0",
+      "public":{  
+         "number":6,
+         "figurine":"SHIP",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner5",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":6,
+      "status":"LOBBY",
+      "figurines":[  
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"ab3a53f682bff56a9b1687681411ceaeae93ff7c3afe6c2db764c62f7ee56ae0",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}***************************** 
+Name:Joiner6 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:022c7b8263f4e3d12eee1e840451a1e1da40a8e86be72e3cbb7c0d496c53dfaa 
+figurine:DOG 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner6",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner4":{  
+         "number":5,
+         "figurine":"BOOT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner4",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "figurine":"IRON",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner3",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "figurine":"SHIP",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner5",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      },
+      "Joiner6":{  
+         "name":"Joiner6",
+         "number":7,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"022c7b8263f4e3d12eee1e840451a1e1da40a8e86be72e3cbb7c0d496c53dfaa",
+      "public":{  
+         "name":"Joiner6",
+         "number":7,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":7,
+      "status":"LOBBY",
+      "figurines":[  
+         "DOG",
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"DOG",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"022c7b8263f4e3d12eee1e840451a1e1da40a8e86be72e3cbb7c0d496c53dfaa"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"022c7b8263f4e3d12eee1e840451a1e1da40a8e86be72e3cbb7c0d496c53dfaa",
+      "public":{  
+         "number":7,
+         "figurine":"DOG",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner6",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":7,
+      "status":"LOBBY",
+      "figurines":[  
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"022c7b8263f4e3d12eee1e840451a1e1da40a8e86be72e3cbb7c0d496c53dfaa",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}***************************** 
+Name:Joiner7 
+gID:ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba 
+uID:e3cdfecc95e4fd31ca7020e0aa2f245fb1d51ef368d786de298cf892fe0dc6bb 
+figurine:WHEELBARROW 
+
+Request history:*************************** 
+
+SENDING (JOIN)*****{  
+   "request":"JOIN",
+   "name":"Joiner7",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "name":"Joiner7",
+         "number":8,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "figurine":"BOOT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner4",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "figurine":"CAR",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner1",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "figurine":"IRON",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner3",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "figurine":"HAT",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Hosty",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "figurine":"SHIP",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner5",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "figurine":"THIMBLE",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner2",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "figurine":"DOG",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner6",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"e3cdfecc95e4fd31ca7020e0aa2f245fb1d51ef368d786de298cf892fe0dc6bb",
+      "public":{  
+         "name":"Joiner7",
+         "number":8,
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+         "WHEELBARROW"
+      ],
+      "type":"private"
+   }
+}SENDING (FIGURINE)*{  
+   "request":"FIGURINE",
+   "figurine":"WHEELBARROW",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+   "uID":"e3cdfecc95e4fd31ca7020e0aa2f245fb1d51ef368d786de298cf892fe0dc6bb"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "player":{  
+      "uID":"e3cdfecc95e4fd31ca7020e0aa2f245fb1d51ef368d786de298cf892fe0dc6bb",
+      "public":{  
+         "number":8,
+         "figurine":"WHEELBARROW",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "name":"Joiner7",
+         "position":0
+      },
+      "money":10000
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}SENDING (PING)*{  
+   "request":"PING",
+   "uID":"e3cdfecc95e4fd31ca7020e0aa2f245fb1d51ef368d786de298cf892fe0dc6bb",
+   "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba"
+}RECIEVED***********{  
+   "players":{  
+      "Joiner7":{  
+         "number":8,
+         "name":"Joiner7",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"WHEELBARROW",
+         "position":0
+      },
+      "Joiner4":{  
+         "number":5,
+         "name":"Joiner4",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"BOOT",
+         "position":0
+      },
+      "Joiner1":{  
+         "number":2,
+         "name":"Joiner1",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"CAR",
+         "position":0
+      },
+      "Joiner3":{  
+         "number":4,
+         "name":"Joiner3",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"IRON",
+         "position":0
+      },
+      "Hosty":{  
+         "number":1,
+         "name":"Hosty",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"HAT",
+         "position":0
+      },
+      "Joiner5":{  
+         "number":6,
+         "name":"Joiner5",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"SHIP",
+         "position":0
+      },
+      "Joiner2":{  
+         "number":3,
+         "name":"Joiner2",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"THIMBLE",
+         "position":0
+      },
+      "Joiner6":{  
+         "number":7,
+         "name":"Joiner6",
+         "properties":{  
+
+         },
+         "GOOJF":0,
+         "figurine":"DOG",
+         "position":0
+      }
+   },
+   "game":{  
+      "gID":"ba36bc8f454f15eb55b016cfef85b7600a8e9906f974e5731b51e1e3aa7195ba",
+      "turn":1,
+      "lastActivity":"2017-02-22 00:00:44",
+      "playersNo":8,
+      "status":"LOBBY",
+      "figurines":[  
+
+      ],
+      "type":"private"
+   }
+}*****************************

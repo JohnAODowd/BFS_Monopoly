@@ -11,18 +11,18 @@ def getRoll():
 """
 
 
-def roll_dice(verbose = False):
+def roll_dice(range=6, verbose = False):
 	MAX_HEX = 42949672.95  # 'FFFFFFFF' in dec
 
-	client_range = 6  # 6-sided dice {0...5}
+	client_range = range  # 6-sided dice {0...5}
 
 	# TODO make these seeds functional 
-	client_seed = uuid.uuid4().hex
-	server_seed = uuid.uuid4().hex
-	secret_seed = uuid.uuid4().hex
+	client_seed = uuid.uuid4().hex.encode("utf-8")
+	server_seed = uuid.uuid4().hex.encode("utf-8")
+	secret_seed = uuid.uuid4().hex.encode("utf-8")
 
 	# Create sha256 of seeds 
-	hash_object = hashlib.sha256((secret_seed.encode("utf-8") + server_seed.encode("utf-8") + client_seed.encode("utf-8")))
+	hash_object = hashlib.sha256((secret_seed + server_seed + client_seed))
 	hex_digest = hash_object.hexdigest()
 
 	# Convert first 8 chars to DEC
@@ -36,21 +36,26 @@ def roll_dice(verbose = False):
 		print('Client: ' + client_seed)
 		print('Server: ' + server_seed)
 		print('Secret: ' + secret_seed)
-		print
 		print(str(perc))
 		print(str(result))
 
 	return result
 
 def double_roll():
-	ret 			= {}
-	first_roll 		= roll_dice()
-	second_roll 	= roll_dice()
-	ret['value'] 	= first_roll + second_roll
-	ret['double']	= first_roll == second_roll
+	ret 				= {}
+	# ret['firstRoll']	= roll_dice()
+	# ret['secondRoll']	= roll_dice()
+	ret['firstRoll']	= 4
+	ret['secondRoll']	= 2
+	ret['value'] 		= ret['firstRoll'] + ret['secondRoll']
+	ret['double']		= ret['firstRoll'] == ret['secondRoll']
 	return ret
 
-"""
+
+def drawFromDeck(deckSize=16):
+	#return roll_dice(deckSize)
+	return 0
+'''
 def test_single(verbose = False):
 	results = [0 for x in range(6)]
 	for i in range(100):
@@ -70,11 +75,11 @@ def test_double(verbose = False):
 		for i in range(len(results)):
 			print(str(i+2) + " : " + str(results[i]) + " " + ("=" * results[i]))
 	print(results)
-"""
+'''
 
 if __name__ == '__main__':
-	print(double_roll())
-	#test_double(verbose = True)
+	double_roll()
+	#test_double()
 	#double_roll()
-	print(roll_dice()
+	#roll_dice()
 	#roll_dice(verbose = True)

@@ -1,0 +1,49 @@
+{
+    "Chance":{
+        "0":{
+            "type":"GOOJF",
+            "text":"Get Out of Jail Free"
+        },
+        "1":{
+            "type":"move",
+            "destination":"go",
+            "text":"Advance to Go (Collect $200)"
+        },
+        "2":{
+            "type":"move",
+            "destination":"red3",
+            "text":"Advance to Illinois Ave—If you pass Go, collect $200"
+        },
+        "3":{
+            "type":"move",
+            "destination":"pink1",
+            "text":"Advance to St. Charles Place – If you pass Go, collect $200"
+        },
+        "4":{
+            "type":"move",
+            "destination":"jail",
+            "text":"Go to Jail–Go directly to Jail–Do not pass Go, do not collect $200"
+        },
+        "5":{
+            "type":"receive",
+            "amount":150,
+            "text":"Your building and loan matures—Collect $150"
+        },
+        "6":{
+            "type":"receive",
+            "amount":50,
+            "text":"Bank pays you dividend of $50"
+        },
+        "7":{
+            "type":"receive",
+            "amount":100,
+            "text":"You have won a crossword competition—Collect $100"
+        },
+        "8":{
+            "type":"pay",
+            "amount":15,
+            "text":"Pay poor tax of $15"
+        }
+    }
+}
+

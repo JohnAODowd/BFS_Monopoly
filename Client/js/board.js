@@ -91,41 +91,46 @@ myFiles.forEach(function (file, i) {
 		var cLeft = c.offsetLeft;
 		var cTop = c.offsetTop;
 
-		/*
-		c.addEventListener('click', function(event) {
-		    var x = event.pageX - cLeft,
-		        y = event.pageY - cTop;
-		    console.log(x, y)
-		    tiles.forEach(function(element) {
-		        if (y > element.top && y < element.top + element.height &&
-		        	x > element.left && x < element.left + element.width) {
-		            document.getElementById("blaze").innerHTML = element.i
-		        }
-		    });
+		c.addEventListener('mousemove', function(event) {
+            var x = event.pageX - cLeft,
+                y = event.pageY - cTop;
+            //console.log(x, y)
+            tiles.forEach(function(tile) {
+                if (y > tile.top && y < tile.top + tile.width &&
+                    x > tile.left && x < tile.left + tile.height) {
+                    
+                    var category = getCategory(tile.i);
+                    if (category == "property"){
+                         document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
+                }
+            });
 
-		}, false);
-		*/
+        }, false);
 
 		function Square(i) {
-		  coords = orientSquare(i);
-		  this.width  = 2*wanchor;
-		  this.height = 2*hanchor;
-		  this.x = coords.x;
-		  this.y = coords.y;
-		  _drawRect(this.x, this.y, this.width, this.height);
-		  this.onmouseover = function(){console.log("blaze it")}
-		}
+          coords = orientSquare(i);
+          this.width  = 2*wanchor;
+          this.height = 2*hanchor;
+          this.x = coords.x;
+          this.y = coords.y;
+          if (i != 0){
+          i = 40-i;}
+          _drawRect(this.x, this.y, this.width, this.height);
+          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+        }
 
 		var tiles = [];
 		function Tile(i) {
-		  coords = orientTile(i);
-		  this.width = coords.w;
-		  this.height = coords.h;
-		  this.x = coords.x;
-		  this.y = coords.y;
-		  _drawRect(this.x, this.y, this.width, this.height);
-		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
-		}
+          coords = orientTile(i);
+          this.width = coords.w;
+          this.height = coords.h;
+          this.x = coords.x;
+          this.y = coords.y;
+          _drawRect(this.x, this.y, this.width, this.height);
+          if (i != 0){
+          i = 40-i;}
+          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+        }
 
 		function ColourTile(i, colourHex) {
 		  coords = orientColourTile(i);

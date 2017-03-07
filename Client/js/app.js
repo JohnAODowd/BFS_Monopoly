@@ -38,12 +38,9 @@
 		//
 		function initGame(){
 			console.log("Game Started!")
+		
 			// Grab data from HTML
 			parseJSON(init);
-			// Update player UI
-			$('#player-name').html(player_name);
-			$('#player-balance').html('&#36;'+player_balance);
-			$("#player-image").attr("src", initFig[player_figurine]);
 		}
 
 		/*	========= =========
@@ -127,16 +124,25 @@
 						  PUBLIC
 						========== */
 					player_name = playerOBJ['public']['name']; 				console.log('player_name:'+player_name);
+					$('#player-name').html(player_name);
 					player_GOOJF = playerOBJ['public']['GOOJF']; 			console.log('player_GOOJF:'+player_GOOJF);
 					player_number = playerOBJ['public']['number']; 			console.log('player_number:'+player_number);
 					player_position = playerOBJ['public']['position']; 		console.log('player_position:'+player_position);
 					player_properties = playerOBJ['public']['properties']; 	console.log('player_properties:'+player_position);
 					player_figurine = playerOBJ['public']['figurine'];		console.log('player_figurine:'+player_figurine);
+					// display player figurine to screen
+					if (player_figurine != null) {
+						console.log('Setting player_figurine:'+player_figurine);
+						$("#player-image").attr("src", initFig[player_figurine]);
+					} else {
+						$("#player-image").attr("src", "assets/game_assets/lobby/Avatars/unknown.png");
+					}
 					/* 	==========
 						  PRIVATE
 						========== */
 					playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
 					player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
+					$('#player-balance').html('&#36;'+player_balance);
 					/* 	==========
 						PLAYERS
 						========== */						
@@ -284,7 +290,7 @@
 			Core logic will go in a loop in the main() func
 			============	============	============	*/
 		function main() {
-			ping();
+			//ping();
 			// console.log('PING 1');
 			// wait(3000);
 			// //var ping_interval = setInterval(ping, 4000);

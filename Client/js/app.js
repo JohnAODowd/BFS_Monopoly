@@ -76,46 +76,47 @@
 					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
 					// OPTIONS 
 					options = json_data['options'];
-
-					// check if game_state has changed			
-					console.log('state:'+ game_variables['state']);
-					if (game_state != game_variables['state']) {
-						// Game has changed state
-						// Set new game state into memory
-						game_state = game_variables['state'];
-
-						if (game_state === 'PLAYING'){
-							// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
-							// Set control buttons
-							console.log('GAME STATE: ' + game_state);
-							$('.board').empty();
-							//$('.board').append();
-						}
-						else if (game_state === 'LOBBY'){
-							// GAME IS IN LOBBY - RENDER BOARD OR OPTIONS
-							// disable control buttons
-							console.log('GAME STATE: ' + game_state);
-							if (options != []) {
-								// if there are options
-								$.each(options, function(key,val) {
-									if (val === "FIGURINE") {	// check to see if there is a FIGURINE options
-										displayFigurines();		// tere should only ever be this option or none in LOBBY
-									}
-								})
-							} else {
-								// otherwise - diplay the game board
-								// test in place for now
-								$('.board').empty();
-								$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520">');
-							}
 							
-						}
+					console.log('state:'+ game_variables['state']);
+					// Game has changed state
+					// Set new game state into memory
+					game_state = game_variables['state'];
+
+					if (game_state === 'PLAYING'){
+						// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
+						// Set control buttons
+						console.log('GAME STATE: ' + game_state);
+						$('.board').empty();
+						//$('.board').append();
+					}
+					else if (game_state === 'LOBBY'){
+						console.log('GAME STATE: ' + game_state);
+						console.log('Options:' + options);
+						// GAME IS IN LOBBY - RENDER BOARD OR OPTIONS
+						// disable control buttons
+						if (options.length > 0) {
+							console.log('DISPLAYING OPTIONS *****');
+							// if there are options
+							$.each(options, function(key,val) {
+								if (val === "FIGURINE") {	// check to see if there is a FIGURINE options
+									displayFigurines();		// tere should only ever be this option or none in LOBBY
+								}
+							});
+						} 
+						else {
+							console.log('NO OPTIONS');
+							// otherwise - diplay the game board
+							// test in place for now
+							$('.board').empty();
+							$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520" id="game-board">');
+						}	//
+						
+					}
 
 						// paused
 
 						// over / winner
 
-					}	// end if game state
 					
 					/* 	==========
 						PLAYER VARS

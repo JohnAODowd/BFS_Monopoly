@@ -1,9 +1,9 @@
 	var d = document.getElementById("dynamicCanvas");
 		var dtx = d.getContext("2d");
 
-dtx.font = "20px Arial";
+dtx.font = "10px Arial";
 dtx.textAlign="center";
-var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDDFF)};
+var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDE87)};
 var player2 = {id: 2, token:String.fromCharCode(0xD83D, 0xDC18)};
 var players = [player1, player2];
 var locations = [[1,11], [2,13]];
@@ -22,6 +22,7 @@ function drawPiece(playerID, pos){
 	var player = getPlayer(playerID);
 	
 	dtx.fillText(player.token, x +10,y -10);
+	dtx.rotate(Math.PI*2/(i*6));
 	return tiles[pos].top + " " + tiles[pos].left + "\n" +x + " " + y}
 
 function shuffleTiles(){
@@ -51,4 +52,36 @@ function updateLocation(playerID, position){
 function start(){
 	shuffleTiles();
 	drawPieces();
+}
+dtx.textAlign="center";
+function drawRotatedText(r,x,y){
+	var word1="The Brog";
+	var word1Width=ctx.measureText(word1).width;
+	var rotation
+	switch(r){
+		  		case 1:
+		  			rotation = 0;
+					break;
+				case 0:
+		  			rotation = 90;
+					break;
+				case 2:
+		  			rotation = 180;
+					break;
+				case 3:
+					rotation = 270;
+				}
+	dtx.save();
+	dtx.translate(x,y);
+	dtx.rotate(rotation*Math.PI/180); 
+	
+	dtx.fillText(word1,-word1Width/2,4);
+	dtx.restore();
+ 
+}
+function test(){
+shuffleTiles();
+var x = tiles[6].left + (tiles[6].width/2);
+var y = tiles[6].top + (tiles[6].height/1.5);
+drawRotatedText(0,x,y);
 }

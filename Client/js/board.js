@@ -1,3 +1,16 @@
+var c = document.getElementById("boardCanvas");
+		var ctx = c.getContext("2d");
+		var tiles = [];
+				var _width = c.width;
+		var _height = c.height;
+
+		var wanchor = _width / 13;
+		var hanchor = _height / 13;
+
+		var cLeft = c.offsetLeft;
+		var cTop = c.offsetTop;
+
+
 // Load JSON File
 var loadFile = function (filePath, done) {
     var xhr = new XMLHttpRequest();
@@ -6,12 +19,10 @@ var loadFile = function (filePath, done) {
     xhr.send();
 }
 
-var tiles = [];
-
-
 // directory paths to all JSON files
 var myFiles = [ "../Server/monopolyJSON/board.json",
 				"../Server/monopolyJSON/properties.json",
+				"../Server/monopolyJSON/cards.json"
 			  ];
 
 // where JSON data is stored
@@ -27,13 +38,14 @@ myFiles.forEach(function (file, i) {
     loadFile(file, function (responseText) {
         // set jsonData[i] to the parse data since the requests
         // will not necessarily come in order
+		//alert("adfasd!");
         jsonData[i] = JSON.parse(responseText);
         // all JSON obj's are available in this scope.
 	    jboard 		= jsonData[0];
 	    jproperties	= jsonData[1];
 	    jcards 		= jsonData[2];
 
-		/* -------------------------------------------------------- */
+		/* ----------------------------------- */
 
 		function getAttribute(index, attr){
 			var str = index.toString(); //force type string
@@ -72,139 +84,182 @@ myFiles.forEach(function (file, i) {
 
 		function getPropertyPrice(index){
 			var path = getAttribute(index, "pID");
-			return jproperties[path]["name"];
-		}
-
-		function getPropertyAttribute(index, attr){
-			var path = getAttribute(index, "pID");
-			return jproperties[path][attr];
+			return jproperties[path]["price"];
 		} 
 
 		function getTaxAmount(index){
 			return getAttribute(index, "amount");
 		} // returns 100, 200
 
-		/* -------------------------------------------------------- */
+		/* ----------------------------------- */
 
-		var c = document.getElementById("boardCanvas");
-		var ctx = c.getContext("2d");
-
-		var _width = c.width;
-		var _height = c.height;
-
-		var wanchor = _width / 13;
-		var hanchor = _height / 13;
-
-		/* -------------------------------------------------------- */
-
-		var cLeft = c.offsetLeft;
-		var cTop = c.offsetTop;
-
-		c.addEventListener('click', function(event) {
-            var x = event.pageX - cLeft,
-                y = event.pageY - cTop;
-            //console.log(x, y)
-            tiles.forEach(function(tile) {
-                if (y > tile.top && y < tile.top + tile.width &&
-                    x > tile.left && x < tile.left + tile.height) {
-                    
-                    var category = getCategory(tiles.i);
-                    if (category == "property"){
-				        var canvas = document.createElement('canvas');
-				        canvas.id     = "CursorLayer";
-				        canvas.width  = 140;
-				        canvas.height = 180;
-				        canvas.style.position = "absolute";
-				        canvas.style.border   = "1px solid";
-						var _ctx = canvas.getContext("2d");
-
-						// Border
-						_ctx.beginPath();
-						_ctx.rect(9,9,122,32);
-						_ctx.fill();
-
-						_ctx.beginPath();
-						_ctx.rect(4,5,132,170);
-						_ctx.lineWidth="1";
-						_ctx.strokeStyle="black";
-						_ctx.stroke();
-
-						// Colour 
-						_ctx.beginPath();
-						_ctx.rect(10,10,120,30);
-						_ctx.fillStyle = getStreetColour(tile.i);
-						_ctx.fill();
-
-						// Setup Title
-						_ctx.font = "12px Arial"; 
-						_ctx.fillStyle = "black";
-						_ctx.textAlign = "center";
-						_ctx.fillText( getPropertyName(tile.i), 70, 35);
-
-						// Setup Title / Rent
-						_ctx.font = "10px Arial"; 
-						var rentVal = getPropertyAttribute(tile.i, 'rent');
-						_ctx.fillText( "Rent $".concat(rentVal), 70, 55);
-						_ctx.fillText("Title Deed", 70, 20);
-
-						// Setup bottom of the card
-						var hotelVal = getPropertyAttribute(tile.i, 'hotel');
-						_ctx.fillText("With HOTEL $".concat(hotelVal), 70, 115);
-
-						var mortVal = getPropertyAttribute(tile.i, 'mortgage');
-						_ctx.fillText("Mortgage Value $".concat(mortVal), 70, 130);
-
-						var houseVal = getPropertyAttribute(tile.i, 'houseprice');
-						_ctx.fillText("Houses Cost $".concat(houseVal).concat(" each"), 70, 145);
-						_ctx.fillText("Hotels, $".concat(houseVal).concat(" plus 4 houses"), 70, 160);
+		
 
 
-						// Setup House Values
-						_ctx.textAlign = "left";
-						_ctx.fillText( "With 1 House ", 10, 70);
-						_ctx.fillText( "With 2 Houses ", 10, 80);
-						_ctx.fillText( "With 3 Houses ", 10, 90);
-						_ctx.fillText( "With 4 Houses ", 10, 100);
 
-						_ctx.textAlign = "right";
-						_ctx.fillText( getPropertyAttribute(tile.i, 'house1'), 130, 70);
-						_ctx.fillText( getPropertyAttribute(tile.i, 'house2'), 130, 80);
-						_ctx.fillText( getPropertyAttribute(tile.i, 'house3'), 130, 90);
-						_ctx.fillText( getPropertyAttribute(tile.i, 'house4'), 130, 100);
+		
+		c.addEventListener('mousemove', function(event) {
+		    var x = event.pageX - cLeft,
+		        y = event.pageY - cTop;
+		    //console.log(x, y)
+		    tiles.forEach(function(tile) {
+		        if (y > tile.top && y < tile.top + tile.width &&
+		        	x > tile.left && x < tile.left + tile.height) {
+					
+					var category = getCategory(tile.i);
+					if (category == "property"){
+		                 document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
+		        }
+		    });
 
-				        div.appendChild(canvas);
-                    }
-                }
-            });
+		}, false);
+		
+		
+		
+		ctx.textAlign="center";
+		
+		function switchOrientation(o){
+		switch(o){
+						case 1:
+							ctx.textAlign = "right";
+							textX =20;
+							textY = -14;
+							
+							rotation = 0;
+							break;
+						case 0:
+						ctx.textAlign = "left";
+							textX = -33;
+							textY = -8;
+							rotation = 90;
+							break;
+						case 3:
+						ctx.textAlign = "left";
+							textX = -20;
+							textY = -14;
+							rotation = 0;
+							break;
+						case 2:
+							ctx.textAlign = "left";
+							textX = -4;
+							textY = -8;
+							rotation = 270;
+						}
+						
+						return [textX, textY, rotation];
+		}
+		
+		function drawRotatedText(text,price, o,x,y){
+			var twoWords = text.includes(" ");
+			var word2;
+			if (twoWords){
+			var words = text.split(" ");
+			word2 = words[1];
+			text = words[0];
+			}
+			var namewidth=ctx.measureText(text).width;
+			var rotation;
+			var textX =0;			
+			var textY = -12;
+			
+			[textX, textY, rotation] = switchOrientation(o);
+			
+						
+			
+			ctx.save();
+			ctx.translate(x,y);
+			ctx.rotate(rotation*Math.PI/180); 
+			ctx.fillStyle = "black";
+			
+			 
+			if (twoWords){ctx.fillText(text,textX,textY);
+			ctx.fillText(word2,textX,textY +10)}else{
+			
+			ctx.fillText(text,textX,textY);}
+			ctx.fillText("$" +price,textX,textY +24)
+			ctx.restore();
+		 
+		}
+		
+		function drawRailroad(text,price, o,x,y){
+			var twoWords = text.includes(" ");
+			var word2;
+			if (twoWords){
+			var words = text.split(" ");
+			word2 = words[1];
+			text = words[0];
+			}
+			var symbol = String.fromCharCode(0xD83D, 0xDE87);
+			var rotation;
+			var textX =0;			
+			var textY = -12;
+			
+			[textX, textY, rotation] = switchOrientation(o);
+			
+						
+			
+			ctx.save();
+			ctx.translate(x,y);
+			ctx.rotate(rotation*Math.PI/180); 
+			ctx.fillStyle = "black";
+			
+			 
+			
+			
+			if (twoWords){ctx.fillText(text,textX,textY+5);
+			ctx.fillText(word2,textX,textY +15)}else{
+			
+			ctx.fillText(text,textX,textY+5);}
+			ctx.font = "15px Arial";
+			ctx.fillText(symbol,textX+20,textY+12)
+			ctx.restore();
+		 
+		}
+		
+		function drawName(text, price, i){
+		//shuffleTiles();
+		coords = orientTile(i);
+		var x = coords.x + (coords.w/2);
+		var y = coords.y + (coords.h/1.5);
+		var o = Math.floor(i / 10);
+		drawRotatedText(text, price, o,x,y);
+}
 
-        }, false);
+		function drawRailroadName(text, price, i){
+		//shuffleTiles();
+		coords = orientTile(i);
+		var x = coords.x + (coords.w/2);
+		var y = coords.y + (coords.h/1.5);
+		var o = Math.floor(i / 10);
+		drawRailroad(text, price, o,x,y);
+}
 
-
-        /* -------------------------------------------------------- */
+		
 
 		function Square(i) {
-          coords = orientSquare(i);
-          this.width  = 2*wanchor;
-          this.height = 2*hanchor;
-          this.x = coords.x;
-          this.y = coords.y;
-          if (i != 0){
-          i = 40-i;}
-          _drawRect(this.x, this.y, this.width, this.height);
-          //tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
-        }
+		  coords = orientSquare(i);
+		  this.width  = 2*wanchor;
+		  this.height = 2*hanchor;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  if (i != 0){
+		  i = 40-i;}
+		  _drawRect(this.x, this.y, this.width, this.height);
+		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+		}
 
+		
 		function Tile(i) {
-          coords = orientTile(i);
-          this.width = coords.w;
-          this.height = coords.h;
-          this.x = coords.x;
-          this.y = coords.y;
-          _drawRect(this.x, this.y, this.width, this.height);
-          if (i != 0){
-          i = 40-i;}
-          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
-        }
+		  coords = orientTile(i);
+		  this.width = coords.w;
+		  this.height = coords.h;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  _drawRect(this.x, this.y, this.width, this.height);
+		  if (i != 0){
+		  i = 40-i;}
+		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+		}
 
 		function ColourTile(i, colourHex) {
 		  coords = orientColourTile(i);
@@ -224,11 +279,16 @@ myFiles.forEach(function (file, i) {
 		  _drawImage(this.x, this.y, this.width, this.height, image);
 		}
 
-		/* -------------------------------------------------------- */
-		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
+		/* ----------------------------------- */
+		// ?? ?? ?? warning ?? ?? ?? much wisdom below ?? ?? ??
 		function orientTile(i) {
 			var o = Math.floor(i / 10);
-			var n = i % 10;
+			var n;
+			if (i < 10){
+				n = i;
+			} else {
+				n = i % 10;
+			}
 			switch(o){
 		  		case 0:
 		  			return {
@@ -266,7 +326,12 @@ myFiles.forEach(function (file, i) {
 
 		function orientImageTile(i) {
 			var o = Math.floor(i / 10);
-			var n = i % 10;
+			var n;
+			if (i < 10){
+				n = i;
+			} else {
+				n = i % 10;
+			}
 			switch(o){
 		  		case 0:
 		  			return {
@@ -375,7 +440,7 @@ myFiles.forEach(function (file, i) {
 			}
 		}
 
-		/* -------------------------------------------------------- */
+		/* ----------------------------------- */
 
 
 		function _drawRect(x,y,w,h) {
@@ -419,7 +484,7 @@ myFiles.forEach(function (file, i) {
     		};
 		}
 
-		/* -------------------------------------------------------- */
+		/* ----------------------------------- */
 
 		function draw(){
 		  
@@ -440,6 +505,7 @@ myFiles.forEach(function (file, i) {
 
 		  var type;
 		  var tile;
+
 
 		  for(var i = 0; i < 40; i++){
 		  	switch(getCategory(i)){
@@ -469,11 +535,17 @@ myFiles.forEach(function (file, i) {
 		  			if (type == "street") {
 		  				// make a street tile
 		  				tile = new Tile(i);
+						var name = getPropertyName(i);
+						var price = getPropertyPrice(i)
+						tile = drawName(name, price, i);
 		  				tile = new ColourTile(i, getStreetColour(i));
 		  			} else if (type == "railroad") {
 		  				// make a railroad tile
 		  				tile = new Tile(i);
-		  				tile = new ImageTile(i, railroad_img);
+						var name = getPropertyName(i);
+						var price = getPropertyPrice(i)
+						tile = drawRailroadName(name, price, i);
+		  				//tile = new ImageTile(i, railroad_img);
 		  			} else {
 		  				// make a utility tile
 		  				if (getPropertyName(i) == "Water Works"){
@@ -514,10 +586,16 @@ myFiles.forEach(function (file, i) {
 		  			}
 		  		}
 		  }
+		  
 		  console.log(tiles);
 		  draw = function(){}; // Google "js noop" 
+		  
 		}
+		
 		// init once
 		draw();
+		
     })
 })
+
+	

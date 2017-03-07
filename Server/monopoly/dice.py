@@ -53,8 +53,7 @@ def double_roll():
 
 
 def drawFromDeck(deckSize=16):
-	#return roll_dice(deckSize)
-	return 0
+	return roll_dice(deckSize)
 '''
 def test_single(verbose = False):
 	results = [0 for x in range(6)]

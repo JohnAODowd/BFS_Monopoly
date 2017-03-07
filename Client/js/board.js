@@ -6,10 +6,12 @@ var loadFile = function (filePath, done) {
     xhr.send();
 }
 
+var tiles = [];
+
+
 // directory paths to all JSON files
-var myFiles = [ "../Server/monopoly/board.json",
-				"../Server/monopoly/properties.json",
-				"../Server/monopoly/cards.json"
+var myFiles = [ "../Server/monopolyJSON/board.json",
+				"../Server/monopolyJSON/properties.json",
 			  ];
 
 // where JSON data is stored
@@ -31,7 +33,7 @@ myFiles.forEach(function (file, i) {
 	    jproperties	= jsonData[1];
 	    jcards 		= jsonData[2];
 
-		/* ----------------------------------- */
+		/* -------------------------------------------------------- */
 
 		function getAttribute(index, attr){
 			var str = index.toString(); //force type string
@@ -60,24 +62,29 @@ myFiles.forEach(function (file, i) {
 
 		function getStreetColour(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["colourHex"];
+			return jproperties[path]["colourHex"];
 		} // returns (eg.) "#ffffff"
 
 		function getPropertyName(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["name"];
+			return jproperties[path]["name"];
 		}  
 
 		function getPropertyPrice(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["name"];
+			return jproperties[path]["name"];
+		}
+
+		function getPropertyAttribute(index, attr){
+			var path = getAttribute(index, "pID");
+			return jproperties[path][attr];
 		} 
 
 		function getTaxAmount(index){
 			return getAttribute(index, "amount");
 		} // returns 100, 200
 
-		/* ----------------------------------- */
+		/* -------------------------------------------------------- */
 
 		var c = document.getElementById("boardCanvas");
 		var ctx = c.getContext("2d");
@@ -88,10 +95,12 @@ myFiles.forEach(function (file, i) {
 		var wanchor = _width / 13;
 		var hanchor = _height / 13;
 
+		/* -------------------------------------------------------- */
+
 		var cLeft = c.offsetLeft;
 		var cTop = c.offsetTop;
 
-		c.addEventListener('mousemove', function(event) {
+		c.addEventListener('click', function(event) {
             var x = event.pageX - cLeft,
                 y = event.pageY - cTop;
             //console.log(x, y)
@@ -99,13 +108,79 @@ myFiles.forEach(function (file, i) {
                 if (y > tile.top && y < tile.top + tile.width &&
                     x > tile.left && x < tile.left + tile.height) {
                     
-                    var category = getCategory(tile.i);
+                    var category = getCategory(tiles.i);
                     if (category == "property"){
-                         document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
+				        var canvas = document.createElement('canvas');
+				        canvas.id     = "CursorLayer";
+				        canvas.width  = 140;
+				        canvas.height = 180;
+				        canvas.style.position = "absolute";
+				        canvas.style.border   = "1px solid";
+						var _ctx = canvas.getContext("2d");
+
+						// Border
+						_ctx.beginPath();
+						_ctx.rect(9,9,122,32);
+						_ctx.fill();
+
+						_ctx.beginPath();
+						_ctx.rect(4,5,132,170);
+						_ctx.lineWidth="1";
+						_ctx.strokeStyle="black";
+						_ctx.stroke();
+
+						// Colour 
+						_ctx.beginPath();
+						_ctx.rect(10,10,120,30);
+						_ctx.fillStyle = getStreetColour(tile.i);
+						_ctx.fill();
+
+						// Setup Title
+						_ctx.font = "12px Arial"; 
+						_ctx.fillStyle = "black";
+						_ctx.textAlign = "center";
+						_ctx.fillText( getPropertyName(tile.i), 70, 35);
+
+						// Setup Title / Rent
+						_ctx.font = "10px Arial"; 
+						var rentVal = getPropertyAttribute(tile.i, 'rent');
+						_ctx.fillText( "Rent $".concat(rentVal), 70, 55);
+						_ctx.fillText("Title Deed", 70, 20);
+
+						// Setup bottom of the card
+						var hotelVal = getPropertyAttribute(tile.i, 'hotel');
+						_ctx.fillText("With HOTEL $".concat(hotelVal), 70, 115);
+
+						var mortVal = getPropertyAttribute(tile.i, 'mortgage');
+						_ctx.fillText("Mortgage Value $".concat(mortVal), 70, 130);
+
+						var houseVal = getPropertyAttribute(tile.i, 'houseprice');
+						_ctx.fillText("Houses Cost $".concat(houseVal).concat(" each"), 70, 145);
+						_ctx.fillText("Hotels, $".concat(houseVal).concat(" plus 4 houses"), 70, 160);
+
+
+						// Setup House Values
+						_ctx.textAlign = "left";
+						_ctx.fillText( "With 1 House ", 10, 70);
+						_ctx.fillText( "With 2 Houses ", 10, 80);
+						_ctx.fillText( "With 3 Houses ", 10, 90);
+						_ctx.fillText( "With 4 Houses ", 10, 100);
+
+						_ctx.textAlign = "right";
+						_ctx.fillText( getPropertyAttribute(tile.i, 'house1'), 130, 70);
+						_ctx.fillText( getPropertyAttribute(tile.i, 'house2'), 130, 80);
+						_ctx.fillText( getPropertyAttribute(tile.i, 'house3'), 130, 90);
+						_ctx.fillText( getPropertyAttribute(tile.i, 'house4'), 130, 100);
+
+				        div.appendChild(canvas);
+                    }
                 }
             });
 
         }, false);
+
+
+        /* -------------------------------------------------------- */
 
 		function Square(i) {
           coords = orientSquare(i);
@@ -116,10 +191,9 @@ myFiles.forEach(function (file, i) {
           if (i != 0){
           i = 40-i;}
           _drawRect(this.x, this.y, this.width, this.height);
-          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+          //tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
         }
 
-		var tiles = [];
 		function Tile(i) {
           coords = orientTile(i);
           this.width = coords.w;
@@ -150,16 +224,11 @@ myFiles.forEach(function (file, i) {
 		  _drawImage(this.x, this.y, this.width, this.height, image);
 		}
 
-		/* ----------------------------------- */
+		/* -------------------------------------------------------- */
 		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
 		function orientTile(i) {
 			var o = Math.floor(i / 10);
-			var n;
-			if (i < 10){
-				n = i;
-			} else {
-				n = i % 10;
-			}
+			var n = i % 10;
 			switch(o){
 		  		case 0:
 		  			return {
@@ -197,12 +266,7 @@ myFiles.forEach(function (file, i) {
 
 		function orientImageTile(i) {
 			var o = Math.floor(i / 10);
-			var n;
-			if (i < 10){
-				n = i;
-			} else {
-				n = i % 10;
-			}
+			var n = i % 10;
 			switch(o){
 		  		case 0:
 		  			return {
@@ -311,7 +375,7 @@ myFiles.forEach(function (file, i) {
 			}
 		}
 
-		/* ----------------------------------- */
+		/* -------------------------------------------------------- */
 
 
 		function _drawRect(x,y,w,h) {
@@ -355,7 +419,7 @@ myFiles.forEach(function (file, i) {
     		};
 		}
 
-		/* ----------------------------------- */
+		/* -------------------------------------------------------- */
 
 		function draw(){
 		  
@@ -376,7 +440,6 @@ myFiles.forEach(function (file, i) {
 
 		  var type;
 		  var tile;
-
 
 		  for(var i = 0; i < 40; i++){
 		  	switch(getCategory(i)){

@@ -6,7 +6,11 @@
 
 <body>
 
-<canvas id="boardCanvas" width="400" height="400" style="border:1px solid #000000; background: #cdcdcd">
+<canvas id="boardCanvas" width="600" height="600" style="border:1px solid #000000; background: #cdcdcd ;
+position: absolute;left: 0;top:0;z-index:0;">
+</canvas>
+<canvas id="dynamicCanvas" width="600" height="600" style="border:1px solid #000000;
+position: absolute;left: 0;top:0;z-index:1;">
 </canvas>
 
 
@@ -44,4 +48,5 @@ hello world
 </body>
 
 <script src="js/board.js"></script>
+<script src="js/dynamicBoard.js"></script>
 </html>

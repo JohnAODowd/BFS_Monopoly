@@ -6,6 +6,8 @@
 		var figurines;
 		var game_state;
 		var playersNo;
+		//options
+		var options;
 		// player variables
 		// public
 		var player_name;
@@ -13,6 +15,7 @@
 		var player_number;
 		var player_position;
 		var player_properties; // ID's > properties.json
+		var player_figurine;
 		// private
 		var playerID;
 		var player_balance;
@@ -21,60 +24,35 @@
 		var player_keys;
 
 		$(document).ready(function(){
-			/*	=========
-				Core Logic
-				=========	*/
-
-			hostGame();
-			//joinGame();
+			initGame();
 			main();
 
 		});
 
-		/*	=========
-			Join Game
-			=========	*/	
-		function joinGame() {
-			console.log("Join Game!");
-			// update JSON using returned variable 'init' which is embedded in html return
-			parseJSON(init);
-		} // end joinGame()
-
-		/*	=========
-			Host Game
-			=========	*/	
-		function hostGame() {
-			console.log("Host Game!");
-			// update JSON using returned variable 'init' which is embedded in html return
-			parseJSON(init);
-
-		} // end hostGame()
-
-		/*	=========
+		/*	=========	=========
 			Init Game State
-			=========	*/	
+			=========	=========  */	
+
+		//	Read in initial data from HTML and parse it
+		//	Update player icons and meta data
+		//
 		function initGame(){
 			console.log("Game Started!")
-			//
-			var canvas = document.getElementById("game-board")
-			var ctx = canvas.getContext("2d");
-
-			canvas.width = 520;
-			canvas.height = 520;
-
-			// draw loading screen to game
-			ctx.fillRect(0,0,520,520);
-			var img = new Image();
-			img.onload = function () {
-			    ctx.drawImage(img, 0, 0, 520, 520);
-			}
-			img.src = "assets/game_assets/lobby/monopoly-test-background.png";
+			// Grab data from HTML
+			parseJSON(init);
+			// Update player UI
+			$('#player-name').html(player_name);
+			$('#player-balance').html('&#36;'+player_balance);
+			$("#player-image").attr("src", initFig[player_figurine]);
 		}
+
 		/*	========= =========
 				  HELPERS
 			========= =========	*/	
 		function parseJSON(json_data) {
 			// game variables
+			console.log('');
+			console.log('- - - - - - - - - - - - - - - - ');
 			console.log('game_variables');
 			// FIRST CHECK FOR 'error'
 			// game : player : players : options - req all states
@@ -94,9 +72,51 @@
 					game_variables = json_data['game'];
 					gameID = game_variables['gID']; 			console.log('GID:' + gameID);
 					game_turn = game_variables['turn']; 		console.log('turn:' + game_turn);
-					figurines = game_variables['figurines']; 	console.log('figurines:'+ figurines);			
-					game_state = game_variables['status']; 	console.log('status:'+ game_state);
+					figurines = game_variables['figurines']; 	console.log('figurines:'+ figurines);
 					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
+					// OPTIONS 
+					options = json_data['options'];
+
+					// check if game_state has changed			
+					console.log('state:'+ game_variables['state']);
+					if (game_state != game_variables['state']) {
+						// Game has changed state
+						// Set new game state into memory
+						game_state = game_variables['state'];
+
+						if (game_state === 'PLAYING'){
+							// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
+							// Set control buttons
+							console.log('GAME STATE: ' + game_state);
+							$('.board').empty();
+							//$('.board').append();
+						}
+						else if (game_state === 'LOBBY'){
+							// GAME IS IN LOBBY - RENDER BOARD OR OPTIONS
+							// disable control buttons
+							console.log('GAME STATE: ' + game_state);
+							if (options != []) {
+								// if there are options
+								$.each(options, function(key,val) {
+									if (val === "FIGURINE") {	// check to see if there is a FIGURINE options
+										displayFigurines();		// tere should only ever be this option or none in LOBBY
+									}
+								})
+							} else {
+								// otherwise - diplay the game board
+								// test in place for now
+								$('.board').empty();
+								$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520">');
+							}
+							
+						}
+
+						// paused
+
+						// over / winner
+
+					}	// end if game state
+					
 					/* 	==========
 						PLAYER VARS
 						========== */
@@ -110,6 +130,7 @@
 					player_number = playerOBJ['public']['number']; 			console.log('player_number:'+player_number);
 					player_position = playerOBJ['public']['position']; 		console.log('player_position:'+player_position);
 					player_properties = playerOBJ['public']['properties']; 	console.log('player_properties:'+player_position);
+					player_figurine = playerOBJ['public']['figurine'];		console.log('player_figurine:'+player_figurine);
 					/* 	==========
 						  PRIVATE
 						========== */
@@ -195,20 +216,23 @@
 			// 
 			//	Embeds players in Header
 			//
-			function displayPlayers() {
-				for (_player in player_list) {
+		function displayPlayers() {
+
+			for (_player in player_list) {
+
+				if (_player != player_name) {
 					console.log("Player ----");
 					console.log(_player);
 					console.log(player_list[_player]['figurine']);
 					var player_img = initFig[player_list[_player]['figurine']];
-					$('.player-icons').append('<li><img src="'+ player_img +'" class="player-icon circle" id="'+_player+'"></li>');
+					$('.player-icons').append('<li><img src="'+ player_img +'" class="player-icon circle valign" id="'+_player+'"></li>');
 					
-					/* 	========= 	=========
-						Add Event Listeners using _player 
-						=========	========= */
+				/* 	========= 	=========
+					Add Event Listeners using _player 
+					=========	========= */
 				}
 			}
-
+		}
 		/*	=========	=========
 			Display figurines to lobby
 			=========	========= */
@@ -217,12 +241,13 @@
 			console.log(figurines);
 			var x = 0;
 			var row = 1;
-			var figurines_html = 	'<div class="figurines">'+
+			var figurines_html = 	'<div class="figurines z-depth-2">'+
+									'	<h2>Choose a firuine below:</h2>'+
 									'</div>';
 									
 			$('.board').append(figurines_html);
 			for (fig in figurines) {
-				$('.figurines').append('<img src="' + initFig[figurines[fig]] + '" id="' + figurines[fig] + '" />');
+				$('.figurines').append('<img src="' + initFig[figurines[fig]] + '" id="' + figurines[fig] + '" class="hoverable"/>');
 			}
 
 		}
@@ -262,8 +287,6 @@
 			// console.log('PING 1');
 			// wait(3000);
 			// //var ping_interval = setInterval(ping, 4000);
-			displayFigurines();
-			// //var display_fig_interval = setInterval(displayFigurines, 4001);
 			// wait(3000);
 
 			displayPlayers();

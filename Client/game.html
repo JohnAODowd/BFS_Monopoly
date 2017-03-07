@@ -27,14 +27,17 @@
 
 
       <div class="main row">
+
         <nav class="blue-grey darken-3">
           <div class="nav-wrapper">
           <span id="title">Cork Pub Edition</span>
             <a href="#" class="brand-logo"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down player-icons">
+            <ul id="nav-mobile" class="right hide-on-med-and-down player-icons valign-wrapper">
             </ul>
           </div>
         </nav>
+
+
         <section class="side-control col s3 demo">
           <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -56,11 +59,13 @@
 
         </section>
         <section class="options col s3 demo">
-          <div class="control-area">
-            <h2>Player Name</h2>
-            <button class="btn">Roll Dice</button>
+          <div class="control-area z-depth-3 row">
+              <h2 id="player-name"></h2>
+              <p id="player-balance"></p>
+              <button class="btn center" id="action-button">Roll Dice</button>
+              <img src="" id="player-image" class="circle">
+            
           </div>
-
         </section>
       </div>
       <script type="text/javascript">
@@ -95,11 +100,9 @@
         },
         "GO":200,
         "playersNo":2,
-        "state":"PLAYING"
+        "state":"LOBBY"
     },
     "options":[  
-        "TRADE",
-        "MORTGAGE"
     ],
     "players":{  
         "Joiner1":{  

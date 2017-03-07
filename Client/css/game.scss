@@ -1,14 +1,46 @@
 // app specific
 .main {
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 	height: 100vh;
 	max-height: 100vh;
 	background-image: url("../assets/tweed/tweed.png");
 	overflow: hidden;
 }
-nav {
-	height: 10vh;
-}
+.nav-wrapper {
+	line-height: 64px;
+	height: 64px;
+	a {
 
+		height: 64px;
+		line-height: 64px;
+		img {
+			height: 64px;
+			display: inline;
+		}
+	}
+	#title {
+		display: inline-block;
+		height: 64px;
+		font-size: 42px;
+		font-family: 'norwester';
+		font-variant: small-caps;
+		margin-left: 1em;
+	}
+	.player-icon {
+		height: 52px;
+		width: 52px;
+		margin-left: 2em;
+	}
+}
+@font-face {
+    font-family: 'norwester';
+    //src: url(http://hassassin.netsoc.co/client/assets/fonts/norwester/webfonts/norwester.ttf);
+    src: url(../assets/fonts/norwester/webfonts/norwester.ttf);
+}
 
 // CSS for game forms
 .form-container {
@@ -68,24 +100,56 @@ form {
 // 	left: 0;
 // 	top: 0;
 // }
-.test {
-	margin-top: 6em;
-	border: 1px #333 solid;
-	border-radius: 4px;
-	margin: 2em;
-}
 .control-area {
 	background-color: #333;
-	position: absolute;
+	position: fixed;
 	bottom: 0;
-	right: 0;
-	height: 6em;
+	height: 14em;
+	width: 100%;
+	padding-left: 1em;
+
+	color: white;
+	font-family: 'norwester';
+
+	h2 {
+		font-size: 2em;
+		
+		letter-spacing: 2px;
+		font-variant: small-caps;
+		margin-bottom: 0;
+	}
+	p {
+		font-size: 2em;
+		margin-top: 0;
+	}
+	.player-image {
+		width: 20px;
+		height: 20px;
+		float: right;
+	}
 }
 .demo {
 	border-right: 1px solid #333;
-	height: 85vh;
-	min-height: 85vh;
 	margin-bottom: none;
+	height: 100%;
+}
+.figurines {
+	margin-top: 2em;
+	background-color: #333;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-top: 0.3em;
+
+	h2 {
+		font-size: 2em;
+		font-family: 'norwester';
+		font-variant: small-caps;
+	}
+
+	img {
+		margin-right: 1em;
+		margin-bottom: 1em;
+	}
 }
 .collapsible {
 	margin-top: 2em;

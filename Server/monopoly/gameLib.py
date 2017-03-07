@@ -20,6 +20,17 @@ from monopoly.chat import addChat
 
 #******************************************************************************
 
+def payToGOOJ(gID, uID, player):
+    alert = {}
+    alert['boolean'] = False
+    if player['money'] > 50:
+        player['money'] - 50
+        r.setPlayer(gID, uID, player)
+    else:
+        alert['boolean']    = True
+        alert["alert"]      = "INSUFFICIENT FUNDS"
+    return alert
+
 def hasGOOJF(player, deckType):
     return player["public"]["GOOJF"][deckType]
 
@@ -150,10 +161,10 @@ def processCard(gID, uID, card, deckType):
         giveGOOJF(gID, uID, deckType)
         return alert
     if card['type'] == "move":
-        if card['destination'] == "jail":
-            alert = updateLocation(gID, uID, "GTJ")
+        if card['destination'] == 10:       
+            alert = updateLocation(gID, uID, "GTJ", card=True) 
         else:
-            alert = updateLocation(uID, gID, card['destinationIndex'])
+            alert = updateLocation(gID, uID, card['destination'], card=True)
     elif card['type'] == "pay":
         alert = pay(gID, uID, 0, card['amount'])
     elif card['type'] == "receive":
@@ -202,15 +213,15 @@ def analysePosition(gID, uID, board, pos):
         alert = drawCard(gID, uID)
         
     elif square['category'] == 'property':
-        property = r.getDeeds(gID)[square['pID']]
-        if property['status'] == "owned":
-            rent    = rentCalculator(gID, property)
-            alert   = pay(gID, uID, property['owner'], rent)
+        deed = r.getDeeds(gID)[square['pID']]
+        if deed['status'] == "owned":
+            rent    = rentCalculator(gID, deed)
+            alert   = pay(gID, uID, deed['owner'], rent)
             alert["activity"] = "rent"
             return alert
-        elif property['status'] == "mortgaged":
+        elif deed['status'] == "mortgaged":
             pass
-        else:
+        elif deed['status'] == "notOwned":
             player = r.getPlayers(gID)[uID]
             player['options'] += ["BUY"]
             player['options'] += ["AUCTION"]
@@ -218,7 +229,7 @@ def analysePosition(gID, uID, board, pos):
             r.setPlayer(gID, uID, player)
     return alert
 
-def updateLocation(gID, uID, value):         #moves a player to new position
+def updateLocation(gID, uID, value, card=False):         #moves a player to new position
     #value can be value of a roll, or a special card e.g. jail, go, free parking
     player  = r.getPlayers(gID)[uID]
     board   = r.getBoard(gID)
@@ -226,7 +237,7 @@ def updateLocation(gID, uID, value):         #moves a player to new position
     GO      = False
     if value == "GTJ":
         newPos = 10
-        player['public']['inJail'] = True
+        player['public']['jail']['boolean'] = True
         alert = {}
 
         alert['boolean']    = True
@@ -240,6 +251,14 @@ def updateLocation(gID, uID, value):         #moves a player to new position
         r.setPlayer(gID, uID, player)
         return alert
 
+    if card:
+        newPos = int(value)
+        if newPos > 39:
+            game = r.getGame(gID)
+            amount = game['GO']
+            incrementMoney(gID, uID, amount)
+            newPos = newPos - 40
+            GO      = True
     else:
         newPos  = prevPos + value
         if newPos > 39:
@@ -377,7 +396,6 @@ def initTrade(gID, uID, playerNumber, jOffer, jFor):
 
 def giveProperty(gID, uID, player, deed, status="owned"):
     # method for giving a player a property (deed signing)
-    pos                 = player['public']['position']
     deed['status']      = status
     deed['owner']       = player['public']['number']
     player['public']['properties'][deed['group']]['owned'].append(deed['pID'])
@@ -483,9 +501,27 @@ def roll(json):
     r.setGame(gID, game)
 
     if inJail(gID, uID) and not roll['double']:
-        incrementTurn(gID)
-        ret = helpers.getReturnData(gID, uID, [], ['ROLL'])
-        return ret
+        player = r.getPlayers(gID)[uID]
+        if player["public"]["jail"]["turn"] == 4:
+            alert = payToGOOJ(gID, uID, player)
+            if alert["boolean"]:
+                #kill player
+                pass
+            else:
+                getOutOfJail(gID, uID)
+        if player["public"]["jail"]["turn"] == 3:
+            alert = payToGOOJ(gID, uID, player)
+            if alert["boolean"]:
+                ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], alert['alert'], card)
+                return ret
+            else:
+                getOutOfJail(gID, uID)
+        if inJail(gID, uID):
+            player['public']['jail']['turn'] += 1
+            incrementTurn(gID)
+            r.setPlayer(gID, uID, player)
+            ret = helpers.getReturnData(gID, uID, [], ['ROLL'])
+            return ret
 
     elif inJail(gID, uID) and roll['double']:
         getOutOfJail(gID, uID)
@@ -496,13 +532,13 @@ def roll(json):
     else:
         card = False
     if alert['boolean']:
-        ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], alert['alert'], card)
+        ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['alert'], card)
     elif "activity" in alert:
         if alert['activity'] == "rent":
-            incrementTurn(gID)
             ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['activity'], card)
     else:
         ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], {}, card)
+    incrementTurn(gID)
     return ret
 
 def buy(json):
@@ -579,12 +615,12 @@ def getOutOfJail(gID, uID, card=False):
     ret = None
     if card:
         player = r.getPlayers(gID)[uID]
-        if inJail(gID, uID) and (player['public']['GOOJF']['commChest'] or player['public']['GOOJF']['commChest']):
+        if inJail(gID, uID) and (player['public']['GOOJF']['CommunityChest'] or player['public']['GOOJF']['Chance']):
             deck = None
-            if player['public']['GOOJF']['commChest']:
-                deck = "commChest"
-            elif player['public']['GOOJF']['commChest']:
-                deck = "chance"
+            if player['public']['GOOJF']['CommunityChest']:
+                deck = "CommunityChest"
+            elif player['public']['GOOJF']['Chance']:
+                deck = "Chance"
             player['public']['GOOJF'][deck] = False
             game                            = r.getGame(gID)
             game['takenGOOJF'][deck]        = False
@@ -619,7 +655,11 @@ def trade(json):
 
 def ping(json, isTurn):
     if isTurn:
-        ret  = helpers.getReturnData(json['gID'], json['uID'], ["ROLL"])
+        player = r.getPlayers(json['gID'])[json['uID']]
+        if 'ROLLED' in player['options']:
+            ret  = helpers.getReturnData(json['gID'], json['uID'])
+        else:
+            ret  = helpers.getReturnData(json['gID'], json['uID'], ["ROLL"])
     else:
         ret  = helpers.getReturnData(json['gID'], json['uID'])
     return ret

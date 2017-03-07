@@ -26,17 +26,18 @@
     --> 
 
 
-      <div class="body row">
+      <div class="main row">
+
         <nav class="blue-grey darken-3">
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
-              <li><a href="collapsible.html">JavaScript</a></li>
+          <span id="title">Cork Pub Edition</span>
+            <a href="#" class="brand-logo"></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down player-icons valign-wrapper">
             </ul>
           </div>
         </nav>
+
+
         <section class="side-control col s3 demo">
           <ul class="collapsible" data-collapsible="accordion">
             <li>
@@ -58,13 +59,233 @@
 
         </section>
         <section class="options col s3 demo">
-          <h1>Test</h1>
+          <div class="control-area z-depth-3 row">
+
+              <h2 id="player-name"></h2>
+              <img src="" id="player-image" class="circle">
+              <p id="player-balance"></p>
+              <button class="btn center" id="action-button">Roll Dice</button>
+              
+            
+          </div>
         </section>
       </div>
       <script type="text/javascript">
-          var init = {"player": {"public": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, "uID": "d03320484e04fee26e86b27ba80581bc96fb9e68c85b6be6cc341d3df56c87d0", "money": 10000}, "players": {"azby": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, "hass": {"name": "hass", "GOOJF": 0, "number": 1, "position": 0, "properties": {}}}, "game": {"gID": "14ae581c4e2595892d46b3c76a501e3505cc24f901c1ec594bd9fb0c878749bd", "lastActivity": "2017-02-28 04:04:27", "turn": 1, "figurines": ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"], "type": "public", "status": "LOBBY", "playersNo": 2}};
+      var init = {
+"game":{  
+        "takenGOOJF":{  
+            "Chance":false,
+            "CommunityChest":false
+        },
+        "gID":"11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d",
+        "buildings":32,
+        "turn":1,
+        "figurines":[  
+            "IRON",
+            "THIMBLE",
+            "BOOT",
+            "HAT",
+            "CAR",
+            "DOG",
+            "WHEELBARROW"
+        ],
+        "playersNo":1,
+        "GO":200,
+        "state":"LOBBY",
+        "trade":{  
+
+        },
+        "lastActivity":"2017-03-05 02:56:53",
+        "type":"private",
+        "lastRoll":{  
+
+        }
+    },
+    "options":[  
+    ],
+    "players":{  
+        "Hosty":{  
+            "position":0,
+            "name":"Hosty",
+            "figurine":"SHIP",
+            "properties":{  
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "lightBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                }
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "GOOJF":{  
+                "Chance":false,
+                "CommunityChest":false
+            },
+            "number":1
+        }
+    },
+    "player":{  
+        "uID":"576278beae513e916efb834554cd23a7acb5d8d2800ed5467fc474add55ee51f",
+        "trade":{  
+            "recieved":[  
+
+            ],
+            "sent":{  
+
+            }
+        },
+        "public":{  
+            "position":0,
+            "name":"Hosty",
+            "figurine":"SHIP",
+            "properties":{  
+                "pink":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "darkBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "lightBlue":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "services":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "green":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "orange":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "brown":{  
+                    "owned":[  
+
+                    ],
+                    "size":2
+                },
+                "red":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                },
+                "transport":{  
+                    "owned":[  
+
+                    ],
+                    "size":4
+                },
+                "yellow":{  
+                    "owned":[  
+
+                    ],
+                    "size":3
+                }
+            },
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "GOOJF":{  
+                "Chance":false,
+                "CommunityChest":false
+            },
+            "number":1
+        },
+        "canBuy":null,
+        "options":[  
+
+        ],
+        "money":15000
+    }
+}
+      var initFig = {
+        "HAT"         : 'assets/game_assets/lobby/Avatars/avatar-hat.png', 
+        "CAR"         : 'assets/game_assets/lobby/Avatars/avatar-car.png', 
+        "THIMBLE"     : 'assets/game_assets/lobby/Avatars/avatar-thimble.png', 
+        "IRON"        : 'assets/game_assets/lobby/Avatars/avatar-iron.png', 
+        "BOOT"        : 'assets/game_assets/lobby/Avatars/avatar-boot.png', 
+        "SHIP"        : 'assets/game_assets/lobby/Avatars/avatar-ship.png', 
+        "DOG"         : 'assets/game_assets/lobby/Avatars/avatar-dog.png', 
+        "WHEELBARROW" : 'assets/game_assets/lobby/Avatars/avatar-wbarrow.png'
+      }
       </script>
-      <!--Import jQ
+      <!--Import jQ-->
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"> </script>
       <script type="text/javascript" src="js/jquery-cookie/jquery.cookie.js">           </script>

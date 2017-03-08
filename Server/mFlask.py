@@ -52,6 +52,6 @@ def game():
 
 if __name__ == '__main__':
   app.run(
-        host="0.0.0.0",
+        host="localhost",
         port=int("8080")
   )

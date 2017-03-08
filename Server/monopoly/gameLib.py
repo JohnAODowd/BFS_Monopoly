@@ -180,7 +180,7 @@ def drawCard(gID, uID):
     player      = r.getPlayers(gID)[uID]
     pos         = player['public']['position']
     cardType    = board[pos]['name']
-    cardNumber  = drawFromDeck(8)   #Fixme
+    cardNumber  = drawFromDeck()
     takenGOOJF  = game['takenGOOJF'][cardType]
     if takenGOOJF and cardNumber == 0:
         cardNumber += 1
@@ -394,8 +394,9 @@ def initTrade(gID, uID, playerNumber, jOffer, jFor):
         r.setGame(gID, game)
     return alert
 
-def giveProperty(gID, uID, player, deed, status="owned"):
+def giveProperty(gID, uID, deed, status="owned"):
     # method for giving a player a property (deed signing)
+    player              = r.getPlayers(gID)[uID]
     deed['status']      = status
     deed['owner']       = player['public']['number']
     player['public']['properties'][deed['group']]['owned'].append(deed['pID'])
@@ -512,7 +513,7 @@ def roll(json):
         if player["public"]["jail"]["turn"] == 3:
             alert = payToGOOJ(gID, uID, player)
             if alert["boolean"]:
-                ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], alert['alert'], card)
+                ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], alert['alert'])
                 return ret
             else:
                 getOutOfJail(gID, uID)
@@ -533,12 +534,15 @@ def roll(json):
         card = False
     if alert['boolean']:
         ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['alert'], card)
+        if alert["alert"] == "IN JAIL":
+            incrementTurn(gID)
     elif "activity" in alert:
         if alert['activity'] == "rent":
             ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['activity'], card)
+            incrementTurn(gID)
     else:
         ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], {}, card)
-    incrementTurn(gID)
+        incrementTurn(gID)
     return ret
 
 def buy(json):
@@ -552,7 +556,7 @@ def buy(json):
         deed        = r.getDeeds(gID)[pID]
         alert       = pay(gID, uID, 0, deed['price'])
         if not alert['boolean']:
-            giveProperty(gID, uID, player, deed)
+            giveProperty(gID, uID, deed)
             if incrementTurn(gID):
                 ret = helpers.getReturnData(gID, uID, [], ["BUY", "AUCTION", "ROLLED"])
             else:

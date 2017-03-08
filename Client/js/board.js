@@ -1,3 +1,4 @@
+(function() {
 var c = document.getElementById("boardCanvas");
 		var ctx = c.getContext("2d");
 		var tiles = [];
@@ -444,11 +445,13 @@ myFiles.forEach(function (file, i) {
 
 
 		function _drawRect(x,y,w,h) {
+		  /*
 		  console.log("Drawing at \n x     : ".concat(x)
 		              .concat("\n y     : ".concat(y))
 		              .concat("\n width : ".concat(w))
 		              .concat("\n height: ".concat(h))
 		             );
+		  */
 		  ctx.rect(x,y,w,h);
 		  ctx.stroke();
 
@@ -476,6 +479,14 @@ myFiles.forEach(function (file, i) {
 			 ctx.restore();
 		}
 
+		function _createImage(src, alt, title) {
+		    var img = new Image();
+		    img.src = src;
+		    if ( alt != null ) img.alt = alt;
+		    if ( title != null ) img.title = title;
+		    return img;
+		}
+
 		function rotate_point(pointX, pointY, originX, originY, angle) {
 		    angle = angle * Math.PI / 180.0;
 		    return {
@@ -489,19 +500,20 @@ myFiles.forEach(function (file, i) {
 		function draw(){
 		  
 		  // tile imgs
-		  var chance_img 		= document.getElementById("chance");
-		  var community_img 	= document.getElementById("community");
-		  var luxury_img 		= document.getElementById("luxury_tax");
-		  var income_img		= document.getElementById("income_tax");
-		  var water_img 		= document.getElementById("water");
-		  var electric_img		= document.getElementById("electric");
-		  var railroad_img		= document.getElementById("railroad");
+		  var _path = "./assets/game_assets/board/"
+		  var chance_img 		= _createImage(_path.concat("chance.png"));
+		  var community_img 	= _createImage(_path.concat("community-chest.png"));
+		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
+		  var income_img		= _createImage(_path.concat("income-tax.png"));
+		  var water_img 		= _createImage(_path.concat("water.png"));
+		  var electric_img		= _createImage(_path.concat("electric.png"));
+		  var railroad_img		= _createImage(_path.concat("railroad.png"));
 
 		  //corner imgs
-		  var go_img 			= document.getElementById("go");
-		  var jail_img 			= document.getElementById("jail");
-		  var free_parking_img 	= document.getElementById("free_parking");
-		  var go_to_jail_img 	= document.getElementById("go_to_jail");
+		  var go_img 			= _createImage(_path.concat("go.png"));
+		  var jail_img 			= _createImage(_path.concat("jail.png"));
+		  var free_parking_img 	= _createImage(_path.concat("free-parking.png"));
+		  var go_to_jail_img 	= _createImage(_path.concat("go-to-jail.png"));
 
 		  var type;
 		  var tile;
@@ -582,7 +594,7 @@ myFiles.forEach(function (file, i) {
 		  				// make the IncomeTax tile
 
 		  				tile = new Tile(i);
-						tile = new ImageTile(i, income_tax);
+						tile = new ImageTile(i, income_img);
 		  			}
 		  		}
 		  }
@@ -597,5 +609,4 @@ myFiles.forEach(function (file, i) {
 		
     })
 })
-
-	
+})();

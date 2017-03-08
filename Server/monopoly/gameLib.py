@@ -115,15 +115,13 @@ def isMortgageable(gID, pID, playerNo):
     # returns boolean if property is mortgageable
     alert = {}
     deeds = r.getDeeds(gID)
-    if deeds['pID']['owner'] == playerNo:
-        group = []
+    alert['value'] = False
+    if deeds[pID]['owner'] == playerNo:
         for _pID in deeds:
             if deeds[_pID]['group'] == deeds[pID]['group']:
                 if deeds[_pID]['buildings'] == None:
                     alert['value'] = "CANNOT MORTGAGE. SELL PROPERTY."
-        else:
-            alert['value'] = True
-    alert['value'] = False
+                    break
     return alert
 
 def housingShortage(gID):
@@ -479,14 +477,15 @@ def mortgage(json):
     gID             = json['gID']
     uID             = json['uID']
     pID             = json['pID']
-    deed            = r.getDeeds(gID)['pID']
+    deeds           = r.getDeeds(gID)
+    deed            = deeds[pID]
     player          = r.getPlayers(gID)[uID]
     mortgageable    = isMortgageable(gID, pID, player['public']['number'])
-    if mortgageable['value'] == True:
+    if mortgageable['value'] == False:
         deed["status"]  = "mortgaged"
         player['money'] += deed['mortgage']
-        r.setPlayer(gID, uID)
-        r.setBoard(gID, uID)
+        r.setPlayer(gID, uID, player)
+        r.setDeeds(gID, deeds)
         ret = helpers.getReturnData(gID, uID)
     else:
         ret = helpers.getReturnData(gID, uID, [], [], mortgageable['value'])
@@ -536,13 +535,16 @@ def roll(json):
         ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['alert'], card)
         if alert["alert"] == "IN JAIL":
             incrementTurn(gID)
+        else:
+            return ret
     elif "activity" in alert:
         if alert['activity'] == "rent":
             ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['activity'], card)
             incrementTurn(gID)
-    else:
-        ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'], {}, card)
-        incrementTurn(gID)
+    elif card == False:
+        ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'])
+        return ret
+    incrementTurn(gID)
     return ret
 
 def buy(json):
@@ -678,6 +680,22 @@ def chat(json):
     ret = helpers.getReturnData(json['gID'], json['uID'])
     return ret
 
+def payMort(json):
+    gID             = json["gID"]
+    uID             = json["uID"]
+    pID             = json['pID']
+    deeds           = r.getDeeds(gID)
+    deed            = deeds[pID]
+    mortgageAmount  = int(deed["mortgage"] * 1.1)
+    alert           = pay(gID, uID, 0, mortgageAmount)
+    if alert["boolean"]:
+        ret = helpers.getReturnData(gID, uID, [], [], alert['alert'])
+    else:
+        deeds[pID]["status"] = "owned"
+        r.setDeeds(gID, deeds)
+        ret = helpers.getReturnData(gID, uID)
+    return ret
+
 #******************************************************************************
     # Flask Game + Bid Controller Abstraction
 #******************************************************************************
@@ -710,6 +728,8 @@ def game(json):
             ret = trade(json)
         elif json['request'] == 'GOOJF':
             ret = getOutOfJail(json['gID'], json['uID'], True)
+        elif json['request'] == 'PAYMORT':
+            ret = payMort(json)
 
         return ret
 

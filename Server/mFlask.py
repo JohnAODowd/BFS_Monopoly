@@ -18,7 +18,6 @@ def home():
             return render_template("index.html", joinForm="private", gID=gID)
     return render_template("index.html", joinForm="public")                             #return the homepage
 
-# TODO check for form to implement full server independence
 """
 Main game controller
 """

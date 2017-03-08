@@ -28,11 +28,9 @@ def game():
         json        = (request.get_json())
         fromForm    = False
         if json == None:
-            print(json)
             fromForm = True
             form = request.form
             json = helpers.formToJson(form)
-
         if json['request'] == 'HOST' or json['request'] == "JOIN" or helpers.getGameState(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
             if fromForm:

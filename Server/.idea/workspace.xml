@@ -14,8 +14,8 @@
     <SUITE FILE_PATH="coverage/Server$emojiToken.coverage" NAME="emojiToken Coverage Results" MODIFIED="1488561911510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
     <SUITE FILE_PATH="coverage/Server$lobbyUnitTest__1_.coverage" NAME="lobbyUnitTest (1) Coverage Results" MODIFIED="1488224995475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Server$cleanup.coverage" NAME="cleanup Coverage Results" MODIFIED="1488886876262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
-    <SUITE FILE_PATH="coverage/Server$unitTest.coverage" NAME="unitTest Coverage Results" MODIFIED="1488951180884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Server$mFlask.coverage" NAME="mFlask Coverage Results" MODIFIED="1488951167301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$unitTest.coverage" NAME="unitTest Coverage Results" MODIFIED="1489009564464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Server$mFlask.coverage" NAME="mFlask Coverage Results" MODIFIED="1489009529192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$board.coverage" NAME="board Coverage Results" MODIFIED="1488399029298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$cleanup__1_.coverage" NAME="cleanup (1) Coverage Results" MODIFIED="1488886421556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$lobbyUnitTest.coverage" NAME="lobbyUnitTest Coverage Results" MODIFIED="1488748792556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -43,9 +43,10 @@
             <file leaf-file-name="gameLib.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-534">
-                    <caret line="721" column="0" lean-forward="false" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
+                  <state relative-caret-position="206">
+                    <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
                     <folding>
+                      <element signature="e#729#977#0" expanded="false" />
                       <element signature="e#1015#1057#0" expanded="false" />
                       <element signature="e#1085#1183#0" expanded="false" />
                       <element signature="e#1224#1431#0" expanded="false" />
@@ -54,36 +55,47 @@
                       <element signature="e#1841#2007#0" expanded="false" />
                       <element signature="e#2048#3140#0" expanded="false" />
                       <element signature="e#3178#3860#0" expanded="false" />
+                      <element signature="e#3906#4315#0" expanded="false" />
                       <element signature="e#4347#4441#0" expanded="false" />
                       <element signature="e#4481#4682#0" expanded="false" />
                       <element signature="e#4728#5620#0" expanded="false" />
-                      <element signature="e#9827#10037#0" expanded="false" />
-                      <element signature="e#10067#10405#0" expanded="false" />
-                      <element signature="e#10466#11915#0" expanded="false" />
-                      <element signature="e#11958#12401#0" expanded="false" />
-                      <element signature="e#12460#13893#0" expanded="false" />
-                      <element signature="e#13949#14289#0" expanded="false" />
-                      <element signature="e#14350#14538#0" expanded="false" />
-                      <element signature="e#14576#16372#0" expanded="false" />
-                      <element signature="e#16411#16900#0" expanded="false" />
-                      <element signature="e#20480#21383#0" expanded="false" />
-                      <element signature="e#21417#22109#0" expanded="false" />
-                      <element signature="e#22155#23104#0" expanded="false" />
-                      <element signature="e#23127#23730#0" expanded="false" />
-                      <element signature="e#23760#24114#0" expanded="false" />
-                      <element signature="e#24136#24464#0" expanded="false" />
+                      <element signature="e#5669#6217#0" expanded="false" />
+                      <element signature="e#6247#6933#0" expanded="false" />
+                      <element signature="e#6982#8190#0" expanded="false" />
+                      <element signature="e#8285#9803#0" expanded="false" />
+                      <element signature="e#9834#10044#0" expanded="false" />
+                      <element signature="e#10074#10412#0" expanded="false" />
+                      <element signature="e#10473#11922#0" expanded="false" />
+                      <element signature="e#11965#12408#0" expanded="false" />
+                      <element signature="e#12467#13900#0" expanded="false" />
+                      <element signature="e#13956#14296#0" expanded="false" />
+                      <element signature="e#14357#14545#0" expanded="false" />
+                      <element signature="e#14583#16379#0" expanded="false" />
+                      <element signature="e#16418#16907#0" expanded="false" />
+                      <element signature="e#17119#17779#0" expanded="false" />
+                      <element signature="e#17801#19658#0" expanded="false" />
+                      <element signature="e#19679#20448#0" expanded="false" />
+                      <element signature="e#20473#21278#0" expanded="false" />
+                      <element signature="e#21312#22004#0" expanded="false" />
+                      <element signature="e#22050#22999#0" expanded="false" />
+                      <element signature="e#23022#23625#0" expanded="false" />
+                      <element signature="e#23655#24009#0" expanded="false" />
+                      <element signature="e#24031#24359#0" expanded="false" />
+                      <element signature="e#24396#24698#0" expanded="false" />
+                      <element signature="e#24723#25232#0" expanded="false" />
+                      <element signature="e#25461#26717#0" expanded="false" />
                     </folding>
                   </state>
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="unitTest.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
+            <file leaf-file-name="mFlask.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/mFlask.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="403">
-                    <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
+                  <state relative-caret-position="444">
+                    <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
                     <folding>
-                      <element signature="e#0#11#0" expanded="true" />
+                      <element signature="e#0#22#0" expanded="true" />
                     </folding>
                   </state>
                 </provider>
@@ -102,8 +114,8 @@
             <file leaf-file-name="dice.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="54">
-                    <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+                  <state relative-caret-position="527">
+                    <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -112,10 +124,26 @@
             <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="301">
-                    <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                  <state relative-caret-position="240">
+                    <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
                     <folding>
                       <element signature="e#0#13#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="unitTest.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="458">
+                    <caret line="267" column="14" lean-forward="false" selection-start-line="267" selection-start-column="14" selection-end-line="267" selection-end-column="14" />
+                    <folding>
+                      <element signature="e#0#11#0" expanded="true" />
+                      <element signature="e#680#834#0" expanded="false" />
+                      <element signature="e#867#1182#0" expanded="false" />
+                      <element signature="e#1220#1288#0" expanded="false" />
+                      <element signature="e#9681#12973#0" expanded="false" />
                     </folding>
                   </state>
                 </provider>
@@ -149,19 +177,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mFlask.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mFlask.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
         <entry file="file://C:/Python34/Lib/site-packages/flask/app.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -171,10 +187,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="redisLib.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="redisLib.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
+            <state relative-caret-position="-2">
               <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
@@ -205,7 +221,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>['property'][</find>
       <find>jail</find>
       <find>getProp</find>
       <find>Last</find>
@@ -235,6 +250,7 @@
       <find>r.</find>
       <find>http</find>
       <find>print</find>
+      <find>IN JAIL</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -268,7 +284,6 @@
         <option value="$PROJECT_DIR$/monopolyJSON/init.json" />
         <option value="$PROJECT_DIR$/monopolyJSON/commchest.json" />
         <option value="$PROJECT_DIR$/monopolyJSON/chance.json" />
-        <option value="$PROJECT_DIR$/monopoly/dice.py" />
         <option value="$PROJECT_DIR$/chat.py" />
         <option value="$PROJECT_DIR$/monopoly/lobby.py" />
         <option value="$PROJECT_DIR$/monopoly/chat.py" />
@@ -278,15 +293,16 @@
         <option value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
         <option value="$PROJECT_DIR$/cleanup.py" />
         <option value="$PROJECT_DIR$/monopoly/cleanup.py" />
-        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
         <option value="$PROJECT_DIR$/monopoly/redisLib.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/game.html" />
         <option value="$PROJECT_DIR$/monopoly/getData.py" />
-        <option value="$PROJECT_DIR$/mFlask.py" />
-        <option value="$PROJECT_DIR$/tests/unitTest.py" />
         <option value="$PROJECT_DIR$/monopoly/emojiToken.py" />
+        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
+        <option value="$PROJECT_DIR$/tests/unitTest.py" />
+        <option value="$PROJECT_DIR$/monopoly/dice.py" />
         <option value="$PROJECT_DIR$/monopoly/gameLib.py" />
+        <option value="$PROJECT_DIR$/mFlask.py" />
       </list>
     </option>
   </component>
@@ -338,6 +354,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="monopoly" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -358,6 +388,7 @@
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\tests" />
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\monopoly" />
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\monopolyJSON" />
       <recent name="C:\Users\hassan\Documents\Coding\College Shit\Third Year\Project\BFS_Monopoly\Server\test" />
@@ -737,12 +768,12 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5106383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9700997" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.9983389" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -779,28 +810,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/monopoly/gameLib.py</url>
-          <line>721</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/monopoly/gameLib.py</url>
-          <line>731</line>
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/tests/unitTest.py</url>
-          <line>313</line>
-          <option name="timeStamp" value="69" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/monopoly/gameLib.py</url>
-          <line>478</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -811,7 +820,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="78" />
+      <option name="time" value="94" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1048,28 +1057,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Python34/Lib/codecs.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-9">
           <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
           <folding />
         </state>
       </provider>
@@ -1082,10 +1073,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://C:/Python34/Lib/json/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9">
+          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="39" column="8" lean-forward="false" selection-start-line="39" selection-start-column="8" selection-end-line="39" selection-end-column="8" />
+        <state relative-caret-position="527">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1098,41 +1097,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python34/Lib/json/__init__.py">
+    <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="187">
+          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="313" column="0" lean-forward="false" selection-start-line="313" selection-start-column="0" selection-end-line="313" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mFlask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1144,11 +1113,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="458">
+          <caret line="267" column="14" lean-forward="false" selection-start-line="267" selection-start-column="14" selection-end-line="267" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#680#834#0" expanded="false" />
+            <element signature="e#867#1182#0" expanded="false" />
+            <element signature="e#1220#1288#0" expanded="false" />
+            <element signature="e#9681#12973#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mFlask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2">
+          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-534">
-          <caret line="721" column="0" lean-forward="false" selection-start-line="721" selection-start-column="0" selection-end-line="721" selection-end-column="0" />
+        <state relative-caret-position="206">
+          <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
           <folding>
+            <element signature="e#729#977#0" expanded="false" />
             <element signature="e#1015#1057#0" expanded="false" />
             <element signature="e#1085#1183#0" expanded="false" />
             <element signature="e#1224#1431#0" expanded="false" />
@@ -1157,24 +1171,35 @@
             <element signature="e#1841#2007#0" expanded="false" />
             <element signature="e#2048#3140#0" expanded="false" />
             <element signature="e#3178#3860#0" expanded="false" />
+            <element signature="e#3906#4315#0" expanded="false" />
             <element signature="e#4347#4441#0" expanded="false" />
             <element signature="e#4481#4682#0" expanded="false" />
             <element signature="e#4728#5620#0" expanded="false" />
-            <element signature="e#9827#10037#0" expanded="false" />
-            <element signature="e#10067#10405#0" expanded="false" />
-            <element signature="e#10466#11915#0" expanded="false" />
-            <element signature="e#11958#12401#0" expanded="false" />
-            <element signature="e#12460#13893#0" expanded="false" />
-            <element signature="e#13949#14289#0" expanded="false" />
-            <element signature="e#14350#14538#0" expanded="false" />
-            <element signature="e#14576#16372#0" expanded="false" />
-            <element signature="e#16411#16900#0" expanded="false" />
-            <element signature="e#20480#21383#0" expanded="false" />
-            <element signature="e#21417#22109#0" expanded="false" />
-            <element signature="e#22155#23104#0" expanded="false" />
-            <element signature="e#23127#23730#0" expanded="false" />
-            <element signature="e#23760#24114#0" expanded="false" />
-            <element signature="e#24136#24464#0" expanded="false" />
+            <element signature="e#5669#6217#0" expanded="false" />
+            <element signature="e#6247#6933#0" expanded="false" />
+            <element signature="e#6982#8190#0" expanded="false" />
+            <element signature="e#8285#9803#0" expanded="false" />
+            <element signature="e#9834#10044#0" expanded="false" />
+            <element signature="e#10074#10412#0" expanded="false" />
+            <element signature="e#10473#11922#0" expanded="false" />
+            <element signature="e#11965#12408#0" expanded="false" />
+            <element signature="e#12467#13900#0" expanded="false" />
+            <element signature="e#13956#14296#0" expanded="false" />
+            <element signature="e#14357#14545#0" expanded="false" />
+            <element signature="e#14583#16379#0" expanded="false" />
+            <element signature="e#16418#16907#0" expanded="false" />
+            <element signature="e#17119#17779#0" expanded="false" />
+            <element signature="e#17801#19658#0" expanded="false" />
+            <element signature="e#19679#20448#0" expanded="false" />
+            <element signature="e#20473#21278#0" expanded="false" />
+            <element signature="e#21312#22004#0" expanded="false" />
+            <element signature="e#22050#22999#0" expanded="false" />
+            <element signature="e#23022#23625#0" expanded="false" />
+            <element signature="e#23655#24009#0" expanded="false" />
+            <element signature="e#24031#24359#0" expanded="false" />
+            <element signature="e#24396#24698#0" expanded="false" />
+            <element signature="e#24723#25232#0" expanded="false" />
+            <element signature="e#25461#26717#0" expanded="false" />
           </folding>
         </state>
       </provider>

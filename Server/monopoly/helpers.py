@@ -64,7 +64,7 @@ def getReturnData(gID, uID, optionsToAdd=[], optionsToRemove=[], alert={}, card=
 
     ret['options'] = player['options']
     if len(alert) != 0:
-        ret['activity'] = alert
+        ret['alert'] = alert
     if card:
         ret['card'] = card
 

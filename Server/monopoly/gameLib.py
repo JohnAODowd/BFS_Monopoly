@@ -159,10 +159,10 @@ def processCard(gID, uID, card, deckType):
         giveGOOJF(gID, uID, deckType)
         return alert
     if card['type'] == "move":
-        if card['destination'] == 10:       
+        if int(card['destination']) == 10:
             alert = updateLocation(gID, uID, "GTJ", card=True) 
         else:
-            alert = updateLocation(gID, uID, card['destination'], card=True)
+            alert = updateLocation(gID, uID, int(card['destination']), card=True)
     elif card['type'] == "pay":
         alert = pay(gID, uID, 0, card['amount'])
     elif card['type'] == "receive":
@@ -188,7 +188,7 @@ def drawCard(gID, uID):
         deck = getChanceJson()
 
     deck            = helpers.keyStringtoInt(deck)
-    card            = deck[cardNumber]
+    card            = deck[cardNumber - 1]
     alert           = processCard(gID, uID, card, cardType)
     alert['card']   = card
 
@@ -534,7 +534,7 @@ def roll(json):
     if alert['boolean']:
         ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['alert'], card)
         if alert["alert"] == "IN JAIL":
-            incrementTurn(gID)
+            pass
         else:
             return ret
     elif "activity" in alert:
@@ -571,17 +571,14 @@ def auction(json):
     # moves the game state into an auction for 30 seconds
     gID     = json['gID']
     uID     = json['uID']
-    board   = r.getBoard(gID)
     players = r.getPlayers(gID)
     player  = players[uID]
-    pos     = player['public']['position']
     pID     = json["pID"]
     if player["canBuy"] == pID:
         deed    = r.getDeeds(gID)[pID]
-        for _player in players:
-            _uID = _player['uID']
-            _player['options'] += ["BID"]
-            r.setPlayer(gID, _uID, _player)
+        for _uID in players:
+            players[_uID]['options'] += ["BID"]
+            r.setPlayer(gID, _uID, players[_uID])
         game = r.getGame(gID)
         game['auction'] = {}
         game['auction']['pID'] = pID
@@ -680,6 +677,17 @@ def chat(json):
     ret = helpers.getReturnData(json['gID'], json['uID'])
     return ret
 
+def payGetOutOfJail(gID, uID):
+    players = r.getPlayers(gID)
+    player  = players[uID]
+    alert   = payToGOOJ(gID, uID, player)
+    if alert["boolean"] == False:
+        getOutOfJail(gID, uID)
+        ret = helpers.getReturnData(gID, uID)
+    else:
+        ret = helpers.getReturnData(gID, uID, [], [], alert["alert"])
+    return ret
+
 def payMort(json):
     gID             = json["gID"]
     uID             = json["uID"]
@@ -730,6 +738,8 @@ def game(json):
             ret = getOutOfJail(json['gID'], json['uID'], True)
         elif json['request'] == 'PAYMORT':
             ret = payMort(json)
+        elif json["request"] == "PGOOJ":
+            ret = payGetOutOfJail(json['gID'], json['uID'])
 
         return ret
 
@@ -737,47 +747,58 @@ def bid(json):
     gID = json['gID']
     uID = json['uID']
     if r.validateUID(json['gID'], json['uID']):
-        ret         = {}
         game        = r.getGame(gID)
         players     = r.getPlayers(gID)
         player      = players[uID]
-        hBidder     = game['auction']['highest']
+        hBidder     = None
+        for key in game['auction']['highest']:
+            hBidder = key
         hBidAmount  = game['auction']['highest'][hBidder]
 
         def close():
             if hBidder != 0:
-                alert = pay(gID, uID, 0, hBidAmount)
+                payUID = None
+                for _uID in players:
+                    if players[_uID]["public"]["number"] == int(hBidder):
+                        payUID = _uID
+                        break
+                alert = pay(gID, payUID, 0, hBidAmount)
                 if not alert['boolean']:
                     deed = r.getDeeds(gID)[game['auction']['pID']]
-                    giveProperty(gID, uID, player, deed)
-                    for _player in players:
-                        _uID = _player['uID']
-                        _player['options'].remove("BID")
-                        r.setPlayer(gID, _uID, _player)
-                        game['state'] = "PLAYING"
-                        incrementTurn(gID)
+                    giveProperty(gID, payUID, deed)
+                    for _uID in players:
+                        players[_uID]['options'].remove("BID")
+                        if "AUCTION" in players[_uID]["options"]:
+                            players[_uID]['options'].remove("AUCTION")
+                        if "BUY" in players[_uID]["options"]:
+                            players[_uID]['options'].remove("BUY")
+                    r.setPlayers(gID, players)
+                    game['state'] = "PLAYING"
+                    r.setGame(gID, game)
+                    incrementTurn(gID)
+                    return helpers.getReturnData(gID, uID)
                 else:
                     return helpers.getReturnData(gID, uID, [], [], alert['alert'])
 
         if not helpers.checkTime(game['lastActivity'], 30, True):
-            close()
+            return close()
 
         elif json['request'] == "PING":
             pass
 
         elif json['request'] == "BID" and player['public']['number'] not in game['auction']['out']:
-            if json['amount'] > hBidAmount and json['amount'] <= player['public']['money']:
+            if (json['amount'] > hBidAmount) and (json['amount'] <= player['money']):
                 newBid                      = {player['public']['number'] : json['amount']}
                 game['auction']['highest']  = newBid
                 r.setGame(json['gID'], game)
             else:
-                helpers.getReturnData(gID, uID, [], [], "INSUFFICIENT FUNDS")
+                return helpers.getReturnData(gID, uID, [], [], "INSUFFICIENT FUNDS")
 
         elif json['request'] == "OUT":
             if hBidder != player['public']['number']:
                 game['auction']['out'].append(player['public']['number'])
                 r.setGame(json['gID'], game)
-                if len(game['auction']['out']) >= 7:
-                    close()
+                if len(game['auction']['out']) >= game['playersNo'] - 1:
+                    return close()
 
         return helpers.getReturnData(gID, uID)

@@ -24,6 +24,8 @@ class user:
     _pID        = None
     _properties = []
     _mortgaged  = []
+    _alert      = None
+    _inJail     = False
 
     def __init__(self, name, type="HOST", gID=None):
         self._name      = name
@@ -53,6 +55,10 @@ class user:
             for group in player["public"]["properties"]:
                 for prop in player["public"]["properties"][group]["owned"]:
                     self._properties += [prop]
+            if "alert" in dic:
+                if dic["alert"] == "IN JAIL":
+                    self._inJail = True
+
             # toPrint = "name: " + player["public"]["name"] + "\n"
             # toPrint += "position: " + str(player["public"]["position"]) + "\n"
             # toPrint += "money: " + str(player["money"]) + "\n\n"
@@ -211,7 +217,53 @@ class user:
             self._history += "RECIEVED***********\n" + response + "\n\n"
             self.parseResponse(json.loads(response))
 
+    def payGOOJ(self):
+        if self._inJail:
+            js = {}
+            js["request"] = "PGOOJ"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            self._history += "SENDING (PGOOJ)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
 
+    def auction(self):
+        if self.canBuy():
+            pID = self._pID
+            js = {}
+            js["request"] = "AUCTION"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js['pID'] = pID
+            self._history += "SENDING (AUCTION)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+
+    def bid(self, amount):
+        if self._state == "AUCTION":
+            js = {}
+            js["request"] = "BID"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js["amount"] = amount
+            self._history += "SENDING (BID)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+    def out(self):
+        if self._state == "AUCTION":
+            js = {}
+            js["request"] = "OUT"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            self._history += "SENDING (OUT)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
 
 class mMatrix:
 
@@ -295,6 +347,33 @@ class mMatrix:
         self.allPing()
         self.incrementHistory("UNMORT")
 
+    def payGOOJ(self):
+        self.clearHist()
+        for player in self.users:
+            player.payGOOJ()
+        self.allPing()
+        self.incrementHistory("PGOOJ")
+
+    def auction(self):
+        self.clearHist()
+        for player in self.users:
+            player.auction()
+        self.allPing()
+        self.incrementHistory("AUCTION")
+
+
+    def bid(self, playeri, amount):
+        self.clearHist()
+        self.users[playeri].bid(amount)
+        self.allPing()
+        self.incrementHistory("BID")
+
+    def out(self, playeri):
+        self.clearHist()
+        self.users[playeri].out()
+        self.allPing()
+        self.incrementHistory("OUT")
+
 
     def resetHistory(self, turn):
         self.history = "!!!!**** TURN %i *****!!!!!\n\n" % (turn)
@@ -309,9 +388,14 @@ class mMatrix:
             for i in range(1):
                 self.resetHistory(turn)
                 self.roll()
-                self.buy()
-                self.mortgage()
-                self.unMortgage()
+                self.auction()
+                self.bid(0, 30)
+                self.bid(0, 50)
+                self.bid(0, 60)
+                self.bid(1, 50)
+                self.bid(1, 70)
+                self.out(0)
+
             print(self.history)
 
 matrix = mMatrix(2)

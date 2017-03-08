@@ -45,8 +45,8 @@ def double_roll():
 	ret 				= {}
 	# ret['firstRoll']	= roll_dice()
 	# ret['secondRoll']	= roll_dice()
-	ret['firstRoll']	= 4
-	ret['secondRoll']	= 2
+	ret['firstRoll']	= 2
+	ret['secondRoll']	= 4
 	ret['value'] 		= ret['firstRoll'] + ret['secondRoll']
 	ret['double']		= ret['firstRoll'] == ret['secondRoll']
 	return ret
@@ -54,6 +54,7 @@ def double_roll():
 
 def drawFromDeck(deckSize=16):
 	return roll_dice(deckSize)
+
 '''
 def test_single(verbose = False):
 	results = [0 for x in range(6)]

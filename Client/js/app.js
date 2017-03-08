@@ -73,35 +73,52 @@
 					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
 					// OPTIONS 
 					options = json_data['options'];
+
+					if (('ROLL' in options) == 1) {
+						console.log("fuck");
+						// there are options, check if we need them
+						$('#action-button').addClass('disabled');
+					} else {
+						console.log("fuck2");
+						$('#action-button').removeClass('disabled');
+					}
 							
 					console.log('state:'+ game_variables['state']);
-					// Game has changed state
-					// Set new game state into memory
+					if (game_variables['state'] != game_state) {
+						// GAMES STATE HAS CHANGED
+
+						$('.board').empty();
+						// $('.board').append(
+						// '<canvas id="dynamicCanvas" width="520" height="520" style="border:1px solid #000000;'+
+						// 	'position: absolute;left: 0;top:0;z-index:1;">'+
+						// '</canvas>'+
+						// '<canvas id="boardCanvas" width="520" height="520" style="border:1px solid #000000; background: #cdcdcd ;'+
+						// 	'position: absolute;left: 0;top:0;z-index:0;">'+
+						// '</canvas>');
+					}
 					game_state = game_variables['state'];
 
 					if (game_state === 'PLAYING'){
 						// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
 						// Set control buttons
+						// The game's state has not changed so we should not redraw canvas etc to board
 						console.log('GAME STATE: ' + game_state);
-						$('.board').empty();
-						//$('.board').append();
+
+
 					}
-					else if (game_state === 'LOBBY'){
+					if (game_state === 'LOBBY'){
 						console.log('GAME STATE: ' + game_state);
 						console.log('Options:' + options);
 						// GAME IS IN LOBBY - RENDER BOARD OR OPTIONS
 						// disable control buttons
-						if (options.length > 0) {
+						if ('FIGURINE' in options) {
 							console.log('DISPLAYING OPTIONS *****');
 							// if there are options
-							$.each(options, function(key,val) {
-								if (val === "FIGURINE") {	// check to see if there is a FIGURINE options
-									displayFigurines();		// tere should only ever be this option or none in LOBBY
-								}
-							});
+
+							displayFigurines();		// tere should only ever be this option or none in LOBBY
+
 						} 
 						else {
-							console.log('NO OPTIONS');
 							// otherwise - diplay the game board
 							// test in place for now
 							$('.board').empty();
@@ -163,16 +180,7 @@
 						});
 					} // End for
 				}
-				if (game_state == 'PLAYING') {
-					// check if game is playing
-					// in which case 'board' is required
-					if (json_data.hasOwnProperty('board')) {
-						// make sure 'board' is present
 
-						// NEED TO IMPLEMENT
-
-					}
-				} // END PLAYING IF
 				if (json_data.hasOwnProperty('alert')) {
 					// IMPLEMENT
 				}

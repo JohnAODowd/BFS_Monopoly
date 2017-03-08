@@ -1,5 +1,5 @@
-(function() {
 var c = document.getElementById("boardCanvas");
+
 		var ctx = c.getContext("2d");
 		var tiles = [];
 				var _width = c.width;
@@ -10,7 +10,12 @@ var c = document.getElementById("boardCanvas");
 
 		var cLeft = c.offsetLeft;
 		var cTop = c.offsetTop;
+var background = new Image();
+background.src = "loading.gif";
 
+background.onload = function(){
+    ctx.drawImage(background,100,200);   
+}
 
 // Load JSON File
 var loadFile = function (filePath, done) {
@@ -47,6 +52,11 @@ myFiles.forEach(function (file, i) {
 	    jcards 		= jsonData[2];
 
 		/* ----------------------------------- */
+
+
+		
+    })
+})
 
 		function getAttribute(index, attr){
 			var str = index.toString(); //force type string
@@ -151,6 +161,7 @@ myFiles.forEach(function (file, i) {
 		}
 		
 		function drawRotatedText(text,price, o,x,y){
+			console.log("|||||||||||zzzz|||||||||");
 			var twoWords = text.includes(" ");
 			var word2;
 			if (twoWords){
@@ -179,6 +190,8 @@ myFiles.forEach(function (file, i) {
 			ctx.fillText(text,textX,textY);}
 			ctx.fillText("$" +price,textX,textY +24)
 			ctx.restore();
+			
+			console.log(text + " " + textX);
 		 
 		}
 		
@@ -223,7 +236,11 @@ myFiles.forEach(function (file, i) {
 		var x = coords.x + (coords.w/2);
 		var y = coords.y + (coords.h/1.5);
 		var o = Math.floor(i / 10);
+		
+		console.log("****************************");
 		drawRotatedText(text, price, o,x,y);
+		
+		console.log("<><><><><><><><");
 }
 
 		function drawRailroadName(text, price, i){
@@ -445,13 +462,11 @@ myFiles.forEach(function (file, i) {
 
 
 		function _drawRect(x,y,w,h) {
-		  /*
 		  console.log("Drawing at \n x     : ".concat(x)
 		              .concat("\n y     : ".concat(y))
 		              .concat("\n width : ".concat(w))
 		              .concat("\n height: ".concat(h))
 		             );
-		  */
 		  ctx.rect(x,y,w,h);
 		  ctx.stroke();
 
@@ -479,14 +494,6 @@ myFiles.forEach(function (file, i) {
 			 ctx.restore();
 		}
 
-		function _createImage(src, alt, title) {
-		    var img = new Image();
-		    img.src = src;
-		    if ( alt != null ) img.alt = alt;
-		    if ( title != null ) img.title = title;
-		    return img;
-		}
-
 		function rotate_point(pointX, pointY, originX, originY, angle) {
 		    angle = angle * Math.PI / 180.0;
 		    return {
@@ -496,28 +503,33 @@ myFiles.forEach(function (file, i) {
 		}
 
 		/* ----------------------------------- */
-
+		function _createImage(src, alt, title) {
+ 	    var img = new Image();
+		    img.src = src;
+ 		    if ( alt != null ) img.alt = alt;
+ 		    if ( title != null ) img.title = title;
+ 		    return img;
+ 		}
 		function draw(){
-		  
-		  // tile imgs
+		  ctx.clearRect(0,0,d.width,d.height);
+ 		  // tile imgs
 		  var _path = "./assets/game_assets/board/"
-		  var chance1_img 		= _createImage(_path.concat("chance.png"));
-		  var chance2_img 		= _createImage(_path.concat("chance2.png"));
-		  var chance3_img 		= _createImage(_path.concat("chance3.png"));
-
-		  var community_img 	= _createImage(_path.concat("community-chest.png"));
-		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
-		  var income_img		= _createImage(_path.concat("income-tax.png"));
-		  var water_img 		= _createImage(_path.concat("water.png"));
-		  var electric_img		= _createImage(_path.concat("electric.png"));
-		  var railroad_img		= _createImage(_path.concat("railroad.png"));
+ 		  var chance1_img 		= _createImage(_path.concat("chance.png"));
+ 		  var chance2_img 		= _createImage(_path.concat("chance2.png"));
+ 		  var chance3_img 		= _createImage(_path.concat("chance3.png"));
+ 
+ 		  var community_img 	= _createImage(_path.concat("community-chest.png"));
+ 		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
+ 		  var income_img		= _createImage(_path.concat("income-tax.png"));
+ 		  var water_img 		= _createImage(_path.concat("water.png"));
+ 		  var electric_img		= _createImage(_path.concat("electric.png"));
+ 		  var railroad_img		= _createImage(_path.concat("railroad.png"));
 
 		  //corner imgs
 		  var go_img 			= _createImage(_path.concat("go.png"));
-		  var jail_img 			= _createImage(_path.concat("jail.png"));
-		  var free_parking_img 	= _createImage(_path.concat("free-parking.png"));
-		  var go_to_jail_img 	= _createImage(_path.concat("go-to-jail.png"));
-
+ 		  var jail_img 			= _createImage(_path.concat("jail.png"));
+ 		  var free_parking_img 		= _createImage(_path.concat("free-parking.png"));
+ 		  var go_to_jail_img 		= _createImage(_path.concat("go-to-jail.png"));
 		  var type;
 		  var tile;
 
@@ -559,8 +571,8 @@ myFiles.forEach(function (file, i) {
 		  				tile = new Tile(i);
 						var name = getPropertyName(i);
 						var price = getPropertyPrice(i)
-						//tile = drawRailroadName(name, price, i);
-		  				tile = new ImageTile(i, railroad_img);
+						tile = drawRailroadName(name, price, i);
+		  				//tile = new ImageTile(i, railroad_img);
 		  			} else {
 		  				// make a utility tile
 		  				if (getPropertyName(i) == "Water Works"){
@@ -573,7 +585,7 @@ myFiles.forEach(function (file, i) {
 		  			}
 		  			break;
 
-		  		case "card":
+	  		case "card":
 		  			type = getCardType(i);
 		  			if (type == "Chance"){
 		  				// make a chance tile
@@ -589,6 +601,7 @@ myFiles.forEach(function (file, i) {
 						tile = new ImageTile(i, community_img);
 		  			}
 		  			break;
+
 
 		  		case "tax":
 		  			type = getTaxType(i);
@@ -612,8 +625,5 @@ myFiles.forEach(function (file, i) {
 		}
 		
 		// init once
-		draw();
-		
-    })
-})
-})();
+	setTimeout(draw, 100
+	);

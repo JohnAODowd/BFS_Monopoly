@@ -585,11 +585,15 @@ myFiles.forEach(function (file, i) {
 		  			}
 		  			break;
 
-		  		case "card":
+	  		case "card":
 		  			type = getCardType(i);
 		  			if (type == "Chance"){
 		  				// make a chance tile
 		  				tile = new Tile(i);
+		  				var chance_img;
+		  				if (i == 7) chance_img = chance1_img;
+		  				if (i == 22) chance_img =chance2_img;
+		  				if (i == 36) chance_img = chance3_img;
 						tile = new ImageTile(i, chance_img);		  			
 					} else {
 		  				// make a community tile
@@ -597,6 +601,7 @@ myFiles.forEach(function (file, i) {
 						tile = new ImageTile(i, community_img);
 		  			}
 		  			break;
+
 
 		  		case "tax":
 		  			type = getTaxType(i);
@@ -609,7 +614,7 @@ myFiles.forEach(function (file, i) {
 		  				// make the IncomeTax tile
 
 		  				tile = new Tile(i);
-						tile = new ImageTile(i, income_tax);
+						tile = new ImageTile(i, income_img);
 		  			}
 		  		}
 		  }

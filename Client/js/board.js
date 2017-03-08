@@ -501,7 +501,10 @@ myFiles.forEach(function (file, i) {
 		  
 		  // tile imgs
 		  var _path = "./assets/game_assets/board/"
-		  var chance_img 		= _createImage(_path.concat("chance.png"));
+		  var chance1_img 		= _createImage(_path.concat("chance.png"));
+		  var chance2_img 		= _createImage(_path.concat("chance2.png"));
+		  var chance3_img 		= _createImage(_path.concat("chance3.png"));
+
 		  var community_img 	= _createImage(_path.concat("community-chest.png"));
 		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
 		  var income_img		= _createImage(_path.concat("income-tax.png"));
@@ -556,8 +559,8 @@ myFiles.forEach(function (file, i) {
 		  				tile = new Tile(i);
 						var name = getPropertyName(i);
 						var price = getPropertyPrice(i)
-						tile = drawRailroadName(name, price, i);
-		  				//tile = new ImageTile(i, railroad_img);
+						//tile = drawRailroadName(name, price, i);
+		  				tile = new ImageTile(i, railroad_img);
 		  			} else {
 		  				// make a utility tile
 		  				if (getPropertyName(i) == "Water Works"){
@@ -575,6 +578,10 @@ myFiles.forEach(function (file, i) {
 		  			if (type == "Chance"){
 		  				// make a chance tile
 		  				tile = new Tile(i);
+		  				var chance_img;
+		  				if (i == 7) chance_img = chance1_img;
+		  				if (i == 22) chance_img =chance2_img;
+		  				if (i == 36) chance_img = chance3_img;
 						tile = new ImageTile(i, chance_img);		  			
 					} else {
 		  				// make a community tile

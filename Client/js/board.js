@@ -482,6 +482,7 @@ myFiles.forEach(function (file, i) {
 		function _drawImage(x,y,w,h, img) {
 			ctx.drawImage(img, x, y, w, h);
 		}
+https://github.com/JohnAODowd/BFS_Monopoly/commit/34dc1aab0f25c3b68a953877f06032ea933e9b92
 
 		function _drawRotatedText(x,y,angle,str) {
 			 ctx.save();
@@ -506,21 +507,24 @@ myFiles.forEach(function (file, i) {
 
 		function draw(){
 		  ctx.clearRect(0,0,d.width,d.height);
-		  // tile imgs
-		  var chance_img 		= document.getElementById("chance");
-		  var community_img 	= document.getElementById("community");
-		  var luxury_img 		= document.getElementById("luxury_tax");
-		  var income_img		= document.getElementById("income_tax");
-		  var water_img 		= document.getElementById("water");
-		  var electric_img		= document.getElementById("electric");
-		  var railroad_img		= document.getElementById("railroad");
+ 		  // tile imgs
+ -		  var _path = "./assets/game_assets/board/"
+ -		  var chance1_img 		= _createImage(_path.concat("chance.png"));
+ -		  var chance2_img 		= _createImage(_path.concat("chance2.png"));
+ -		  var chance3_img 		= _createImage(_path.concat("chance3.png"));
+ -
+ -		  var community_img 	= _createImage(_path.concat("community-chest.png"));
+ -		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
+ -		  var income_img		= _createImage(_path.concat("income-tax.png"));
+ -		  var water_img 		= _createImage(_path.concat("water.png"));
+ -		  var electric_img		= _createImage(_path.concat("electric.png"));
+ -		  var railroad_img		= _createImage(_path.concat("railroad.png"));
 
 		  //corner imgs
-		  var go_img 			= document.getElementById("go");
-		  var jail_img 			= document.getElementById("jail");
-		  var free_parking_img 	= document.getElementById("free_parking");
-		  var go_to_jail_img 	= document.getElementById("go_to_jail");
-
+-		  var go_img 			= _createImage(_path.concat("go.png"));
+ -		  var jail_img 			= _createImage(_path.concat("jail.png"));
+ -		  var free_parking_img 		= _createImage(_path.concat("free-parking.png"));
+ -		  var go_to_jail_img 		= _createImage(_path.concat("go-to-jail.png"));
 		  var type;
 		  var tile;
 

@@ -22,7 +22,23 @@ function drawPiece(playerID, pos){
 	var player = getPlayer(playerID);
 	
 	dtx.fillText(player.token, x +10,y -10);
+	//dtx.rotate(Math.PI*2/(i*6));
+	
+	console.log(x + "  " + y);
 	return tiles[pos].top + " " + tiles[pos].left + "\n" +x + " " + y}
+
+
+function drawPieces(){
+	dtx.clearRect(0,0,d.width,d.height);
+	for (var i = 0; i<locations.length;i++){
+	
+		
+		var loc = locations[i];
+		console.log("aaa");
+		drawPiece(loc[0], loc[1]);
+	}
+
+}
 
 function shuffleTiles(){
 	var newTiles =[];
@@ -32,19 +48,13 @@ function shuffleTiles(){
 	}
 	tiles = newTiles;
 	}
-	
-function drawPieces(){
-	dtx.clearRect(0,0,d.width,d.height);
-	for (var i = 0; i<locations.length;i++){
-	
-		console.log(loc);
-		var loc = locations[i];
-		console.log(loc);
-		drawPiece(loc[0], loc[1]);
-	}
 
+function move(player, location){
+	updateLocation(player, location);
+	drawPieces();
 }
 
+	
 function updateLocation(playerID, position){
 	locations[playerID-1] = [playerID, position];
 }
@@ -53,31 +63,7 @@ function start(){
 	drawPieces();
 }
 dtx.textAlign="center";
-function drawRotatedText(r,x,y){
-	var word1="The Brog";
-	var word1Width=ctx.measureText(word1).width;
-	var rotation
-	switch(r){
-		  		case 1:
-		  			rotation = 0;
-					break;
-				case 0:
-		  			rotation = 90;
-					break;
-				case 2:
-		  			rotation = 180;
-					break;
-				case 3:
-					rotation = 270;
-				}
-	dtx.save();
-	dtx.translate(x,y);
-	dtx.rotate(rotation*Math.PI/180); 
-	
-	dtx.fillText(word1,-word1Width/2,4);
-	dtx.restore();
- 
-}
+
 function test(){
 shuffleTiles();
 var x = tiles[6].left + (tiles[6].width/2);

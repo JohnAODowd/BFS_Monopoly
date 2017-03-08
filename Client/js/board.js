@@ -503,7 +503,13 @@ myFiles.forEach(function (file, i) {
 		}
 
 		/* ----------------------------------- */
-
+		function _createImage(src, alt, title) {
+ 	    var img = new Image();
+		    img.src = src;
+ 		    if ( alt != null ) img.alt = alt;
+ 		    if ( title != null ) img.title = title;
+ 		    return img;
+ 		}
 		function draw(){
 		  ctx.clearRect(0,0,d.width,d.height);
  		  // tile imgs

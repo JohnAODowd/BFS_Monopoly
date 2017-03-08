@@ -625,5 +625,5 @@ myFiles.forEach(function (file, i) {
 		}
 		
 		// init once
-	setTimeout(draw, 100
+	setTimeout(draw, 1500
 	);

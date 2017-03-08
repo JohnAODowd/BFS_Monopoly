@@ -6,7 +6,7 @@ def post(d):
 	js = d
 	payload = json.dumps(js)
 	headers = {'Content-Type' : 'application/json'}
-	r = requests.post("http://leela.netsoc.co:8080/game", data=payload, headers=headers)
+	r = requests.post("http://localhost:8080/game", data=payload, headers=headers)
 	return r.text
 
 class user:

@@ -1,12 +1,16 @@
 import redis
 from json import dumps, loads
-from monopoly.helpers import keyStringtoInt
 
 r = redis.StrictRedis(host='redis.netsoc.co', port=6379, db=0)
 
 """
 Used for setting and getting data from redis database
 """
+
+def keyStringtoInt(dictionary):
+    # convert all top level dict string keys to ints
+    # eg {"0":"abc} -> {0:"abc"}
+    return {int(k):v for k,v in dictionary.items()}
 
 def getGames():  # gets all games in redis
     return loads(r.get('games').decode("utf-8"))

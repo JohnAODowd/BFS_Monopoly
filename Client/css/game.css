@@ -79,17 +79,24 @@
   color: white;
   font-family: 'norwester'; }
   .control-area h2 {
-    font-size: 2em;
+    font-size: 3em;
     letter-spacing: 2px;
     font-variant: small-caps;
-    margin-bottom: 0; }
+    margin-top: 0.5em;
+    margin-bottom: 0;
+    display: inline-block; }
   .control-area p {
-    font-size: 2em;
-    margin-top: 0; }
-  .control-area .player-image {
-    width: 20px;
-    height: 20px;
-    float: right; }
+    display: block;
+    font-size: 3em;
+    margin-top: 0em;
+    margin-bottom: 0; }
+  .control-area #player-image {
+    margin-top: 1em;
+    margin-left: 4em;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-color: #fff; }
 
 .demo {
   border-right: 1px solid #333;
@@ -111,7 +118,10 @@
     margin-bottom: 1em; }
 
 #game-board {
-  margin-top: 2em; }
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 520; }
 
 .collapsible {
   margin-top: 2em; }

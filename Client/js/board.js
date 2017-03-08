@@ -1,3 +1,17 @@
+(function() {
+var c = document.getElementById("boardCanvas");
+		var ctx = c.getContext("2d");
+		var tiles = [];
+				var _width = c.width;
+		var _height = c.height;
+
+		var wanchor = _width / 13;
+		var hanchor = _height / 13;
+
+		var cLeft = c.offsetLeft;
+		var cTop = c.offsetTop;
+
+
 // Load JSON File
 var loadFile = function (filePath, done) {
     var xhr = new XMLHttpRequest();
@@ -7,9 +21,9 @@ var loadFile = function (filePath, done) {
 }
 
 // directory paths to all JSON files
-var myFiles = [ "../Server/monopoly/board.json",
-				"../Server/monopoly/properties.json",
-				"../Server/monopoly/cards.json"
+var myFiles = [ "../Server/monopolyJSON/board.json",
+				"../Server/monopolyJSON/properties.json",
+				"../Server/monopolyJSON/cards.json"
 			  ];
 
 // where JSON data is stored
@@ -25,6 +39,7 @@ myFiles.forEach(function (file, i) {
     loadFile(file, function (responseText) {
         // set jsonData[i] to the parse data since the requests
         // will not necessarily come in order
+		//alert("adfasd!");
         jsonData[i] = JSON.parse(responseText);
         // all JSON obj's are available in this scope.
 	    jboard 		= jsonData[0];
@@ -60,17 +75,17 @@ myFiles.forEach(function (file, i) {
 
 		function getStreetColour(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["colourHex"];
+			return jproperties[path]["colourHex"];
 		} // returns (eg.) "#ffffff"
 
 		function getPropertyName(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["name"];
+			return jproperties[path]["name"];
 		}  
 
 		function getPropertyPrice(index){
 			var path = getAttribute(index, "pID");
-			return jproperties.properties[path]["name"];
+			return jproperties[path]["price"];
 		} 
 
 		function getTaxAmount(index){
@@ -79,58 +94,173 @@ myFiles.forEach(function (file, i) {
 
 		/* ----------------------------------- */
 
-		var c = document.getElementById("boardCanvas");
-		var ctx = c.getContext("2d");
+		
 
-		var _width = c.width;
-		var _height = c.height;
 
-		var wanchor = _width / 13;
-		var hanchor = _height / 13;
 
-		var cLeft = c.offsetLeft;
-		var cTop = c.offsetTop;
-
+		
 		c.addEventListener('mousemove', function(event) {
-            var x = event.pageX - cLeft,
-                y = event.pageY - cTop;
-            //console.log(x, y)
-            tiles.forEach(function(tile) {
-                if (y > tile.top && y < tile.top + tile.width &&
-                    x > tile.left && x < tile.left + tile.height) {
-                    
-                    var category = getCategory(tile.i);
-                    if (category == "property"){
-                         document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
-                }
-            });
+		    var x = event.pageX - cLeft,
+		        y = event.pageY - cTop;
+		    //console.log(x, y)
+		    tiles.forEach(function(tile) {
+		        if (y > tile.top && y < tile.top + tile.width &&
+		        	x > tile.left && x < tile.left + tile.height) {
+					
+					var category = getCategory(tile.i);
+					if (category == "property"){
+		                 document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
+		        }
+		    });
 
-        }, false);
+		}, false);
+		
+		
+		
+		ctx.textAlign="center";
+		
+		function switchOrientation(o){
+		switch(o){
+						case 1:
+							ctx.textAlign = "right";
+							textX =20;
+							textY = -14;
+							
+							rotation = 0;
+							break;
+						case 0:
+						ctx.textAlign = "left";
+							textX = -33;
+							textY = -8;
+							rotation = 90;
+							break;
+						case 3:
+						ctx.textAlign = "left";
+							textX = -20;
+							textY = -14;
+							rotation = 0;
+							break;
+						case 2:
+							ctx.textAlign = "left";
+							textX = -4;
+							textY = -8;
+							rotation = 270;
+						}
+						
+						return [textX, textY, rotation];
+		}
+		
+		function drawRotatedText(text,price, o,x,y){
+			var twoWords = text.includes(" ");
+			var word2;
+			if (twoWords){
+			var words = text.split(" ");
+			word2 = words[1];
+			text = words[0];
+			}
+			var namewidth=ctx.measureText(text).width;
+			var rotation;
+			var textX =0;			
+			var textY = -12;
+			
+			[textX, textY, rotation] = switchOrientation(o);
+			
+						
+			
+			ctx.save();
+			ctx.translate(x,y);
+			ctx.rotate(rotation*Math.PI/180); 
+			ctx.fillStyle = "black";
+			
+			 
+			if (twoWords){ctx.fillText(text,textX,textY);
+			ctx.fillText(word2,textX,textY +10)}else{
+			
+			ctx.fillText(text,textX,textY);}
+			ctx.fillText("$" +price,textX,textY +24)
+			ctx.restore();
+		 
+		}
+		
+		function drawRailroad(text,price, o,x,y){
+			var twoWords = text.includes(" ");
+			var word2;
+			if (twoWords){
+			var words = text.split(" ");
+			word2 = words[1];
+			text = words[0];
+			}
+			var symbol = String.fromCharCode(0xD83D, 0xDE87);
+			var rotation;
+			var textX =0;			
+			var textY = -12;
+			
+			[textX, textY, rotation] = switchOrientation(o);
+			
+						
+			
+			ctx.save();
+			ctx.translate(x,y);
+			ctx.rotate(rotation*Math.PI/180); 
+			ctx.fillStyle = "black";
+			
+			 
+			
+			
+			if (twoWords){ctx.fillText(text,textX,textY+5);
+			ctx.fillText(word2,textX,textY +15)}else{
+			
+			ctx.fillText(text,textX,textY+5);}
+			ctx.font = "15px Arial";
+			ctx.fillText(symbol,textX+20,textY+12)
+			ctx.restore();
+		 
+		}
+		
+		function drawName(text, price, i){
+		//shuffleTiles();
+		coords = orientTile(i);
+		var x = coords.x + (coords.w/2);
+		var y = coords.y + (coords.h/1.5);
+		var o = Math.floor(i / 10);
+		drawRotatedText(text, price, o,x,y);
+}
+
+		function drawRailroadName(text, price, i){
+		//shuffleTiles();
+		coords = orientTile(i);
+		var x = coords.x + (coords.w/2);
+		var y = coords.y + (coords.h/1.5);
+		var o = Math.floor(i / 10);
+		drawRailroad(text, price, o,x,y);
+}
+
+		
 
 		function Square(i) {
-          coords = orientSquare(i);
-          this.width  = 2*wanchor;
-          this.height = 2*hanchor;
-          this.x = coords.x;
-          this.y = coords.y;
-          if (i != 0){
-          i = 40-i;}
-          _drawRect(this.x, this.y, this.width, this.height);
-          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
-        }
+		  coords = orientSquare(i);
+		  this.width  = 2*wanchor;
+		  this.height = 2*hanchor;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  if (i != 0){
+		  i = 40-i;}
+		  _drawRect(this.x, this.y, this.width, this.height);
+		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+		}
 
-		var tiles = [];
+		
 		function Tile(i) {
-          coords = orientTile(i);
-          this.width = coords.w;
-          this.height = coords.h;
-          this.x = coords.x;
-          this.y = coords.y;
-          _drawRect(this.x, this.y, this.width, this.height);
-          if (i != 0){
-          i = 40-i;}
-          tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
-        }
+		  coords = orientTile(i);
+		  this.width = coords.w;
+		  this.height = coords.h;
+		  this.x = coords.x;
+		  this.y = coords.y;
+		  _drawRect(this.x, this.y, this.width, this.height);
+		  if (i != 0){
+		  i = 40-i;}
+		  tiles.push({ top : this.x, left : this.y, width : this.width, height: this.height, i : i});
+		}
 
 		function ColourTile(i, colourHex) {
 		  coords = orientColourTile(i);
@@ -151,7 +281,7 @@ myFiles.forEach(function (file, i) {
 		}
 
 		/* ----------------------------------- */
-		// 🐘 🐘 🐘 warning 🐘 🐘 🐘 much wisdom below 🐘 🐘 🐘
+		// ?? ?? ?? warning ?? ?? ?? much wisdom below ?? ?? ??
 		function orientTile(i) {
 			var o = Math.floor(i / 10);
 			var n;
@@ -315,11 +445,13 @@ myFiles.forEach(function (file, i) {
 
 
 		function _drawRect(x,y,w,h) {
+		  /*
 		  console.log("Drawing at \n x     : ".concat(x)
 		              .concat("\n y     : ".concat(y))
 		              .concat("\n width : ".concat(w))
 		              .concat("\n height: ".concat(h))
 		             );
+		  */
 		  ctx.rect(x,y,w,h);
 		  ctx.stroke();
 
@@ -347,6 +479,14 @@ myFiles.forEach(function (file, i) {
 			 ctx.restore();
 		}
 
+		function _createImage(src, alt, title) {
+		    var img = new Image();
+		    img.src = src;
+		    if ( alt != null ) img.alt = alt;
+		    if ( title != null ) img.title = title;
+		    return img;
+		}
+
 		function rotate_point(pointX, pointY, originX, originY, angle) {
 		    angle = angle * Math.PI / 180.0;
 		    return {
@@ -360,19 +500,20 @@ myFiles.forEach(function (file, i) {
 		function draw(){
 		  
 		  // tile imgs
-		  var chance_img 		= document.getElementById("chance");
-		  var community_img 	= document.getElementById("community");
-		  var luxury_img 		= document.getElementById("luxury_tax");
-		  var income_img		= document.getElementById("income_tax");
-		  var water_img 		= document.getElementById("water");
-		  var electric_img		= document.getElementById("electric");
-		  var railroad_img		= document.getElementById("railroad");
+		  var _path = "./assets/game_assets/board/"
+		  var chance_img 		= _createImage(_path.concat("chance.png"));
+		  var community_img 	= _createImage(_path.concat("community-chest.png"));
+		  var luxury_img 		= _createImage(_path.concat("luxury-tax.png"));
+		  var income_img		= _createImage(_path.concat("income-tax.png"));
+		  var water_img 		= _createImage(_path.concat("water.png"));
+		  var electric_img		= _createImage(_path.concat("electric.png"));
+		  var railroad_img		= _createImage(_path.concat("railroad.png"));
 
 		  //corner imgs
-		  var go_img 			= document.getElementById("go");
-		  var jail_img 			= document.getElementById("jail");
-		  var free_parking_img 	= document.getElementById("free_parking");
-		  var go_to_jail_img 	= document.getElementById("go_to_jail");
+		  var go_img 			= _createImage(_path.concat("go.png"));
+		  var jail_img 			= _createImage(_path.concat("jail.png"));
+		  var free_parking_img 	= _createImage(_path.concat("free-parking.png"));
+		  var go_to_jail_img 	= _createImage(_path.concat("go-to-jail.png"));
 
 		  var type;
 		  var tile;
@@ -406,11 +547,17 @@ myFiles.forEach(function (file, i) {
 		  			if (type == "street") {
 		  				// make a street tile
 		  				tile = new Tile(i);
+						var name = getPropertyName(i);
+						var price = getPropertyPrice(i)
+						tile = drawName(name, price, i);
 		  				tile = new ColourTile(i, getStreetColour(i));
 		  			} else if (type == "railroad") {
 		  				// make a railroad tile
 		  				tile = new Tile(i);
-		  				tile = new ImageTile(i, railroad_img);
+						var name = getPropertyName(i);
+						var price = getPropertyPrice(i)
+						tile = drawRailroadName(name, price, i);
+		  				//tile = new ImageTile(i, railroad_img);
 		  			} else {
 		  				// make a utility tile
 		  				if (getPropertyName(i) == "Water Works"){
@@ -447,14 +594,19 @@ myFiles.forEach(function (file, i) {
 		  				// make the IncomeTax tile
 
 		  				tile = new Tile(i);
-						tile = new ImageTile(i, income_tax);
+						tile = new ImageTile(i, income_img);
 		  			}
 		  		}
 		  }
+		  
 		  console.log(tiles);
 		  draw = function(){}; // Google "js noop" 
+		  
 		}
+		
 		// init once
 		draw();
+		
     })
 })
+})();

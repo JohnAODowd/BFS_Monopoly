@@ -6,7 +6,11 @@
 
 <body>
 
-<canvas id="boardCanvas" width="400" height="400" style="border:1px solid #000000; background: #cdcdcd">
+<canvas id="boardCanvas" width="600" height="600" style="border:1px solid #000000; background: #cdcdcd ;
+position: absolute;left: 0;top:0;z-index:0;">
+</canvas>
+<canvas id="dynamicCanvas" width="600" height="600" style="border:1px solid #000000;
+position: absolute;left: 0;top:0;z-index:1;">
 </canvas>
 
 
@@ -17,31 +21,8 @@ hello world
 
 
 
-<img id="chance" src="./assets/game_assets/board/chance.png" alt="Chance" style="display:none">
-
-<img id="community" src="./assets/game_assets/board/community-chest.png" alt="Community Chest" style="display:none">
-
-<img id="luxury_tax" src="./assets/game_assets/board/luxury-tax.png" alt="Luxury Tax" style="display:none">
-
-<img id="income_tax" src="./assets/game_assets/board/income-tax.png" alt="Income Tax" style="display:none">
-
-<img id="go" src="./assets/game_assets/board/go.png" alt="Go" style="display:none">
-
-<img id="jail" src="./assets/game_assets/board/jail.png" alt="Jail" style="display:none">
-
-<img id="free_parking" src="./assets/game_assets/board/free-parking.png" alt="Free Parking" style="display:none">
-
-<img id="go_to_jail" src="./assets/game_assets/board/go-to-jail.png" alt="Go To Jail" style="display:none">
-
-<img id="water" src="./assets/game_assets/board/water.png" alt="Water" style="display:none">
-
-<img id="electric" src="./assets/game_assets/board/electric.png" alt="Electric" style="display:none">
-
-<img id="railroad" src="./assets/game_assets/board/railroad.png" alt="Railroad" style="display:none">
-
-
-
 </body>
 
 <script src="js/board.js"></script>
+<script src="js/dynamicBoard.js"></script>
 </html>

@@ -43,10 +43,10 @@ def roll_dice(range=6, verbose = False):
 
 def double_roll():
 	ret 				= {}
-	# ret['firstRoll']	= roll_dice()
-	# ret['secondRoll']	= roll_dice()
-	ret['firstRoll']	= 2
-	ret['secondRoll']	= 4
+	ret['firstRoll']	= roll_dice()
+	ret['secondRoll']	= roll_dice()
+	# ret['firstRoll']	= 2
+	# ret['secondRoll']	= 4
 	ret['value'] 		= ret['firstRoll'] + ret['secondRoll']
 	ret['double']		= ret['firstRoll'] == ret['secondRoll']
 	return ret

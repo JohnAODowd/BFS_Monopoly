@@ -22,7 +22,6 @@ function drawPiece(playerID, pos){
 	var player = getPlayer(playerID);
 	
 	dtx.fillText(player.token, x +10,y -10);
-	dtx.rotate(Math.PI*2/(i*6));
 	return tiles[pos].top + " " + tiles[pos].left + "\n" +x + " " + y}
 
 function shuffleTiles(){
@@ -38,7 +37,7 @@ function drawPieces(){
 	dtx.clearRect(0,0,d.width,d.height);
 	for (var i = 0; i<locations.length;i++){
 	
-		
+		console.log(loc);
 		var loc = locations[i];
 		console.log(loc);
 		drawPiece(loc[0], loc[1]);

@@ -1,4 +1,3 @@
-(function() {
 var c = document.getElementById("boardCanvas");
 		var ctx = c.getContext("2d");
 		var tiles = [];
@@ -10,7 +9,8 @@ var c = document.getElementById("boardCanvas");
 
 		var cLeft = c.offsetLeft;
 		var cTop = c.offsetTop;
-
+		
+(function() {
 
 // Load JSON File
 var loadFile = function (filePath, done) {

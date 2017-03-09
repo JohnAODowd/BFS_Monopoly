@@ -1,360 +1,1065 @@
-{
-	"player": 
-		{
-			"public": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, 
-			"uID": "d03320484e04fee26e86b27ba80581bc96fb9e68c85b6be6cc341d3df56c87d0", "money": 10000
-		}, 
-	"players": 
-		{
-			"azby": {"name": "azby", "GOOJF": 0, "number": 2, "position": 0, "properties": {}}, 
-			"hass": {"name": "hass", "GOOJF": 0, "number": 1, "position": 0, "properties": {}}
-		}, 
-	"game": 
-		{
-			"gID": "14ae581c4e2595892d46b3c76a501e3505cc24f901c1ec594bd9fb0c878749bd", 
-			"lastActivity": "2017-02-28 04:04:27", 
-			"turn": 1, 
-			"figurines": ["HAT", "CAR", "THIMBLE", "IRON", "BOOT", "SHIP", "DOG", "WHEELBARROW"], 
-			"type": "public", 
-			"status": "LOBBY", 
-			"playersNo": 2
-		},
-	"options":
-		{
+{  
+    "board":{  
+        "0":{  
+            "playersOn":[  
+                2
+            ],
+            "category":"special",
+            "name":"Go"
+        },
+        "1":{  
+            "pID":"brown1",
+            "playersOn":[  
 
-		}
-}
-/*
-(function($){
-	$(function(){
-		// Game Variables
-		var gameID;
-		var game_turn;
-		var figurines;
-		var game_status;
-		var playersNo;
-		// player variables
-		// public
-		var player_name;
-		var player_GOOJF;
-		var player_number;
-		var player_position;
-		var player_properties; // ID's > properties.json
-		// private
-		var playerID;
-		var player_balance;
-		// player list object
-		var player_list;
-		var player_keys;
+            ],
+            "category":"property"
+        },
+        "2":{  
+            "playersOn":[  
 
-		$(document).ready(function(){
-			/*	=========
-				Core Logic
-				=========	*/
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "3":{  
+            "pID":"brown2",
+            "playersOn":[  
 
-			hostGame();
-			//joinGame();
-			if (gameID){
-				// check a game has actually been found
-				if (game_status === 'LOBBY'){
-					main();
-				}
-			}
+            ],
+            "category":"property"
+        },
+        "4":{  
+            "playersOn":[  
 
-		});
+            ],
+            "category":"tax",
+            "name":"IncomeTax",
+            "amount":200
+        },
+        "5":{  
+            "pID":"railroad1",
+            "playersOn":[  
 
-		/*	=========
-			Join Game
-			=========	*/	
-		function joinGame() {
-			console.log("Join Game!");
-			// update JSON using returned variable 'init' which is embedded in html return
-			parseJSON(init);
-		} // end joinGame()
+            ],
+            "category":"property"
+        },
+        "6":{  
+            "pID":"lightBlue1",
+            "playersOn":[  
+                1
+            ],
+            "category":"property"
+        },
+        "7":{  
+            "playersOn":[  
 
-		/*	=========
-			Host Game
-			=========	*/	
-		function hostGame() {
-			console.log("Host Game!");
-			// update JSON using returned variable 'init' which is embedded in html return
-			parseJSON(init);
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "8":{  
+            "pID":"lightBlue2",
+            "playersOn":[  
 
-		} // end hostGame()
+            ],
+            "category":"property"
+        },
+        "9":{  
+            "pID":"lightBlue3",
+            "playersOn":[  
 
-		/*	=========
-			Init Game State
-			=========	*/	
-		function initGame(){
-			console.log("Game Started!")
-			//
-			var canvas = document.getElementById("game-board")
-			var ctx = canvas.getContext("2d");
+            ],
+            "category":"property"
+        },
+        "10":{  
+            "playersOn":[  
 
-			canvas.width = 520;
-			canvas.height = 520;
+            ],
+            "category":"special",
+            "name":"jail"
+        },
+        "11":{  
+            "pID":"pink1",
+            "playersOn":[  
 
-			// draw loading screen to game
-			ctx.fillRect(0,0,520,520);
-			var img = new Image();
-			img.onload = function () {
-			    ctx.drawImage(img, 0, 0, 520, 520);
-			}
-			img.src = "assets/game_assets/lobby/monopoly-test-background.png";
-		}
-		/*	========= =========
-				  HELPERS
-			========= =========	*/	
-		function parseJSON(json_data) {
-			// game variables
-			console.log('game_variables');
-			// FIRST CHECK FOR 'error'
-			// game : player : players : options - req all states
-			// board - req when game in playing state
-			// alert - !req 
-			if (!json_data.hasOwnProperty('error')) {
-				//ensure that there is no error present in the return
-				if (json_data.hasOwnProperty('game') && 
-					json_data.hasOwnProperty('player') && 
-					json_data.hasOwnProperty('players') && 
-					json_data.hasOwnProperty('options')) {
-					//ensure a 'game', 'player', 'players' and 'options' are set as keys in the json
+            ],
+            "category":"property"
+        },
+        "12":{  
+            "pID":"electric",
+            "playersOn":[  
 
-					/* 	==========
-						GAME VARS
-						========== */
-					game_variables = json_data['game'];
-					gameID = game_variables['gID']; 			console.log('GID:' + gameID);
-					game_turn = game_variables['turn']; 		console.log('turn:' + game_turn);
-					figurines = game_variables['figurines']; 	console.log('figurines:'+ figurines);			
-					game_status = game_variables['status']; 	console.log('status:'+ game_status);
-					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
-					/* 	==========
-						PLAYER VARS
-						========== */
-					console.log('player variables');
-					playerOBJ = json_data['player'];
-					/* 	==========
-						  PUBLIC
-						========== */
-					player_name = playerOBJ['public']['name']; 				console.log('player_name:'+player_name);
-					player_GOOJF = playerOBJ['public']['GOOJF']; 			console.log('player_GOOJF:'+player_GOOJF);
-					player_number = playerOBJ['public']['number']; 			console.log('player_number:'+player_number);
-					player_position = playerOBJ['public']['position']; 		console.log('player_position:'+player_position);
-					player_properties = playerOBJ['public']['properties']; 	console.log('player_properties:'+player_position);
-					/* 	==========
-						  PRIVATE
-						========== */
-					playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
-					player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
-					/* 	==========
-						PLAYERS
-						========== */						
-					// player_list contains the json mapping of player_names to their properties
-					// player keys is used for processing elsewhere, contains all keys
-					console.log('Player list');
-					player_list = json_data['players'];
-					player_keys = [];
-					// populate player_keys
-					$.each(player_list, function(key, value) {
-						player_keys.push(key);
-					});
-					// log to console for confirmation
-					for (var x=0; x < player_keys.length; x++){
-						console.log(player_keys[x]);
-						$.each(player_list[player_keys[x]], function(key, value){
-							console.log(key + ':' + value);
-						});
-					} // End for
-				}
-				if (game_status == 'PLAYING') {
-					// check if game is playing
-					// in which case 'board' is required
-					if (json_data.hasOwnProperty('board')) {
-						// make sure 'board' is present
+            ],
+            "category":"property"
+        },
+        "13":{  
+            "pID":"pink2",
+            "playersOn":[  
 
-						// NEED TO IMPLEMENT
+            ],
+            "category":"property"
+        },
+        "14":{  
+            "pID":"pink3",
+            "playersOn":[  
 
-					}
-				} // END PLAYING IF
-				if (json_data.hasOwnProperty('alert')) {
-					// IMPLEMENT
-				}
-				return 1;
-			} // End error check for req
-			console.log('Something went wrong');
-			return 0;
-		}
+            ],
+            "category":"property"
+        },
+        "15":{  
+            "pID":"railroad2",
+            "playersOn":[  
 
-		/*	========= =========
-				  HELPERS
-			========= =========	*/		
-		/*	=========
-			PING RQST
-			Updates game and player state throughout game
-			=========	*/
-		function ping() {
+            ],
+            "category":"property"
+        },
+        "16":{  
+            "pID":"orange1",
+            "playersOn":[  
 
-			var data = {};
-			data['request'] = 'PING';
-			data['uID'] = playerID;
-			data['gID'] = gameID;
+            ],
+            "category":"property"
+        },
+        "17":{  
+            "playersOn":[  
 
-			var json = JSON.stringify(data);
-			var ping_url = "http://leela.netsoc.co:8080/game";
-			
-			// $.ajax({
-			// 	type: 'post',
-	  //           url: ping_url,
-	  //           data: json,
-	  //           contentType: "application/json; charset=utf-8",
-	  //           traditional: true,
-	  //           success: function (data) {
-   //              	parseJSON(data);
-   //              	console.log(data);
-   //              }
-			// });
-			parseJSON(init /*json*/);
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "18":{  
+            "pID":"orange2",
+            "playersOn":[  
 
-		}
+            ],
+            "category":"property"
+        },
+        "19":{  
+            "pID":"orange3",
+            "playersOn":[  
 
-		/*	=========	=========
-			Display figurines to lobby
-			=========	========= */
-		function displayFigurines() {
-			console.log(figurines);
-			var x = 0;
-			var row = 1;
-			var figurines_html = 	'<div class="figurines">'+
-									'</div>';
-									
-			$('.board').append(figurines_html);
-			for (fig in figurines) {
-				$('.figurines').append('<img src="' + initFig[figurines[fig]] + '" id="' + figurines[fig] + '" />');
-			}
+            ],
+            "category":"property"
+        },
+        "20":{  
+            "playersOn":[  
 
-		}
-		/*  ============
-			Functions for figurines
-			============ */
+            ],
+            "category":"special",
+            "name":"FreeParking"
+        },
+        "21":{  
+            "pID":"red1",
+            "playersOn":[  
 
-        function figurineRequest(data) {
+            ],
+            "category":"property"
+        },
+        "22":{  
+            "playersOn":[  
 
-          var json = JSON.stringify(data);
-          var ping_url = "http://leela.netsoc.co:8080/game"
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "23":{  
+            "pID":"red2",
+            "playersOn":[  
 
-          $.ajax({
-              type: 'post',
-              url: ping_url,
-              data: json,
-              contentType: "application/json; charset=utf-8",
-              traditional: true,
-              success: function (data) {
-                  console.log(data);
-                }
-            });
+            ],
+            "category":"property"
+        },
+        "24":{  
+            "pID":"red3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "25":{  
+            "pID":"railroad3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "26":{  
+            "pID":"yellow1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "27":{  
+            "pID":"yellow2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "28":{  
+            "pID":"water",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "29":{  
+            "pID":"yellow3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "30":{  
+            "playersOn":[  
+
+            ],
+            "category":"special",
+            "name":"goToJail"
+        },
+        "31":{  
+            "pID":"green1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "32":{  
+            "pID":"green2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "33":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"CommunityChest"
+        },
+        "34":{  
+            "pID":"green3",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "35":{  
+            "pID":"railroad4",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "36":{  
+            "playersOn":[  
+
+            ],
+            "category":"card",
+            "name":"Chance"
+        },
+        "37":{  
+            "pID":"darkBlue1",
+            "playersOn":[  
+
+            ],
+            "category":"property"
+        },
+        "38":{  
+            "playersOn":[  
+
+            ],
+            "category":"tax",
+            "name":"tax",
+            "amount":100
+        },
+        "39":{  
+            "pID":"darkBlue2",
+            "playersOn":[  
+
+            ],
+            "category":"property"
         }
+    },
+    "game":{  
+        "lastActivity":"2017-03-05 03:14:13",
+        "buildings":32,
+        "takenGOOJF":{  
+            "CommunityChest":false,
+            "Chance":false
+        },
+        "type":"private",
+        "gID":"10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+        "figurines":[  
+            "BOOT",
+            "SHIP",
+            "DOG",
+            "WHEELBARROW",
+            "CAR",
+            "HAT"
+        ],
+        "turn":1,
+        "lastRoll":{  
+            "value":6,
+            "double":false,
+            "firstRoll":4,
+            "secondRoll":2
+        },
+        "trade":{  
 
-		/*	============	============	============
-			Core logic will go in a loop in the main() func
-			============	============	============	*/
-		function main() {
-			ping();
-			//var ping_interval = setInterval(ping, 4000);
-			displayFigurines(init);
-			//var display_fig_interval = setInterval(displayFigurines, 4000);
+        },
+        "GO":200,
+        "playersNo":2,
+        "state":"PLAYING"
+    },
+    "options":[  
+        "TRADE",
+        "MORTGAGE"
+    ],
+    "players":{  
+        "Joiner1":{  
+            "position":0,
+            "name":"Joiner1",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
 
-			while (game_status == 'LOBBY') {
-				ping();
-				wait(5000);
-				displayFigurines();
-			}
-			while (game_status == 'LOBBY') {
-				ping();
-				wait(5000);
-				displayFigurines();
-			}
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
 
-			$('#HAT').click(function()
-			{
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "HAT";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log('HAT');
-			});
-	        $('#CAR').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "CAR";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("CAR");
-	          //sendRequest(data);
-	        });
-	        $('#THIMBLE').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "THIMBLE";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("THIMBLE");
-	          //sendRequest(data);
-	        });
-	        $('#IRON').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "IRON";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("IRON");
-	          //sendRequest(data);
-	        });
-	        $('#BOOT').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "BOOT";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("BOOT");
-	          //sendRequest(data);
-	        });
-	        $('#SHIP').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "SHIP";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("SHIP");
-	          //sendRequest(data);
-	        });
-	        $('#DOG').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "DOG";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("DOG");
-	          //sendRequest(data);
-	        });
-	        $('#WHEELBARROW').click(function() {
-	          var data = {};
-	          data['request'] = 'FIGURINE';
-	          data["figurine"] = "WHEELBARROW";
-	          data['gID'] = gameID;
-	          data['uID'] = playerID;
-	          console.log("WHEELBARROW");
-	          //sendRequest(data);
-	        });
-	        function wait(ms){
-			   var start = new Date().getTime();
-			   var end = start;
-			   while(end < start + ms) {
-			     end = new Date().getTime();
-			  }
-			}
-		}
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
 
-  	}); // end of document ready
-})(jQuery); // end of jQuery name space*/
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        },
+        "Hosty":{  
+            "position":6,
+            "name":"Hosty",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"IRON",
+            "number":1,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        }
+    },
+    "chat":{  
+        "1":{  
+            "number":2,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83d\udc77",
+            "playerName":"Joiner1"
+        },
+        "0":{  
+            "number":1,
+            "time":"2017-03-05 03:14:15",
+            "text":"\ud83c\udf3b",
+            "playerName":"Hosty"
+        }
+    },
+    "trade":{  
+
+    },
+    "player":{  
+        "uID":"b853a4146360f7a6382692b074dfd203aab7e64e393ef5366172d6d895d55cc6",
+        "canBuy":null,
+        "money":15000,
+        "options":[  
+            "TRADE",
+            "MORTGAGE"
+        ],
+        "trade":{  
+            "sent":{  
+
+            },
+            "recieved":[  
+
+            ]
+        },
+        "public":{  
+            "position":0,
+            "name":"Joiner1",
+            "jail":{  
+                "boolean":false,
+                "turn":0
+            },
+            "figurine":"THIMBLE",
+            "number":2,
+            "properties":{  
+                "orange":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "darkBlue":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "transport":{  
+                    "size":4,
+                    "owned":[  
+
+                    ]
+                },
+                "yellow":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "red":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "lightBlue":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "green":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "services":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                },
+                "pink":{  
+                    "size":3,
+                    "owned":[  
+
+                    ]
+                },
+                "brown":{  
+                    "size":2,
+                    "owned":[  
+
+                    ]
+                }
+            },
+            "GOOJF":{  
+                "CommunityChest":false,
+                "Chance":false
+            }
+        }
+    },
+    "deeds":{  
+        "red2":{  
+            "price":220,
+            "house2":250,
+            "house1":90,
+            "hotel":1050,
+            "pID":"red2",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":875,
+            "rent":18,
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "mortgage":110,
+            "name":"Fleet Street"
+        },
+        "yellow3":{  
+            "price":280,
+            "house2":360,
+            "house1":120,
+            "hotel":1200,
+            "pID":"yellow3",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":1025,
+            "rent":24,
+            "buildPrice":120,
+            "house3":850,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "mortgage":140,
+            "name":"Piccadilly"
+        },
+        "lightBlue2":{  
+            "price":100,
+            "house2":90,
+            "house1":30,
+            "hotel":550,
+            "pID":"lightBlue2",
+            "houseprice":50,
+            "groupSize":3,
+            "house4":400,
+            "rent":6,
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "mortgage":50,
+            "name":"Euston Road"
+        },
+        "brown2":{  
+            "price":60,
+            "house2":60,
+            "house1":20,
+            "hotel":450,
+            "pID":"brown2",
+            "houseprice":50,
+            "groupSize":2,
+            "house4":320,
+            "rent":4,
+            "buildPrice":20,
+            "house3":180,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "mortgage":30,
+            "name":"Whitechapel Road"
+        },
+        "darkBlue2":{  
+            "price":400,
+            "house2":600,
+            "house1":200,
+            "hotel":2000,
+            "pID":"darkBlue2",
+            "houseprice":200,
+            "groupSize":2,
+            "house4":1700,
+            "rent":50,
+            "buildPrice":200,
+            "house3":1400,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "mortgage":200,
+            "name":"Mayfair"
+        },
+        "darkBlue1":{  
+            "price":350,
+            "house2":500,
+            "house1":175,
+            "hotel":1500,
+            "pID":"darkBlue1",
+            "houseprice":200,
+            "groupSize":2,
+            "house4":1300,
+            "rent":35,
+            "buildPrice":175,
+            "house3":1100,
+            "colourHex":"#1C529C",
+            "buildings":0,
+            "group":"darkBlue",
+            "status":"notOwned",
+            "mortgage":175,
+            "name":"Park Lane"
+        },
+        "orange1":{  
+            "price":180,
+            "house2":200,
+            "house1":70,
+            "hotel":950,
+            "pID":"orange1",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":750,
+            "rent":14,
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "mortgage":90,
+            "name":"Bow Street"
+        },
+        "green3":{  
+            "price":320,
+            "house2":450,
+            "house1":150,
+            "hotel":1400,
+            "pID":"green3",
+            "houseprice":200,
+            "groupSize":3,
+            "house4":1200,
+            "rent":28,
+            "buildPrice":150,
+            "house3":1000,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "mortgage":160,
+            "name":"Bond Street"
+        },
+        "pink1":{  
+            "price":140,
+            "house2":150,
+            "house1":50,
+            "hotel":750,
+            "pID":"pink1",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":625,
+            "rent":10,
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "mortgage":70,
+            "name":"Pall Mall"
+        },
+        "water":{  
+            "price":150,
+            "buildings":0,
+            "pID":"water",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Water Works"
+        },
+        "railroad4":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad4",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Liverpool Street Station"
+        },
+        "orange2":{  
+            "price":180,
+            "house2":200,
+            "house1":70,
+            "hotel":950,
+            "pID":"orange2",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":750,
+            "rent":14,
+            "buildPrice":70,
+            "house3":550,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "mortgage":90,
+            "name":"Marlborough Street"
+        },
+        "yellow2":{  
+            "price":260,
+            "house2":330,
+            "house1":110,
+            "hotel":1150,
+            "pID":"yellow2",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":975,
+            "rent":22,
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "mortgage":130,
+            "name":"Coventry Street"
+        },
+        "railroad3":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad3",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Fenchurch St Station"
+        },
+        "yellow1":{  
+            "price":260,
+            "house2":330,
+            "house1":110,
+            "hotel":1150,
+            "pID":"yellow1",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":975,
+            "rent":22,
+            "buildPrice":110,
+            "house3":800,
+            "colourHex":"#ECE604",
+            "buildings":0,
+            "group":"yellow",
+            "status":"notOwned",
+            "mortgage":130,
+            "name":"Leicester Square"
+        },
+        "orange3":{  
+            "price":200,
+            "house2":220,
+            "house1":80,
+            "hotel":1000,
+            "pID":"orange3",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":800,
+            "rent":16,
+            "buildPrice":80,
+            "house3":600,
+            "colourHex":"#EC8B2C",
+            "buildings":0,
+            "group":"orange",
+            "status":"notOwned",
+            "mortgage":100,
+            "name":"Vine Street"
+        },
+        "green2":{  
+            "price":300,
+            "house2":390,
+            "house1":130,
+            "hotel":1275,
+            "pID":"green2",
+            "houseprice":200,
+            "groupSize":3,
+            "house4":1100,
+            "rent":26,
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "mortgage":150,
+            "name":"Oxford Street"
+        },
+        "pink3":{  
+            "price":160,
+            "house2":180,
+            "house1":60,
+            "hotel":900,
+            "pID":"pink3",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":700,
+            "rent":12,
+            "buildPrice":60,
+            "house3":500,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "mortgage":80,
+            "name":"Northumberland Avenue"
+        },
+        "brown1":{  
+            "price":60,
+            "house2":30,
+            "house1":10,
+            "hotel":250,
+            "pID":"brown1",
+            "houseprice":50,
+            "groupSize":2,
+            "house4":160,
+            "rent":2,
+            "buildPrice":10,
+            "house3":90,
+            "colourHex":"#864C38",
+            "buildings":0,
+            "group":"brown",
+            "status":"notOwned",
+            "mortgage":30,
+            "name":"Old Kent Road"
+        },
+        "lightBlue1":{  
+            "price":100,
+            "house2":90,
+            "house1":30,
+            "hotel":550,
+            "pID":"lightBlue1",
+            "houseprice":50,
+            "groupSize":3,
+            "house4":400,
+            "rent":6,
+            "buildPrice":30,
+            "house3":270,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "mortgage":50,
+            "name":"The Angel Islington"
+        },
+        "green1":{  
+            "price":300,
+            "house2":390,
+            "house1":130,
+            "hotel":1275,
+            "pID":"green1",
+            "houseprice":200,
+            "groupSize":3,
+            "house4":1100,
+            "rent":26,
+            "buildPrice":130,
+            "house3":900,
+            "colourHex":"#13A758",
+            "buildings":0,
+            "group":"green",
+            "status":"notOwned",
+            "mortgage":150,
+            "name":"Regent Street"
+        },
+        "red1":{  
+            "price":220,
+            "house2":250,
+            "house1":90,
+            "hotel":1050,
+            "pID":"red1",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":875,
+            "rent":18,
+            "buildPrice":90,
+            "house3":700,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "mortgage":110,
+            "name":"The Strand"
+        },
+        "railroad2":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad2",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Marylebone Station"
+        },
+        "red3":{  
+            "price":240,
+            "house2":300,
+            "house1":100,
+            "hotel":1100,
+            "pID":"red3",
+            "houseprice":150,
+            "groupSize":3,
+            "house4":925,
+            "rent":20,
+            "buildPrice":100,
+            "house3":750,
+            "colourHex":"#EC1E24",
+            "buildings":0,
+            "group":"red",
+            "status":"notOwned",
+            "mortgage":120,
+            "name":"Trafalgar Square"
+        },
+        "lightBlue3":{  
+            "price":120,
+            "house2":100,
+            "house1":40,
+            "hotel":600,
+            "pID":"lightBlue3",
+            "houseprice":50,
+            "groupSize":3,
+            "house4":450,
+            "rent":8,
+            "buildPrice":40,
+            "house3":300,
+            "colourHex":"#1C7EFC",
+            "buildings":0,
+            "group":"lightBlue",
+            "status":"notOwned",
+            "mortgage":60,
+            "name":"Pentonville Road"
+        },
+        "pink2":{  
+            "price":140,
+            "house2":150,
+            "house1":50,
+            "hotel":750,
+            "pID":"pink2",
+            "houseprice":100,
+            "groupSize":3,
+            "house4":625,
+            "rent":10,
+            "buildPrice":50,
+            "house3":450,
+            "colourHex":"#D32884",
+            "buildings":0,
+            "group":"pink",
+            "status":"notOwned",
+            "mortgage":70,
+            "name":"Whitehall"
+        },
+        "railroad1":{  
+            "price":200,
+            "buildings":0,
+            "pID":"railroad1",
+            "group":"transport",
+            "mortgage":100,
+            "groupSize":4,
+            "status":"notOwned",
+            "name":"Kings Cross Station"
+        },
+        "electric":{  
+            "price":150,
+            "buildings":0,
+            "pID":"electric",
+            "group":"services",
+            "mortgage":75,
+            "groupSize":2,
+            "status":"notOwned",
+            "name":"Electric Company"
+        }
+    }
+}

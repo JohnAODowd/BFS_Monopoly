@@ -26,9 +26,9 @@ var loadFile = function (filePath, done) {
 }
 
 // directory paths to all JSON files
-var myFiles = [ "../js/monopolyJSON/board.json",
-				"../js/monopolyJSON/properties.json",
-				"../js/monopolyJSON/cards.json"
+var myFiles = [ "js/monopolyJSON/board.json",
+				"js/monopolyJSON/properties.json",
+				"js/monopolyJSON/cards.json"
 			  ];
 
 // where JSON data is stored

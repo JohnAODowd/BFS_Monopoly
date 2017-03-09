@@ -6,7 +6,7 @@ dtx.textAlign="center";
 var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDE87)};
 var player2 = {id: 2, token:String.fromCharCode(0xD83D, 0xDC18)};
 var players = [player1, player2];
-var locations = [[1,11], [2,13]];
+var locations = [[1,0],[2,0]];
 function getPlayer(playerID){
 	for (i =0; i<players.length;i++){
 		if (playerID-1 == i){

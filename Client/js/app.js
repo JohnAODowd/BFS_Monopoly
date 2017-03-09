@@ -85,14 +85,15 @@
 						if (game_state === 'PLAYING') {
 							$('.board').empty();
 							$('.board').append(
-							'<canvas id="dynamicCanvas" width="520" height="520" style="border:1px solid #000000;'+
-								'position: absolute;left: 0;top:0;z-index:1;">'+
+							'<canvas id="boardCanvas" width="600" height="600" style="border:1px solid #000000; background: #E9DFCC ;'+
+							'position: absolute;left: 0;top:0;z-index:0;">'+
 							'</canvas>'+
-							'<canvas id="boardCanvas" width="520" height="520" style="border:1px solid #000000; background: #cdcdcd ;'+
-								'position: absolute;left: 0;top:0;z-index:0;">'+
+							'<canvas id="dynamicCanvas" width="600" height="600" style="border:1px solid #000000;'+
+							'position: absolute;left: 0;top:0;z-index:1;">'+
 							'</canvas>');
 						}
 					}
+					// now that we've checked for game changes we can do more general code
 					game_state = game_variables['state'];
 
 					/* 	-------	-------
@@ -110,6 +111,8 @@
 						$('#action-button').addClass('disabled');
 						console.log('START DISABLED');
 					}
+
+
 					if (game_state === 'PLAYING'){
 						// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
 						// Set control buttons

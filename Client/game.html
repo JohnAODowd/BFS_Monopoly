@@ -60,6 +60,11 @@
 
         </section>
         <section class="options col s3 demo">
+          <div class="row options blue-grey darken-3">
+            <button class="btn red disabled option-button" id="buy">Buy Property</button>
+            <button class="btn red disabled option-button" id="mortgage">Mortgage</button>
+            <button class="btn red disabled option-button" id="buy">Auction</button>
+          </div>
           <div class="control-area z-depth-3 row">
 
               <h2 id="player-name"></h2>
@@ -74,7 +79,7 @@
       <script type="text/javascript">
       var init = {
 
-    "board":{  
+      "board":{  
         "0":{  
             "playersOn":[  
                 2
@@ -569,7 +574,7 @@
     },
     "player":{  
         "uID":"6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba",
-        "canBuy":"lightBlue1",
+        "canBuy":null,
         "money":15000,
         "options":[  
             "TRADE",

@@ -136,8 +136,8 @@
 						// cycle through each player and render them to the board
 						$.each(player_list, function(plyr){
 							var pnum = player_list[plyr]['number'];
-							var psquare = player_list[plyr]['position'];
-							move(pnum,psquare);
+							// var psquare = player_list[plyr]['position'];
+							move(pnum,player_position);
 						});
 
 					}
@@ -197,26 +197,20 @@
 					playerID = playerOBJ['uID']; console.log('playerID:'+playerID);
 					player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
 					$('#player-balance').html('&#36;'+player_balance);
-					/* 	==========
-						PLAYERS
-						========== */						
-					// player_list contains the json mapping of player_names to their properties
-					// player keys is used for processing elsewhere, contains all keys
-					// console.log('Player list');
-					// player_list = json_data['players'];
-					// player_keys = [];
-					// // populate player_keys
-					// $.each(player_list, function(key, value) {
-					// 	player_keys.push(key);
-					// });
-					// // log to console for confirmation
-					// for (var x=0; x < player_keys.length; x++){
-					// 	console.log(player_keys[x]);
-					// 	$.each(player_list[player_keys[x]], function(key, value){
-					// 		console.log(key + ':' + value);
-					// 	});
-					// } // End for
+
 				}
+
+				// Check if can buy
+				if (playerOBJ['canBuy'] != null) {
+					console.log('PLAYER CAN BUY');
+					$('.options').removeClass('disabled');
+					$('#buy').click(function(){
+						buyProperty();
+					})
+				 } else {
+				 	$('.options').addClass('disabled');
+				 }
+				
 
 				if (json_data.hasOwnProperty('alert')) {
 					// IMPLEMENT
@@ -234,6 +228,36 @@
 		/*	========= =========
 				  HELPERS
 			========= =========	*/		
+		/*	=========
+			BUY PROPERTY RQST
+			Send JSON BUY request to server
+			=========	*/
+		function buyProperty() {
+			var data = {};
+			data['request'] = 'BUY';
+			data['pID'] = playerOBJ['canBuy'];
+			data['uID'] = playerID;
+			data['gID'] = gameID;
+
+			var json = JSON.stringify(data);
+			
+			// *******
+			// Uncomment for server
+			// *******
+
+			$.ajax({
+				type: 'post',
+	            url: ping_url,
+	            data: json,
+	            contentType: "application/json; charset=utf-8",
+	            traditional: true,
+	            success: function (data) {
+                	parseJSON(data);
+                	console.log(data);
+                }
+			});
+			parseJSON(json);
+		}
 		/*	=========
 			PING RQST
 			Updates game and player state throughout game
@@ -272,9 +296,8 @@
 			//	Embeds players in Header
 			//
 		function displayPlayers() {
-
+			$('.player-icons').empty();
 			for (_player in player_list) {
-
 				if (_player != player_name) {
 					console.log("Player ----");
 					console.log(_player);

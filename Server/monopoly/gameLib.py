@@ -12,13 +12,41 @@ from monopoly.chat import addChat
 # TODO: Debug with unit test
 
 # Methods to write:
-#   checkPlayerstatus
 #   forceTurn (can also be used for debugging)
-#   killPlayer
-#   checkGameEnd
-#   killGame
 
 #******************************************************************************
+
+def gameOver(gID):
+    return len(r.getGame(gID)["spect"]) == r.getGame(gID)["playersNo"] - 1
+
+def killPlayer(gID, uID):
+    game = r.getGame(gID)
+    players = r.getPlayers(gID)
+    players[uID]["options"] = []
+    players[uID]["state"] = "spect"
+    game["spect"].append(players[uID]["public"]["number"])
+    r.setGame(gID, game)
+    r.setPlayers(gID, players)
+
+def measureAssets(gID, uID, amountNeeded):
+    alert               = {}
+    alert["boolean"]    = False
+    players             = r.getPlayers(gID)
+    deeds               = r.getDeeds(gID)
+    assetsTotal         = 0
+    if players[uID]['money'] < amountNeeded:
+        for group in players[uID]["public"]["properties"]:
+            for pID in players[uID]["public"]["properties"][group]["owned"]:
+                if deeds[pID]['status'] != "mortgaged":
+                    assetsTotal += (deeds[pID]["house1"] * deeds[pID]['buildings']) / 2
+                    assetsTotal += deeds[pID]["mortgage"]
+        assetsTotal += players[uID]['money']
+        if assetsTotal < amountNeeded:
+            alert["boolean"] = True
+            alert["alert"]   = "BANKRUPT"
+            killPlayer(gID, uID)
+            return alert
+    return alert
 
 def payToGOOJ(gID, uID, player):
     alert = {}
@@ -27,8 +55,12 @@ def payToGOOJ(gID, uID, player):
         player['money'] - 50
         r.setPlayer(gID, uID, player)
     else:
-        alert['boolean']    = True
-        alert["alert"]      = "INSUFFICIENT FUNDS"
+        tempAlert           = measureAssets(gID, uID, 50)
+        if not tempAlert["boolean"]:
+            alert['boolean']    = True
+            alert["alert"]      = "INSUFFICIENT FUNDS"
+        else:
+            alert               = tempAlert
     return alert
 
 def hasGOOJF(player, deckType):
@@ -107,8 +139,12 @@ def pay(gID, uID, rec, amount):
                     r.setPlayer(gID, _uID, players[_uID])
         r.setPlayer(gID, uID, players[uID])
     else:
-        alert['boolean']    = True
-        alert['alert']      = "INSUFFICIENT FUNDS"    # alert; must be dealt with or player loses
+        tempAlert = measureAssets(gID, uID, amount)
+        if not tempAlert["boolean"]:
+            alert['boolean']    = True
+            alert['alert']      = "INSUFFICIENT FUNDS"    # alert; must be dealt with or player loses
+        else:
+            alert = tempAlert
     return alert
 
 def isMortgageable(gID, pID, playerNo):
@@ -283,6 +319,9 @@ def checkTurn(gID, uID):
     game    = r.getGame(gID)
     player  = r.getPlayers(gID)[uID]
     if (player['public']['number'] == game['turn']):
+        if player['state'] == 'spect':
+            incrementTurn(gID)
+            checkTurn(gID, uID)
         return True
     else:
         return False
@@ -547,7 +586,6 @@ def roll(json):
         ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'])
         return ret
 
-
 def buy(json):
     # if player has option to buy a certain property and chooses to buy
     gID         = json['gID']
@@ -742,6 +780,11 @@ def game(json):
         elif json["request"] == "PGOOJ":
             ret = payGetOutOfJail(json['gID'], json['uID'])
 
+        if gameOver(json['gID']):
+            game            = r.getGame(json['gID'])
+            game['state']   = "FINISHED"
+            r.setGame(json["gID"], game)
+
         return ret
 
 def bid(json):
@@ -813,7 +856,7 @@ def bid(json):
             if hBidder != player['public']['number']:
                 game['auction']['out'].append(player['public']['number'])
                 r.setGame(json['gID'], game)
-                if len(game['auction']['out']) >= game['playersNo'] - 1:
+                if len(game['auction']['out']) >= game['playersNo'] - 1 - len(game['spect']):
                     return close()
 
         return helpers.getReturnData(gID, uID)

@@ -122,6 +122,7 @@ def host(json):
         game['type']            = json['type']
         game['playersNo']       = 0
         game['turn']            = 1
+        game["spect"]           = []
         game['lastActivity']    = helpers.getTime()
         game['figurines']       = getFigurinesList()
         game['state']           = 'LOBBY'
@@ -158,6 +159,7 @@ def join(json, gID=None):
             uID                                         = helpers.genID()
             player                                      = {}
             player['uID']                               = uID
+            player["state"]                             = "active"
             player['money']                             = getInitJson()['startMoney']
             player['options']                           = []
             player["trade"]                             = {}

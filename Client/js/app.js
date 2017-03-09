@@ -79,19 +79,25 @@
 					console.log("Checking for game state change...");
 					if (game_variables['state'] != game_state) {
 						// GAMES STATE HAS CHANGED
-
+						console.log("CHANGED GAME STATE");
 						// THIS WILL BE USED FOR END OF GAME WINNER/PAUSE ETC
 
-						if (game_state === 'PLAYING') {
+						if (game_variables['state'] === 'PLAYING') {
+							// check if has changed to playing
+							console.log("DRAWING BOARD");
 							$('.board').empty();
-							$('.board').append(
-							'<canvas id="boardCanvas" width="600" height="600" style="border:1px solid #000000; background: #E9DFCC ;'+
-							'position: absolute;left: 0;top:0;z-index:0;">'+
-							'</canvas>'+
-							'<canvas id="dynamicCanvas" width="600" height="600" style="border:1px solid #000000;'+
-							'position: absolute;left: 0;top:0;z-index:1;">'+
-							'</canvas>');
+
+
+							var canvas_html = '<div id="blaze">'+
+												'</div>'+
+												'<canvas id="boardCanvas" width="520" height="520">'+
+												'</canvas>'+
+												'<canvas id="dynamicCanvas" width="520" height="520"'+
+												'</canvas>';
+							$('.board').append(canvas_html);
+							setTimeout(draw, 1400 	);
 						}
+			
 					}
 					// now that we've checked for game changes we can do more general code
 					game_state = game_variables['state'];
@@ -122,8 +128,7 @@
 
 					}
 					// PRINT LOBBY SCREEN FIRST - OVERWRITTEN WHEN NEEDED
-					$('.board').empty();
-					$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520" id="game-board">');
+					
 					
 					if (game_state === 'LOBBY'){
 						console.log('GAME STATE: ' + game_state);

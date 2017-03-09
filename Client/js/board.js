@@ -1,21 +1,16 @@
-var c = document.getElementById("boardCanvas");
+var c;
 
-		var ctx = c.getContext("2d");
+		var ctx;
 		var tiles = [];
-				var _width = c.width;
-		var _height = c.height;
+				var _width;
+		var _height;
 
-		var wanchor = _width / 13;
-		var hanchor = _height / 13;
+		var wanchor;
+		var hanchor;
 
-		var cLeft = c.offsetLeft;
-		var cTop = c.offsetTop;
-var background = new Image();
-background.src = "loading.gif";
+		var cLeft;
+		var cTop;
 
-background.onload = function(){
-    ctx.drawImage(background,100,200);   
-}
 
 // Load JSON File
 var loadFile = function (filePath, done) {
@@ -109,25 +104,11 @@ myFiles.forEach(function (file, i) {
 
 
 		
-		c.addEventListener('mousemove', function(event) {
-		    var x = event.pageX - cLeft,
-		        y = event.pageY - cTop;
-		    //console.log(x, y)
-		    tiles.forEach(function(tile) {
-		        if (y > tile.top && y < tile.top + tile.width &&
-		        	x > tile.left && x < tile.left + tile.height) {
-					
-					var category = getCategory(tile.i);
-					if (category == "property"){
-		                 document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
-		        }
-		    });
 
-		}, false);
 		
 		
 		
-		ctx.textAlign="center";
+		
 		
 		function switchOrientation(o){
 		switch(o){
@@ -511,7 +492,38 @@ myFiles.forEach(function (file, i) {
  		    return img;
  		}
 		function draw(){
-		  ctx.clearRect(0,0,d.width,d.height);
+
+			c = document.getElementById("boardCanvas");
+
+		ctx = c.getContext("2d");
+		ctx.clearRect(0,0,c.width,c.height);
+		        tiles = [];
+                _width = c.width;
+        _height = c.height;
+
+        wanchor = _width / 13;
+        hanchor = _height / 13;
+
+        cLeft = c.offsetLeft;
+        cTop = c.offsetTop;
+
+        ctx.textAlign="center";
+
+        		c.addEventListener('mousemove', function(event) {
+		    var x = event.pageX - cLeft,
+		        y = event.pageY - cTop;
+		    //console.log(x, y)
+		    tiles.forEach(function(tile) {
+		        if (y > tile.top && y < tile.top + tile.width &&
+		        	x > tile.left && x < tile.left + tile.height) {
+					
+					var category = getCategory(tile.i);
+					if (category == "property"){
+		                 document.getElementById("blaze").innerHTML = tile.i + " " + getPropertyName(tile.i);}
+		        }
+		    });
+
+		}, false);
  		  // tile imgs
 		  var _path = "./assets/game_assets/board/"
  		  var chance1_img 		= _createImage(_path.concat("chance.png"));
@@ -623,7 +635,3 @@ myFiles.forEach(function (file, i) {
 		  draw = function(){}; // Google "js noop" 
 		  
 		}
-		
-		// init once
-	setTimeout(draw, 1500
-	);

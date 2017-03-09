@@ -1,8 +1,7 @@
-	var d = document.getElementById("dynamicCanvas");
-		var dtx = d.getContext("2d");
+var d;
+		var dtx;
 
-dtx.font = "10px Arial";
-dtx.textAlign="center";
+
 var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDE87)};
 var player2 = {id: 2, token:String.fromCharCode(0xD83D, 0xDC18)};
 var players = [player1, player2];
@@ -59,10 +58,14 @@ function updateLocation(playerID, position){
 	locations[playerID-1] = [playerID, position];
 }
 function start(){
+	d = document.getElementById("dynamicCanvas");
+	dtx = d.getContext("2d");
+	dtx.font = "10px Arial";
+dtx.textAlign="center";
 	shuffleTiles();
 	drawPieces();
 }
-dtx.textAlign="center";
+
 
 function test(){
 shuffleTiles();

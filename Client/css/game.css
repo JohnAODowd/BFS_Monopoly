@@ -117,11 +117,20 @@
     margin-right: 1em;
     margin-bottom: 1em; }
 
-#game-board {
-  margin-top: 2em;
-  margin-left: auto;
-  margin-right: auto;
-  width: 520; }
+#boardCanvas {
+  border: 1px solid #000000;
+  background: #E9DFCC;
+  position: absolute;
+  left: 50;
+  top: 55;
+  z-index: 0; }
+
+#dynamicCanvas {
+  border: 1px solid #000000;
+  position: absolute;
+  left: 50;
+  top: 55;
+  z-index: 1; }
 
 .collapsible {
   margin-top: 2em; }

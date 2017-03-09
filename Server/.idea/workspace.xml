@@ -10,12 +10,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Server$test.coverage" NAME="test Coverage Results" MODIFIED="1488344406286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$emojiToken.coverage" NAME="emojiToken Coverage Results" MODIFIED="1488561911510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
+    <SUITE FILE_PATH="coverage/Server$test.coverage" NAME="test Coverage Results" MODIFIED="1489023226230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
     <SUITE FILE_PATH="coverage/Server$lobbyUnitTest__1_.coverage" NAME="lobbyUnitTest (1) Coverage Results" MODIFIED="1488224995475" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/Server$cleanup.coverage" NAME="cleanup Coverage Results" MODIFIED="1488886876262" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/monopoly" />
-    <SUITE FILE_PATH="coverage/Server$unitTest.coverage" NAME="unitTest Coverage Results" MODIFIED="1489009564464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/Server$mFlask.coverage" NAME="mFlask Coverage Results" MODIFIED="1489009529192" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Server$unitTest.coverage" NAME="unitTest Coverage Results" MODIFIED="1489026603946" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/Server$mFlask.coverage" NAME="mFlask Coverage Results" MODIFIED="1489026565467" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$board.coverage" NAME="board Coverage Results" MODIFIED="1488399029298" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$cleanup__1_.coverage" NAME="cleanup (1) Coverage Results" MODIFIED="1488886421556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Server$lobbyUnitTest.coverage" NAME="lobbyUnitTest Coverage Results" MODIFIED="1488748792556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
@@ -40,11 +40,33 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="gameLib.py" pinned="false" current-in-tab="false">
+            <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/monopoly/test.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="17">
+                    <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="41" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="redisLib.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="51">
+                    <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+                    <folding>
+                      <element signature="e#0#12#0" expanded="true" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="gameLib.py" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="206">
-                    <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
+                  <state relative-caret-position="154">
+                    <caret line="96" column="54" lean-forward="false" selection-start-line="96" selection-start-column="54" selection-end-line="96" selection-end-column="54" />
                     <folding>
                       <element signature="e#729#977#0" expanded="false" />
                       <element signature="e#1015#1057#0" expanded="false" />
@@ -54,7 +76,6 @@
                       <element signature="e#1630#1797#0" expanded="false" />
                       <element signature="e#1841#2007#0" expanded="false" />
                       <element signature="e#2048#3140#0" expanded="false" />
-                      <element signature="e#3178#3860#0" expanded="false" />
                       <element signature="e#3906#4315#0" expanded="false" />
                       <element signature="e#4347#4441#0" expanded="false" />
                       <element signature="e#4481#4682#0" expanded="false" />
@@ -73,18 +94,27 @@
                       <element signature="e#14583#16379#0" expanded="false" />
                       <element signature="e#16418#16907#0" expanded="false" />
                       <element signature="e#17119#17779#0" expanded="false" />
-                      <element signature="e#17801#19658#0" expanded="false" />
-                      <element signature="e#19679#20448#0" expanded="false" />
-                      <element signature="e#20473#21278#0" expanded="false" />
-                      <element signature="e#21312#22004#0" expanded="false" />
-                      <element signature="e#22050#22999#0" expanded="false" />
-                      <element signature="e#23022#23625#0" expanded="false" />
-                      <element signature="e#23655#24009#0" expanded="false" />
-                      <element signature="e#24031#24359#0" expanded="false" />
-                      <element signature="e#24396#24698#0" expanded="false" />
-                      <element signature="e#24723#25232#0" expanded="false" />
-                      <element signature="e#25461#26717#0" expanded="false" />
+                      <element signature="e#19702#20471#0" expanded="false" />
+                      <element signature="e#20496#21301#0" expanded="false" />
+                      <element signature="e#21335#22027#0" expanded="false" />
+                      <element signature="e#22073#23022#0" expanded="false" />
+                      <element signature="e#23045#23648#0" expanded="false" />
+                      <element signature="e#23678#24032#0" expanded="false" />
+                      <element signature="e#24054#24382#0" expanded="false" />
+                      <element signature="e#24419#24721#0" expanded="false" />
+                      <element signature="e#24746#25255#0" expanded="false" />
+                      <element signature="e#25484#26740#0" expanded="false" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="dice.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="434">
+                    <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -92,8 +122,8 @@
             <file leaf-file-name="mFlask.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/mFlask.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="444">
-                    <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+                  <state relative-caret-position="578">
+                    <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
                     <folding>
                       <element signature="e#0#22#0" expanded="true" />
                     </folding>
@@ -101,31 +131,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="emojiToken.py" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/monopoly/emojiToken.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="272">
-                    <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="dice.py" pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="357">
-                    <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="27" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
             <file leaf-file-name="helpers.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="240">
-                    <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
+                  <state relative-caret-position="230">
+                    <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
                     <folding>
                       <element signature="e#0#13#0" expanded="true" />
                     </folding>
@@ -136,15 +146,24 @@
             <file leaf-file-name="unitTest.py" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="458">
-                    <caret line="267" column="14" lean-forward="false" selection-start-line="267" selection-start-column="14" selection-end-line="267" selection-end-column="14" />
+                  <state relative-caret-position="415">
+                    <caret line="396" column="27" lean-forward="false" selection-start-line="396" selection-start-column="27" selection-end-line="396" selection-end-column="27" />
                     <folding>
                       <element signature="e#0#11#0" expanded="true" />
                       <element signature="e#680#834#0" expanded="false" />
                       <element signature="e#867#1182#0" expanded="false" />
                       <element signature="e#1220#1288#0" expanded="false" />
-                      <element signature="e#9681#12973#0" expanded="false" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="getData.py" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state relative-caret-position="391">
+                    <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -157,54 +176,14 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="getData.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
+      <file leaf-file-name="cleanup.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/monopoly/cleanup.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python34/Lib/json/__init__.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python34/Lib/site-packages/flask/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="1597" column="0" lean-forward="false" selection-start-line="1597" selection-start-column="0" selection-end-line="1597" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="redisLib.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2">
-              <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="codecs.py" pinned="false" current-in-tab="false">
-        <entry file="file://C:/Python34/Lib/codecs.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9">
-              <caret line="302" column="0" lean-forward="false" selection-start-line="302" selection-start-column="0" selection-end-line="302" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -221,7 +200,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>jail</find>
       <find>getProp</find>
       <find>Last</find>
       <find>getPlayer(gID</find>
@@ -238,7 +216,6 @@
       <find>com</find>
       <find>giveP</find>
       <find>getRe</find>
-      <find>prin</find>
       <find>_js</find>
       <find>pri</find>
       <find>red</find>
@@ -251,6 +228,8 @@
       <find>http</find>
       <find>print</find>
       <find>IN JAIL</find>
+      <find>can</find>
+      <find>prin</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -292,17 +271,18 @@
         <option value="$PROJECT_DIR$/monopolyJSON/properties.json" />
         <option value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
         <option value="$PROJECT_DIR$/cleanup.py" />
-        <option value="$PROJECT_DIR$/monopoly/cleanup.py" />
-        <option value="$PROJECT_DIR$/monopoly/redisLib.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/game.html" />
-        <option value="$PROJECT_DIR$/monopoly/getData.py" />
         <option value="$PROJECT_DIR$/monopoly/emojiToken.py" />
-        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
         <option value="$PROJECT_DIR$/tests/unitTest.py" />
-        <option value="$PROJECT_DIR$/monopoly/gameLib.py" />
+        <option value="$PROJECT_DIR$/monopoly/test.py" />
+        <option value="$PROJECT_DIR$/monopoly/redisLib.py" />
+        <option value="$PROJECT_DIR$/monopoly/cleanup.py" />
         <option value="$PROJECT_DIR$/mFlask.py" />
+        <option value="$PROJECT_DIR$/monopoly/getData.py" />
         <option value="$PROJECT_DIR$/monopoly/dice.py" />
+        <option value="$PROJECT_DIR$/monopoly/gameLib.py" />
+        <option value="$PROJECT_DIR$/monopoly/helpers.py" />
       </list>
     </option>
   </component>
@@ -414,24 +394,6 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="lobbyUnitTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/lobbyUnitTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
     <configuration default="false" name="unitTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -482,6 +444,24 @@
       <module name="Project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mFlask.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/monopoly" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/monopoly/test.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
@@ -721,18 +701,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Project" />
       <item index="1" class="java.lang.String" itemvalue="Python.cleanup" />
-      <item index="2" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
-      <item index="3" class="java.lang.String" itemvalue="Python.unitTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python.cleanup (1)" />
-      <item index="5" class="java.lang.String" itemvalue="Python.mFlask" />
+      <item index="2" class="java.lang.String" itemvalue="Python.unitTest" />
+      <item index="3" class="java.lang.String" itemvalue="Python.cleanup (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Python.mFlask" />
+      <item index="5" class="java.lang.String" itemvalue="Python.test" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.unitTest" />
         <item index="1" class="java.lang.String" itemvalue="Python.mFlask" />
-        <item index="2" class="java.lang.String" itemvalue="Python.cleanup" />
-        <item index="3" class="java.lang.String" itemvalue="Python.cleanup (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.lobbyUnitTest" />
+        <item index="2" class="java.lang.String" itemvalue="Python.test" />
+        <item index="3" class="java.lang.String" itemvalue="Python.cleanup" />
+        <item index="4" class="java.lang.String" itemvalue="Python.cleanup (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -769,11 +749,11 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5106383" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.9700997" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6694352" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32890365" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -820,18 +800,11 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="94" />
+      <option name="time" value="103" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/static/sample.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/join.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="507">
@@ -973,16 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/cleanup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="23" lean-forward="false" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#12#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cleanup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1073,10 +1036,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python34/Lib/json/__init__.py">
+    <entry file="file://C:/Python34/Lib/site-packages/flask/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="1597" column="0" lean-forward="false" selection-start-line="1597" selection-start-column="0" selection-end-line="1597" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="28" lean-forward="true" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="41" />
           <folding />
         </state>
       </provider>
@@ -1091,68 +1062,85 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/monopoly/getData.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="13" column="46" lean-forward="false" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+        <state relative-caret-position="391">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Python34/Lib/site-packages/flask/app.py">
+    <entry file="file://C:/Python34/Lib/json/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="1597" column="0" lean-forward="false" selection-start-line="1597" selection-start-column="0" selection-end-line="1597" selection-end-column="0" />
+        <state relative-caret-position="-9">
+          <caret line="312" column="0" lean-forward="false" selection-start-line="312" selection-start-column="0" selection-end-line="312" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
+    <entry file="file://$PROJECT_DIR$/monopoly/cleanup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="458">
-          <caret line="267" column="14" lean-forward="false" selection-start-line="267" selection-start-column="14" selection-end-line="267" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#680#834#0" expanded="false" />
-            <element signature="e#867#1182#0" expanded="false" />
-            <element signature="e#1220#1288#0" expanded="false" />
-            <element signature="e#9681#12973#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="65" column="23" lean-forward="true" selection-start-line="65" selection-start-column="23" selection-end-line="65" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mFlask.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding>
             <element signature="e#0#12#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/mFlask.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/helpers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="75" column="18" lean-forward="false" selection-start-line="75" selection-start-column="18" selection-end-line="75" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/unitTest.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="396" column="27" lean-forward="false" selection-start-line="396" selection-start-column="27" selection-end-line="396" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#680#834#0" expanded="false" />
+            <element signature="e#867#1182#0" expanded="false" />
+            <element signature="e#1220#1288#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/redisLib.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="35" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="48" column="27" lean-forward="false" selection-start-line="48" selection-start-column="27" selection-end-line="48" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/monopoly/gameLib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="768" column="0" lean-forward="false" selection-start-line="768" selection-start-column="0" selection-end-line="768" selection-end-column="0" />
+        <state relative-caret-position="154">
+          <caret line="96" column="54" lean-forward="false" selection-start-line="96" selection-start-column="54" selection-end-line="96" selection-end-column="54" />
           <folding>
             <element signature="e#729#977#0" expanded="false" />
             <element signature="e#1015#1057#0" expanded="false" />
@@ -1162,7 +1150,6 @@
             <element signature="e#1630#1797#0" expanded="false" />
             <element signature="e#1841#2007#0" expanded="false" />
             <element signature="e#2048#3140#0" expanded="false" />
-            <element signature="e#3178#3860#0" expanded="false" />
             <element signature="e#3906#4315#0" expanded="false" />
             <element signature="e#4347#4441#0" expanded="false" />
             <element signature="e#4481#4682#0" expanded="false" />
@@ -1181,26 +1168,17 @@
             <element signature="e#14583#16379#0" expanded="false" />
             <element signature="e#16418#16907#0" expanded="false" />
             <element signature="e#17119#17779#0" expanded="false" />
-            <element signature="e#17801#19658#0" expanded="false" />
-            <element signature="e#19679#20448#0" expanded="false" />
-            <element signature="e#20473#21278#0" expanded="false" />
-            <element signature="e#21312#22004#0" expanded="false" />
-            <element signature="e#22050#22999#0" expanded="false" />
-            <element signature="e#23022#23625#0" expanded="false" />
-            <element signature="e#23655#24009#0" expanded="false" />
-            <element signature="e#24031#24359#0" expanded="false" />
-            <element signature="e#24396#24698#0" expanded="false" />
-            <element signature="e#24723#25232#0" expanded="false" />
-            <element signature="e#25461#26717#0" expanded="false" />
+            <element signature="e#19702#20471#0" expanded="false" />
+            <element signature="e#20496#21301#0" expanded="false" />
+            <element signature="e#21335#22027#0" expanded="false" />
+            <element signature="e#22073#23022#0" expanded="false" />
+            <element signature="e#23045#23648#0" expanded="false" />
+            <element signature="e#23678#24032#0" expanded="false" />
+            <element signature="e#24054#24382#0" expanded="false" />
+            <element signature="e#24419#24721#0" expanded="false" />
+            <element signature="e#24746#25255#0" expanded="false" />
+            <element signature="e#25484#26740#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monopoly/dice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="48" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>

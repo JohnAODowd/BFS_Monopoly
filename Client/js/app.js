@@ -54,6 +54,7 @@
 			console.log('');
 			console.log('- - - - - - - - - - - - - - - - ');
 			console.log('game_variables');
+			console.log(json_data['chat']);
 			// FIRST CHECK FOR 'error'
 			// game : player : players : options - req all states
 			// board - req when game in playing state
@@ -86,6 +87,7 @@
 
 						if (game_variables['state'] === 'PLAYING') {
 							// check if has changed to playing
+							$('#action-button').text('Roll Dice');
 							console.log("DRAWING BOARD");
 							$('.board').empty();
 
@@ -103,7 +105,6 @@
 							//draw();
 							//tart();
 						}
-			
 					}
 					// now that we've checked for game changes we can do more general code
 					game_state = game_variables['state'];
@@ -139,7 +140,6 @@
 							// var psquare = player_list[plyr]['position'];
 							move(pnum,player_position);
 						});
-
 					}
 					// PRINT LOBBY SCREEN FIRST - OVERWRITTEN WHEN NEEDED
 					
@@ -158,8 +158,6 @@
 								}
 							})//foreach
 						} // END IF LOBBY
-	//
-						
 					}
 
 						// paused
@@ -198,20 +196,32 @@
 					player_balance = playerOBJ['money']; console.log('player_balance:'+playerID);
 					$('#player-balance').html('&#36;'+player_balance);
 
-				}
-
-				// Check if can buy
-				if (playerOBJ['canBuy'] != null) {
-					console.log('PLAYER CAN BUY');
-					$('.options').removeClass('disabled');
-					$('#buy').click(function(){
-						buyProperty();
-					})
-				 } else {
-				 	$('.options').addClass('disabled');
-				 }
 				
 
+					// Check if can buy
+					if (playerOBJ['canBuy'] != null) {
+						console.log('PLAYER CAN BUY');
+						$('#buy').removeClass('disabled');
+						$('#buy').click(function(){
+							buyProperty();
+						})
+					 } else {
+					 	$('#buy').addClass('disabled');
+					 }
+
+
+					console.log(json_data['chat']);
+					if (json_data['chat'].length > 0) {
+						var chats = json_data['chat'];
+						$.each(chats, function(chat){
+							var message = '<p class="chat-text">' + chats[chat]['playerName'] + ':' + chats[chat]['time'] +
+											'\n' + chats[chat.toString()]['text'] + '</p>';
+							console.log(message);
+							$('.chat-log').append(message);
+						})
+						
+					}
+				}
 				if (json_data.hasOwnProperty('alert')) {
 					// IMPLEMENT
 				}
@@ -223,7 +233,7 @@
 			} // End error check for req
 			console.log('Something went wrong');
 			return 0;
-		}
+		} // END PARSER
 
 		/*	========= =========
 				  HELPERS
@@ -396,7 +406,7 @@
 			//ping();
 			// console.log('PING 1');
 			// wait(3000);
-			// //var ping_interval = setInterval(ping, 4000);
+			//var ping_interval = setInterval(parseJSON(init), 4000);
 			// wait(3000);
 
 			$('#action-button').click(function(){

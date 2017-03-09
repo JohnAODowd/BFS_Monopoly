@@ -10,6 +10,9 @@
 	background-image: url("../assets/tweed/tweed.png");
 	overflow: hidden;
 }
+nav {
+
+}
 .nav-wrapper {
 	line-height: 64px;
 	height: 64px;
@@ -173,9 +176,17 @@ form {
 	margin-top: 2em;
 }
 .options {
+	border-bottom: 1px #000 solid;
 	padding: 1em;
 }
 .option-button {
 	width: 100%;
 	margin-top: 1em;
+}
+.chat {
+	padding-top: 0.1em;
+}
+.chat-log {
+	margin: 0em 0.3em 0.2em 0.3em;
+	border-radius: 5px;
 }

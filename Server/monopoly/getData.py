@@ -10,12 +10,12 @@ def getBoardJson():
     return board
 
 def getChanceJson():
-    response = requests.get(url + "chance.json")
-    return loads(response.text)['Chance']
+    response = requests.get(url + "cards.json")
+    return loads(response.text)["cards"]['Chance']
 
 def getCommChestJson():
-    response = requests.get(url + "commchest.json")
-    return loads(response.text)['CommunityChest']
+    response = requests.get(url + "cards.json")
+    return loads(response.text)["cards"]['CommunityChest']
 
 def getPropertiesJson():
     response = requests.get(url + "properties.json")

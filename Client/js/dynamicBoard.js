@@ -1,9 +1,9 @@
 	var d = document.getElementById("dynamicCanvas");
 		var dtx = d.getContext("2d");
 
-dtx.font = "20px Arial";
+dtx.font = "10px Arial";
 dtx.textAlign="center";
-var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDDFF)};
+var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDE87)};
 var player2 = {id: 2, token:String.fromCharCode(0xD83D, 0xDC18)};
 var players = [player1, player2];
 var locations = [[1,11], [2,13]];
@@ -22,7 +22,23 @@ function drawPiece(playerID, pos){
 	var player = getPlayer(playerID);
 	
 	dtx.fillText(player.token, x +10,y -10);
+	//dtx.rotate(Math.PI*2/(i*6));
+	
+	console.log(x + "  " + y);
 	return tiles[pos].top + " " + tiles[pos].left + "\n" +x + " " + y}
+
+
+function drawPieces(){
+	dtx.clearRect(0,0,d.width,d.height);
+	for (var i = 0; i<locations.length;i++){
+	
+		
+		var loc = locations[i];
+		console.log("aaa");
+		drawPiece(loc[0], loc[1]);
+	}
+
+}
 
 function shuffleTiles(){
 	var newTiles =[];
@@ -32,23 +48,25 @@ function shuffleTiles(){
 	}
 	tiles = newTiles;
 	}
-	
-function drawPieces(){
-	dtx.clearRect(0,0,d.width,d.height);
-	for (var i = 0; i<locations.length;i++){
-	
-		
-		var loc = locations[i];
-		console.log(loc);
-		drawPiece(loc[0], loc[1]);
-	}
 
+function move(player, location){
+	updateLocation(player, location);
+	drawPieces();
 }
 
+	
 function updateLocation(playerID, position){
 	locations[playerID-1] = [playerID, position];
 }
 function start(){
 	shuffleTiles();
 	drawPieces();
+}
+dtx.textAlign="center";
+
+function test(){
+shuffleTiles();
+var x = tiles[6].left + (tiles[6].width/2);
+var y = tiles[6].top + (tiles[6].height/1.5);
+drawRotatedText(0,x,y);
 }

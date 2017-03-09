@@ -6,7 +6,7 @@ def post(d):
 	js = d
 	payload = json.dumps(js)
 	headers = {'Content-Type' : 'application/json'}
-	r = requests.post("http://leela.netsoc.co:8080/game", data=payload, headers=headers)
+	r = requests.post("http://localhost:8080/game", data=payload, headers=headers)
 	return r.text
 
 class user:
@@ -22,6 +22,10 @@ class user:
     _dic        = None
     _state      = None
     _pID        = None
+    _properties = []
+    _mortgaged  = []
+    _alert      = None
+    _inJail     = False
 
     def __init__(self, name, type="HOST", gID=None):
         self._name      = name
@@ -48,6 +52,13 @@ class user:
             self._options   = dic["options"]
             self._state     = game["state"]
             self._pID       = player["canBuy"]
+            for group in player["public"]["properties"]:
+                for prop in player["public"]["properties"][group]["owned"]:
+                    self._properties += [prop]
+            if "alert" in dic:
+                if dic["alert"] == "IN JAIL":
+                    self._inJail = True
+
             # toPrint = "name: " + player["public"]["name"] + "\n"
             # toPrint += "position: " + str(player["public"]["position"]) + "\n"
             # toPrint += "money: " + str(player["money"]) + "\n\n"
@@ -67,7 +78,6 @@ class user:
         response            = post(js)
         self._history       += "RECIEVED***********\n" + response + "\n\n"
         response            = json.loads(response)
-        print(response)
         self._gID           = response["game"]["gID"]
         self._options       = response["options"]
         self._figurines     = response["game"]["figurines"]
@@ -175,6 +185,85 @@ class user:
             self.parseResponse(json.loads(response))
             # toPrint = self._name + "has Bought " + pID + "\n\n"
             # print(toPrint)
+    def canMortgage(self):
+        return len(self._properties) > 0
+
+    def mortgage(self):
+        if self.canMortgage():
+            pID = self._properties[0]
+            self._properties.pop(0)
+            js = {}
+            js["request"] = "MORTGAGE"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js['pID'] = pID
+            self._mortgaged += [pID]
+            self._history += "SENDING (MORTGAGE)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+    def unMortgage(self):
+        if len(self._mortgaged) > 0:
+            pID = self._mortgaged[0]
+            self._mortgaged.pop(0)
+            js = {}
+            js["request"] = "PAYMORT"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js['pID'] = pID
+            self._history += "SENDING (PAYMORT)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+    def payGOOJ(self):
+        if self._inJail:
+            js = {}
+            js["request"] = "PGOOJ"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            self._history += "SENDING (PGOOJ)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+    def auction(self):
+        if self.canBuy():
+            pID = self._pID
+            js = {}
+            js["request"] = "AUCTION"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js['pID'] = pID
+            self._history += "SENDING (AUCTION)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+
+    def bid(self, amount):
+        if self._state == "AUCTION":
+            js = {}
+            js["request"] = "BID"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            js["amount"] = amount
+            self._history += "SENDING (BID)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
+
+    def out(self):
+        if self._state == "AUCTION":
+            js = {}
+            js["request"] = "OUT"
+            js["uID"] = self._uID
+            js["gID"] = self._gID
+            self._history += "SENDING (OUT)*****\n" + str(js) + "\n\n"
+            response = post(js)
+            self._history += "RECIEVED***********\n" + response + "\n\n"
+            self.parseResponse(json.loads(response))
 
 class mMatrix:
 
@@ -244,6 +333,48 @@ class mMatrix:
         self.allPing()
         self.incrementHistory("BUY")
 
+    def mortgage(self):
+        self.clearHist()
+        for player in self.users:
+            player.mortgage()
+        self.allPing()
+        self.incrementHistory("MORTGAGE")
+
+    def unMortgage(self):
+        self.clearHist()
+        for player in self.users:
+            player.unMortgage()
+        self.allPing()
+        self.incrementHistory("UNMORT")
+
+    def payGOOJ(self):
+        self.clearHist()
+        for player in self.users:
+            player.payGOOJ()
+        self.allPing()
+        self.incrementHistory("PGOOJ")
+
+    def auction(self):
+        self.clearHist()
+        for player in self.users:
+            player.auction()
+        self.allPing()
+        self.incrementHistory("AUCTION")
+
+
+    def bid(self, playeri, amount):
+        self.clearHist()
+        self.users[playeri].bid(amount)
+        self.allPing()
+        self.incrementHistory("BID")
+
+    def out(self, playeri):
+        self.clearHist()
+        self.users[playeri].out()
+        self.allPing()
+        self.incrementHistory("OUT")
+
+
     def resetHistory(self, turn):
         self.history = "!!!!**** TURN %i *****!!!!!\n\n" % (turn)
 
@@ -254,9 +385,17 @@ class mMatrix:
         print(self.history)
         while True:
             turn += 1
-            self.resetHistory(turn)
-            self.roll()
-            self.buy()
+            for i in range(1):
+                self.resetHistory(turn)
+                self.roll()
+                self.auction()
+                self.bid(0, 30)
+                self.bid(0, 50)
+                self.bid(0, 60)
+                self.bid(1, 50)
+                self.bid(1, 70)
+                self.out(0)
+
             print(self.history)
 
 matrix = mMatrix(2)

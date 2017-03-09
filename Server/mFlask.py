@@ -18,7 +18,6 @@ def home():
             return render_template("index.html", joinForm="private", gID=gID)
     return render_template("index.html", joinForm="public")                             #return the homepage
 
-# TODO check for form to implement full server independence
 """
 Main game controller
 """
@@ -29,11 +28,9 @@ def game():
         json        = (request.get_json())
         fromForm    = False
         if json == None:
-            print(json)
             fromForm = True
             form = request.form
             json = helpers.formToJson(form)
-
         if json['request'] == 'HOST' or json['request'] == "JOIN" or helpers.getGameState(json['gID']) == "LOBBY":
             ret = lobby.lobby(json)
             if fromForm:
@@ -52,6 +49,6 @@ def game():
 
 if __name__ == '__main__':
   app.run(
-        host="0.0.0.0",
+        host="localhost",
         port=int("8080")
   )

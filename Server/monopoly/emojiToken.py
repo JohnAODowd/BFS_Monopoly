@@ -10,9 +10,9 @@ def generateEmoji():
     emoji = b'\\U0001F'+random.choice(shortHex)+random.choice(longHex)+random.choice(longHex)
     return emoji
 
-x = ''
-for i in range(0,8):
-    emoji = generateEmoji()
-    #emoji[-5:] in unsupported)
-    x += emoji.decode('unicode_escape')
-print('http://'+x)
+# x = ''
+# for i in range(0,8):
+#     emoji = generateEmoji()
+#     #emoji[-5:] in unsupported)
+#     x += emoji.decode('unicode_escape')
+# print('http://'+x)

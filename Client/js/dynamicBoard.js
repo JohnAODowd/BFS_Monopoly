@@ -5,8 +5,12 @@ var d;
 var player1 = {id: 1, token :String.fromCharCode(0xD83D, 0xDE87)};
 var player2 = {id: 2, token:String.fromCharCode(0xD83D, 0xDC18)};
 var players = [player1, player2];
+<<<<<<< HEAD
 var locations = [[1,11], [2,13]];
 var tiles;
+=======
+var locations = [[1,0],[2,0]];
+>>>>>>> 22e13484cbb4dab74323780159ae4e0439a879a0
 function getPlayer(playerID){
 	for (i =0; i<players.length;i++){
 		if (playerID-1 == i){

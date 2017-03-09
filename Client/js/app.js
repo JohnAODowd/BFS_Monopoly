@@ -1,5 +1,6 @@
 (function($){
 	$(function(){
+		var ping_url = "http://leela.netsoc.co:8080/game"
 		// Game Variables
 		var gameID;
 		var game_turn;
@@ -72,41 +73,70 @@
 					figurines = game_variables['figurines']; 	console.log('figurines:'+ figurines);
 					playersNo = game_variables['playersNo']; 	console.log('playersNo:'+ playersNo);
 					// OPTIONS 
-					options = json_data['options'];
-							
-					console.log('state:'+ game_variables['state']);
-					// Game has changed state
-					// Set new game state into memory
+					options = json_data['player']['options'];	console.log('Options:'+ options);
+
+					console.log("\n");
+					console.log("Checking for game state change...");
+					if (game_variables['state'] != game_state) {
+						// GAMES STATE HAS CHANGED
+
+						// THIS WILL BE USED FOR END OF GAME WINNER/PAUSE ETC
+
+						if (game_state === 'PLAYING') {
+							$('.board').empty();
+							$('.board').append(
+							'<canvas id="dynamicCanvas" width="520" height="520" style="border:1px solid #000000;'+
+								'position: absolute;left: 0;top:0;z-index:1;">'+
+							'</canvas>'+
+							'<canvas id="boardCanvas" width="520" height="520" style="border:1px solid #000000; background: #cdcdcd ;'+
+								'position: absolute;left: 0;top:0;z-index:0;">'+
+							'</canvas>');
+						}
+					}
 					game_state = game_variables['state'];
 
+					/* 	-------	-------
+						Check if button should be enabled or disabled
+						-------	-------	*/
+						// this does not count as secure so check again later during request gen
+					if (options.length > 0) {
+						$.each(options, function(opt){
+							if (options[opt] === "START" || options[opt] === "ROLL") {
+								console.log('START ENABLED');
+								$('#action-button').removeClass('disabled');
+							} 
+						})//foreach
+					} else {
+						$('#action-button').addClass('disabled');
+						console.log('START DISABLED');
+					}
 					if (game_state === 'PLAYING'){
 						// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
 						// Set control buttons
-						console.log('GAME STATE: ' + game_state);
-						$('.board').empty();
-						//$('.board').append();
+						// The game's state has not changed so we should not redraw canvas etc to board
+						console.log('playing: ' + game_state);
+
+
 					}
-					else if (game_state === 'LOBBY'){
+					// PRINT LOBBY SCREEN FIRST - OVERWRITTEN WHEN NEEDED
+					$('.board').empty();
+					$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520" id="game-board">');
+					
+					if (game_state === 'LOBBY'){
 						console.log('GAME STATE: ' + game_state);
-						console.log('Options:' + options);
+						
 						// GAME IS IN LOBBY - RENDER BOARD OR OPTIONS
-						// disable control buttons
+						//disable control buttons
 						if (options.length > 0) {
-							console.log('DISPLAYING OPTIONS *****');
 							// if there are options
-							$.each(options, function(key,val) {
-								if (val === "FIGURINE") {	// check to see if there is a FIGURINE options
+							console.log('Options are present:' + options);
+							$.each(options, function(opt){
+								if (options[opt] === "FIGURINE") {
 									displayFigurines();		// tere should only ever be this option or none in LOBBY
 								}
-							});
-						} 
-						else {
-							console.log('NO OPTIONS');
-							// otherwise - diplay the game board
-							// test in place for now
-							$('.board').empty();
-							$('.board').html('<img src="assets/game_assets/lobby/monopoly-test-background.png" width="520" heigh="520" id="game-board">');
-						}	//
+							})//foreach
+						} // END IF LOBBY
+	//
 						
 					}
 
@@ -118,7 +148,8 @@
 					/* 	==========
 						PLAYER VARS
 						========== */
-					console.log('player variables');
+					console.log('\n');
+					console.log('Player Variables');
 					playerOBJ = json_data['player'];
 					/* 	==========
 						  PUBLIC
@@ -135,6 +166,7 @@
 						console.log('Setting player_figurine:'+player_figurine);
 						$("#player-image").attr("src", initFig[player_figurine]);
 					} else {
+						// replace server uncomment
 						$("#player-image").attr("src", "assets/game_assets/lobby/Avatars/unknown.png");
 					}
 					/* 	==========
@@ -163,19 +195,14 @@
 						});
 					} // End for
 				}
-				if (game_state == 'PLAYING') {
-					// check if game is playing
-					// in which case 'board' is required
-					if (json_data.hasOwnProperty('board')) {
-						// make sure 'board' is present
 
-						// NEED TO IMPLEMENT
-
-					}
-				} // END PLAYING IF
 				if (json_data.hasOwnProperty('alert')) {
 					// IMPLEMENT
 				}
+
+				// FUNCTIONS FOR AFTER PARSE
+				displayPlayers();
+
 				return 1;
 			} // End error check for req
 			console.log('Something went wrong');
@@ -197,7 +224,6 @@
 			data['gID'] = gameID;
 
 			var json = JSON.stringify(data);
-			var ping_url = "http://leela.netsoc.co:8080/game";
 			
 			// *******
 			// Uncomment for server
@@ -265,7 +291,7 @@
         function figurineRequest(data) {
 
           var json = JSON.stringify(data);
-          var ping_url = "http://leela.netsoc.co:8080/game"
+          
 
           // *** Uncomment when pushing to server
           // $.ajax({
@@ -279,13 +305,43 @@
           //       }
           //   });
         }
-        function wait(ms){
-		   var start = new Date().getTime();
-		   var end = start;
-		   while(end < start + ms) {
-		     end = new Date().getTime();
-		  }
+		/*  ============
+			Functions for Start Button and Roll
+			============ */
+		// Function to be used for either rolling or starting game from lobby
+		function sendMainAction() {
+			var data = {};
+			data['gID'] = gameID;
+			data['uID'] = playerID;
+			// to implement
+			$.each(options, function(opt){
+				if (options[opt] === 'START') {
+					console.log('START GAME REQUEST');
+					data['request'] = 'START';
+				} else if (options[opt] === "ROLL") {
+					console.log('ROLL DICE REQUEST');
+					data['request'] = 'ROLL';
+				} else {
+					console.log('ERROR SENDING REQUEST TO SERVER - NO PERMISSION FOUND');
+					return 0;
+				}
+				var json = JSON.stringify(data);
+				$.ajax({
+		          type: 'post',
+		          url: ping_url,
+		          data: json,
+		          contentType: "application/json; charset=utf-8",
+		          traditional: true,
+		          success: function (data) {
+		              console.log(data);
+		            }
+		        });
+
+			});
+
 		}
+
+
 		/*	============	============	============
 			Core logic will go in a loop in the main() func
 			============	============	============	*/
@@ -296,7 +352,9 @@
 			// //var ping_interval = setInterval(ping, 4000);
 			// wait(3000);
 
-			displayPlayers();
+			$('#action-button').click(function(){
+				sendMainAction();
+			});
 
 			$('#HAT').click(function()
 			{

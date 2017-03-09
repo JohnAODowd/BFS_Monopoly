@@ -26,9 +26,9 @@ var loadFile = function (filePath, done) {
 }
 
 // directory paths to all JSON files
-var myFiles = [ "../Server/monopolyJSON/board.json",
-				"../Server/monopolyJSON/properties.json",
-				"../Server/monopolyJSON/cards.json"
+var myFiles = [ "../js/monopolyJSON/board.json",
+				"../js/monopolyJSON/properties.json",
+				"../js/monopolyJSON/cards.json"
 			  ];
 
 // where JSON data is stored
@@ -625,5 +625,5 @@ myFiles.forEach(function (file, i) {
 		}
 		
 		// init once
-	setTimeout(draw, 100
+	setTimeout(draw, 1500
 	);

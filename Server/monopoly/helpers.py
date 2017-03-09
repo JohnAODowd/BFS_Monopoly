@@ -3,6 +3,7 @@ import string
 from _sha256 import sha256
 from datetime import datetime, timedelta
 from monopoly import redisLib as r
+from monopoly import emojiToken as ET
 
 def getGameState(gID):
     return r.getGame(gID)['state']
@@ -90,8 +91,15 @@ def genString(size=10, chars=string.ascii_uppercase + string.digits):   #used fo
 	return ''.join(random.choice(chars) for _ in range(size))
 
 def genID():
-	token = sha256(genString().encode('utf-8')).hexdigest()             #generates ID's
-	return token
+    token = ''
+    for i in range(0,32):
+        emoji = ET.generateEmoji()
+        token += emoji.decode('unicode_escape')
+    return token
+
+# def genID():
+# 	token = sha256(genString().encode('utf-8')).hexdigest()             #generates ID's
+# 	return token
 
 def getfirstPublicGame():                                               #used to connect to random public game
     games   = r.getGames()

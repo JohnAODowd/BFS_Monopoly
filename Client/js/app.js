@@ -1,6 +1,6 @@
 (function($){
 	$(function(){
-		var ping_url = "http://leela.netsoc.co:8080/game"
+		var ping_url = "";
 		// Game Variables
 		var gameID;
 		var game_turn;
@@ -23,6 +23,8 @@
 		// player list object
 		var player_list;
 		var player_keys;
+
+		var first_pass = true;
 
 		$(document).ready(function(){
 			initGame();
@@ -95,7 +97,11 @@
 												'<canvas id="dynamicCanvas" width="520" height="520"'+
 												'</canvas>';
 							$('.board').append(canvas_html);
-							setTimeout(draw, 1400 	);
+							setTimeout(draw, 1400);
+							setTimeout(start, 1400);
+							//sleep(1400);
+							//draw();
+							//tart();
 						}
 			
 					}
@@ -118,13 +124,21 @@
 						console.log('START DISABLED');
 					}
 
+					console.log('Player list');
+					player_list = json_data['players'];
 
-					if (game_state === 'PLAYING'){
+					if (game_state === 'PLAYING' && first_pass != true){
+
 						// GAME IS BEING PLAYED - RENDER GAME + OPTIONS
 						// Set control buttons
 						// The game's state has not changed so we should not redraw canvas etc to board
 						console.log('playing: ' + game_state);
-
+						// cycle through each player and render them to the board
+						$.each(player_list, function(plyr){
+							var pnum = player_list[plyr]['number'];
+							var psquare = player_list[plyr]['position'];
+							move(pnum,psquare);
+						});
 
 					}
 					// PRINT LOBBY SCREEN FIRST - OVERWRITTEN WHEN NEEDED
@@ -188,20 +202,20 @@
 						========== */						
 					// player_list contains the json mapping of player_names to their properties
 					// player keys is used for processing elsewhere, contains all keys
-					console.log('Player list');
-					player_list = json_data['players'];
-					player_keys = [];
-					// populate player_keys
-					$.each(player_list, function(key, value) {
-						player_keys.push(key);
-					});
-					// log to console for confirmation
-					for (var x=0; x < player_keys.length; x++){
-						console.log(player_keys[x]);
-						$.each(player_list[player_keys[x]], function(key, value){
-							console.log(key + ':' + value);
-						});
-					} // End for
+					// console.log('Player list');
+					// player_list = json_data['players'];
+					// player_keys = [];
+					// // populate player_keys
+					// $.each(player_list, function(key, value) {
+					// 	player_keys.push(key);
+					// });
+					// // log to console for confirmation
+					// for (var x=0; x < player_keys.length; x++){
+					// 	console.log(player_keys[x]);
+					// 	$.each(player_list[player_keys[x]], function(key, value){
+					// 		console.log(key + ':' + value);
+					// 	});
+					// } // End for
 				}
 
 				if (json_data.hasOwnProperty('alert')) {
@@ -210,7 +224,7 @@
 
 				// FUNCTIONS FOR AFTER PARSE
 				displayPlayers();
-
+				first_pass = false;
 				return 1;
 			} // End error check for req
 			console.log('Something went wrong');
@@ -237,18 +251,18 @@
 			// Uncomment for server
 			// *******
 
-			// $.ajax({
-			// 	type: 'post',
-	  //           url: ping_url,
-	  //           data: json,
-	  //           contentType: "application/json; charset=utf-8",
-	  //           traditional: true,
-	  //           success: function (data) {
-   //              	parseJSON(data);
-   //              	console.log(data);
-   //              }
-			// });
-			parseJSON(init /*json*/);
+			$.ajax({
+				type: 'post',
+	            url: ping_url,
+	            data: json,
+	            contentType: "application/json; charset=utf-8",
+	            traditional: true,
+	            success: function (data) {
+                	parseJSON(data);
+                	console.log(data);
+                }
+			});
+			parseJSON(json);
 
 		}
 		/* 	=========	=========
@@ -302,16 +316,16 @@
           
 
           // *** Uncomment when pushing to server
-          // $.ajax({
-          //     type: 'post',
-          //     url: ping_url,
-          //     data: json,
-          //     contentType: "application/json; charset=utf-8",
-          //     traditional: true,
-          //     success: function (data) {
-          //         console.log(data);
-          //       }
-          //   });
+          $.ajax({
+              type: 'post',
+              url: ping_url,
+              data: json,
+              contentType: "application/json; charset=utf-8",
+              traditional: true,
+              success: function (data) {
+                  console.log(data);
+                }
+            });
         }
 		/*  ============
 			Functions for Start Button and Roll
@@ -348,7 +362,9 @@
 			});
 
 		}
+		function sleep(milliseconds) {
 
+}
 
 		/*	============	============	============
 			Core logic will go in a loop in the main() func
@@ -373,6 +389,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log('HAT');
+	          sendRequest(data);
 			});
 	        $('#CAR').click(function() {
 	          var data = {};
@@ -381,7 +398,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("CAR");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#THIMBLE').click(function() {
 	          var data = {};
@@ -390,7 +407,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("THIMBLE");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#IRON').click(function() {
 	          var data = {};
@@ -399,7 +416,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("IRON");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#BOOT').click(function() {
 	          var data = {};
@@ -408,7 +425,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("BOOT");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#SHIP').click(function() {
 	          var data = {};
@@ -417,7 +434,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("SHIP");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#DOG').click(function() {
 	          var data = {};
@@ -426,7 +443,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("DOG");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 	        $('#WHEELBARROW').click(function() {
 	          var data = {};
@@ -435,7 +452,7 @@
 	          data['gID'] = gameID;
 	          data['uID'] = playerID;
 	          console.log("WHEELBARROW");
-	          //sendRequest(data);
+	          sendRequest(data);
 	        });
 
 		}

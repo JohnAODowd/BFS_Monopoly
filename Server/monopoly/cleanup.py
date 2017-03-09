@@ -1,7 +1,7 @@
 import redis
 from monopoly import redisLib as rLib
 
-r = redis.StrictRedis(host='redis.netsoc.co', port=6379, db=0)
+r = redis.StrictRedis(host='213.32.22.158', port=6379, db=0)
 
 games = rLib.getGames()
 for gID in games:

@@ -534,18 +534,19 @@ def roll(json):
     if alert['boolean']:
         ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['alert'], card)
         if alert["alert"] == "IN JAIL":
-            pass
+            incrementTurn(gID)
+            return ret
         else:
             return ret
     elif "activity" in alert:
         if alert['activity'] == "rent":
             ret = helpers.getReturnData(gID, uID, [], ['ROLL'], alert['activity'], card)
             incrementTurn(gID)
+            return ret
     elif card == False:
         ret = helpers.getReturnData(gID, uID, ["ROLLED"], ['ROLL'])
         return ret
-    incrementTurn(gID)
-    return ret
+
 
 def buy(json):
     # if player has option to buy a certain property and chooses to buy
@@ -756,7 +757,20 @@ def bid(json):
         hBidAmount  = game['auction']['highest'][hBidder]
 
         def close():
-            if hBidder != 0:
+            if hBidder == None or int(hBidder) == 0:
+                for _uID in players:
+                    players[_uID]['options'].remove("BID")
+                    if "AUCTION" in players[_uID]["options"]:
+                        players[_uID]['options'].remove("AUCTION")
+                    if "BUY" in players[_uID]["options"]:
+                        players[_uID]['options'].remove("BUY")
+                        players[_uID]["canBuy"] = None
+                r.setPlayers(gID, players)
+                game['state'] = "PLAYING"
+                r.setGame(gID, game)
+                incrementTurn(gID)
+                return helpers.getReturnData(gID, uID)
+            if int(hBidder) != 0:
                 payUID = None
                 for _uID in players:
                     if players[_uID]["public"]["number"] == int(hBidder):
@@ -772,6 +786,7 @@ def bid(json):
                             players[_uID]['options'].remove("AUCTION")
                         if "BUY" in players[_uID]["options"]:
                             players[_uID]['options'].remove("BUY")
+                            players[_uID]["canBuy"] = None
                     r.setPlayers(gID, players)
                     game['state'] = "PLAYING"
                     r.setGame(gID, game)

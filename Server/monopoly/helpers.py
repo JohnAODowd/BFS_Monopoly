@@ -70,16 +70,16 @@ def getReturnData(gID, uID, optionsToAdd=[], optionsToRemove=[], alert={}, card=
 
     ret['game'] = game
     ret['player'] = player
-    if game['state'] != "LOBBY" and (game["turn"] == player["public"]["number"]):
-        print ("Return Data")
-        print("name: " + player["public"]["name"])
-        print("turn: " + str(game["turn"]))
-        print("options: " + str(ret['options']))
-        if "card" in ret:
-            print (card['type'])
-        if 'alert' in ret:
-            print (alert)
-        print("")
+    # if game['state'] != "LOBBY" and (game["turn"] == player["public"]["number"]):
+    #     print ("Return Data")
+    #     print("name: " + player["public"]["name"])
+    #     print("turn: " + str(game["turn"]))
+    #     print("options: " + str(ret['options']))
+    #     if "card" in ret:
+    #         print (card['type'])
+    #     if 'alert' in ret:
+    #         print (alert)
+    #     print("")
     return ret
 
 def getTime():                                                          #used for updating  activity time

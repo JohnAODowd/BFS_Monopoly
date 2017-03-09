@@ -2,7 +2,7 @@ import requests
 from json import loads
 from monopoly.helpers import keyStringtoInt
 
-url = "http://hassassin.netsoc.co/monopolyJSON/"
+url = "http://213.32.22.158/"
 
 def getBoardJson():
     response = requests.get(url + "board.json")

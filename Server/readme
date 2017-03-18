@@ -5,13 +5,13 @@ These states are used to abstract the API requests.
 *PING request is used in all states, it's used to poll the server every state*
 
 Ping ->
-	```json
-	{  
+
+    {  
     "uID":"13a8ba65a19ec410fa3fd7e585e7b924274458966b8d726b3837adcdab862b4d",
     "request":"PING",
     "gID":"11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d"
 	}
-	```
+	
 
 Lobby:
 

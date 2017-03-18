@@ -1,1 +1,198 @@
+The game is divided up into four states, LOBBY, PLAYING, AUCTION, and FINISHED.
 
+These states are used to abstract the API requests.
+
+*PING request is used in all states, it's used to poll the server every state*
+
+Ping ->
+	```json
+	{  
+    "uID":"13a8ba65a19ec410fa3fd7e585e7b924274458966b8d726b3837adcdab862b4d",
+    "request":"PING",
+    "gID":"11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d"
+	}
+	```
+
+Lobby:
+
+The lobby State is the first state and consists of 5 types of API calls. 
+In this state, users get back 4 objects in every request sent : "game, player, players, options"
+users get a gID and uID when hosting or joining a game.
+
+"HOST" -> When someone wants to start a new game:
+	
+	{
+	'request' 	: "HOST",
+	'name'		: "hosty",
+	"type" 		: "private" 	/*games can be public or private*/
+	}
+
+
+"JOIN" -> sent when someone wants to join a game: 
+
+
+Private Join -> Used for joining a game
+
+*A gID is needed if joining a private game, hosts of private games must send it to the joiners (link).*
+
+	{  
+	"gID"		: "11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d",
+	"name"		: "Joiner1",
+	"request"	: "JOIN"
+	}
+
+Public Join -> No gID is needed when joining a public game, as you're put in a random public game.
+
+		{  
+    	"name"		: "Joiner1",
+    	"request"	: "JOIN"
+		}
+
+Figurine selection -> used to select a figurine:
+
+	{  
+    "uID"		: "13a8ba65a19ec410fa3fd7e585e7b924274458966b8d726b3837adcdab862b4d",
+    "gID"		: "11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d",
+    "request"	: "FIGURINE",
+    "figurine"	: "IRON"
+	}
+
+Start -> only the host gets this request, it's used to start a game when theres enough players in the game, changes the game state to PLAYING.
+
+	{  
+    "uID"		: "576278beae513e916efb834554cd23a7acb5d8d2800ed5467fc474add55ee51f",
+    "request"	: "START",
+    "gID"		: "11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d"
+	}
+
+
+PLAYING:
+
+In this state you will get the same objects as the LOBBY state, plus 3 more, chat, deeds, and board. 
+
+You may also get one more object, alert, this is used if certain events happen, such as trying to pay with insufficient funds.
+
+This looks like this {"alert" : "INSUFFICIENT FUNDS"}
+
+Alerts are also used to discern when a player loses, and when the game is over.
+
+Chat -> a live chat for users to avail of.
+
+	{  
+    "uID"		:"576278beae513e916efb834554cd23a7acb5d8d2800ed5467fc474add55ee51f",
+    "text"		:"🐵",
+    "request"	:"CHAT",
+    "gID"		:"11c5d71aa790cc4ab0da3cdf8e91972f6e35c400fac8b03d6852e06c2573206d"
+	}
+
+Roll -> used to roll a dice, move, and send the player back their options for the square they moved to.
+
+	{  
+	"gID"		: "10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+	"request"	: "ROLL",
+	"uID"		: "6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba"
+	}
+
+Buy -> if a player lands on a square they can buy they are given the option to buy it.
+
+	{  
+    "pID"		: "lightBlue1",
+    "gID"		: "10dcf6b0c6aaf92dd850d292c8a91dc9ea8c58bdf7a5144f8fb6ff6a1b45ca34",
+    "request"	: "BUY",
+    "uID"		: "6b62586de9beeb0c2b7c3fafaff38f5bda04e8917462cc9d10881ec6669c53ba"
+	}
+
+Auction -> a player can also auction a property, this moves the gamee state to AUCTION
+
+	{  
+    "pID"		:"lightBlue1",
+    "request"	:"AUCTION",
+    "uID"		:"2906726542a7ea76ee49db0f2d66b61d6485391ae4c6ba646ce5a5050f82e6ae",
+    "gID"		:"5b56788eef91a5e1acaa898d9710690c7420b40a3f6f6d839cce2450aebddf0f"
+	}
+
+
+Mortgage -> players can mortgage properties they own
+
+	{  
+    "request"	:"MORTGAGE",
+    "uID"		:"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID"		:"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229",
+    "pID"		:"lightBlue1"
+	}
+
+Pay off mortgage ->
+
+	{  
+    "request":"PAYMORT",
+    "uID":"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID":"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229",
+    "pID":"lightBlue1"
+	}
+
+Build -> used if you want to build a house
+
+	{
+	"request" 	: "BUILD",
+	"pID"		: "lightblue1",
+	"uID"		:"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID"		:"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229"
+	}
+
+Sell -> used to sell a bulding
+
+	{
+	"request" 	: "SELL",
+	"pID"		: "lightblue1",
+	"uID"		:"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID"		:"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229"
+	}
+
+Get out of jail free card ->
+
+	{
+	"uID"		:"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID"		:"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229",
+    "request"	: "GOOJF"
+	}
+
+Pay to get out of jail ->
+
+	{
+	"uID"		:"064b59356678759f689d759699227b7eb5583ff7b071882efee0dd58bb095b6d",
+    "gID"		:"2527d08629ae299a68a80e9342a8515a0e9d75ae02b49e315f0d8bef34ee3229",
+    "request"	: "PGOOJ"
+	}
+
+*trade not tested yet*
+
+AUCTION:
+
+In the auction state, players have 3 requests, bid, opt out of the auction, and to ping for updates. 
+
+The auction status can be found in the "auction" object, which is in the "game" object.
+
+An auction is closed after 30 seconds, or if enough players leave the auction.
+
+Bid -> used to bid on the auctioned property
+
+	{  
+    "amount":60,
+    "request":"BID",
+    "uID":"2906726542a7ea76ee49db0f2d66b61d6485391ae4c6ba646ce5a5050f82e6ae",
+    "gID":"5b56788eef91a5e1acaa898d9710690c7420b40a3f6f6d839cce2450aebddf0f"
+	}
+
+Out -> used to opt out an auction
+
+	{  
+    "request":"OUT",
+    "uID":"2906726542a7ea76ee49db0f2d66b61d6485391ae4c6ba646ce5a5050f82e6ae",
+    "gID":"5b56788eef91a5e1acaa898d9710690c7420b40a3f6f6d839cce2450aebddf0f"
+	}
+
+
+
+
+
+To see how the response objects look like, go to https://github.com/JohnAODowd/BFS_Monopoly/tree/master/Server/tests
